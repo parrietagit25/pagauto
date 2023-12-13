@@ -1,0 +1,17 @@
+{
+    "name": "leonard.hernandez/automarket",
+    "autoload": {
+        "psr-4": {
+            "LeonardHernandez\\Automarket\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Grupo PCR",
+            "email": "76816677+TecnologiaPCR@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "mobiledetect/mobiledetectlib": "^4.8"
+    }
+}

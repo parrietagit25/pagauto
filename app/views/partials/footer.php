@@ -34,6 +34,13 @@
     <script src="assets/plugins/slider-pro/jquery.sliderPro.min.js"></script>
     <!--Sliders-->
     <script src="assets/plugins/slick/slick.js"></script>
+     <!-- User map
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhTd-ZT5nzCNucY9AZUCspnXrw3votR34"></script>-->
+     <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhTd-ZT5nzCNucY9AZUCspnXrw3votR34&callback=initMap">
+    </script>
+    <!-- Maps customization-->
+    <script src="assets/js/map-custom.js"></script>
     <!-- User customization-->
     <script src="assets/js/custom.js"></script>
 </body>

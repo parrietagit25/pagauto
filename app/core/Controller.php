@@ -1,7 +1,6 @@
 <?php
 
-class Controller {
-    // Métodos comunes del controlador... 
+class Controller { 
     
     protected function view($view, $data = []) {
     

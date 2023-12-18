@@ -20,7 +20,7 @@
 
 
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="/automarket/pagauto/public/about">Sobre Nosotros</a></li>
                 <!--
                 <li class="nav-item "><a class="nav-link" href="#">Pages</a>
 
@@ -84,7 +84,7 @@
                                                 <a class="dropdown-item" href="#">Camiones</a></div>
                                         </li>
 
-                                        <li class="nav-item"><a class="nav-link" href="about.html">Sobre Nosotros</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/automarket/pagauto/public/about">Sobre Nosotros</a></li>
 
                                         <!--<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown1" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1"><a class="dropdown-item" href="typography.html">Typography</a></div>

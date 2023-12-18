@@ -12,7 +12,7 @@
             <div class="main-slider slider-pro" id="main-slider" data-slider-width="100%" data-slider-height="700px" data-slider-arrows="false" data-slider-buttons="false">
                 <div class="sp-slides">
                     <!-- Slide 1-->
-                    <div class="main-slider__slide sp-slide"><img class="sp-image" src="<?php echo BASEURL; ?>media/content/b-main-slider/bg-1.jpg" alt="slider" />
+                    <div class="main-slider__slide sp-slide"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" />
                         <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
                             <div class="main-slider__wrap">
                                 <div class="main-slider__slogan">luxury unleashed</div>

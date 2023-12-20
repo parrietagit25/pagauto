@@ -37,7 +37,7 @@
      <!-- User map
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhTd-ZT5nzCNucY9AZUCspnXrw3votR34"></script>-->
      <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhTd-ZT5nzCNucY9AZUCspnXrw3votR34&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb-wAj4BAs9Fyiu0Gf9lf-PNF98K8fgw8&callback=initMap">
     </script>
     <!-- Maps customization-->
     <script src="assets/js/map-custom.js"></script>

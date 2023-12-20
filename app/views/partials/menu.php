@@ -2,7 +2,7 @@
         <!-- MOBILE MENU-->
         <!-- ==========================-->
         <div data-off-canvas="mobile-slidebar left overlay">
-            <a class="navbar-brand scroll" href="home.html"><img class="scroll-logo" src="<?php echo BASEURL; ?>media/general/logo-light.png" alt="logo"></a>
+            <a class="navbar-brand scroll" href="home.html"><img width="200" class="scroll-logo" src="<?php echo BASEURL; ?>media/logo/LOGO-WEB-AUTOMARKET.png" alt="logo"></a>
 
 
             <ul class="navbar-nav">
@@ -49,10 +49,10 @@
                             <div class="col offset-2">
                                 <div class="top-bar__inner row justify-content-between align-items-center">
                                     <ul class="top-bar__list list-unstyled col">
-                                        <li class="top-bar__item"><a class="top-bar__link" href="mailto:support@domain.com">support@domain.com</a></li>
-                                        <li class="top-bar__item">Mon to Fri : 9:00am to 6:00pm</li>
-                                        <li class="top-bar__item">Fairview Ave, El Monte, CA 91732</li>
-                                    </ul><a class="btn btn-primary btn-sm col-auto" href="#"><i class="ic icon-list"></i> Add Listings</a>
+                                        <li class="top-bar__item"><a class="top-bar__link" href="mailto:ventas@automarketpan.com">ventas@automarketpan.com</a></li>
+                                        <li class="top-bar__item">Horario: Lunes a Sábado de 8:00 a.m. a 5:00 p.m.</li>
+                                        <!--<li class="top-bar__item">Fairview Ave, El Monte, CA 91732</li>-->
+                                    </ul><a class="btn btn-primary btn-sm col-auto" href="#"><i class="ic icon-list"></i> Ver Inventario</a>
                                 </div>
                             </div>
                         </div>
@@ -62,10 +62,10 @@
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-2 col-auto">
-                                <a class="navbar-brand scroll" href="home.html"><img class="normal-logo" src="<?php echo BASEURL; ?>media/general/logo.png" alt="logo"></a>
+                                <a class="navbar-brand scroll" href="home.html"><img width="200" class="normal-logo" src="<?php echo BASEURL; ?>media/logo/LOGO-WEB-AUTOMARKET.png" alt="logo"></a>
                             </div>
                             <div class="col-lg-auto col">
-                                <div class="header-contacts d-none d-md-block d-lg-none d-xl-block"><i class="ic text-primary icon-call-in"></i><span class="header-contacts__inner">Call Us Today!<a class="header-contacts__number" href="tel:+17553028549">+1 755 302 8549</a></span></div>
+                                <div class="header-contacts d-none d-md-block d-lg-none d-xl-block"><i class="ic text-primary icon-call-in"></i><span class="header-contacts__inner">Llámanos!<a class="header-contacts__number" href="tel:+17553028549">+507 279-2789</a></span></div>
                                 <!-- Mobile Trigger Start-->
                                 <button class="menu-mobile-button js-toggle-mobile-slidebar toggle-menu-button d-lg-none"><i class="toggle-menu-button-icon"><span></span><span></span><span></span><span></span><span></span><span></span></i></button>
                                 <!-- Mobile Trigger End-->

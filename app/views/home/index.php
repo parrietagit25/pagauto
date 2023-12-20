@@ -47,9 +47,9 @@
                         <div class="col-12">
                             <div class="b-find">
                                 <ul class="b-find-nav nav nav-tabs" id="findTab" role="tablist">
-                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link active" id="tab-allCar" data-toggle="tab" href="#content-allCar" role="tab" aria-controls="content-allCar" aria-selected="true">All Car Types</a></li>
-                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-newCars" data-toggle="tab" href="#content-newCars" role="tab" aria-controls="content-newCars" aria-selected="false">New Cars</a></li>
-                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-usedCars" data-toggle="tab" href="#content-usedCars" role="tab" aria-controls="content-usedCars" aria-selected="false">Used Cars</a></li>
+                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link active" id="tab-allCar" data-toggle="tab" href="#content-allCar" role="tab" aria-controls="content-allCar" aria-selected="true">Todo el Inventario</a></li>
+                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-newCars" data-toggle="tab" href="#content-newCars" role="tab" aria-controls="content-newCars" aria-selected="false">Autos Seminuevos</a></li>
+                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-usedCars" data-toggle="tab" href="#content-usedCars" role="tab" aria-controls="content-usedCars" aria-selected="false">Autos Usados</a></li>
                                 </ul>
                                 <div class="b-find-content tab-content" id="findTabContent">
                                     <div class="tab-pane fade show active" id="content-allCar">
@@ -58,7 +58,7 @@
                                                 <div class="b-find__main">
                                                     <div class="b-find__inner">
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">01</span> Select Make</div>
+                                                            <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Audi</option>
@@ -68,7 +68,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">02</span> Select a Model</div>
+                                                            <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Model 1</option>
@@ -78,7 +78,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">03</span> Price Range</div>
+                                                            <div class="b-find__label"><span class="b-find__number">03</span> Rango de Precio</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Max $5000</option>
@@ -104,7 +104,7 @@
                                                 <div class="b-find__main">
                                                     <div class="b-find__inner">
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">01</span> Select Make</div>
+                                                            <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Audi</option>
@@ -114,7 +114,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">02</span> Select a Model</div>
+                                                            <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Model 1</option>
@@ -124,7 +124,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">03</span> Price Range</div>
+                                                            <div class="b-find__label"><span class="b-find__number">03</span> Rango de Precio</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Max $5000</option>
@@ -150,7 +150,7 @@
                                                 <div class="b-find__main">
                                                     <div class="b-find__inner">
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">01</span> Select Make</div>
+                                                            <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Audi</option>
@@ -160,7 +160,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">02</span> Select a Model</div>
+                                                            <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Model 1</option>
@@ -170,7 +170,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">03</span> Price Range</div>
+                                                            <div class="b-find__label"><span class="b-find__number">03</span> Rango de Precio</div>
                                                             <div class="b-find__selector">
                                                                 <select class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option>Max $5000</option>
@@ -183,11 +183,15 @@
                                                 </div>
                                                 <button class="b-find__btn btn btn-primary">Search</button>
                                             </div>
-                                            <div class="b-find__checkbox-group"><span class="b-find__checkbox-item">
-                            <input class="forms__check" id="newCars3" type="checkbox" checked="checked"/>
-                            <label class="forms__label forms__label-check" for="newCars3">New Cars</label></span><span class="b-find__checkbox-item">
-                            <input class="forms__check" id="usedCars3" type="checkbox"/>
-                            <label class="forms__label forms__label-check" for="usedCars3">Used Cars</label></span></div>
+                                            <div class="b-find__checkbox-group">
+                                                <span class="b-find__checkbox-item">
+                                                <!--
+                                                <input class="forms__check" id="newCars3" type="checkbox" checked="checked"/>
+                                                <label class="forms__label forms__label-check" for="newCars3">New Cars</label></span><span class="b-find__checkbox-item">
+                                                <input class="forms__check" id="usedCars3" type="checkbox"/>
+                                                <label class="forms__label forms__label-check" for="usedCars3">Used Cars</label>-->
+                                                </span>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -201,21 +205,21 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6">
-                            <div class="ui-title-slogan">Helps you to find your next car easily</div>
-                            <h2 class="ui-title">Welcome to<span class="text-primary"> Revus</span></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed eiusmod tempor incididu et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull laboris aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderits volupta velit dolore fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
-                            <p>Non proident sunt ind culpa qudesa officia deserunt mollit anim est laborum. Sed per unde omnis iste natus error sit voluptatem accusantium doloremque laudantium tom eaque ipsa quae ab illo inventore veritatis architecto.</p>
+                            <div class="ui-title-slogan">Te ayudamos a encontrar tu próximo vehículo fácilmente</div>
+                            <h2 class="ui-title">Bienvenido a <span style="color:#1b3b72;">AutoMarket</span></h2>
+                            <p>En AutoMarket, entendemos que comprar el vehículo ideal no solo es una cuestión de preferencias, sino también de posibilidades financieras. Es por eso que nos enorgullecemos de ofrecer soluciones de financiamiento flexibles en colaboración con bancos de renombre. Nuestro objetivo es hacer que la adquisición de tu nuevo o seminuevo auto sea no solo emocionante, sino también accesible y conveniente.</p>
+                            <p>Ya sea que estés buscando un coche familiar espacioso, un vehículo deportivo elegante o un auto económico y eficiente, tenemos una gama diversa que se adapta a tus necesidades y presupuesto. Nuestros expertos están aquí para guiarte en cada paso del camino, asegurando que encuentres no solo un coche, sino una inversión que te acompañará por años. Descubre hoy la facilidad y comodidad de comprar con AutoMarket, donde tu satisfacción es nuestra prioridad.</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xl-7">
                             <ul class="b-welcome-list list-unstyled d-sm-flex justify-content-around">
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-car"></i>We Offers Lower
-                                    <br> Cars Prices</li>
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-gearbox"></i>Largest cars
-                                    <br> Dealership</li>
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-wrench"></i>Multipoint Safety
-                                    <br> Checks offers</li>
+                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-car"></i>Ofrecemos precios 
+                                    <br> más bajos en autos</li>
+                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-gearbox"></i>El concesionario de 
+                                    <br> autos más grande</li>
+                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-wrench"></i>Ofertas con chequeos
+                                    <br> de seguridad multipunto</li>
                             </ul>
                         </div>
                     </div>
@@ -226,8 +230,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="ui-title-slogan">Helps you to find your next car easily</div>
-                            <h2 class="ui-title">Featured<span class="text-primary"> Vehicles</span></h2>
+                            <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
+                            <h2 class="ui-title">Vehículos <span style="color:#1b3b72;"> Destacados</span></h2>
                         </div>
                     </div>
                 </div>
@@ -396,7 +400,7 @@
                     </div>
                     <div class="container">
                         <div class="row">
-                            <div class="col-12"><a class="section-carousel__btn btn btn-primary" href="#"><i class="ic icon-list"></i> View All Cars Listings</a></div>
+                            <div class="col-12"><a class="section-carousel__btn btn btn-primary" href="#"><i class="ic icon-list"></i> Ver todos los vehiculos</a></div>
                         </div>
                     </div>
                 </div>
@@ -417,7 +421,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="b-services__main">
-                                <div class="ui-title-slogan">Helps you to find your next car easily</div>
+                                <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
                                 <h2 class="ui-title">Services We<span class="text-primary"> Offers</span></h2>
                                 <div class="b-services-content tab-content" id="servicesTabContent">
                                     <div class="b-services-content__item tab-pane fade show active" id="repairing" role="tabpanel" aria-labelledby="repairing-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
@@ -498,7 +502,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <div class="ui-title-slogan">Helps you to find perfect car</div>
+                            <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
                             <h2 class="ui-title">Our Vehicles<span class="text-primary"> Listing</span></h2>
                             <ul class="b-isotope-filter list-unstyled">
                                 <li class="current"><a href="" data-filter="*">Show All</a></li>

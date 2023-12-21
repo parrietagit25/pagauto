@@ -207,8 +207,8 @@
                         <div class="col-xl-6">
                             <div class="ui-title-slogan">Te ayudamos a encontrar tu próximo vehículo fácilmente</div>
                             <h2 class="ui-title">Bienvenido a <span style="color:#1b3b72;">AutoMarket</span></h2>
-                            <p>En AutoMarket, entendemos que comprar el vehículo ideal no solo es una cuestión de preferencias, sino también de posibilidades financieras. Es por eso que nos enorgullecemos de ofrecer soluciones de financiamiento flexibles en colaboración con bancos de renombre. Nuestro objetivo es hacer que la adquisición de tu nuevo o seminuevo auto sea no solo emocionante, sino también accesible y conveniente.</p>
-                            <p>Ya sea que estés buscando un coche familiar espacioso, un vehículo deportivo elegante o un auto económico y eficiente, tenemos una gama diversa que se adapta a tus necesidades y presupuesto. Nuestros expertos están aquí para guiarte en cada paso del camino, asegurando que encuentres no solo un coche, sino una inversión que te acompañará por años. Descubre hoy la facilidad y comodidad de comprar con AutoMarket, donde tu satisfacción es nuestra prioridad.</p>
+                            <p>En AutoMarket Panamá, nos comprometemos a facilitar la compra de tu auto ideal. Con opciones de financiamiento flexibles y adaptadas, encontrarás desde un espacioso vehículo familiar hasta un elegante deportivo o un coche económico y eficiente. Nuestro equipo de expertos te proporcionará asesoría personalizada, asegurando que cada paso del proceso sea claro y satisfactorio.</p>
+                            <p>Nuestra prioridad es tu satisfacción. Por ello, en AutoMarket Panamá, te acompañamos en la búsqueda del vehículo que no solo cumpla tus expectativas, sino que también represente una inversión inteligente y duradera. Ven y experimenta la comodidad y simplicidad de elegir el coche perfecto, ajustado a tus necesidades y presupuesto.</p>
                         </div>
                     </div>
                     <div class="row">
@@ -1000,95 +1000,11 @@
                 <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/8.jpg" alt="foto" /></div>
             </div>
             <!-- end .b-gallery-->
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="text-center">
-                                <div class="footer-logo">
-                                    <a class="footer-logo__link" href="home.html"><img class="img-responsive" src="<?php echo BASEURL; ?>media/general/logo-light.png" alt="Logo"></a>
-                                </div>
-                                <ul class="footer-soc list-unstyled">
-                                    <li class="footer-soc__item"><a class="footer-soc__link" href="#" target="_blank"><i class="ic fab fa-twitter"></i></a></li>
-                                    <li class="footer-soc__item"><a class="footer-soc__link" href="#" target="_blank"><i class="ic fab fa-facebook"></i></a></li>
-                                    <li class="footer-soc__item"><a class="footer-soc__link" href="#" target="_blank"><i class="ic fab fa-linkedin"></i></a></li>
-                                    <li class="footer-soc__item"><a class="footer-soc__link" href="#" target="_blank"><i class="ic fab fa-google-plus-g"></i></a></li>
-                                    <li class="footer-soc__item"><a class="footer-soc__link" href="#" target="_blank"><i class="ic fab fa-pinterest"></i></a></li>
-                                    <li class="footer-soc__item"><a class="footer-soc__link" href="#" target="_blank"><i class="ic fas fa-play"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-5">
-                            <div class="footer-section footer-section_info">
-                                <div class="footer-info">Ceipisicing elit sed do eiusmod tempor laboe dolore magna aliqa Ut enim ad minim veniam quis nostrud exercitation ullam co laboris nis aliquip comsecd sed ipsum.</div>
-                                <div class="footer-contacts">
-                                    <div class="footer-contacts__item"><i class="ic icon-location-pin"></i>Fairview Ave, El Monte, CA 91732</div>
-                                    <div class="footer-contacts__item"><i class="ic icon-envelope"></i><a href="mailto:support@domain.com">support@domain.com</a></div>
-                                    <div class="footer-contacts__item"><i class="ic icon-earphones-alt"></i>Phone:
-
-                                        <a href="tel:+17553028549">+1 755 302 8549</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-3">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <section class="footer-section footer-section_link">
-                                        <h3 class="footer-section__title">About Revus</h3>
-                                        <ul class="footer-list list-unstyled">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">Services</a></li>
-                                            <li><a href="#">About us</a></li>
-                                            <li><a href="#">Inventory</a></li>
-                                            <li><a href="#">Parts Shop</a></li>
-                                            <li><a href="/automarket/pagauto/public/contact">Contact</a></li>
-                                        </ul>
-                                    </section>
-                                </div>
-                                <div class="col-lg-6">
-                                    <section class="footer-section footer-section_link">
-                                        <h3 class="footer-section__title">Customer Links</h3>
-                                        <ul class="footer-list list-unstyled">
-                                            <li><a href="#">Latest Cars</a></li>
-                                            <li><a href="#">Featured Cars</a></li>
-                                            <li><a href="#">Sell Your Car</a></li>
-                                            <li><a href="#">Buy a Car</a></li>
-                                            <li><a href="#">Reviews</a></li>
-                                            <li><a href="#">Latest News</a></li>
-                                        </ul>
-                                    </section>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <section class="footer-section footer-section_subscribe">
-                                <h3 class="footer-section__title">Subscribe Newsletter</h3>
-                                <form class="footer-form">
-                                    <div class="footer-form__info">Get our weekly nwsletter for latest car news exclusive offers and deals and more.</div>
-                                    <div class="form-group">
-                                        <input class="footer-form__input form-control" type="email" placeholder="your email">
-                                    </div>
-                                    <button class="btn btn-sm btn-primary">Subscribe</button>
-                                </form>
-                            </section>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="footer-copyright">
-                                Copyrights (c) 2019 Revus - Auto Dealer Template. All rights reserved.
-                                <a class="footer-copyright__link" href="privacy-policy.html">Privacy Policy</a>
-                            </div>
-                        </div>
-                    </div><span class="footer__btn-up js-scroll-top"><i class="ic fas fa-angle-up"></i><img src="<?php echo BASEURL; ?>media/general/go_top.png" alt="go top"></span>
-                </div>
-            </footer>
-            <!-- .footer-->
-        </div>
+            <?php include(ROOT_PATH . '/app/views/partials/piedepagina.php'); ?>         
+          <!-- .footer-->
+      </div>
     </div>
     <!-- end layout-theme-->
+    
 <?php include(ROOT_PATH . '/app/views/partials/footer.php'); ?>
 

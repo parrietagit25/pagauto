@@ -1,6 +1,5 @@
 RewriteEngine On
-RewriteBase /automarket/pagauto/public/
-#RewriteBase /automarket/public
+RewriteBase /devtest/ultimos/public/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

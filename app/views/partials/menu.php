@@ -6,7 +6,7 @@
 
 
             <ul class="navbar-nav">
-                <li class="nav-item active"><a class="nav-link" href="/automarket/pagauto/public/">Inicio<span class="sr-only"></span></a></li>
+                <li class="nav-item active"><a class="nav-link" href="/automarket/public/">Inicio<span class="sr-only"></span></a></li>
                 <li class="nav-item "><a class="nav-link">Inventario</a>
 
 
@@ -20,7 +20,7 @@
 
 
                 </li>
-                <li class="nav-item"><a class="nav-link" href="/automarket/pagauto/public/about">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="/automarket/public/about">Sobre Nosotros</a></li>
                 <!--
                 <li class="nav-item "><a class="nav-link" href="#">Pages</a>
 
@@ -36,7 +36,7 @@
                         <li><a class="dropdown-item" href="blog-post.html">Blog post</a></li>
                     </ul>
                 </li> -->
-                <li class="nav-item"><a class="nav-link" href="/automarket/pagauto/public/contact">Contactanos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/automarket/public/contact">Contactanos</a></li>
             </ul>
 
         </div>
@@ -73,7 +73,7 @@
                             <div class="col-lg d-none d-lg-block">
                                 <nav class="navbar navbar-expand-md justify-content-end" id="nav">
                                     <ul class="yamm main-menu navbar-nav">
-                                        <li class="nav-item active"><a class="nav-link" href="/automarket/pagauto/public/">Inicio<span class="sr-only"></span></a></li>
+                                        <li class="nav-item active"><a class="nav-link" href="/automarket/public/">Inicio<span class="sr-only"></span></a></li>
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" id="navbarDropdown2" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inventario</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
@@ -84,7 +84,7 @@
                                                 <a class="dropdown-item" href="#">Camiones</a></div>
                                         </li>
 
-                                        <li class="nav-item"><a class="nav-link" href="/automarket/pagauto/public/about">Sobre Nosotros</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/automarket/public/about">Sobre Nosotros</a></li>
 
                                         <!--<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown1" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1"><a class="dropdown-item" href="typography.html">Typography</a></div>
@@ -92,7 +92,7 @@
                                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown4" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="blog-main.html">Blog main</a><a class="dropdown-item" href="blog-post.html">Blog post</a></div>
                                         </li> -->
-                                        <li class="nav-item"><a class="nav-link" href="/automarket/pagauto/public/contact">Contactanos</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/automarket/public/contact">Contactanos</a></li>
                                     </ul>
                                 </nav>
                             </div>

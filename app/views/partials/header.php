@@ -12,6 +12,11 @@
     <meta name="HandheldFriendly" content="true">
     <link rel="stylesheet" href="assets/css/master.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        #mapTumbaMuerto, #mapViaIsrael, #mapCostaVerde, #mapDavid {
+            height: 400px; 
+        }
+    </style>
     <!--[if lt IE 9 ]>
 <script src="/assets/js/separate-js/html5shiv-3.7.2.min.js" type="text/javascript"></script><meta content="no" http-equiv="imagetoolbar">
 <![endif]-->

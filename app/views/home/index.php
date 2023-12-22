@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <!-- Slide 2-->
-                    <div class="main-slider__slide-2 sp-slide"><img class="sp-image" src="<?php echo BASEURL; ?>media/content/b-main-slider/bg-2.jpg" alt="slider" />
+                    <div class="main-slider__slide-2 sp-slide"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/2.png" alt="slider" />
                         <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
                             <div class="main-slider__wrap">
                                 <div class="main-slider__slogan">expert auto services</div>
@@ -35,8 +35,8 @@
                                 <div class="text-right"><a class="main-slider__link" href="blog-post.html">learn more</a></div>
                             </div>
                         </div>
-                        <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="1500" data-show-delay="800" data-hide-delay="400"><img class="main-slider__figure-1 img-fluid" src="<?php echo BASEURL; ?>media/content/b-main-slider/bg-2_item-1.png" alt="foto" /></div>
-                        <div class="sp-layer" data-width="100%" data-show-transition="right" data-hide-transition="right" data-show-duration="2000" data-show-delay="1200" data-hide-delay="400"><img class="main-slider__figure-2 img-fluid" src="<?php echo BASEURL; ?>media/content/b-main-slider/bg-2_item-2.png" alt="foto" /></div>
+                        <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="1500" data-show-delay="800" data-hide-delay="400"><img class="main-slider__figure-1 img-fluid" src="<?php echo BASEURL; ?>media/slider/3.png" alt="foto" /></div>
+                        <div class="sp-layer" data-width="100%" data-show-transition="right" data-hide-transition="right" data-show-duration="2000" data-show-delay="1200" data-hide-delay="400"><img class="main-slider__figure-2 img-fluid" src="<?php echo BASEURL; ?>media/slider/4.png" alt="foto" /></div>
                     </div>
                 </div>
             </div>
@@ -411,43 +411,43 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="b-services-nav nav" id="servicesTab" role="tablist">
-                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link active" id="repairing-tab" data-toggle="tab" href="#repairing" role="tab" aria-controls="repairing" aria-selected="true"><span class="b-services-nav__number">01</span><i class="ic flaticon-car-door"></i><span class="b-services-nav__info">Parts Repairing</span></a></li>
-                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="inspection-tab" data-toggle="tab" href="#inspection" role="tab" aria-controls="inspection" aria-selected="false"><span class="b-services-nav__number">02</span><i class="ic flaticon-plunger"></i><span class="b-services-nav__info">Car Inspection</span></a></li>
-                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="trade-tab" data-toggle="tab" href="#trade" role="tab" aria-controls="trade" aria-selected="false"><span class="b-services-nav__number">03</span><i class="ic flaticon-car-2"></i><span class="b-services-nav__info">Vehicle Trade-In</span></a></li>
-                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="painting-tab" data-toggle="tab" href="#painting" role="tab" aria-controls="painting" aria-selected="false"><span class="b-services-nav__number">04</span><i class="ic flaticon-paint-roller"></i><span class="b-services-nav__info">Auto Painting</span></a></li>
-                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="financing-tab" data-toggle="tab" href="#financing" role="tab" aria-controls="financing" aria-selected="false"><span class="b-services-nav__number">05</span><i class="ic flaticon-money"></i><span class="b-services-nav__info">Auto Financing</span></a></li>
-                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="delivery-tab" data-toggle="tab" href="#delivery" role="tab" aria-controls="delivery" aria-selected="false"><span class="b-services-nav__number">06</span><i class="ic flaticon-car-4"></i><span class="b-services-nav__info">Vehicle Delivery</span></a></li>
+                                <!--<li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link active" id="repairing-tab" data-toggle="tab" href="#repairing" role="tab" aria-controls="repairing" aria-selected="true"><span class="b-services-nav__number">01</span><i class="ic flaticon-car-door"></i><span class="b-services-nav__info">Parts Repairing</span></a></li>-->
+                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="inspection-tab" data-toggle="tab" href="#inspection" role="tab" aria-controls="inspection" aria-selected="false"><span class="b-services-nav__number">02</span><i class="ic flaticon-plunger"></i><span class="b-services-nav__info">Inspeccion</span></a></li>
+                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="trade-tab" data-toggle="tab" href="#trade" role="tab" aria-controls="trade" aria-selected="false"><span class="b-services-nav__number">03</span><i class="ic flaticon-car-2"></i><span class="b-services-nav__info">Trade-In</span></a></li>
+                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="painting-tab" data-toggle="tab" href="#painting" role="tab" aria-controls="painting" aria-selected="false"><span class="b-services-nav__number">04</span><i class="ic flaticon-paint-roller"></i><span class="b-services-nav__info">Pintura</span></a></li>
+                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="financing-tab" data-toggle="tab" href="#financing" role="tab" aria-controls="financing" aria-selected="false"><span class="b-services-nav__number">05</span><i class="ic flaticon-money"></i><span class="b-services-nav__info">Finaciamiento</span></a></li>
+                                <!--<li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="delivery-tab" data-toggle="tab" href="#delivery" role="tab" aria-controls="delivery" aria-selected="false"><span class="b-services-nav__number">06</span><i class="ic flaticon-car-4"></i><span class="b-services-nav__info">Vehicle Delivery</span></a></li>-->
                             </ul>
                         </div>
                         <div class="col-lg-6">
                             <div class="b-services__main">
                                 <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
-                                <h2 class="ui-title">Services We<span class="text-primary"> Offers</span></h2>
+                                <h2 class="ui-title">Servicios que <span class="text-primary"> Ofrecemos</span></h2>
                                 <div class="b-services-content tab-content" id="servicesTabContent">
-                                    <div class="b-services-content__item tab-pane fade show active" id="repairing" role="tabpanel" aria-labelledby="repairing-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
+                                    <!--<div class="b-services-content__item tab-pane fade show active" id="repairing" role="tabpanel" aria-labelledby="repairing-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
                                         <h3 class="b-services-content__title ui-title-sm">Parts Repairing</h3>
                                         <p>Edipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqa Ut enim ad minim veniam, quis nostrud exercitation ullam co laboris nisi ut aliquip comsecdo consequat duis aute irure dolorin reprehenderits. Non proident sunt in culpa qudesa officia deserunt mollit anim id est laborum.</p>
-                                    </div>
+                                    </div>-->
                                     <div class="b-services-content__item tab-pane fade" id="inspection" role="tabpanel" aria-labelledby="inspection-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
-                                        <h3 class="b-services-content__title ui-title-sm">Car Inspection</h3>
-                                        <p>Edipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqa Ut enim ad minim veniam, quis nostrud exercitation ullam co laboris nisi ut aliquip comsecdo consequat duis aute irure dolorin reprehenderits. Non proident sunt in culpa qudesa officia deserunt mollit anim id est laborum.</p>
+                                        <h3 class="b-services-content__title ui-title-sm">Inspeccion</h3>
+                                        <p>La inspección de vehículos es crucial para la seguridad y el cumplimiento normativo. Incluye revisión de frenos, luces, neumáticos y emisiones. Nuestros expertos garantizan que su coche cumpla con los estándares de seguridad. Ofrecemos también consejos para el mantenimiento preventivo. Nos comprometemos a brindar un servicio confiable y de calidad, asegurando la seguridad y tranquilidad de nuestros clientes.</p>
                                     </div>
-                                    <div class="b-services-content__item tab-pane fade" id="trade" role="tabpanel" aria-labelledby="trade-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
-                                        <h3 class="b-services-content__title ui-title-sm">Vehicle Trade-In</h3>
-                                        <p>Edipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqa Ut enim ad minim veniam, quis nostrud exercitation ullam co laboris nisi ut aliquip comsecdo consequat duis aute irure dolorin reprehenderits. Non proident sunt in culpa qudesa officia deserunt mollit anim id est laborum.</p>
+                                    <div class="b-services-content__item tab-pane fade" id="trade" role="tabpanel" aria-labelledby="trade-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/2.jpg" alt="foto" />
+                                        <h3 class="b-services-content__title ui-title-sm">Trade-In</h3>
+                                        <p>El Trade-In de vehículos es una opción práctica para quienes buscan renovar su coche. Evaluamos su vehículo actual y ofrecemos un valor justo para aplicarlo como parte del pago de uno nuevo. Este proceso es simple y transparente, asegurando que nuestros clientes obtengan la mejor oferta. Con nuestro Trade-In, facilitamos la actualización a un coche más nuevo, brindando comodidad y confianza en cada paso del proceso</p>
                                     </div>
-                                    <div class="b-services-content__item tab-pane fade" id="painting" role="tabpanel" aria-labelledby="painting-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
-                                        <h3 class="b-services-content__title ui-title-sm">Auto Painting</h3>
-                                        <p>Edipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqa Ut enim ad minim veniam, quis nostrud exercitation ullam co laboris nisi ut aliquip comsecdo consequat duis aute irure dolorin reprehenderits. Non proident sunt in culpa qudesa officia deserunt mollit anim id est laborum.</p>
+                                    <div class="b-services-content__item tab-pane fade" id="painting" role="tabpanel" aria-labelledby="painting-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/3.jpg" alt="foto" />
+                                        <h3 class="b-services-content__title ui-title-sm">Pintura</h3>
+                                        <p>El servicio de pintura de autos que ofrecemos combina calidad y precisión para darle a su vehículo un aspecto renovado. Utilizamos materiales de alta calidad y técnicas avanzadas para asegurar un acabado duradero y estéticamente atractivo. Nuestro equipo de profesionales trabaja con cuidado para igualar el color y garantizar una cobertura uniforme. Ya sea para reparar pequeños rasguños o para un cambio completo de color, nuestro servicio de pintura es la solución ideal para revitalizar su coche.</p>
                                     </div>
-                                    <div class="b-services-content__item tab-pane fade" id="financing" role="tabpanel" aria-labelledby="financing-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
-                                        <h3 class="b-services-content__title ui-title-sm">Auto Financing</h3>
-                                        <p>Edipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqa Ut enim ad minim veniam, quis nostrud exercitation ullam co laboris nisi ut aliquip comsecdo consequat duis aute irure dolorin reprehenderits. Non proident sunt in culpa qudesa officia deserunt mollit anim id est laborum.</p>
+                                    <div class="b-services-content__item tab-pane fade" id="financing" role="tabpanel" aria-labelledby="financing-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/4.jpg" alt="foto" />
+                                        <h3 class="b-services-content__title ui-title-sm">Finaciamiento</h3>
+                                        <p>Nuestro servicio de financiamiento de autos en colaboración con bancos líderes ofrece soluciones accesibles para adquirir el vehículo de sus sueños. Facilitamos el proceso de solicitud de préstamo, trabajando estrechamente con instituciones financieras de confianza para obtener las mejores tasas y condiciones. Ofrecemos asesoramiento personalizado para elegir el plan de financiamiento más adecuado a su situación económica, garantizando transparencia y facilidad en cada paso. Con nuestro apoyo, la compra de su nuevo coche es más sencilla y asequible.</p>
                                     </div>
-                                    <div class="b-services-content__item tab-pane fade" id="delivery" role="tabpanel" aria-labelledby="delivery-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
+                                    <!--<div class="b-services-content__item tab-pane fade" id="delivery" role="tabpanel" aria-labelledby="delivery-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
                                         <h3 class="b-services-content__title ui-title-sm">Vehicle Delivery</h3>
                                         <p>Edipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqa Ut enim ad minim veniam, quis nostrud exercitation ullam co laboris nisi ut aliquip comsecdo consequat duis aute irure dolorin reprehenderits. Non proident sunt in culpa qudesa officia deserunt mollit anim id est laborum.</p>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -460,14 +460,14 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="b-bnr__main">
-                                <h2 class="b-bnr__title">Book your Free Car Inspection</h2>
-                                <div class="b-bnr__info">Labore dolore magna aliqua minim ipsum veniam quis nostrud exercitation</div>
+                                <h2 class="b-bnr__title">Conduce el Futuro, Hoy.</h2>
+                                <div class="b-bnr__info">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
                             </div>
                         </div>
                         <div class="col-xl-6">
-                            <div class="b-bnr__second"><a class="btn btn-primary" href="#">get rigistered</a>
+                            <div class="b-bnr__second"><a class="btn btn-primary" href="#">Ver inventario</a>
                                 <div class="b-bnr-contacts">
-                                    <div class="b-bnr-contacts__info">Call Us For Booking Vehicle</div><a class="b-bnr-contacts__phone" href="tel:+17553028549"><i class="ic icon-call-end text-primary"></i> +1 (755) 302-8549</a>
+                                    <div class="b-bnr-contacts__info">Llamanos</div><a class="b-bnr-contacts__phone" href="tel:+507279-2789"><i class="ic icon-call-end text-primary"></i> +507 279-2789</a>
                                 </div>
                             </div>
                         </div>
@@ -479,19 +479,19 @@
                 <div class="container">
                     <ul class="b-progress-list row list-unstyled">
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Vehicles Stock</span><span class="b-progress-list__percent js-chart" data-percent="3874"><span class="js-percent"></span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Vehiculos en stock</span><span class="b-progress-list__percent js-chart" data-percent="3874"><span class="js-percent"></span></span>
                             </div>
                         </li>
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">dealers served</span><span class="b-progress-list__percent js-chart" data-percent="299"><span class="js-percent"></span><span>+</span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Concesionarios </span><span class="b-progress-list__percent js-chart" data-percent="12"><span class="js-percent"></span><span>+</span></span>
                             </div>
                         </li>
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Happy Customers</span><span class="b-progress-list__percent js-chart" data-percent="6403"><span class="js-percent"></span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Clientes Felices</span><span class="b-progress-list__percent js-chart" data-percent="4568"><span class="js-percent"></span></span>
                             </div>
                         </li>
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">vehicles on sale</span><span class="b-progress-list__percent js-chart" data-percent="1450"><span class="js-percent"></span><span>+</span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Vehiculos en ventas</span><span class="b-progress-list__percent js-chart" data-percent="1450"><span class="js-percent"></span><span>+</span></span>
                             </div>
                         </li>
                     </ul>
@@ -503,7 +503,7 @@
                     <div class="row">
                         <div class="col-12 text-center">
                             <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
-                            <h2 class="ui-title">Our Vehicles<span class="text-primary"> Listing</span></h2>
+                            <h2 class="ui-title">Nuestros Vehiculos<span class="text-primary"> </span></h2>
                             <ul class="b-isotope-filter list-unstyled">
                                 <li class="current"><a href="" data-filter="*">Show All</a></li>
                                 <li><a href="" data-filter=".bmw">BMW</a></li>
@@ -674,24 +674,24 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <div class="ui-title-slogan">Helps you to find perfect car</div>
-                                <h2 class="ui-title">How Revus<span class="text-primary"> Works</span></h2>
+                                <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
+                                <h2 class="ui-title">Como AutoMarket<span class="text-primary"> Trabaja</span></h2>
                                 <ul class="b-steps-list list-unstyled row">
                                     <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">01</span>
-                                        <div class="b-steps-list__title">Search Our Inventory</div>
-                                        <div class="b-steps-list__info">Magna aliqua enim aduas dui veniam quis nostrud exercitation ullam laboris aut aliquip ex consequat.</div>
+                                        <div class="b-steps-list__title">Busca en nuestro inventario</div>
+                                        <div class="b-steps-list__info">Explora nuestro inventario extenso, encontrarás el vehículo perfecto para ti. Descubre calidad y variedad ahora mismo</div>
                                     </li>
                                     <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">02</span>
-                                        <div class="b-steps-list__title">Choose The Car You Like</div>
-                                        <div class="b-steps-list__info">Magna aliqua enim aduas dui veniam quis nostrud exercitation ullam laboris aut aliquip ex consequat.</div>
+                                        <div class="b-steps-list__title">Selecciona el vehiculo que te gusta</div>
+                                        <div class="b-steps-list__info">Elige tu coche ideal de nuestro diverso inventario. Aquí, tu vehículo soñado te está esperando..</div>
                                     </li>
                                     <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">03</span>
-                                        <div class="b-steps-list__title">Apply For Auto Finance</div>
-                                        <div class="b-steps-list__info">Magna aliqua enim aduas dui veniam quis nostrud exercitation ullam laboris aut aliquip ex consequat.</div>
+                                        <div class="b-steps-list__title">Habla con uno de nuestros agentes</div>
+                                        <div class="b-steps-list__info">Contacta a uno de nuestros expertos agentes hoy y encuentra el auto perfecto para ti en nuestro inventario.</div>
                                     </li>
                                     <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">04</span>
-                                        <div class="b-steps-list__title">Get Approved & Drive</div>
-                                        <div class="b-steps-list__info">Magna aliqua enim aduas dui veniam quis nostrud exercitation ullam laboris aut aliquip ex consequat.</div>
+                                        <div class="b-steps-list__title">Conduce tu nuevo vehiculo</div>
+                                        <div class="b-steps-list__info">Conduce hacia una nueva aventura con tu vehículo elegido. Aquí, tu nuevo viaje comienza con nosotros.</div>
                                     </li>
                                 </ul>
                             </div>
@@ -706,13 +706,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="b-bnr-2__section b-bnr-2__section_first bg-dark">
-                                <h2 class="b-bnr-2__title">Are you looking to<br>buy a new car?</h2><a class="b-bnr-2__link" href="#">Start searching our inventory that includes 2000+ cars</a>
+                                <h2 class="b-bnr-2__title">Quieres <br>comprar un auro seminuevo?</h2><a class="b-bnr-2__link" href="#">Inicia buscando en nuestro inventario 2000+ vehiculos</a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="b-bnr-2__section b-bnr-2__section_second bg-primary">
-                                <div class="b-bnr-2__title">Are you looking to
-                                    <br>sell your car?</div><a class="b-bnr-2__link" href="#">Add your vehicle to inventory & reach 3k potential buyers</a>
+                                <div class="b-bnr-2__title">Quieres Vender o cambiar tu auto?
+                                    <br>Vender o cambiar?</div><a class="b-bnr-2__link" href="#">Te ofrecemos los mejores precios del mercado</a>
                             </div>
                         </div>
                     </div>
@@ -753,8 +753,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="text-center">
-                                <div class="ui-title-slogan">Helps you to find perfect car</div>
-                                <h2 class="ui-title">Our Sales<span class="text-primary"> Team</span></h2>
+                                <div class="ui-title-slogan">Te ayudamos a buscar el vehiculo perfecto</div>
+                                <h2 class="ui-title">Nuestro equipo de <span class="text-primary"> Ventas</span></h2>
                             </div>
                         </div>
                     </div>
@@ -762,7 +762,7 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="b-team">
                                 <div class="b-team__media">
-                                    <div class="b-team__img"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-team/1.jpg" alt="Foto" /></div>
+                                    <div class="b-team__img"><img class="img-fluid" src="<?php echo BASEURL; ?>media/team/2.png" alt="Foto" /></div>
                                     <ul class="b-team__soc list-unstyled">
                                         <li class="b-team__soc-item"><a class="b-team__soc-link" href="#"><i class="ic fab fa-facebook"></i></a></li>
                                         <li class="b-team__soc-item"><a class="b-team__soc-link" href="#"><i class="ic fab fa-twitter"></i></a></li>
@@ -779,7 +779,7 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="b-team">
                                 <div class="b-team__media">
-                                    <div class="b-team__img"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-team/2.jpg" alt="Foto" /></div>
+                                    <div class="b-team__img"><img class="img-fluid" src="<?php echo BASEURL; ?>media/team/1.png" alt="Foto" /></div>
                                     <ul class="b-team__soc list-unstyled">
                                         <li class="b-team__soc-item"><a class="b-team__soc-link" href="#"><i class="ic fab fa-facebook"></i></a></li>
                                         <li class="b-team__soc-item"><a class="b-team__soc-link" href="#"><i class="ic fab fa-twitter"></i></a></li>
@@ -796,7 +796,7 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="b-team">
                                 <div class="b-team__media">
-                                    <div class="b-team__img"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-team/3.jpg" alt="Foto" /></div>
+                                    <div class="b-team__img"><img class="img-fluid" src="<?php echo BASEURL; ?>media/team/3.png" alt="Foto" /></div>
                                     <ul class="b-team__soc list-unstyled">
                                         <li class="b-team__soc-item"><a class="b-team__soc-link" href="#"><i class="ic fab fa-facebook"></i></a></li>
                                         <li class="b-team__soc-item"><a class="b-team__soc-link" href="#"><i class="ic fab fa-twitter"></i></a></li>
@@ -813,7 +813,7 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="b-team">
                                 <div class="b-team__media">
-                                    <div class="b-team__img"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-team/4.jpg" alt="Foto" /></div>
+                                    <div class="b-team__img"><img class="img-fluid" src="<?php echo BASEURL; ?>media/team/4.png" alt="Foto" /></div>
                                     <ul class="b-team__soc list-unstyled">
                                         <li class="b-team__soc-item"><a class="b-team__soc-link" href="#"><i class="ic fab fa-facebook"></i></a></li>
                                         <li class="b-team__soc-item"><a class="b-team__soc-link" href="#"><i class="ic fab fa-twitter"></i></a></li>
@@ -837,8 +837,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="text-center">
-                                    <div class="ui-title-slogan">Helps you to find perfect car</div>
-                                    <h2 class="ui-title">Customer Reviews</h2><span class="section-reviews__decor">“</span>
+                                    <div class="ui-title-slogan">Te ayudamos a encontrar el auto perfecto</div>
+                                    <h2 class="ui-title">Reseñas de nuestro clientes</h2><span class="section-reviews__decor">“</span>
                                 </div>
                             </div>
                         </div>
@@ -848,49 +848,49 @@
                                     <div class="b-reviews">
                                         <blockquote class="b-reviews__blockquote">
                                             <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua. Ut enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit.</p>
+                                                <p>Confiable, excelente atención y sobre todo mejor precio y servicio en panamá, recomendado 100%</p>
                                             </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Alexa Cathy</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-1.jpg" alt="foto"/></span></cite>
+                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Wuendy Tapia</span><span class="b-reviews__category">Cliente</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-2.jpg" alt="foto"/></span></cite>
                                         </blockquote>
                                     </div>
                                     <div class="b-reviews">
                                         <blockquote class="b-reviews__blockquote">
                                             <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua uat enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit. Slyly babbled much partook this much in in thus the sauc.</p>
+                                                <p>Me atendieron muy bien. Están muy cualificados para responder cualquier pregunta sobre los autos. Además tienen los autos muy bien cuidados, parecen recién salidos de la agencia. Para haber dado un año de garantía y toda la confianza del trámite de compra venta, los precios me parecen muy competitivos. El vendedor que me atendió fue Juan Estrada; tanto él como la gerente me parecen personas muy amables, comunicativas y atentas.</p>
                                             </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Tina Olivia</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-2.jpg" alt="foto"/></span></cite>
+                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Francisco Rodriguez</span><span class="b-reviews__category">Cliente</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-1.jpg" alt="foto"/></span></cite>
                                         </blockquote>
                                     </div>
                                     <div class="b-reviews">
                                         <blockquote class="b-reviews__blockquote">
                                             <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua. Ut enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit.</p>
+                                                <p>Excelente atención del Sr. Felipe! es extraordinariamente amable, muy conocedor de su trabajo y rápido en las gestiones. Acabo de salir de ahí muy satisfecha con la gestión. Lo recomiendo!</p>
                                             </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Alexa Cathy</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-3.jpg" alt="foto"/></span></cite>
+                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Celia Llanusa</span><span class="b-reviews__category">Cliente</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-2.jpg" alt="foto"/></span></cite>
                                         </blockquote>
                                     </div>
                                     <div class="b-reviews">
                                         <blockquote class="b-reviews__blockquote">
                                             <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua. Ut enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit.</p>
+                                                <p>En este sitio puedes alquilar autos de Dollar Rent-A-Car y los puedes devolver hasta las 8 pm.  Adicionalmente, es el punto de venta de autos de segunda esta arrendadora.  Buenos precios!</p>
                                             </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Alexa Cathy</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-1.jpg" alt="foto"/></span></cite>
+                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Arturo Rebollon</span><span class="b-reviews__category">Cliente</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-1.jpg" alt="foto"/></span></cite>
                                         </blockquote>
                                     </div>
                                     <div class="b-reviews">
                                         <blockquote class="b-reviews__blockquote">
                                             <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua uat enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit. Slyly babbled much partook this much in in thus the sauc.</p>
+                                                <p>Lugar agradable. Buen trato.</p>
                                             </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Tina Olivia</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-2.jpg" alt="foto"/></span></cite>
+                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Teresa González</span><span class="b-reviews__category">Cliente</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-2.jpg" alt="foto"/></span></cite>
                                         </blockquote>
                                     </div>
                                     <div class="b-reviews">
                                         <blockquote class="b-reviews__blockquote">
                                             <div class="b-reviews__wrap">
-                                                <p>Norem ipsum dolor sit amet consectetur adipisicing elit aliqua. Ut enim ad minim veniam, quis nostrud exercita Duis aute irure dolor reprehenderit.</p>
+                                                <p>Es una excelente opción para comprar un auto al contado ó financiado, hay buenos precios y excelente garantía!</p>
                                             </div>
-                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Alexa Cathy</span><span class="b-reviews__category">Customer</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-3.jpg" alt="foto"/></span></cite>
+                                            <cite class="b-reviews__cite" title="Blockquote Title"><span class="b-reviews__inner"><span class="b-reviews__name">Ariel Acevedo</span><span class="b-reviews__category">Cliente</span></span><span class="b-reviews__author"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-reviews/face-1.jpg" alt="foto"/></span></cite>
                                         </blockquote>
                                     </div>
                                 </div>
@@ -905,8 +905,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="text-center">
-                                <div class="ui-title-slogan">Helps you to find perfect car</div>
-                                <h2 class="ui-title">News &<span class="text-primary"> Articles</span></h2>
+                                <div class="ui-title-slogan">Te ayudamos a encontrar el auto perfecto</div>
+                                <h2 class="ui-title">Noticias &<span class="text-primary"> Articulos</span></h2>
                             </div>
                         </div>
                     </div>
@@ -915,17 +915,17 @@
                             <div class="col-md-4">
                                 <section class="b-post b-post-1 clearfix">
                                     <div class="entry-media">
-                                        <a href="#"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-posts/360x280/1.jpg" alt="Foto" /></a>
+                                        <a href="https://www.tvn-2.com/economia/empresas/publirreportajes/panama-car-rental-celebra-dia_1_2049663.html" target="_blank"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-posts/360x280/1.jpg" alt="Foto" /></a>
                                     </div>
                                     <div class="entry-main">
                                         <div class="entry-header">
-                                            <div class="entry-meta"><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">25 DEC 2018</a></span><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">BY ADMIN</a></span></div>
-                                            <h2 class="entry-title">Top 10 most Fuel-Efficient cars on the roads</h2>
+                                            <div class="entry-meta"><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">04/28/2023</a></span><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">POR ADMIN</a></span></div>
+                                            <h2 class="entry-title">Panama Car Rental Celebra el Día Internacional</h2>
                                         </div>
                                         <div class="entry-content">
-                                            <p>Edipisicing eiusmod tempor incididunt labore dolore magna aliqa ust enim ad minim veniams quis nostrud citation ullam co laboris nisi ut aliquip.</p>
+                                            <p>Panama Car Rental Celebra el Día Internacional de la Seguridad y Salud en el Trabajo y se certifica con la Norma ISO 45001:2018 - PUBLIRREPORTAJES...</p>
                                         </div>
-                                        <div class="entry-footer"><a class="entry-link btn-link" href="#">READ article</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
+                                        <div class="entry-footer"><a class="entry-link btn-link" target="_blank" href="https://www.tvn-2.com/economia/empresas/publirreportajes/panama-car-rental-celebra-dia_1_2049663.html">Leer Articulo</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
                                     </div>
                                 </section>
                                 <!-- end .post-->
@@ -933,17 +933,17 @@
                             <div class="col-md-4">
                                 <section class="b-post b-post-1 clearfix">
                                     <div class="entry-media">
-                                        <a href="#"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-posts/360x280/2.jpg" alt="Foto" /></a>
+                                        <a href="https://www.prensa.com/notas-de-prensa/dollar-car-rental-y-automarket-seminuevos-reinaugura-sucursal-de-via-israel/"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-posts/360x280/2.jpg" alt="Foto" /></a>
                                     </div>
                                     <div class="entry-main">
                                         <div class="entry-header">
-                                            <div class="entry-meta"><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">25 DEC 2018</a></span><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">BY ADMIN</a></span></div>
-                                            <h2 class="entry-title">How to increase Auto Sales: A Dealers’ Guide</h2>
+                                            <div class="entry-meta"><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">10/17/2022</a></span><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">POR ADMIN</a></span></div>
+                                            <h2 class="entry-title">Dollar Car Rental y Automarket Seminuevos reinaugura</h2>
                                         </div>
                                         <div class="entry-content">
-                                            <p>Edipisicing eiusmod tempor incididunt labore dolore magna aliqa ust enim ad minim veniams quis nostrud citation ullam co laboris nisi ut aliquip.</p>
+                                            <p>Dollar Car Rental y Automarket Seminuevos reinaugura sucursal de Vía Israel | La Prensa Panamá. El pasado 11 de octubre, Grupo Panama Car Rental, celebró la reinauguració ...</p>
                                         </div>
-                                        <div class="entry-footer"><a class="entry-link btn-link" href="#">READ article</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
+                                        <div class="entry-footer"><a class="entry-link btn-link" target="_blank" href="https://www.prensa.com/notas-de-prensa/dollar-car-rental-y-automarket-seminuevos-reinaugura-sucursal-de-via-israel/">Leer Articulo</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
                                     </div>
                                 </section>
                                 <!-- end .post-->
@@ -951,17 +951,17 @@
                             <div class="col-md-4">
                                 <section class="b-post b-post-1 clearfix">
                                     <div class="entry-media">
-                                        <a href="#"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-posts/360x280/3.jpg" alt="Foto" /></a>
+                                        <a href="https://radiopanama.com.pa/colocacion-de-primera-piedra-centro-y-taller-panama-oeste-panama-car-rental/"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-posts/360x280/3.jpg" alt="Foto" /></a>
                                     </div>
                                     <div class="entry-main">
                                         <div class="entry-header">
-                                            <div class="entry-meta"><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">25 DEC 2018</a></span><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">BY ADMIN</a></span></div>
-                                            <h2 class="entry-title">We have vehicle with safety checks and licensed</h2>
+                                            <div class="entry-meta"><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">09/23/2022</a></span><span class="entry-meta__item"><a class="entry-meta__link" href="blog-main.html">POR ADMIN</a></span></div>
+                                            <h2 class="entry-title">Colocación de primera piedra: Centro y Taller Panamá Oeste</h2>
                                         </div>
                                         <div class="entry-content">
-                                            <p>Edipisicing eiusmod tempor incididunt labore dolore magna aliqa ust enim ad minim veniams quis nostrud citation ullam co laboris nisi ut aliquip.</p>
+                                            <p>Colocación de primera piedra: Centro y Taller Panamá Oeste Panama Car Rental. Panama Car Rental, empresa líder en la industria automotriz con más de 19 años en el mercado...</p>
                                         </div>
-                                        <div class="entry-footer"><a class="entry-link btn-link" href="#">READ article</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
+                                        <div class="entry-footer"><a class="entry-link btn-link" target="_blank" href="https://radiopanama.com.pa/colocacion-de-primera-piedra-centro-y-taller-panama-oeste-panama-car-rental/">Leer Articulo</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
                                     </div>
                                 </section>
                                 <!-- end .post-->
@@ -974,8 +974,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="b-bnr-3__title ui-tilte">Buy Sell Your Car Quickly & Easily with Revus</h2>
-                            <div class="b-bnr-3__info">Labore dolore magna aliqua minim ipsum sed ipsumveniam quis nostrud exercitation</div><a class="b-bnr-3__btn btn btn-primary" href="#">get rigistered</a>
+                            <h2 class="b-bnr-3__title ui-tilte">Ternemos el mejor precio del mercado</h2>
+                            <div class="b-bnr-3__info">Busca en nuestro inventario tu auto ideal</div><a class="b-bnr-3__btn btn btn-primary" href="#">Ver inventario</a>
                         </div>
                     </div>
                 </div>

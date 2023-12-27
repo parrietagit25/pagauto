@@ -424,7 +424,7 @@
                     </div>
                     <div class="container">
                         <div class="row">
-                            <div class="col-12"><a class="section-carousel__btn btn btn-primary" href="#"><i class="ic icon-list"></i> Ver todos los vehiculos</a></div>
+                            <div class="col-12"><a class="section-carousel__btn btn btn-primary" href="https://automarketpanama.com/devtest/ultimos/public/listing"><i class="ic icon-list"></i> Ver todos los vehiculos</a></div>
                         </div>
                     </div>
                 </div>
@@ -489,7 +489,7 @@
                             </div>
                         </div>
                         <div class="col-xl-6">
-                            <div class="b-bnr__second"><a class="btn btn-primary" href="#">Ver inventario</a>
+                            <div class="b-bnr__second"><a class="btn btn-primary" href="https://automarketpanama.com/devtest/ultimos/public/listing">Ver inventario</a>
                                 <div class="b-bnr-contacts">
                                     <div class="b-bnr-contacts__info">Llamanos</div><a class="b-bnr-contacts__phone" href="tel:+507279-2789"><i class="ic icon-call-end text-primary"></i> +507 279-2789</a>
                                 </div>
@@ -747,7 +747,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="b-bnr-2__section b-bnr-2__section_first bg-dark">
-                                <h2 class="b-bnr-2__title">Quieres <br>comprar un auro seminuevo?</h2><a class="b-bnr-2__link" href="#">Inicia buscando en nuestro inventario 2000+ vehiculos</a>
+                                <h2 class="b-bnr-2__title">Quieres <br>comprar un auto seminuevo?</h2><a class="b-bnr-2__link" href="https://automarketpanama.com/devtest/ultimos/public/listing">Inicia buscando en nuestro inventario 2000+ vehiculos</a>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -1035,7 +1035,7 @@
                     <div class="row">
                         <div class="col-12">
                             <h2 class="b-bnr-3__title ui-tilte">Ternemos el mejor precio del mercado</h2>
-                            <div class="b-bnr-3__info">Busca en nuestro inventario tu auto ideal</div><a class="b-bnr-3__btn btn btn-primary" href="#">Ver inventario</a>
+                            <div class="b-bnr-3__info">Busca en nuestro inventario tu auto ideal</div><a class="b-bnr-3__btn btn btn-primary" href="https://automarketpanama.com/devtest/ultimos/public/listing">Ver inventario</a>
                         </div>
                     </div>
                 </div>
@@ -1044,7 +1044,11 @@
             <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
             <?php if ($diesiseis->num_rows > 0) {
                     while ($row = $diesiseis->fetch_assoc()) { ?>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>
+                <div class="b-gallery__item">
+                    <img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>
+                    <!--<a href="https://automarketpanama.com/devtest/ultimos/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                        <img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>
+                    </a>-->
                 <?php
                     }
                 }

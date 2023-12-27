@@ -7,7 +7,7 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item active"><a class="nav-link" href="/automarket/public/">Inicio<span class="sr-only"></span></a></li>
-                <li class="nav-item "><a class="nav-link">Inventario</a>
+                <li class="nav-item "><a class="btn btn-primary" href="https://automarketpanama.com/devtest/ultimos/public/listing">Inventario</a>
 
 
                     <ul>
@@ -20,7 +20,7 @@
 
 
                 </li>
-                <li class="nav-item"><a class="nav-link" href="/automarket/public/about">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="/devtest/ultimos/public/about">Sobre Nosotros</a></li>
                 <!--
                 <li class="nav-item "><a class="nav-link" href="#">Pages</a>
 
@@ -36,7 +36,7 @@
                         <li><a class="dropdown-item" href="blog-post.html">Blog post</a></li>
                     </ul>
                 </li> -->
-                <li class="nav-item"><a class="nav-link" href="/automarket/public/contact">Contactanos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/devtest/ultimos/public/contact">Contactanos</a></li>
             </ul>
 
         </div>
@@ -52,7 +52,7 @@
                                         <li class="top-bar__item"><a class="top-bar__link" href="mailto:ventas@automarketpan.com">ventas@automarketpan.com</a></li>
                                         <li class="top-bar__item">Horario: Lunes a Sábado de 8:00 a.m. a 5:00 p.m.</li>
                                         <!--<li class="top-bar__item">Fairview Ave, El Monte, CA 91732</li>-->
-                                    </ul><a class="btn btn-primary btn-sm col-auto" href="#"><i class="ic icon-list"></i> Ver Inventario</a>
+                                    </ul><a class="btn btn-primary btn-sm col-auto" href="https://automarketpanama.com/devtest/ultimos/public/listing"><i class="ic icon-list"></i> Ver Inventario</a>
                                 </div>
                             </div>
                         </div>
@@ -73,9 +73,9 @@
                             <div class="col-lg d-none d-lg-block">
                                 <nav class="navbar navbar-expand-md justify-content-end" id="nav">
                                     <ul class="yamm main-menu navbar-nav">
-                                        <li class="nav-item active"><a class="nav-link" href="/automarket/public/">Inicio<span class="sr-only"></span></a></li>
+                                        <li class="nav-item active"><a class="nav-link" href="/devtest/ultimos/public/">Inicio<span class="sr-only"></span></a></li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" id="navbarDropdown2" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inventario</a>
+                                            <a class="nav-link dropdown-toggle" id="navbarDropdown2" href="/devtest/ultimos/public/listing" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inventario</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                                 <a class="dropdown-item" href="#">Sedanes</a>
                                                 <a class="dropdown-item" href="#">Camionetas</a>
@@ -84,7 +84,7 @@
                                                 <a class="dropdown-item" href="#">Camiones</a></div>
                                         </li>
 
-                                        <li class="nav-item"><a class="nav-link" href="/automarket/public/about">Sobre Nosotros</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/devtest/ultimos/public/about">Sobre Nosotros</a></li>
 
                                         <!--<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown1" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1"><a class="dropdown-item" href="typography.html">Typography</a></div>
@@ -92,7 +92,7 @@
                                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown4" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="blog-main.html">Blog main</a><a class="dropdown-item" href="blog-post.html">Blog post</a></div>
                                         </li> -->
-                                        <li class="nav-item"><a class="nav-link" href="/automarket/public/contact">Contactanos</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/devtest/ultimos/public/contact">Contactanos</a></li>
                                     </ul>
                                 </nav>
                             </div>

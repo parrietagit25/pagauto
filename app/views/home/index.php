@@ -1,4 +1,12 @@
-<?php include(ROOT_PATH . '/app/views/partials/header.php'); ?>
+<?php 
+    $result = obtenerDatos(8);
+    $seis = obtener6Mark();
+    $tres = obtenerDatos(3);
+    $diesiseis = obtenerDatos(16);
+    $uno = obtenerDatos(1);
+    $marcas = obtenerMarcas();
+    $vendedores4 = obtenerVendedores(4);
+    include(ROOT_PATH . '/app/views/partials/header.php'); ?>
 
     <!-- Loader-->
     <div id="page-preloader"><span class="spinner border-t_second_b border-t_prim_a"></span></div>
@@ -8,6 +16,7 @@
     <div class="l-theme animated-css animsition" data-header="sticky" data-header-top="200" >
     <!-- Aqui estaba el menu, la version movil y la version web -->
     <?php include(ROOT_PATH . '/app/views/partials/menu.php'); ?>
+
     <!-- end .header-->
             <div class="main-slider slider-pro" id="main-slider" data-slider-width="100%" data-slider-height="700px" data-slider-arrows="false" data-slider-buttons="false">
                 <div class="sp-slides">
@@ -237,6 +246,101 @@
                 </div>
                 <div class="section-carousel__inner bg-dark">
                     <div class="js-slider" data-slick="{&quot;slidesToShow&quot;: 5,  &quot;slidesToScroll&quot;: 5, &quot;infinite&quot;: true, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1800, &quot;settings&quot;: {&quot;slidesToShow&quot;: 4, &quot;slidesToScroll&quot;: 4}}, {&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}, {&quot;breakpoint&quot;: 1040, &quot;settings&quot;: {&quot;slidesToShow&quot;: 2, &quot;slidesToScroll&quot;: 1}}, {&quot;breakpoint&quot;: 767, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1, &quot;slidesToScroll&quot;: 1}}]}">
+                    
+                        <?php
+
+                        if ($result->num_rows > 0) {
+                                
+                            while ($row = $result->fetch_assoc()) { ?>
+                        
+                            <div class="b-goods-f b-goods-f_mod-a">
+                                <div class="b-goods-f__media">
+                                    <a href="https://automarketpanama.com/devtest/ultimos/public/detail?placa=<?php echo $row['LicensePlate']; ?>"><img class="b-goods-f__img img-scale" src="<?php echo $row["Photo"]; ?>" alt="foto" /></a>
+                                </div>
+                                <div class="b-goods-f__main">
+                                    <div class="b-goods-f__descrip">
+                                        <div class="b-goods-f__title"><span><?php echo $row["Make"]; ?></span></div>
+                                        <div class="b-goods-f__info"></div>
+                                        <ul class="b-goods-f__list list-unstyled">
+                                            <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> <?php echo $row["Km"]; ?>km</li>
+                                            <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Modelo: <?php echo $row["Model"]; ?></li>
+                                            <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> <?php echo $row["Transmission"]; ?></li>
+                                        </ul>
+                                    </div>
+                                    <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$<?php echo $row["Price"]; ?></span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php 
+                            }
+                            
+                        } else {
+                            echo "No se encontraron resultados";
+                        }
+                         /* ?>
+                        <!-- end .b-goods-->
+                        <div class="b-goods-f b-goods-f_mod-a">
+                            <div class="b-goods-f__media">
+                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/2.jpg" alt="foto" /></a>
+                            </div>
+                            <div class="b-goods-f__main">
+                                <div class="b-goods-f__descrip">
+                                    <div class="b-goods-f__title"><span>Ford Mustang SZ3</span></div>
+                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
+                                    <ul class="b-goods-f__list list-unstyled">
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
+                                    </ul>
+                                </div>
+                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end .b-goods-->
+                        <div class="b-goods-f b-goods-f_mod-a">
+                            <div class="b-goods-f__media">
+                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/3.jpg" alt="foto" /></a>
+                            </div>
+                            <div class="b-goods-f__main">
+                                <div class="b-goods-f__descrip">
+                                    <div class="b-goods-f__title"><span>Mercedes Benz C Class</span></div>
+                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
+                                    <ul class="b-goods-f__list list-unstyled">
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
+                                    </ul>
+                                </div>
+                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end .b-goods-->
+                        <div class="b-goods-f b-goods-f_mod-a">
+                            <div class="b-goods-f__media">
+                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/4.jpg" alt="foto" /></a>
+                            </div>
+                            <div class="b-goods-f__main">
+                                <div class="b-goods-f__descrip">
+                                    <div class="b-goods-f__title"><span>Skoda KodiaQ 2019</span></div>
+                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
+                                    <ul class="b-goods-f__list list-unstyled">
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
+                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
+                                    </ul>
+                                </div>
+                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end .b-goods-->
                         <div class="b-goods-f b-goods-f_mod-a">
                             <div class="b-goods-f__media">
                                 <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/1.jpg" alt="foto" /></a>
@@ -257,7 +361,7 @@
                             </div>
                         </div>
                         <!-- end .b-goods-->
-                         <div class="b-goods-f b-goods-f_mod-a">
+                        <div class="b-goods-f b-goods-f_mod-a">
                             <div class="b-goods-f__media">
                                 <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/2.jpg" alt="foto" /></a>
                             </div>
@@ -277,7 +381,7 @@
                             </div>
                         </div>
                         <!-- end .b-goods-->
-                           <div class="b-goods-f b-goods-f_mod-a">
+                        <div class="b-goods-f b-goods-f_mod-a">
                             <div class="b-goods-f__media">
                                 <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/3.jpg" alt="foto" /></a>
                             </div>
@@ -297,7 +401,7 @@
                             </div>
                         </div>
                         <!-- end .b-goods-->
-                           <div class="b-goods-f b-goods-f_mod-a">
+                        <div class="b-goods-f b-goods-f_mod-a">
                             <div class="b-goods-f__media">
                                 <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/4.jpg" alt="foto" /></a>
                             </div>
@@ -316,87 +420,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- end .b-goods-->
-                          <div class="b-goods-f b-goods-f_mod-a">
-                            <div class="b-goods-f__media">
-                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/1.jpg" alt="foto" /></a>
-                            </div>
-                            <div class="b-goods-f__main">
-                                <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><span>Audi Q2 L35 Quattro</span></div>
-                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
-                                    <ul class="b-goods-f__list list-unstyled">
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
-                                    </ul>
-                                </div>
-                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$45,800</span></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end .b-goods-->
-                           <div class="b-goods-f b-goods-f_mod-a">
-                            <div class="b-goods-f__media">
-                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/2.jpg" alt="foto" /></a>
-                            </div>
-                            <div class="b-goods-f__main">
-                                <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><span>Ford Mustang SZ3</span></div>
-                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
-                                    <ul class="b-goods-f__list list-unstyled">
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
-                                    </ul>
-                                </div>
-                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end .b-goods-->
-                          <div class="b-goods-f b-goods-f_mod-a">
-                            <div class="b-goods-f__media">
-                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/3.jpg" alt="foto" /></a>
-                            </div>
-                            <div class="b-goods-f__main">
-                                <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><span>Mercedes Benz C Class</span></div>
-                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
-                                    <ul class="b-goods-f__list list-unstyled">
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
-                                    </ul>
-                                </div>
-                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end .b-goods-->
-                       <div class="b-goods-f b-goods-f_mod-a">
-                            <div class="b-goods-f__media">
-                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/4.jpg" alt="foto" /></a>
-                            </div>
-                            <div class="b-goods-f__main">
-                                <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><span>Skoda KodiaQ 2019</span></div>
-                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
-                                    <ul class="b-goods-f__list list-unstyled">
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
-                                    </ul>
-                                </div>
-                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end .b-goods-->
+                        <!-- end .b-goods--> <?php */ ?>
                     </div>
                     <div class="container">
                         <div class="row">
@@ -506,40 +530,56 @@
                             <h2 class="ui-title">Nuestros Vehiculos<span class="text-primary"> </span></h2>
                             <ul class="b-isotope-filter list-unstyled">
                                 <li class="current"><a href="" data-filter="*">Show All</a></li>
-                                <li><a href="" data-filter=".bmw">BMW</a></li>
-                                <li><a href="" data-filter=".honda">Honda</a></li>
-                                <li><a href="" data-filter=".mercedes">Mercedes</a></li>
-                                <li><a href="" data-filter=".rover">Range Rover</a></li>
+
+                                <?php if ($marcas->num_rows > 0) {
+                                
+                                while ($row = $marcas->fetch_assoc()) { ?>
+
+                                <li><a href="" data-filter=".<?php echo $row["Make"]; ?>"><?php echo $row["Make"]; ?></a></li>
+
+                                <?php }
+                        
+                                }  ?>
+
                             </ul>
                         </div>
                     </div>
                     <ul class="b-isotope-grid grid list-unstyled row">
                         <li class="grid-sizer col-lg-4 col-md-6"></li>
-                        <li class="b-isotope-grid__item grid-item col-lg-4 col-md-6 web honda">
+                        <?php if ($seis->num_rows > 0) {
+                                
+                                while ($row = $seis->fetch_assoc()) { ?>
+
+                        <li class="b-isotope-grid__item grid-item col-lg-4 col-md-6 web <?php echo $row["Make"]; ?>">
                             <div class="b-goods-f b-goods-f_dark">
                                 <div class="b-goods-f__media">
-                                    <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/360x260/1.jpg" alt="foto" /></a>
+                                    <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo $row["Photo"]; ?>" alt="foto" /></a>
                                 </div>
                                 <div class="b-goods-f__main">
                                     <div class="b-goods-f__descrip">
-                                        <div class="b-goods-f__title"><span>Jaguar GX 490i</span>
+                                        <div class="b-goods-f__title"><span><?php echo $row["Make"]; ?></span>
                                         </div>
-                                        <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
+                                        <div class="b-goods-f__info"></div>
                                         <ul class="b-goods-f__list list-unstyled">
-                                            <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">35,000km</span></li>
-                                            <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">2019</span></li>
-                                            <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">Manual</span></li>
-                                            <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">Petrol</span></li>
-                                            <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">160 hp</span></li>
+                                            <li class="b-goods-f__list-item"><span class="b-goods-f__list-info"><?php echo $row["Km"]; ?>km</span></li>
+                                            <li class="b-goods-f__list-item"><span class="b-goods-f__list-info"><?php echo $row["Model"]; ?></span></li>
+                                            <li class="b-goods-f__list-item"><span class="b-goods-f__list-info"><?php echo $row["Transmission"]; ?></span></li>
+                                            <!--<li class="b-goods-f__list-item"><span class="b-goods-f__list-info">Petrol</span></li>
+                                            <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">160 hp</span></li>-->
                                         </ul>
                                     </div>
-                                    <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price-numb">$30,480</span></span>
+                                    <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price-numb">$<?php echo $row["Price"]; ?></span></span>
                                         </span>
                                     </div>
                                 </div>
                             </div>
                             <!-- end .b-goods-->
                         </li>
+
+                        <?php   }
+                        
+                            }  /* ?>
+
                         <li class="b-isotope-grid__item grid-item col-lg-4 col-md-6 web bmw">
                             <div class="b-goods-f b-goods-f_dark">
                                 <div class="b-goods-f__media">
@@ -665,6 +705,7 @@
                             </div>
                             <!-- end .b-goods-->
                         </li>
+                        <?php */ ?>
                     </ul>
                 </div>
             </section>
@@ -719,8 +760,13 @@
                 </div>
             </section>
             <!-- end .b-bnr-->
+
+            <?php /* if ($uno->num_rows > 0) {
+                                
+                    while ($row = $uno->fetch_assoc()) { ?>
+
             <div class="section-goods-vip">
-                <a class="b-goods-vip b-goods-vip_1" href="#">
+                <a class="" href="#"><img class="b-goods-vip_1" src="<?php echo $row["Photo"]; ?>" alt="foto" />
                     <div class="b-goods-vip__main"><span class="b-goods-vip__label b-goods-vip__label-1 bg-primary">NEW</span>
                         <div class="b-goods-vip__title">AUDI Q2L (2019)</div>
                         <div class="b-goods-vip__subtitle">LUXURTY APART -<span class="b-goods-vip__price"> $499/M</span></div>
@@ -732,14 +778,14 @@
                         </ul>
                     </div>
                 </a>
-                <a class="b-goods-vip b-goods-vip_2" href="#">
+                <a class="" href="#"><img class="b-goods-vip b-goods-vip_2" src="<?php echo $row["Photo"]; ?>" alt="foto" />
                     <div class="b-goods-vip__main"><span class="b-goods-vip__label b-goods-vip__label-2 bg-primary">As Low As<strong class="b-goods-vip__label_b"> 1.5% APR</strong></span>
                         <div class="b-goods-vip__subtitle">Off-Road King</div>
                         <div class="b-goods-vip__title">JAGUAR I PACE</div>
                         <div class="b-goods-vip__slogan">Limited Time Offer</div>
                     </div>
                 </a>
-                <a class="b-goods-vip b-goods-vip_3" href="#">
+                <a class="b-goods-vip b-goods-vip_3" href="#"><img class="b-goods-vip b-goods-vip_3" src="<?php echo $row["Photo"]; ?>" alt="foto" />
                     <div class="b-goods-vip__main">
                         <div class="b-goods-vip__subtitle">2019 Models</div>
                         <div class="b-goods-vip__title">All Brands Cars<span class="b-goods-vip__label b-goods-vip__label-3 bg-primary">MORE POWER</span></div>
@@ -747,6 +793,11 @@
                     </div>
                 </a>
             </div>
+
+            <?php 
+                    }
+                } */
+            ?>
             <!-- end .b-goods-->
             <section class="section-team section-default">
                 <div class="container">
@@ -759,23 +810,32 @@
                         </div>
                     </div>
                     <div class="row">
+                    <?php if ($vendedores4->num_rows > 0) {
+                                
+                            while ($row = $vendedores4->fetch_assoc()) { ?>
                         <div class="col-lg-3 col-md-6">
                             <div class="b-team">
                                 <div class="b-team__media">
-                                    <div class="b-team__img"><img class="img-fluid" src="<?php echo BASEURL; ?>media/team/2.png" alt="Foto" /></div>
+                                    <div class="b-team__img"><img class="img-fluid" src="<?php echo $row["photo"]; ?>" alt="Foto" /></div>
                                     <ul class="b-team__soc list-unstyled">
-                                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="#"><i class="ic fab fa-facebook"></i></a></li>
-                                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="#"><i class="ic fab fa-twitter"></i></a></li>
-                                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="#"><i class="ic fab fa-google-plus-g"></i></a></li>
+
+                                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="https://www.instagram.com/<?php echo $row["redSocial"]; ?>/"><i class="ic fab fa-instagram"></i></a></li>
+                                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="mailto:<?php echo $row["correo"]; ?>"><i class="ic fa fa-envelope"></i></a></li>
+                                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="<?php echo $row["urlLocation"]; ?>" target="_blank"><i class="ic icon-location-pin"></i></a></li>
+                                    
                                     </ul>
                                 </div>
                                 <div class="b-team__inner bg-dark">
-                                    <div class="b-team__name">Alex Leeman</div>
-                                    <div class="b-team__category">Director</div>
+                                    <div class="b-team__name"><?php echo $row["nombre"]; ?></div>
+                                    <div class="b-team__category"><?php echo $row["cargo"]; ?></div>
                                 </div>
-                                <div class="b-team__footer"><a class="b-team__phone" href="tel:+17553028549"><i class="ic text-primary icon-call-end"></i> +1 755 302 8549</a></div>
+                                <div class="b-team__footer"><a class="b-team__phone" href="tel:+507<?php echo $row["celular"]; ?>"><i class="ic text-primary icon-call-end"></i> +507 <?php echo $row["celular"]; ?></a></div>
                             </div>
                         </div>
+                        <?php }
+                        
+                            } ?>
+                        <!--
                         <div class="col-lg-3 col-md-6">
                             <div class="b-team">
                                 <div class="b-team__media">
@@ -826,7 +886,7 @@
                                 </div>
                                 <div class="b-team__footer"><a class="b-team__phone" href="tel:+17553028549"><i class="ic text-primary icon-call-end"></i> +1 755 302 8549</a></div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section>
@@ -982,22 +1042,13 @@
             </section>
             <!-- end .b-bnr-->
             <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/1.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/2.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/3.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/4.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/5.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/6.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/7.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/8.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/1.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/2.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/3.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/4.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/5.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/6.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/7.jpg" alt="foto" /></div>
-                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-gallery/240x200/8.jpg" alt="foto" /></div>
+            <?php if ($diesiseis->num_rows > 0) {
+                    while ($row = $diesiseis->fetch_assoc()) { ?>
+                <div class="b-gallery__item"><img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>
+                <?php
+                    }
+                }
+                ?>
             </div>
             <!-- end .b-gallery-->
             <?php include(ROOT_PATH . '/app/views/partials/piedepagina.php'); ?>         

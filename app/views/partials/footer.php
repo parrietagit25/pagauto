@@ -39,9 +39,54 @@
      <!-- User map
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhTd-ZT5nzCNucY9AZUCspnXrw3votR34"></script>-->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb-wAj4BAs9Fyiu0Gf9lf-PNF98K8fgw8&callback=init"></script>
-    
+    <!-- Slider number-->
+    <script src="assets/plugins/noUiSlider/wNumb.js"></script>
+    <script src="assets/plugins/noUiSlider/nouislider.min.js"></script>
     <!-- User customization-->
     <script src="assets/js/custom.js"></script>
-</body>
+    <script>window.pipedriveLeadboosterConfig = {base: 'leadbooster-chat.pipedrive.com',companyId: 2402302,playbookUuid: 'b016d2f4-cb8e-4b6c-bab8-9a98b82f71c2',version: 2};(function () {var w = window;if (w.LeadBooster) {console.warn('LeadBooster already exists');} else {w.LeadBooster = {q: [],on: function (n, h) {this.q.push({ t: 'o', n: n, h: h });},trigger: function (n) {this.q.push({ t: 't', n: n });},};}})();</script><script src="https://leadbooster-chat.pipedrive.com/assets/loader.js" async></script>
+    <script>
+        function checkIframeLoaded() {
+            var iframe = document.getElementById('miIframe');
+            if (iframe.contentWindow.document.body.innerHTML == "") {
+                showDefaultImage();
+            }
+        }
+
+        function showDefaultImage() {
+            document.getElementById('miIframe').style.display = 'none';
+            document.getElementById('imagenDefault').style.display = 'block';
+        }
+    </script>
+    <script>
+        document.getElementById('buscar').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('pasando');
+            var formData = new FormData(this);
+            
+            fetch('/devtest/ultimos/app/views/listing/search.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+
+                document.querySelector("#autos_resul").innerHTML = data;
+                
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+    <script>
+        var urlCompleta = window.location.href;
+        console.log("URL completa: " + urlCompleta);
+
+        // Obtener solo la ruta
+        var ruta = window.location.pathname;
+        console.log("Ruta: " + ruta);
+    </script>
+
+    </body>
 
 </html>

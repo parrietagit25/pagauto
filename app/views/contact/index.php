@@ -116,6 +116,12 @@
                 </section>
                 <!-- end .b-form-contact-->
               </div>
+              <div class="col-md-6">
+                <section class="section-form-contacts">
+                  <img src="<?php echo BASEURL; ?>media/imaGoo/contact.png" alt="">
+                </section>
+                <!-- end .b-form-contact-->
+              </div>
             </div>
           </div>
         </main>

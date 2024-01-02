@@ -58,7 +58,7 @@
             <form class="footer-form">
                 <div class="footer-form__info">Suscribete a nuestro voletin informativo para estar al tanto de nuestra ofertas.</div>
                 <div class="form-group">
-                <input class="footer-form__input form-control" type="email" placeholder="your email">
+                <input class="footer-form__input form-control" type="email" placeholder="Tu correo">
                 </div>
                 <button class="btn btn-sm btn-primary">Subscribete</button>
             </form>

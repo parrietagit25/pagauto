@@ -6,6 +6,10 @@
     $uno = obtenerDatos(1);
     $marcas = obtenerMarcas();
     $vendedores4 = obtenerVendedores(4);
+    $todas_marcas = get_marcas();
+    $todos_modelos = get_modelos();
+    $tipo_carro = get_tipo_carro();
+
     include(ROOT_PATH . '/app/views/partials/header.php'); ?>
 
     <!-- Loader-->
@@ -21,6 +25,18 @@
             <div class="main-slider slider-pro" id="main-slider" data-slider-width="100%" data-slider-height="700px" data-slider-arrows="false" data-slider-buttons="false">
                 <div class="sp-slides">
                     <!-- Slide 1-->
+                    <div class="main-slider__slide-2 sp-slide"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/2.png" alt="slider" />
+                        <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
+                            <div class="main-slider__wrap">
+                                <div class="main-slider__slogan">Descubre TODO sobre las </div>
+                                <div class="main-slider__title">Land Cruiser
+                                    <br>Desde $31,998</div>
+                                <div class="text-right"><!--<a class="main-slider__link" href="blog-post.html">Leer mas</a>--></div>
+                            </div>
+                        </div>
+                        <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="1500" data-show-delay="800" data-hide-delay="400"><img class="main-slider__figure-1 img-fluid" src="<?php echo BASEURL; ?>media/slider/3.png" alt="foto" /></div>
+                        <div class="sp-layer" data-width="100%" data-show-transition="right" data-hide-transition="right" data-show-duration="2000" data-show-delay="1200" data-hide-delay="400"><img class="main-slider__figure-2 img-fluid" src="<?php echo BASEURL; ?>media/slider/4.png" alt="foto" /></div>
+                    </div>
                     <div class="main-slider__slide sp-slide"><a href="https://automarketpanama.com/devtest/ultimos/public/listing"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" /></a>
                         <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
                             <!--<div class="main-slider__wrap">
@@ -35,18 +51,7 @@
                         </div>
                     </div>
                     <!-- Slide 2-->
-                    <div class="main-slider__slide-2 sp-slide"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/2.png" alt="slider" />
-                        <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
-                            <div class="main-slider__wrap">
-                                <div class="main-slider__slogan">Descubre TODO sobre las </div>
-                                <div class="main-slider__title">Land Cruiser
-                                    <br>Desde $31,998</div>
-                                <div class="text-right"><a class="main-slider__link" href="blog-post.html">Leer mas</a></div>
-                            </div>
-                        </div>
-                        <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="1500" data-show-delay="800" data-hide-delay="400"><img class="main-slider__figure-1 img-fluid" src="<?php echo BASEURL; ?>media/slider/3.png" alt="foto" /></div>
-                        <div class="sp-layer" data-width="100%" data-show-transition="right" data-hide-transition="right" data-show-duration="2000" data-show-delay="1200" data-hide-delay="400"><img class="main-slider__figure-2 img-fluid" src="<?php echo BASEURL; ?>media/slider/4.png" alt="foto" /></div>
-                    </div>
+                    
                 </div>
             </div>
             <!-- end .main-slider-->
@@ -56,55 +61,62 @@
                         <div class="col-12">
                             <div class="b-find">
                                 <ul class="b-find-nav nav nav-tabs" id="findTab" role="tablist">
-                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link active" id="tab-allCar" data-toggle="tab" href="#content-allCar" role="tab" aria-controls="content-allCar" aria-selected="true">Todo el Inventario</a></li>
-                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-newCars" data-toggle="tab" href="#content-newCars" role="tab" aria-controls="content-newCars" aria-selected="false">Autos Seminuevos</a></li>
-                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-usedCars" data-toggle="tab" href="#content-usedCars" role="tab" aria-controls="content-usedCars" aria-selected="false">Autos Usados</a></li>
+                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link active" id="tab-allCar" data-toggle="tab" href="#content-allCar" role="tab" aria-controls="content-allCar" aria-selected="true">Encuentra tu auto</a></li>
+                                    <!--<li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-newCars" data-toggle="tab" href="#content-newCars" role="tab" aria-controls="content-newCars" aria-selected="false">Autos Seminuevos</a></li>
+                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-usedCars" data-toggle="tab" href="#content-usedCars" role="tab" aria-controls="content-usedCars" aria-selected="false">Autos Usados</a></li>-->
                                 </ul>
                                 <div class="b-find-content tab-content" id="findTabContent">
                                     <div class="tab-pane fade show active" id="content-allCar">
-                                        <form class="b-find__form">
+                                        <form id="form_buscado" class="b-find__form" method="get" action="https://automarketpanama.com/devtest/ultimos/public/listing">
                                             <div class="b-find__row">
                                                 <div class="b-find__main">
                                                     <div class="b-find__inner">
+                                                        <input type="hidden" name="buscador" value="1">
                                                         <div class="b-find__item">
                                                             <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
                                                             <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Audi</option>
-                                                                    <option>BMV</option>
-                                                                    <option>Opel</option>
+                                                                <select name="marca" class="selectpicker" data-width="100%" data-style="ui-select">
+                                                                    <option value=''>Seleccionar</option>
+                                                                    <?php while ($marca = $todas_marcas->fetch_assoc()) { ?>
+                                                                        <option value="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?></option>
+                                                                    <?php } ?>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
                                                             <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
                                                             <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Model 1</option>
-                                                                    <option>Model 2</option>
-                                                                    <option>Model 3</option>
+                                                                <select name="modelo" class="selectpicker" data-width="100%" data-style="ui-select">
+                                                                    <option value=''>Seleccionar</option>
+                                                                    <?php while ($modelos = $todos_modelos->fetch_assoc()) { ?>
+                                                                        <option value="<?php echo $modelos['Model']; ?>"><?php echo $modelos['Model']; ?></option>
+                                                                    <?php } ?>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="b-find__item">
                                                             <div class="b-find__label"><span class="b-find__number">03</span> Rango de Precio</div>
                                                             <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Max $5000</option>
-                                                                    <option>Max $15000</option>
-                                                                    <option>Max $25000</option>
+                                                                <select name="precio_max" class="selectpicker" data-width="100%" data-style="ui-select">
+                                                                    <option value=''>Seleccionar</option>
+                                                                    <option value="9000">Max $9000</option>
+                                                                    <option value="20000">Max $20000</option>
+                                                                    <option value="30000">Max $30000</option>
+                                                                    <option value="50000">Max $50000</option>
+                                                                    <option value="70000">Max $70000</option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <button class="b-find__btn btn btn-primary">Search</button>
+                                                <input type="submit" class="b-find__btn btn btn-primary" value="Buscar">
                                             </div>
-                                            <div class="b-find__checkbox-group"><span class="b-find__checkbox-item">
-                            <input class="forms__check" id="newCars" type="checkbox" checked="checked"/>
-                            <label class="forms__label forms__label-check" for="newCars">New Cars</label></span><span class="b-find__checkbox-item">
-                            <input class="forms__check" id="usedCars" type="checkbox"/>
-                            <label class="forms__label forms__label-check" for="usedCars">Used Cars</label></span></div>
+                                            <!--<div class="b-find__checkbox-group"><span class="b-find__checkbox-item">
+                                                <input class="forms__check" id="newCars" type="checkbox" checked="checked"/>
+                                                <label class="forms__label forms__label-check" for="newCars">New Cars</label></span><span class="b-find__checkbox-item">
+                                                <input class="forms__check" id="usedCars" type="checkbox"/>
+                                                <label class="forms__label forms__label-check" for="usedCars">Used Cars</label></span>
+                                            </div>-->
                                         </form>
                                     </div>
                                     <div class="tab-pane fade" id="content-newCars">
@@ -146,11 +158,11 @@
                                                 </div>
                                                 <button class="b-find__btn btn btn-primary">Search</button>
                                             </div>
-                                            <div class="b-find__checkbox-group"><span class="b-find__checkbox-item">
+                                            <!--<div class="b-find__checkbox-group"><span class="b-find__checkbox-item">
                             <input class="forms__check" id="newCars2" type="checkbox" checked="checked"/>
                             <label class="forms__label forms__label-check" for="newCars2">New Cars</label></span><span class="b-find__checkbox-item">
                             <input class="forms__check" id="usedCars2" type="checkbox"/>
-                            <label class="forms__label forms__label-check" for="usedCars2">Used Cars</label></span></div>
+                            <label class="forms__label forms__label-check" for="usedCars2">Used Cars</label></span></div>-->
                                         </form>
                                     </div>
                                     <div class="tab-pane fade" id="content-usedCars">
@@ -192,15 +204,15 @@
                                                 </div>
                                                 <button class="b-find__btn btn btn-primary">Search</button>
                                             </div>
-                                            <div class="b-find__checkbox-group">
+                                             <!--<div class="b-find__checkbox-group">
                                                 <span class="b-find__checkbox-item">
-                                                <!--
+                                               
                                                 <input class="forms__check" id="newCars3" type="checkbox" checked="checked"/>
                                                 <label class="forms__label forms__label-check" for="newCars3">New Cars</label></span><span class="b-find__checkbox-item">
                                                 <input class="forms__check" id="usedCars3" type="checkbox"/>
-                                                <label class="forms__label forms__label-check" for="usedCars3">Used Cars</label>-->
+                                                <label class="forms__label forms__label-check" for="usedCars3">Used Cars</label>
                                                 </span>
-                                            </div>
+                                            </div>-->
                                         </form>
                                     </div>
                                 </div>
@@ -267,7 +279,7 @@
                                             <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> <?php echo $row["Transmission"]; ?></li>
                                         </ul>
                                     </div>
-                                    <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$<?php echo $row["Price"]; ?></span></span>
+                                    <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$<?php echo $row["PriceTax"]; ?></span></span>
                                         </span>
                                     </div>
                                 </div>
@@ -436,10 +448,10 @@
                         <div class="col-lg-6">
                             <ul class="b-services-nav nav" id="servicesTab" role="tablist">
                                 <!--<li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link active" id="repairing-tab" data-toggle="tab" href="#repairing" role="tab" aria-controls="repairing" aria-selected="true"><span class="b-services-nav__number">01</span><i class="ic flaticon-car-door"></i><span class="b-services-nav__info">Parts Repairing</span></a></li>-->
-                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="inspection-tab" data-toggle="tab" href="#inspection" role="tab" aria-controls="inspection" aria-selected="false"><span class="b-services-nav__number">02</span><i class="ic flaticon-plunger"></i><span class="b-services-nav__info">Inspeccion</span></a></li>
-                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="trade-tab" data-toggle="tab" href="#trade" role="tab" aria-controls="trade" aria-selected="false"><span class="b-services-nav__number">03</span><i class="ic flaticon-car-2"></i><span class="b-services-nav__info">Trade-In</span></a></li>
-                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="painting-tab" data-toggle="tab" href="#painting" role="tab" aria-controls="painting" aria-selected="false"><span class="b-services-nav__number">04</span><i class="ic flaticon-paint-roller"></i><span class="b-services-nav__info">Pintura</span></a></li>
-                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="financing-tab" data-toggle="tab" href="#financing" role="tab" aria-controls="financing" aria-selected="false"><span class="b-services-nav__number">05</span><i class="ic flaticon-money"></i><span class="b-services-nav__info">Finaciamiento</span></a></li>
+                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="inspection-tab" data-toggle="tab" href="#inspection" role="tab" aria-controls="inspection" aria-selected="false"><span class="b-services-nav__number"></span><i class="ic flaticon-plunger"></i><span class="b-services-nav__info">Inspeccion</span></a></li>
+                                <!--<li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="trade-tab" data-toggle="tab" href="#trade" role="tab" aria-controls="trade" aria-selected="false"><span class="b-services-nav__number">03</span><i class="ic flaticon-car-2"></i><span class="b-services-nav__info">Trade-In</span></a></li>-->
+                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="painting-tab" data-toggle="tab" href="#painting" role="tab" aria-controls="painting" aria-selected="false"><span class="b-services-nav__number"></span><i class="ic flaticon-paint-roller"></i><span class="b-services-nav__info">Pintura</span></a></li>
+                                <li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="financing-tab" data-toggle="tab" href="#financing" role="tab" aria-controls="financing" aria-selected="false"><span class="b-services-nav__number"></span><i class="ic flaticon-money"></i><span class="b-services-nav__info">Finaciamiento</span></a></li>
                                 <!--<li class="b-services-nav__item nav-item col-lg-6 col-md-4"><a class="b-services-nav__link nav-link" id="delivery-tab" data-toggle="tab" href="#delivery" role="tab" aria-controls="delivery" aria-selected="false"><span class="b-services-nav__number">06</span><i class="ic flaticon-car-4"></i><span class="b-services-nav__info">Vehicle Delivery</span></a></li>-->
                             </ul>
                         </div>
@@ -448,18 +460,17 @@
                                 <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
                                 <h2 class="ui-title">Servicios que <span class="text-primary"> Ofrecemos</span></h2>
                                 <div class="b-services-content tab-content" id="servicesTabContent">
+
                                     <!--<div class="b-services-content__item tab-pane fade show active" id="repairing" role="tabpanel" aria-labelledby="repairing-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
                                         <h3 class="b-services-content__title ui-title-sm">Parts Repairing</h3>
                                         <p>Edipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqa Ut enim ad minim veniam, quis nostrud exercitation ullam co laboris nisi ut aliquip comsecdo consequat duis aute irure dolorin reprehenderits. Non proident sunt in culpa qudesa officia deserunt mollit anim id est laborum.</p>
                                     </div>-->
+
                                     <div class="b-services-content__item tab-pane fade" id="inspection" role="tabpanel" aria-labelledby="inspection-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
                                         <h3 class="b-services-content__title ui-title-sm">Inspeccion</h3>
                                         <p>La inspección de vehículos es crucial para la seguridad y el cumplimiento normativo. Incluye revisión de frenos, luces, neumáticos y emisiones. Nuestros expertos garantizan que su coche cumpla con los estándares de seguridad. Ofrecemos también consejos para el mantenimiento preventivo. Nos comprometemos a brindar un servicio confiable y de calidad, asegurando la seguridad y tranquilidad de nuestros clientes.</p>
                                     </div>
-                                    <div class="b-services-content__item tab-pane fade" id="trade" role="tabpanel" aria-labelledby="trade-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/2.jpg" alt="foto" />
-                                        <h3 class="b-services-content__title ui-title-sm">Trade-In</h3>
-                                        <p>El Trade-In de vehículos es una opción práctica para quienes buscan renovar su coche. Evaluamos su vehículo actual y ofrecemos un valor justo para aplicarlo como parte del pago de uno nuevo. Este proceso es simple y transparente, asegurando que nuestros clientes obtengan la mejor oferta. Con nuestro Trade-In, facilitamos la actualización a un coche más nuevo, brindando comodidad y confianza en cada paso del proceso</p>
-                                    </div>
+                                    
                                     <div class="b-services-content__item tab-pane fade" id="painting" role="tabpanel" aria-labelledby="painting-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/3.jpg" alt="foto" />
                                         <h3 class="b-services-content__title ui-title-sm">Pintura</h3>
                                         <p>El servicio de pintura de autos que ofrecemos combina calidad y precisión para darle a su vehículo un aspecto renovado. Utilizamos materiales de alta calidad y técnicas avanzadas para asegurar un acabado duradero y estéticamente atractivo. Nuestro equipo de profesionales trabaja con cuidado para igualar el color y garantizar una cobertura uniforme. Ya sea para reparar pequeños rasguños o para un cambio completo de color, nuestro servicio de pintura es la solución ideal para revitalizar su coche.</p>
@@ -468,7 +479,14 @@
                                         <h3 class="b-services-content__title ui-title-sm">Finaciamiento</h3>
                                         <p>Nuestro servicio de financiamiento de autos en colaboración con bancos líderes ofrece soluciones accesibles para adquirir el vehículo de sus sueños. Facilitamos el proceso de solicitud de préstamo, trabajando estrechamente con instituciones financieras de confianza para obtener las mejores tasas y condiciones. Ofrecemos asesoramiento personalizado para elegir el plan de financiamiento más adecuado a su situación económica, garantizando transparencia y facilidad en cada paso. Con nuestro apoyo, la compra de su nuevo coche es más sencilla y asequible.</p>
                                     </div>
-                                    <!--<div class="b-services-content__item tab-pane fade" id="delivery" role="tabpanel" aria-labelledby="delivery-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
+                                    <!--
+                                    
+                                    <div class="b-services-content__item tab-pane fade" id="trade" role="tabpanel" aria-labelledby="trade-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/2.jpg" alt="foto" />
+                                        <h3 class="b-services-content__title ui-title-sm">Trade-In</h3>
+                                        <p>El Trade-In de vehículos es una opción práctica para quienes buscan renovar su coche. Evaluamos su vehículo actual y ofrecemos un valor justo para aplicarlo como parte del pago de uno nuevo. Este proceso es simple y transparente, asegurando que nuestros clientes obtengan la mejor oferta. Con nuestro Trade-In, facilitamos la actualización a un coche más nuevo, brindando comodidad y confianza en cada paso del proceso</p>
+                                    </div>
+                                    
+                                    <div class="b-services-content__item tab-pane fade" id="delivery" role="tabpanel" aria-labelledby="delivery-tab"><img class="img-fluid" src="<?php echo BASEURL; ?>media/content/b-services/1.jpg" alt="foto" />
                                         <h3 class="b-services-content__title ui-title-sm">Vehicle Delivery</h3>
                                         <p>Edipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqa Ut enim ad minim veniam, quis nostrud exercitation ullam co laboris nisi ut aliquip comsecdo consequat duis aute irure dolorin reprehenderits. Non proident sunt in culpa qudesa officia deserunt mollit anim id est laborum.</p>
                                     </div>-->
@@ -503,19 +521,19 @@
                 <div class="container">
                     <ul class="b-progress-list row list-unstyled">
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Vehiculos en stock</span><span class="b-progress-list__percent js-chart" data-percent="3874"><span class="js-percent"></span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Vehiculos en stock</span><span class="b-progress-list__percent js-chart" data-percent="200"><span class="js-percent"></span></span>
                             </div>
                         </li>
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Concesionarios </span><span class="b-progress-list__percent js-chart" data-percent="12"><span class="js-percent"></span><span>+</span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Concesionarios </span><span class="b-progress-list__percent js-chart" data-percent="4"><span class="js-percent"></span><span>+</span></span>
                             </div>
                         </li>
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Clientes Felices</span><span class="b-progress-list__percent js-chart" data-percent="4568"><span class="js-percent"></span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Unidades Vendidas</span><span class="b-progress-list__percent js-chart" data-percent="4568"><span class="js-percent"></span></span>
                             </div>
                         </li>
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Vehiculos en ventas</span><span class="b-progress-list__percent js-chart" data-percent="1450"><span class="js-percent"></span><span>+</span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Años en el mercado</span><span class="b-progress-list__percent js-chart" data-percent="20"><span class="js-percent"></span><span>+</span></span>
                             </div>
                         </li>
                     </ul>
@@ -529,7 +547,7 @@
                             <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
                             <h2 class="ui-title">Nuestros Vehiculos<span class="text-primary"> </span></h2>
                             <ul class="b-isotope-filter list-unstyled">
-                                <li class="current"><a href="" data-filter="*">Show All</a></li>
+                                <li class="current"><a href="" data-filter="*">Mostrar Todos</a></li>
 
                                 <?php if ($marcas->num_rows > 0) {
                                 
@@ -568,7 +586,7 @@
                                             <li class="b-goods-f__list-item"><span class="b-goods-f__list-info">160 hp</span></li>-->
                                         </ul>
                                     </div>
-                                    <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price-numb">$<?php echo $row["Price"]; ?></span></span>
+                                    <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price-numb">$<?php echo number_format($row["PriceTax"], 2); ?></span></span>
                                         </span>
                                     </div>
                                 </div>
@@ -747,13 +765,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="b-bnr-2__section b-bnr-2__section_first bg-dark">
-                                <h2 class="b-bnr-2__title">Quieres <br>comprar un auto seminuevo?</h2><a class="b-bnr-2__link" href="https://automarketpanama.com/devtest/ultimos/public/listing">Inicia buscando en nuestro inventario 2000+ vehiculos</a>
+                                <h2 class="b-bnr-2__title">Quieres <br>comprar un auto seminuevo?</h2><a class="b-bnr-2__link" href="https://automarketpanama.com/devtest/ultimos/public/listing">Inicia buscando en nuestro inventario +200 vehiculos</a>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="b-bnr-2__section b-bnr-2__section_second bg-primary">
-                                <div class="b-bnr-2__title">Quieres Vender o cambiar tu auto?
-                                    <br>Vender o cambiar?</div><a class="b-bnr-2__link" href="#">Te ofrecemos los mejores precios del mercado</a>
+                            <div class="b-bnr-2__section b-bnr-2__section_second bg-primary" style="color:#000 !important;">
+                                <div class="b-bnr-2__title"><b>
+                                    <br><br></b></div><a class="" href="https://www.toyotacertificados.com/warranty" target="_blank"> Ver todos los detalles</a>
                             </div>
                         </div>
                     </div>

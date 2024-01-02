@@ -1,6 +1,6 @@
 <?php $placa = $_GET['placa']; ?>
 <?php $datos_auto = get_data_car($placa);  ?>
-
+<?php $tipo_carro = get_tipo_carro(); ?>
 <?php include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <!-- Loader-->
     <div id="page-preloader"><span class="spinner border-t_second_b border-t_prim_a"></span></div>
@@ -21,7 +21,7 @@
                     <h1 class="b-title-page">Detalles del Auto</h1>
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="home.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Detalles del Auto</li>
                       </ol>
                       <!-- end breadcrumb-->
@@ -49,8 +49,8 @@
                     <div class="col-lg-4">
                         <div class="b-goods-f-price">
                             <div class="b-goods-f-price__inner">
-                            <div class="b-goods-f-price__msrp">Tax:<strong> $<?php echo $row['PriceTax']; ?></strong></div>
-                            <div class="b-goods-f-price__main bg-primary">$<?php echo $row['Price']; ?></div>
+                            <div class="b-goods-f-price__msrp">Precio:<strong> $<?php echo number_format($row["Price"], 2); ?></strong></div>
+                            <div class="b-goods-f-price__main bg-primary">+ITBMS $<?php echo number_format($row["PriceTax"], 2); ?></div>
                             </div>
                             <div class="b-goods-f-price__note"></div>
                         </div>
@@ -86,7 +86,7 @@
                       </dl>
                     </div>
                   </div>
-                  <ul class="nav nav-tabs nav-vehicle-detail-tabs" id="myTab" role="tablist">
+                  <!--<ul class="nav nav-tabs nav-vehicle-detail-tabs" id="myTab" role="tablist">
                     <li class="nav-item"><a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a></li>
                     <li class="nav-item"><a class="nav-link" id="features-tab" data-toggle="tab" href="#features" role="tab" aria-controls="features" aria-selected="false">Features & Options</a></li>
                     <li class="nav-item"><a class="nav-link" id="location-tab" data-toggle="tab" href="#location" role="tab" aria-controls="location" aria-selected="false">Vehicle Location</a></li>
@@ -120,41 +120,53 @@
                         <li>Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</li>
                       </ul>
                     </div>
-                  </div>
+                  </div>-->
                 </div>
                 <div class="col-lg-4">
                   <aside class="l-sidebar">
                       
                   <?php 
-                  
-                  $vendedores_sucursal = get_seller_sucur($row['LocationName']); 
-                  
-                  while ($vendedor = $vendedores_sucursal->fetch_assoc()) {
 
-                  ?>
-                      
-                    <div class="b-seller">
-                      <div class="b-seller__header">
-                        <div class="b-seller__img"><img class="img-scale" src="<?php echo $vendedor['photo']; ?>" alt="foto"/></div>
+                   if($row['LocationName'] == 'Tumba Muerto'){ ?>
+                    <div class="b-seller"> 
+                      <img class="img-scale" src="https://automarketpanama.com/devtest/ultimos/public/assets/media/imaGoo/tumbamuerto.jpg" alt="foto"/>
+                       <p>Sucursal de Tumba Muerto <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
+                    </div>
+                    <?php }elseif($row['LocationName'] == 'David'){ ?>
+                    <div class="b-seller"> 
+                      <img class="img-scale" src="https://automarketpanama.com/devtest/ultimos/public/assets/media/imaGoo/david.jpg" alt="foto"/>
+                      <p>Sucursal de David <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
+                    </div>
+                    <?php }elseif($row['LocationName'] == 'Via Israel'){ ?>
+                    <div class="b-seller"> 
+                      <img class="img-scale" src="https://automarketpanama.com/devtest/ultimos/public/assets/media/imaGoo/viaizrrael.jpg" alt="foto"/>
+                      <p>Sucursal de Vía Israel <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
+                    </div>
+                    <?php }elseif($row['LocationName'] == 'Chorrera'){ ?>
+                    <div class="b-seller"> 
+                      <img class="img-scale" src="https://automarketpanama.com/devtest/ultimos/public/assets/media/imaGoo/costaverde.jpg" alt="foto"/>
+                      <p>Sucursal de Costa Verde <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
+                    </div>
+                    <?php } ?>
+                    <!--<div class="b-seller__header">
+                        <div class="b-seller__img"><img class="img-scale" src="<?php //echo $vendedor['photo']; ?>" alt="foto"/></div>
                         <div class="b-seller__title">
-                          <div class="b-seller__name"><?php echo $vendedor['nombre']; ?></div>
-                          <div class="b-seller__category"><?php echo $vendedor['Cargo']; ?></div>
+                          <div class="b-seller__name"><?php //echo $vendedor['nombre']; ?></div>
+                          <div class="b-seller__category"><?php //echo $vendedor['Cargo']; ?></div>
                         </div>
                       </div>
                       <div class="b-seller__main"><i class="b-seller__ic fas fa-phone text-primary"></i>
                         <div class="b-seller__contact"><span class="d-block">Contacto </span><a class="b-seller__phone" href="tel:12584037961">+507 <?php echo $vendedor['celular']; ?></a></div>
                         <ul class="b-seller-soc list-unstyled">
-                          <!-- <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-twitter"></i></a></li>
+                          <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-twitter"></i></a></li>
                           <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-facebook"></i></a></li>
                           <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-linkedin"></i></a></li>
                           <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-google-plus-g"></i></a></li>
-                          <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-pinterest"></i></a></li> -->
+                          <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-pinterest"></i></a></li> 
                         </ul>
                       </div>
-                    </div>
+                    </div> -->
                     <!-- end .b-seller-->
-
-                    <?php } ?>
                     <!--
                     <div class="widget section-sidebar bg-gray widget-selecr-contact">
                         <h3 class="widget-title bg-dark"><i class="ic icon_mail_alt"></i>Message Seller</h3>

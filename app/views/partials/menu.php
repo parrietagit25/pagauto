@@ -77,11 +77,10 @@
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" id="navbarDropdown2" href="/devtest/ultimos/public/listing" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inventario</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                                <a class="dropdown-item" href="#">Sedanes</a>
-                                                <a class="dropdown-item" href="#">Camionetas</a>
-                                                <a class="dropdown-item" href="#">Pick-Ups</a>
-                                                <a class="dropdown-item" href="#">Buses</a>
-                                                <a class="dropdown-item" href="#">Camiones</a></div>
+                                            <?php while ($tipo = $tipo_carro->fetch_assoc()) { ?>
+                                                <a class="dropdown-item" href="https://automarketpanama.com/devtest/ultimos/public/listing?tipo_auto=<?php echo $tipo['CarType']; ?>&menu=1"><?php echo $tipo['CarType']; ?></a>
+                                            <?php } ?>
+                                            </div>
                                         </li>
 
                                         <li class="nav-item"><a class="nav-link" href="/devtest/ultimos/public/about">Sobre Nosotros</a></li>
@@ -93,7 +92,8 @@
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="blog-main.html">Blog main</a><a class="dropdown-item" href="blog-post.html">Blog post</a></div>
                                         </li> -->
                                         <li class="nav-item"><a class="nav-link" href="/devtest/ultimos/public/contact">Contactanos</a></li>
-                                    </ul>
+                                        
+                                    </ul><a id="todo_inventario" class="btn btn-primary btn-sm col-auto" href="https://automarketpanama.com/devtest/ultimos/public/listing"><i class="ic icon-list"></i> Ver Inventario</a>
                                 </nav>
                             </div>
                         </div>

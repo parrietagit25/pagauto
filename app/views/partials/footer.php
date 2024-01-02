@@ -86,6 +86,32 @@
         var ruta = window.location.pathname;
         console.log("Ruta: " + ruta);
     </script>
+    <script>
+        
+        var menuOption = document.getElementById('todo_inventario');
+        menuOption.style.display="none";
+
+        window.addEventListener('scroll', function() {
+        var header = document.querySelector('.header');
+
+            if (window.scrollY > 100) { // Ajusta este valor según tus necesidades
+                header.classList.add('navbar-scrolling');
+                menuOption.classList.add('active'); // Añade la clase 'active' o la que necesites para activar la opción del menú
+                menuOption.style.display="block";
+            } else {
+                header.classList.remove('navbar-scrolling');
+                menuOption.classList.remove('active'); // Remueve la clase 'active' de la opción del menú
+                menuOption.style.display="none";
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('form_buscado').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            console.log('enviando ...');
+            this.submit();
+        });
+    </script>
 
     </body>
 

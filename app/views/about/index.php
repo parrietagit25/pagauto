@@ -2,6 +2,7 @@
 
 $vendedores4 = obtenerVendedores(13);
 $diesiseis = obtenerDatos(16);
+$tipo_carro = get_tipo_carro();
 
 include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <!-- Loader-->
@@ -106,19 +107,19 @@ Confiados por millones de personas, estamos oficialmente reconocidos por nuestra
               <div class="container">
                   <ul class="b-progress-list row list-unstyled">
                       <li class="b-progress-list__item col-md-3">
-                          <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Vehiculos en stock</span><span class="b-progress-list__percent js-chart" data-percent="3874"><span class="js-percent"></span></span>
+                          <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Vehiculos en stock</span><span class="b-progress-list__percent js-chart" data-percent="200"><span class="js-percent"></span></span>
                           </div>
                       </li>
                       <li class="b-progress-list__item col-md-3">
-                          <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Concesionarios </span><span class="b-progress-list__percent js-chart" data-percent="12"><span class="js-percent"></span><span>+</span></span>
+                          <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Concesionarios </span><span class="b-progress-list__percent js-chart" data-percent="4"><span class="js-percent"></span><span>+</span></span>
                           </div>
                       </li>
                       <li class="b-progress-list__item col-md-3">
-                          <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Clientes Felices</span><span class="b-progress-list__percent js-chart" data-percent="4568"><span class="js-percent"></span></span>
+                          <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Unidades Vendidas</span><span class="b-progress-list__percent js-chart" data-percent="4568"><span class="js-percent"></span></span>
                           </div>
                       </li>
                       <li class="b-progress-list__item col-md-3">
-                          <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Vehiculos en ventas</span><span class="b-progress-list__percent js-chart" data-percent="1450"><span class="js-percent"></span><span>+</span></span>
+                          <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Años en el mercado</span><span class="b-progress-list__percent js-chart" data-percent="20"><span class="js-percent"></span><span>+</span></span>
                           </div>
                       </li>
                   </ul>

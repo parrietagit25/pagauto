@@ -64,7 +64,7 @@
             console.log('pasando');
             var formData = new FormData(this);
             
-            fetch('/devtest/ultimos/app/views/listing/search.php', {
+            fetch('/dev/app/views/listing/search.php', {
                 method: 'POST',
                 body: formData
             })
@@ -111,6 +111,87 @@
             console.log('enviando ...');
             this.submit();
         });
+    </script>
+    <script>
+        document.getElementById('correo_cliente').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            console.log('enviando ...');
+            this.submit();
+        });
+    </script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            console.log('enviando ...');
+            this.submit();
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.b-brands__item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                var marca = this.getAttribute('data-marca');
+                var menu = this.getAttribute('data-menu');
+
+                var formData = new FormData();
+                formData.append('marca', marca);
+                formData.append('menu', menu);
+
+                fetch('/dev/app/views/listing/search.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector("#autos_resul").innerHTML = data;
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        });
+    </script>
+    <script>
+        function buscar_modelo(x) {
+
+            var modelo = x;
+
+            var formData = new FormData();
+                formData.append('modelo_form_principal', modelo);
+            
+            fetch('/dev/app/views/listing/search.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+
+                document.querySelector("#marca_select").innerHTML = data;
+                
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
+            
+        }
+    </script>
+    <script>
+        function checkLogoVisibility() {
+            var logo = document.querySelector('.scroll-edit');
+            var screenWidth = window.innerWidth;
+
+            if (window.scrollY >= 50 && screenWidth <= 1200) {
+                logo.style.display = "block";
+            }else if(window.scrollY >= 50 && screenWidth > 1200) {
+                logo.style.display = "block";
+            }else if(window.scrollY < 50 && screenWidth <= 1200) {
+                logo.style.display = "block";
+            }else{
+                logo.style.display = "none";
+            }
+        }
+
+        window.onscroll = checkLogoVisibility;
+        window.onresize = checkLogoVisibility;
+
+        checkLogoVisibility();
     </script>
 
     </body>

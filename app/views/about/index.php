@@ -3,6 +3,7 @@
 $vendedores4 = obtenerVendedores(13);
 $diesiseis = obtenerDatos(16);
 $tipo_carro = get_tipo_carro();
+$tipo_carro2 = get_tipo_carro();
 
 include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <!-- Loader-->
@@ -23,7 +24,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                     <h1 class="b-title-page">Sobre nosotros</h1>
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="home.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="https://automarketpanama.com/public/">Inicio</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Nosotros</li>
                       </ol>
                       <!-- end breadcrumb-->
@@ -131,31 +132,34 @@ Confiados por millones de personas, estamos oficialmente reconocidos por nuestra
               <div class="row">
                 <div class="col-12">
                   <div class="text-center">
-                    <div class="ui-title-slogan">HTE AYUDAMOS A ENCONTRAR TU PRÓXIMO AUTO</div>
+                    <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO AUTO</div>
                     <h2 class="ui-title">Nuestro equipo de <span class="text-primary"> ventas</span></h2>
                   </div>
                 </div>
               </div>
               <div class="row">
               <?php if ($vendedores4->num_rows > 0) {
-                      while ($row = $vendedores4->fetch_assoc()) { ?>
-                <div class="col-lg-3 col-md-6">
-                  <div class="b-team b-team_mod-a">
-                    <div class="b-team__media">
-                      <div class="b-team__img"><img class="img-fluid" src="<?php echo $row["photo"]; ?>" alt="Foto"/></div>
-                      <ul class="b-team__soc list-unstyled">
-                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="https://www.instagram.com/<?php echo $row["redSocial"]; ?>/"><i class="ic fab fa-instagram"></i></a></li>
-                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="mailto:<?php echo $row["correo"]; ?>"><i class="ic fa fa-envelope"></i></a></li>
-                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="<?php echo $row["urlLocation"]; ?>" target="_blank"><i class="ic icon-location-pin"></i></a></li>
-                      </ul><a class="b-team__phone" href="tel:+17553028549"><i class="ic icon-call-end"></i> +507 <?php echo $row["celular"]; ?></a>
-                    </div>
-                    <div class="b-team__inner bg-dark">
-                      <div class="b-team__name"><?php echo $row["nombre"]; ?></div>
-                      <div class="b-team__category"><?php echo $row["cargo"]; ?></div>
-                    </div>
-                  </div>
-                </div>
-                <?php }
+                    while ($row = $vendedores4->fetch_assoc()) {  ?>
+                      <div class="col-lg-3 col-md-6">
+                          <div class="b-team">
+                              <div class="b-team__media">
+                                  <div class="b-team__img"><img class="img-fluid" src="<?php echo $row["photo"]; ?>" alt="Foto" /></div>
+                                  <ul class="b-team__soc list-unstyled">
+
+                                      <li class="b-team__soc-item"><a class="b-team__soc-link" href="https://www.instagram.com/<?php echo $row["redSocial"]; ?>/"><i class="ic fab fa-instagram"></i></a></li>
+                                      <?php /* <li class="b-team__soc-item"><a class="b-team__soc-link" href="mailto:<?php echo $row["correo"]; ?>"><i class="ic fa fa-envelope"></i></a></li>
+                                      <li class="b-team__soc-item"><a class="b-team__soc-link" href="<?php echo $row["urlLocation"]; ?>" target="_blank"><i class="ic icon-location-pin"></i></a></li> */ ?>
+                                  
+                                  </ul>
+                              </div>
+                              <div class="b-team__inner bg-dark">
+                                  <div class="b-team__name"><?php if($row['id'] == 8){ echo strstr($row["nombre"], ' ', true); }else{ echo $row["nombre"]; } ?></div>
+                                  <div class="b-team__category"><?php echo utf8_encode($row["cargo"]); ?></div>
+                              </div>
+                              <div class="b-team__footer"><a class="b-team__phone" href="tel:+507<?php echo $row["celular"]; ?>"><i class="ic text-primary icon-call-end"></i> +507 <?php echo $row["celular"]; ?></a></div>
+                          </div>
+                      </div>
+                      <?php }
                     } /* ?>
                 <div class="col-lg-3 col-md-6">
                   <div class="b-team b-team_mod-a">
@@ -388,7 +392,7 @@ Confiados por millones de personas, estamos oficialmente reconocidos por nuestra
                                   </li>
                                   <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">03</span>
                                       <div class="b-steps-list__title">Habla con uno de nuestros agentes</div>
-                                      <div class="b-steps-list__info">Contacta a uno de nuestros expertos agentes hoy y encuentra el auto perfecto para ti en nuestro inventario.</div>
+                                      <div class="b-steps-list__info">contácta a uno de nuestros expertos agentes hoy y encuentra el auto perfecto para ti en nuestro inventario.</div>
                                   </li>
                                   <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">04</span>
                                       <div class="b-steps-list__title">Conduce tu nuevo vehiculo</div>
@@ -438,7 +442,7 @@ Confiados por millones de personas, estamos oficialmente reconocidos por nuestra
                 </div>
                 <div class="col-lg-6">
                   <section class="section-reviews-2">
-                    <h2 class="ui-title-inner">Que comentan nuestri<span class="text-primary"> clientes</span></h2>
+                    <h2 class="ui-title-inner">Que comentan nuestros<span class="text-primary"> clientes</span></h2>
                     <div class="b-reviews-slider-2 js-slider" data-slick="{&quot;arrows&quot;: false, &quot;dots&quot;: true}">
                       <div class="b-reviews-2">
                         <blockquote class="b-reviews-2__blockquote">
@@ -480,18 +484,20 @@ Confiados por millones de personas, estamos oficialmente reconocidos por nuestra
             </div>
           </div>
           <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
-          <?php if ($diesiseis->num_rows > 0) {
-                    while ($row = $diesiseis->fetch_assoc()) { ?>
-                <div class="b-gallery__item">
-                    <!--<img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>-->
-                    <a href="https://automarketpanama.com/devtest/ultimos/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
-                        <img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" />
-                    </a>
-                </div>
-                <?php
-                    }
-                }
-                ?>
+              <?php if ($diesiseis->num_rows > 0) {
+                  while ($row = $diesiseis->fetch_assoc()) { ?>
+                  <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                      <div class="b-gallery__item b-team__media"><!--  -->
+                          <!--<img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>-->
+                          <div style="">
+                              <img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" />
+                          </div>
+                      </div>
+                  </a>
+              <?php
+                  }
+              }
+              ?>
           </div>
           <!-- end .b-gallery-->
           <div class="section-brands">

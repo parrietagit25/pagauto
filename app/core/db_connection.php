@@ -22,7 +22,7 @@ function cerrarDB($conn) {
 
 function obtenerDatos($number) {
     $conn = conectarDB();
-    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') LIMIT $number";
+    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') ORDER BY RAND() LIMIT $number";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -181,6 +181,49 @@ function get_transmision(){
 
 function limpiarNumero($numero) {
     return preg_replace('/[^\d.]/', '', $numero);
+}
+
+function insertar_email_cliente($email){ 
+    $conn = conectarDB();
+    $sql = "INSERT INTO email_web(email, ip)VALUES('".$email."', '".$_SERVER['REMOTE_ADDR']."')";
+    $result = $conn->query($sql);
+    cerrarDB($conn);
+    return 1;
+}
+
+function formulario_contacto($nombre, $email, $telefono, $quebusca, $detalles){
+
+
+    $para      = 'rventas@automarket.com'; // Cambia esto por el correo del destinatario
+    $titulo    = 'Mensaje desde la web de Automarket';
+    $mensaje   = 'Una persona escribio desde la web de Automarket
+                  Nombre: '.$nombre.' 
+                  Email: '.$email.' 
+                  Telefono: '.$telefono.' 
+                  Que esta buscando: '.$quebusca.'.
+                  Detalles: '.$detalles.' ';
+    $cabeceras = 'From: pedro.arrieta@grupopcr.com.pa' . "\r\n" . // Cambia esto por tu dirección de correo
+    'Reply-To: pedro.arrieta@grupopcr.com.pa' . "\r\n" . // Cambia esto por tu dirección de correo
+    'X-Mailer: PHP/' . phpversion();
+
+    mail($para, $titulo, $mensaje, $cabeceras);
+
+    $conn = conectarDB();
+    $sql = "INSERT INTO contacto(nombre, email, telefono, que_buscas, detalles, ip)VALUES('".$nombre."', '".$email."', '".$telefono."', '".$quebusca."' , '".$detalles."', '".$_SERVER['REMOTE_ADDR']."')";
+    $result = $conn->query($sql);
+    cerrarDB($conn);
+    return 1;
+
+}
+
+function get_marcas_formulario_principal($marca){
+
+    $conn = conectarDB();
+    $sql = "SELECT Model FROM Automarket_Invs_web WHERE Photo NOT IN ('') AND Make = '".$marca."' GROUP BY Model";
+    $result = $conn->query($sql);
+    cerrarDB($conn);
+    return $result;
+
 }
 
 ?>

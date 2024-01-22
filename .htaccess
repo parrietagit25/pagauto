@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^$ /dev/public/ [L,R=301]

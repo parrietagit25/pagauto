@@ -1,7 +1,8 @@
 <?php $todos_carros = all_car('','','','','','','',''); ?>
 <?php $todas_marcas = get_marcas(); ?>
 <?php $todos_modelos = get_modelos(); ?>
-<?php $tipo_carro = get_tipo_carro(); ?>
+<?php $tipo_carro = get_tipo_carro();
+    $tipo_carro2 = get_tipo_carro(); ?>
 <?php $anio_desde = get_from_year(); ?>
 <?php $anio_hasta = get_to_year(); ?>
 <?php $all_transmision = get_transmision(); ?>
@@ -18,7 +19,7 @@
                     <h1 class="b-title-page">Inventario</h1>
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="home.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="https://automarketpanama.com/public/">Inicio</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Inventario</li>
                       </ol>
                     </nav>
@@ -41,17 +42,18 @@
                         <form id="buscar" class="b-filter bg-light">
                           <div class="b-filter__main">
                             <div class="b-filter__row">
-                              <select class="selectpicker" name="marca" data-width="100%" title="Seleccionar Marca" multiple="multiple" data-max-options="1" data-style="ui-select">
+                              <select class="selectpicker" name="marca" data-width="100%" title="Seleccionar Marca" multiple="multiple" data-max-options="1" data-style="ui-select" onchange="buscar_modelo(this.value)">
                                 <?php while ($marca = $todas_marcas->fetch_assoc()) { ?>
                                 <option value="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?></option>
                                 <?php } ?>
                               </select>
                             </div>
                             <div class="b-filter__row">
-                              <select class="selectpicker" name="modelo" data-width="100%" title="Seleccionar Modelo" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                <?php while ($modelos = $todos_modelos->fetch_assoc()) { ?>
+                              <select class="form-control" id="marca_select" name="modelo" data-width="100%" title="Seleccionar Modelo" data-max-options="1" data-style="ui-select">
+                                <option value="">Seleccionar</option>
+                                <?php /* while ($modelos = $todos_modelos->fetch_assoc()) { ?>
                                 <option value="<?php echo $modelos['Model']; ?>"><?php echo $modelos['Model']; ?></option>
-                                <?php } ?>
+                                <?php } */ ?>
                               </select>
                             </div>
                             <div class="b-filter__row">
@@ -99,7 +101,7 @@
                               </div>
                             </div>
                           </div>
-                          <button class="b-filter__reset btn btn-default w-100" type="button">Limpiar Filtros</button>
+                          <!--<button class="b-filter__reset btn btn-default w-100" type="button">Limpiar Filtros</button>-->
                           <button class="btn btn-primary w-100">Buscar</button>
                         </form>
                       </div>
@@ -109,7 +111,46 @@
                   <section class="widget b-brands section-sidebar">
                     <h3 class="widget-title bg-dark"><i class="ic flaticon-car-4"></i>Marcas Populares</h3>
                     <div class="widget-content">
-                      <div class="b-brands__main d-flex flex-wrap"><a class="b-brands__item" href="home.html"><img class="b-brands__img img-fluid" src="assets/media/content/b-brands/1.png" alt="foto"/></a><a class="b-brands__item" href="home.html"><img class="b-brands__img img-fluid" src="assets/media/content/b-brands/2.png" alt="foto"/></a><a class="b-brands__item" href="home.html"><img class="b-brands__img img-fluid" src="assets/media/content/b-brands/3.png" alt="foto"/></a><a class="b-brands__item" href="home.html"><img class="b-brands__img img-fluid" src="assets/media/content/b-brands/4.png" alt="foto"/></a><a class="b-brands__item" href="home.html"><img class="b-brands__img img-fluid" src="assets/media/content/b-brands/5.png" alt="foto"/></a><a class="b-brands__item" href="home.html"><img class="b-brands__img img-fluid" src="assets/media/content/b-brands/6.png" alt="foto"/></a></div>
+                      <div class="b-brands__main d-flex flex-wrap">
+                        <!--<a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=HONDA&menu=1">
+                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/1.png" alt="foto"/>
+                        </a>
+                        <a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=HYUNDAI&menu=1">
+                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/2.png" alt="foto"/>
+                        </a>
+                        <a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=KIA&menu=1">
+                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/3.png" alt="foto"/>
+                        </a>
+                        <a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=LAND ROVER&menu=1">
+                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/4.png" alt="foto"/>
+                        </a>
+                        <a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=NISSAN&menu=1">
+                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/5.png" alt="foto"/>
+                        </a>
+                        <a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=TOYOTA&menu=1">
+                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/6.png" alt="foto"/>
+                        </a> -->
+
+
+                        <a class="b-brands__item" href="#" data-marca="HONDA" data-menu="1">
+                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/1.png" alt="foto"/>
+                        </a>
+                        <a class="b-brands__item" href="#" data-marca="HYUNDAI" data-menu="1">
+                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/2.png" alt="foto"/>
+                        </a>
+                        <a class="b-brands__item" href="#" data-marca="KIA" data-menu="1">
+                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/3.png" alt="foto"/>
+                        </a>
+                        <!--<a class="b-brands__item" href="#" data-marca="LAND ROVER" data-menu="1">
+                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/4.png" alt="foto"/>
+                        </a>-->
+                        <a class="b-brands__item" href="#" data-marca="NISSAN" data-menu="1">
+                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/5.png" alt="foto"/>
+                        </a>
+                        <a class="b-brands__item" href="#" data-marca="TOYOTA" data-menu="1">
+                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/6.png" alt="foto"/>
+                        </a>
+                      </div>
                     </div>
                   </section>
                 </aside>
@@ -141,30 +182,32 @@
                               
                           while ($row = $todos_carros->fetch_assoc()) { ?>
 
-                      <div class="b-goods-f col-lg-4 col-md-6">
-                          <div class="b-goods-f__media">
-                              <a href="https://automarketpanama.com/devtest/ultimos/public/detail?placa=<?php echo $row['LicensePlate']; ?>"><img width="330" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/></a>
-                              <span class="b-goods-f__media-inner">
-                                  <span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span>
-                                  <span class="b-goods-f__label bg-primary">NEW</span>
-                              </span>
-                          </div>
-                          <div class="b-goods-f__main">
-                              <div class="b-goods-f__descrip">
-                                  <div class="b-goods-f__title"><?php echo $row['Make'].' '.$row['Model']; ?></div>
-                                  <div class="b-goods-f__info"></div>
-                                  <ul class="b-goods-f__list list-unstyled">
-                                  <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
-                                  <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Model :</span><span class="b-goods-f__list-info"><?php echo $row['Model']; ?></span></li>
-                                  <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
-                                  <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Tipo :</span><span class="b-goods-f__list-info"><?php echo $row['CarType']; ?></span></li>
-                                  <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Color :</span><span class="b-goods-f__list-info"><?php echo $row['Color']; ?></span></li>
-                                  </ul>
-                              </div>
-                              <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="assets/media/content/b-goods/auto-check.png" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col">msrp:&nbsp;</span><span class="b-goods-f__price-numb">$<?php echo number_format($row["PriceTax"], 2); ?></span></span></span>
-                              </div>
-                          </div>
-                      </div>
+                      <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                        <div class="b-goods-f col-lg-4 col-md-6">
+                            <div class="b-team__media"><!-- b-goods-f__media -->
+                                <img width="262" height="196" class="b-goods-f__img img-scale" width="262" height="197" src="<?php echo $row['Photo']; ?>" alt="foto"/>
+                                <span class="b-goods-f__media-inner">
+                                    <!--<span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span>
+                                    <span class="b-goods-f__label bg-primary">NEW</span>-->
+                                </span>
+                            </div>
+                            <div class="b-goods-f__main">
+                                <div class="b-goods-f__descrip">
+                                    <div class="b-goods-f__title"><?php echo $row['Make'].' <br> '.$row['Model']; ?></div>
+                                    <div class="b-goods-f__info"></div>
+                                    <ul class="b-goods-f__list list-unstyled">
+                                    <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
+                                    <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Año :</span><span class="b-goods-f__list-info"><?php echo $row['Year']; ?></span></li>
+                                    <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
+                                    <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Tipo :</span><span class="b-goods-f__list-info"><?php echo $row['CarType']; ?></span></li>
+                                    <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Color :</span><span class="b-goods-f__list-info"><?php echo $row['Color']; ?></span></li>
+                                    </ul>
+                                </div>
+                                <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="assets/media/content/b-goods/auto-check.png" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col"></span><span class="b-goods-f__price-numb">$<?php echo number_format($row["PriceTax"], 2); ?></span></span></span>
+                                </div>
+                            </div>
+                        </div>
+                      </a>
 
                       <?php } 
 
@@ -177,32 +220,32 @@
                       if ($todos_carros->num_rows > 0) {
                               
                           while ($row = $todos_carros->fetch_assoc()) { ?>
-
+                    <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
                       <div class="b-goods-f col-lg-4 col-md-6">
-                          <div class="b-goods-f__media">
-                              <a href="https://automarketpanama.com/devtest/ultimos/public/detail?placa=<?php echo $row['LicensePlate']; ?>"><img width="330" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/></a>
+                          <div class="b-team__media"><!-- b-goods-f__media -->
+                              <img width="262" height="196" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/>
                               <span class="b-goods-f__media-inner">
-                                  <span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span>
-                                  <span class="b-goods-f__label bg-primary">NEW</span>
+                                  <!--<span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span>
+                                  <span class="b-goods-f__label bg-primary">NEW</span>-->
                               </span>
                           </div>
                           <div class="b-goods-f__main">
                               <div class="b-goods-f__descrip">
-                                  <div class="b-goods-f__title"><?php echo $row['Make'].' '.$row['Model']; ?></div>
+                                  <div class="b-goods-f__title"><?php echo $row['Make'].' <br> '.$row['Model']; ?></div>
                                   <div class="b-goods-f__info"></div>
                                   <ul class="b-goods-f__list list-unstyled">
                                   <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
-                                  <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Model :</span><span class="b-goods-f__list-info"><?php echo $row['Model']; ?></span></li>
+                                  <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Año :</span><span class="b-goods-f__list-info"><?php echo $row['Year']; ?></span></li>
                                   <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
                                   <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Tipo :</span><span class="b-goods-f__list-info"><?php echo $row['CarType']; ?></span></li>
                                   <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Color :</span><span class="b-goods-f__list-info"><?php echo $row['Color']; ?></span></li>
                                   </ul>
                               </div>
-                              <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="assets/media/content/b-goods/auto-check.png" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col">msrp:&nbsp;</span><span class="b-goods-f__price-numb">$<?php echo number_format($row["PriceTax"], 2); ?></span></span></span>
+                              <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="assets/media/content/b-goods/auto-check.png" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col"></span><span class="b-goods-f__price-numb">$<?php echo number_format($row["PriceTax"], 2); ?></span></span></span>
                               </div>
                           </div>
                       </div>
-
+                    </a>
                       <?php } 
 
                         }
@@ -212,32 +255,32 @@
                         if ($todos_carros->num_rows > 0) {
                                 
                             while ($row = $todos_carros->fetch_assoc()) { ?>
-
+                      <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
                         <div class="b-goods-f col-lg-4 col-md-6">
-                            <div class="b-goods-f__media">
-                                <a href="https://automarketpanama.com/devtest/ultimos/public/detail?placa=<?php echo $row['LicensePlate']; ?>"><img width="330" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/></a>
+                            <div class="b-team__media"><!--b-goods-f__media-->
+                                <img width="262" height="196" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/>
                                 <span class="b-goods-f__media-inner">
-                                    <span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span>
-                                    <span class="b-goods-f__label bg-primary">NEW</span>
+                                    <!--<span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span>
+                                    <span class="b-goods-f__label bg-primary">NEW</span>-->
                                 </span>
                             </div>
                             <div class="b-goods-f__main">
                                 <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><?php echo $row['Make'].' '.$row['Model']; ?></div>
+                                    <div class="b-goods-f__title"><?php echo $row['Make'].' <br> '.$row['Model']; ?></div>
                                     <div class="b-goods-f__info"></div>
                                     <ul class="b-goods-f__list list-unstyled">
                                     <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
-                                    <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Model :</span><span class="b-goods-f__list-info"><?php echo $row['Model']; ?></span></li>
+                                    <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Año :</span><span class="b-goods-f__list-info"><?php echo $row['Year']; ?></span></li>
                                     <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
                                     <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Tipo :</span><span class="b-goods-f__list-info"><?php echo $row['CarType']; ?></span></li>
                                     <li class="b-goods-f__list-item b-goods-f__list-item_row"><span class="b-goods-f__list-title">Color :</span><span class="b-goods-f__list-info"><?php echo $row['Color']; ?></span></li>
                                     </ul>
                                 </div>
-                                <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="assets/media/content/b-goods/auto-check.png" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col">msrp:&nbsp;</span><span class="b-goods-f__price-numb">$<?php echo number_format($row["PriceTax"], 2); ?></span></span></span>
+                                <div class="b-goods-f__sidebar"><a class="b-goods-f__bnr" href="#"><img src="assets/media/content/b-goods/auto-check.png" alt="auto check"/></a><span class="b-goods-f__price-group"><span class="b-goods-f__price"><span class="b-goods-f__price_col"></span><span class="b-goods-f__price-numb">$<?php echo number_format($row["PriceTax"], 2); ?></span></span></span>
                                 </div>
                             </div>
                         </div>
-
+                      </a>
                         <?php 
                          }
                      } 

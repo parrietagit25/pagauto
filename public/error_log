@@ -1,10 +1,2 @@
-[01-Jan-2024 17:22:33 UTC] PHP Notice:  Undefined variable: tipo_carro in /home/uaq20qjz56nj/public_html/devtest/ultimos/app/views/partials/menu.php on line 80
-[01-Jan-2024 17:22:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in /home/uaq20qjz56nj/public_html/devtest/ultimos/app/views/partials/menu.php:80
-Stack trace:
-#0 /home/uaq20qjz56nj/public_html/devtest/ultimos/app/views/contact/index.php(12): include()
-#1 /home/uaq20qjz56nj/public_html/devtest/ultimos/app/core/Controller.php(30): require_once('/home/uaq20qjz5...')
-#2 /home/uaq20qjz56nj/public_html/devtest/ultimos/app/controllers/ContactController.php(6): Controller->view('contact/index')
-#3 /home/uaq20qjz56nj/public_html/devtest/ultimos/app/core/App.php(40): ContactController->index()
-#4 /home/uaq20qjz56nj/public_html/devtest/ultimos/public/index.php(12): App->__construct()
-#5 {main}
-  thrown in /home/uaq20qjz56nj/public_html/devtest/ultimos/app/views/partials/menu.php on line 80
+[03-Jan-2024 12:34:21 UTC] PHP Parse error:  syntax error, unexpected '"' in /home/uaq20qjz56nj/public_html/devtest/ultimos/app/core/db_connection.php on line 200
+[03-Jan-2024 12:52:41 UTC] PHP Parse error:  syntax error, unexpected '"' in /home/uaq20qjz56nj/public_html/devtest/ultimos/app/core/db_connection.php on line 200

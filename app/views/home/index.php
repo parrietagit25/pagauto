@@ -9,6 +9,16 @@
     $todas_marcas = get_marcas();
     $todos_modelos = get_modelos();
     $tipo_carro = get_tipo_carro();
+    $tipo_carro2 = get_tipo_carro();
+
+    if (isset($_POST['email_customer'])) {
+        insertar_email_cliente($_POST['email_customer']);  ?>
+
+        <script>
+            alert('Registro Realizado');
+        </script>
+
+    <?php  }
 
     include(ROOT_PATH . '/app/views/partials/header.php'); ?>
 
@@ -25,7 +35,7 @@
             <div class="main-slider slider-pro" id="main-slider" data-slider-width="100%" data-slider-height="700px" data-slider-arrows="false" data-slider-buttons="false">
                 <div class="sp-slides">
                     <!-- Slide 1-->
-                    <div class="main-slider__slide-2 sp-slide"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/2.png" alt="slider" />
+                    <?php /* <div class="main-slider__slide-2 sp-slide"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/2.png" alt="slider" />
                         <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
                             <div class="main-slider__wrap">
                                 <div class="main-slider__slogan">Descubre TODO sobre las </div>
@@ -37,7 +47,13 @@
                         <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="1500" data-show-delay="800" data-hide-delay="400"><img class="main-slider__figure-1 img-fluid" src="<?php echo BASEURL; ?>media/slider/3.png" alt="foto" /></div>
                         <div class="sp-layer" data-width="100%" data-show-transition="right" data-hide-transition="right" data-show-duration="2000" data-show-delay="1200" data-hide-delay="400"><img class="main-slider__figure-2 img-fluid" src="<?php echo BASEURL; ?>media/slider/4.png" alt="foto" /></div>
                     </div>
-                    <div class="main-slider__slide sp-slide"><a href="https://automarketpanama.com/devtest/ultimos/public/listing"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" /></a>
+                     */ ?>
+                     <div class="main-slider__slide sp-slide"><a href="https://automarketpanama.com/public/listing"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" /></a>
+                        <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
+                           
+                        </div>
+                    </div>
+                    <div class="main-slider__slide sp-slide"><a href="https://automarketpanama.com/public/listing"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" /></a>
                         <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
                             <!--<div class="main-slider__wrap">
                                 <div class="main-slider__slogan">luxury unleashed</div>
@@ -60,14 +76,15 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="b-find">
-                                <ul class="b-find-nav nav nav-tabs" id="findTab" role="tablist">
-                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link active" id="tab-allCar" data-toggle="tab" href="#content-allCar" role="tab" aria-controls="content-allCar" aria-selected="true">Encuentra tu auto</a></li>
-                                    <!--<li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-newCars" data-toggle="tab" href="#content-newCars" role="tab" aria-controls="content-newCars" aria-selected="false">Autos Seminuevos</a></li>
-                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-usedCars" data-toggle="tab" href="#content-usedCars" role="tab" aria-controls="content-usedCars" aria-selected="false">Autos Usados</a></li>-->
-                                </ul>
+                                <!--<ul class="b-find-nav nav nav-tabs" id="findTab" role="tablist">
+                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link active" id="tab-allCar" data-toggle="tab" href="#content-allCar" role="tab" aria-controls="content-allCar" aria-selected="true">Elige tu próximo auto</a></li>
+                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-newCars" data-toggle="tab" href="#content-newCars" role="tab" aria-controls="content-newCars" aria-selected="false">Autos Seminuevos</a></li>
+                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-usedCars" data-toggle="tab" href="#content-usedCars" role="tab" aria-controls="content-usedCars" aria-selected="false">Autos Usados</a></li>
+                                </ul> -->
                                 <div class="b-find-content tab-content" id="findTabContent">
+                                    <?php /*
                                     <div class="tab-pane fade show active" id="content-allCar">
-                                        <form id="form_buscado" class="b-find__form" method="get" action="https://automarketpanama.com/devtest/ultimos/public/listing">
+                                        <form id="form_buscado" class="b-find__form" method="get" action="https://automarketpanama.com/dev/public/listing">
                                             <div class="b-find__row">
                                                 <div class="b-find__main">
                                                     <div class="b-find__inner">
@@ -75,7 +92,7 @@
                                                         <div class="b-find__item">
                                                             <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
                                                             <div class="b-find__selector">
-                                                                <select name="marca" class="selectpicker" data-width="100%" data-style="ui-select">
+                                                                <select name="marca" class="selectpicker" data-width="100%" data-style="ui-select" onchange="buscar_modelo(this.value)">
                                                                     <option value=''>Seleccionar</option>
                                                                     <?php while ($marca = $todas_marcas->fetch_assoc()) { ?>
                                                                         <option value="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?></option>
@@ -86,11 +103,11 @@
                                                         <div class="b-find__item">
                                                             <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
                                                             <div class="b-find__selector">
-                                                                <select name="modelo" class="selectpicker" data-width="100%" data-style="ui-select">
+                                                                <select name="modelo" data-width="100%" class="form-control" id="marca_select">
                                                                     <option value=''>Seleccionar</option>
-                                                                    <?php while ($modelos = $todos_modelos->fetch_assoc()) { ?>
+                                                                    <?php /* while ($modelos = $todos_modelos->fetch_assoc()) { ?>
                                                                         <option value="<?php echo $modelos['Model']; ?>"><?php echo $modelos['Model']; ?></option>
-                                                                    <?php } ?>
+                                                                    <?php } */  /* ?>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -99,11 +116,12 @@
                                                             <div class="b-find__selector">
                                                                 <select name="precio_max" class="selectpicker" data-width="100%" data-style="ui-select">
                                                                     <option value=''>Seleccionar</option>
-                                                                    <option value="9000">Max $9000</option>
-                                                                    <option value="20000">Max $20000</option>
-                                                                    <option value="30000">Max $30000</option>
-                                                                    <option value="50000">Max $50000</option>
-                                                                    <option value="70000">Max $70000</option>
+                                                                    <option value="9000">Max $9,000</option>
+                                                                    <option value="20000">Max $20,000</option>
+                                                                    <option value="30000">Max $30,000</option>
+                                                                    <option value="50000">Max $50,000</option>
+                                                                    <option value="70000">Max $70,000</option>
+                                                                    <option value="100000">Max $100,000</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -118,7 +136,7 @@
                                                 <label class="forms__label forms__label-check" for="usedCars">Used Cars</label></span>
                                             </div>-->
                                         </form>
-                                    </div>
+                                    </div> */ ?>
                                     <div class="tab-pane fade" id="content-newCars">
                                         <form class="b-find__form">
                                             <div class="b-find__row">
@@ -222,37 +240,41 @@
                 </div>
             </div>
             <!-- end .b-find-->
+            <?php /*
             <section class="b-welcome section-default">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6">
-                            <div class="ui-title-slogan">Te ayudamos a encontrar tu próximo vehículo fácilmente</div>
-                            <h2 class="ui-title">Bienvenido a <span style="color:#1b3b72;">AutoMarket</span></h2>
-                            <p>En AutoMarket Panamá, nos comprometemos a facilitar la compra de tu auto ideal. Con opciones de financiamiento flexibles y adaptadas, encontrarás desde un espacioso vehículo familiar hasta un elegante deportivo o un coche económico y eficiente. Nuestro equipo de expertos te proporcionará asesoría personalizada, asegurando que cada paso del proceso sea claro y satisfactorio.</p>
-                            <p>Nuestra prioridad es tu satisfacción. Por ello, en AutoMarket Panamá, te acompañamos en la búsqueda del vehículo que no solo cumpla tus expectativas, sino que también represente una inversión inteligente y duradera. Ven y experimenta la comodidad y simplicidad de elegir el coche perfecto, ajustado a tus necesidades y presupuesto.</p>
+                            <div class="ui-title-slogan"><!--Te ayudamos a encontrar tu próximo vehículo fácilmente--></div>
+                            <h2 class="ui-title"> <span style="color:#1b3b72;">Sobre Nosotros</span></h2>
+                            <p>En Automarket Panamá nos dedicamos a la compra y venta de autos seminuevos con más de 20 años de experiencia en el mercado. Con nosotros puedes vender y comprar tu auto de manera rápida, transparente y segura. </p>
+                            <p>Encontrarás una amplia variedad de modelos de autos seminuevos que se adapten a tus necesidades. Desde sedanes seminuevos, SUV seminuevas, camionetas pickup seminuevas, hasta autos de lujo, tenemos opciones para cada estilo de vida. También contamos con una amplia variedad de autos comerciales para aquellos  emprendedores y negocios que buscan la combinación perfecta de confiabilidad y eficiencia para impulsar su éxito. </p>
+                            <p>Nuestro propósito es transformar tu necesidad de movilidad en comodidad ofreciendo:</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xl-7">
                             <ul class="b-welcome-list list-unstyled d-sm-flex justify-content-around">
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-car"></i>Ofrecemos precios 
-                                    <br> más bajos en autos</li>
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-gearbox"></i>El concesionario de 
-                                    <br> autos más grande</li>
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-wrench"></i>Ofertas con chequeos
-                                    <br> de seguridad multipunto</li>
+                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-car"></i>Opciones de financiamientos 
+                                    <br> y seguros</li>
+                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-gearbox"></i>Procesos seguros 
+                                    <br> y transparentes </li>
+                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-wrench"></i>Mejores ofertas 
+                                    <br> y promociones </li>
+                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-wrench"></i>Calidad y variedad  
+                                    <br> de autos </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */ ?>
             <!-- end .b-welcome-->
             <section class="section-carousel">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
-                            <h2 class="ui-title">Vehículos <span style="color:#1b3b72;"> Destacados</span></h2>
+                            <div class="ui-title-slogan"><!--TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE--></div>
+                            <h2 class="ui-title" style="color:red;">Autos <span > Destacados</span></h2>
                         </div>
                     </div>
                 </div>
@@ -264,184 +286,63 @@
                         if ($result->num_rows > 0) {
                                 
                             while ($row = $result->fetch_assoc()) { ?>
-                        
-                            <div class="b-goods-f b-goods-f_mod-a">
-                                <div class="b-goods-f__media">
-                                    <a href="https://automarketpanama.com/devtest/ultimos/public/detail?placa=<?php echo $row['LicensePlate']; ?>"><img class="b-goods-f__img img-scale" src="<?php echo $row["Photo"]; ?>" alt="foto" /></a>
-                                </div>
-                                <div class="b-goods-f__main">
-                                    <div class="b-goods-f__descrip">
-                                        <div class="b-goods-f__title"><span><?php echo $row["Make"]; ?></span></div>
-                                        <div class="b-goods-f__info"></div>
-                                        <ul class="b-goods-f__list list-unstyled">
-                                            <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> <?php echo $row["Km"]; ?>km</li>
-                                            <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Modelo: <?php echo $row["Model"]; ?></li>
-                                            <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> <?php echo $row["Transmission"]; ?></li>
-                                        </ul>
+                                <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                                    <div class="b-goods-f b-goods-f_mod-a" style="border-radius:10px;">
+                                        <div class="b-team__media"> <!-- b-goods-f__media -->
+                                            <img class="b-goods-f__img img-scale" draggable="false" width="445" height="333.75" src="<?php echo $row["Photo"]; ?>" alt="foto" />
+                                        </div>
+                                        <div class="b-goods-f__main">
+                                            <div class="b-goods-f__descrip">
+                                                <div class="">
+                                                    <span>
+                                                        <b>
+                                                        <h3 class="ui-title" style="margin:-10px;"><span style="color:#1b3b72;"><?php echo number_format($row["Price"], 2); ?></span></h3>
+                                                        <small style="font-size:10px;">Precio sin impuesto</small><br>
+                                                        <h5 style="color:black;"><?php echo $row["Make"]. ' ' . $row["Model"]; ?></h5>
+                                                        </b>
+                                                    </span>
+                                                </div>
+                                                <!--<div class="b-goods-f__info"></div>-->
+                                                <ul class="b-goods-f__list list-unstyled">
+                                                    <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i><?php echo $row["Km"]; ?>km</li>
+                                                    <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Año: <?php echo $row["Year"]; ?></li>
+                                                    <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i><?php echo trim($row["Transmission"]); ?></li>
+                                                </ul>
+                                            </div>
+                                            <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$<?php echo $row["PriceTax"]; ?></span></span>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$<?php echo $row["PriceTax"]; ?></span></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
+                                </a>
                         <?php 
                             }
                             
                         } else {
                             echo "No se encontraron resultados";
-                        }
-                         /* ?>
-                        <!-- end .b-goods-->
-                        <div class="b-goods-f b-goods-f_mod-a">
-                            <div class="b-goods-f__media">
-                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/2.jpg" alt="foto" /></a>
-                            </div>
-                            <div class="b-goods-f__main">
-                                <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><span>Ford Mustang SZ3</span></div>
-                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
-                                    <ul class="b-goods-f__list list-unstyled">
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
-                                    </ul>
-                                </div>
-                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end .b-goods-->
-                        <div class="b-goods-f b-goods-f_mod-a">
-                            <div class="b-goods-f__media">
-                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/3.jpg" alt="foto" /></a>
-                            </div>
-                            <div class="b-goods-f__main">
-                                <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><span>Mercedes Benz C Class</span></div>
-                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
-                                    <ul class="b-goods-f__list list-unstyled">
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
-                                    </ul>
-                                </div>
-                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end .b-goods-->
-                        <div class="b-goods-f b-goods-f_mod-a">
-                            <div class="b-goods-f__media">
-                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/4.jpg" alt="foto" /></a>
-                            </div>
-                            <div class="b-goods-f__main">
-                                <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><span>Skoda KodiaQ 2019</span></div>
-                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
-                                    <ul class="b-goods-f__list list-unstyled">
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
-                                    </ul>
-                                </div>
-                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end .b-goods-->
-                        <div class="b-goods-f b-goods-f_mod-a">
-                            <div class="b-goods-f__media">
-                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/1.jpg" alt="foto" /></a>
-                            </div>
-                            <div class="b-goods-f__main">
-                                <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><span>Audi Q2 L35 Quattro</span></div>
-                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
-                                    <ul class="b-goods-f__list list-unstyled">
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
-                                    </ul>
-                                </div>
-                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$45,800</span></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end .b-goods-->
-                        <div class="b-goods-f b-goods-f_mod-a">
-                            <div class="b-goods-f__media">
-                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/2.jpg" alt="foto" /></a>
-                            </div>
-                            <div class="b-goods-f__main">
-                                <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><span>Ford Mustang SZ3</span></div>
-                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
-                                    <ul class="b-goods-f__list list-unstyled">
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
-                                    </ul>
-                                </div>
-                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end .b-goods-->
-                        <div class="b-goods-f b-goods-f_mod-a">
-                            <div class="b-goods-f__media">
-                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/3.jpg" alt="foto" /></a>
-                            </div>
-                            <div class="b-goods-f__main">
-                                <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><span>Mercedes Benz C Class</span></div>
-                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
-                                    <ul class="b-goods-f__list list-unstyled">
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
-                                    </ul>
-                                </div>
-                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end .b-goods-->
-                        <div class="b-goods-f b-goods-f_mod-a">
-                            <div class="b-goods-f__media">
-                                <a href="#"><img class="b-goods-f__img img-scale" src="<?php echo BASEURL; ?>media/content/b-goods/375x300/4.jpg" alt="foto" /></a>
-                            </div>
-                            <div class="b-goods-f__main">
-                                <div class="b-goods-f__descrip">
-                                    <div class="b-goods-f__title"><span>Skoda KodiaQ 2019</span></div>
-                                    <div class="b-goods-f__info">Magna aliqua enim aduas veniam quis nostrud exercitation ullam laboris aliquip.</div>
-                                    <ul class="b-goods-f__list list-unstyled">
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i> 35,000km</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Model: 2017</li>
-                                        <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i> Auto - Petrol</li>
-                                    </ul>
-                                </div>
-                                <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$30,480</span></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end .b-goods--> <?php */ ?>
+                        } ?>
+                        
                     </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12"><a class="section-carousel__btn btn btn-primary" href="https://automarketpanama.com/devtest/ultimos/public/listing"><i class="ic icon-list"></i> Ver todos los vehiculos</a></div>
+                </div>
+            </section>
+            <section class="b-services section-default bg-light" style="background-color:white;">
+                <div class="container">
+                    <div class="row2 justify-content-center">
+                        <h1 class="ui-title col-12" style="margin:-10px; color:black; text-align:center;">
+                            ¡Tu próximo auto está a un solo clic!
+                        </h1>
+                        <br>
+                        <div class="col-12 d-flex justify-content-center">
+                            <a class="section-carousel__btn btn btn-primary" href="https://automarketpanama.com/public/listing">
+                                <i class="ic icon-list"></i> <b> VER INVENTARIO </b>
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
+
             <!-- end .b-carousel-->
+            <?php /* ?>
             <section class="b-services section-default bg-light">
                 <div class="container">
                     <div class="row">
@@ -457,7 +358,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="b-services__main">
-                                <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
+                                <div class="ui-title-slogan"><!--TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE--></div>
                                 <h2 class="ui-title">Servicios que <span class="text-primary"> Ofrecemos</span></h2>
                                 <div class="b-services-content tab-content" id="servicesTabContent">
 
@@ -496,20 +397,28 @@
                     </div>
                 </div>
             </section>
+            <?php */ ?>
             <!-- end .b-services-->
             <section class="b-bnr bg-dark">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-xl-6">
+                    <div class="row" style="text-align: center;">
+                        <div class="col-xl-12">
                             <div class="b-bnr__main">
-                                <h2 class="b-bnr__title">Conduce el Futuro, Hoy.</h2>
-                                <div class="b-bnr__info">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
+                                <h2 class="b-bnr__title" style="">¡TU PUEDES SER DUEÑO DE UN SEMINUEVO DE VERDAD!</h2>
+                                <div class="text-primary">pide tu cotizacion hoy<br></div>
                             </div>
                         </div>
-                        <div class="col-xl-6">
-                            <div class="b-bnr__second"><a class="btn btn-primary" href="https://automarketpanama.com/devtest/ultimos/public/listing">Ver inventario</a>
+                        <hr>
+                        <div class="col-xl-12 d-flex justify-content-center align-items-center">
+                            <div class="b-bnr__second"><!--<a class="btn btn-primary" href="https://automarketpanama.com/public/listing">Ver inventario</a>-->
                                 <div class="b-bnr-contacts">
-                                    <div class="b-bnr-contacts__info">Llamanos</div><a class="b-bnr-contacts__phone" href="tel:+507279-2789"><i class="ic icon-call-end text-primary"></i> +507 279-2789</a>
+                                    <div class="b-bnr-contacts__info">Contáctanos</div><a class="b-bnr-contacts__phone" href="tel:+5072792789"><i class="ic icon-call-end text-primary"></i> + 507 279-2789</a>
+                                </div>
+                                <div class="b-bnr-contacts">
+                                    <div class="b-bnr-contacts__info">Whatsapp</div><a class="b-bnr-contacts__phone" href="https://wa.me/50769590953" target="_blank"><i class="ic material-icons text-primary"><img width="40" src="<?php echo BASEURL; ?>media/icons/whatsapp.png" alt=""></i> + 507 6959-0953</a>
+                                </div>
+                                <div class="b-bnr-contacts">
+                                    <div class="b-bnr-contacts__info">Correo</div><a class="b-bnr-contacts__phone" href="mailto:ventas@automarketpan.com" target="_blank"><i class="ic icon-envelope text-primary"></i> ventas@automarketpan.com</a>
                                 </div>
                             </div>
                         </div>
@@ -521,30 +430,31 @@
                 <div class="container">
                     <ul class="b-progress-list row list-unstyled">
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Vehiculos en stock</span><span class="b-progress-list__percent js-chart" data-percent="200"><span class="js-percent"></span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__percent js-chart" data-percent="20"><span class="js-percent"></span><span>+</span></span><span class="b-progress-list__name">Años en el mercado</span>
                             </div>
                         </li>
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Concesionarios </span><span class="b-progress-list__percent js-chart" data-percent="4"><span class="js-percent"></span><span>+</span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__percent js-chart" data-percent="17500"><span class="js-percent"></span></span><span class="b-progress-list__name">Autos entregados</span>
                             </div>
                         </li>
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Unidades Vendidas</span><span class="b-progress-list__percent js-chart" data-percent="4568"><span class="js-percent"></span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__percent js-chart" data-percent="200"><span class="js-percent"></span></span><span class="b-progress-list__name">Autos disponibles</span>
                             </div>
                         </li>
                         <li class="b-progress-list__item col-md-3">
-                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__name">Años en el mercado</span><span class="b-progress-list__percent js-chart" data-percent="20"><span class="js-percent"></span><span>+</span></span>
+                            <div class="b-progress-list__wrap bg-light"><span class="b-progress-list__percent js-chart" data-percent="5"><span class="js-percent"></span><span>+</span></span><span class="b-progress-list__name">Sucursales </span>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
-            <!-- end .b-progress-->
+            <br>
+            <!-- end .b-progress--><?php  /*
             <section class="b-isotope section-default">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
+                            <div class="ui-title-slogan"><!--TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE--></div>
                             <h2 class="ui-title">Nuestros Vehiculos<span class="text-primary"> </span></h2>
                             <ul class="b-isotope-filter list-unstyled">
                                 <li class="current"><a href="" data-filter="*">Mostrar Todos</a></li>
@@ -723,19 +633,20 @@
                             </div>
                             <!-- end .b-goods-->
                         </li>
-                        <?php */ ?>
+                        <?php */ /* ?>
                     </ul>
                 </div>
-            </section>
+            </section> */ ?>
             <!-- end .b-isotope-->
+            <?php /* ?>
             <section class="b-steps section-default parallax">
                 <div class="b-steps__inner">
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <div class="ui-title-slogan">TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE</div>
-                                <h2 class="ui-title">Como AutoMarket<span class="text-primary"> Trabaja</span></h2>
-                                <ul class="b-steps-list list-unstyled row">
+                                <div class="ui-title-slogan"><!--TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE--></div>
+                                <h2 class="ui-title">Trabajamos con grandes <span class="text-primary"> aliados</span></h2>
+                                <!--<ul class="b-steps-list list-unstyled row">
                                     <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">01</span>
                                         <div class="b-steps-list__title">Busca en nuestro inventario</div>
                                         <div class="b-steps-list__info">Explora nuestro inventario extenso, encontrarás el vehículo perfecto para ti. Descubre calidad y variedad ahora mismo</div>
@@ -746,18 +657,59 @@
                                     </li>
                                     <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">03</span>
                                         <div class="b-steps-list__title">Habla con uno de nuestros agentes</div>
-                                        <div class="b-steps-list__info">Contacta a uno de nuestros expertos agentes hoy y encuentra el auto perfecto para ti en nuestro inventario.</div>
+                                        <div class="b-steps-list__info">Contácta a uno de nuestros expertos agentes hoy y encuentra el auto perfecto para ti en nuestro inventario.</div>
                                     </li>
                                     <li class="b-steps-list__item col-lg"><span class="b-steps-list__number">04</span>
                                         <div class="b-steps-list__title">Conduce tu nuevo vehiculo</div>
                                         <div class="b-steps-list__info">Conduce hacia una nueva aventura con tu vehículo elegido. Aquí, tu nuevo viaje comienza con nosotros.</div>
                                     </li>
-                                </ul>
+                                </ul>--> 
+                                    <div class="section-brands">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                <div class="section-brands__inner">
+                                                    <div class="b-brands-2 row">
+                                                    <div class="col-md col-12">
+                                                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/1.png" alt="foto"/></div>
+                                                    </div>
+                                                    <div class="col-md col-12">
+                                                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/2.png" alt="foto"/></div>
+                                                    </div>
+                                                    <div class="col-md col-12">
+                                                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/3.png" alt="foto"/></div>
+                                                    </div>
+                                                    <div class="col-md col-12">
+                                                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/4.png" alt="foto"/></div>
+                                                    </div>
+                                                    <div class="col-md col-12">
+                                                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/5.png" alt="foto"/></div>
+                                                    </div>
+                                                    <div class="col-md col-12">
+                                                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/6.png" alt="foto"/></div>
+                                                    </div>
+                                                    <div class="col-md col-12">
+                                                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/7.png" alt="foto"/></div>
+                                                    </div>
+                                                    <div class="col-md col-12">
+                                                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/8.png" alt="foto"/></div>
+                                                    </div>
+                                                    <div class="col-md col-12">
+                                                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/9.png" alt="foto"/></div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            
             <!-- end .b-steps-->
             <section class="b-bnr-2 section-default">
                 <div class="b-bnr-2__figure"><img class="b-bnr-2__img img-fluid" src="<?php echo BASEURL; ?>media/content/b-bnr/1.png" alt="auto" /></div>
@@ -765,7 +717,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="b-bnr-2__section b-bnr-2__section_first bg-dark">
-                                <h2 class="b-bnr-2__title">Quieres <br>comprar un auto seminuevo?</h2><a class="b-bnr-2__link" href="https://automarketpanama.com/devtest/ultimos/public/listing">Inicia buscando en nuestro inventario +200 vehiculos</a>
+                                <h2 class="b-bnr-2__title">Quieres <br>comprar un auto seminuevo?</h2><a class="b-bnr-2__link" href="https://automarketpanama.com/public/listing">Inicia buscando en nuestro inventario +200 vehiculos</a>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -777,6 +729,7 @@
                     </div>
                 </div>
             </section>
+            <?php */ ?>
             <!-- end .b-bnr-->
 
             <?php /* if ($uno->num_rows > 0) {
@@ -817,12 +770,13 @@
                 } */
             ?>
             <!-- end .b-goods-->
+            <?php /* ?>
             <section class="section-team section-default">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="text-center">
-                                <div class="ui-title-slogan">Te ayudamos a buscar el vehiculo perfecto</div>
+                                <div class="ui-title-slogan"><!--Te ayudamos a buscar el vehiculo perfecto--></div>
                                 <h2 class="ui-title">Nuestro equipo de <span class="text-primary"> Ventas</span></h2>
                             </div>
                         </div>
@@ -830,7 +784,7 @@
                     <div class="row">
                     <?php if ($vendedores4->num_rows > 0) {
                                 
-                            while ($row = $vendedores4->fetch_assoc()) { ?>
+                            while ($row = $vendedores4->fetch_assoc()) {  ?>
                         <div class="col-lg-3 col-md-6">
                             <div class="b-team">
                                 <div class="b-team__media">
@@ -838,14 +792,14 @@
                                     <ul class="b-team__soc list-unstyled">
 
                                         <li class="b-team__soc-item"><a class="b-team__soc-link" href="https://www.instagram.com/<?php echo $row["redSocial"]; ?>/"><i class="ic fab fa-instagram"></i></a></li>
-                                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="mailto:<?php echo $row["correo"]; ?>"><i class="ic fa fa-envelope"></i></a></li>
-                                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="<?php echo $row["urlLocation"]; ?>" target="_blank"><i class="ic icon-location-pin"></i></a></li>
+                                        <?php /* <li class="b-team__soc-item"><a class="b-team__soc-link" href="mailto:<?php echo $row["correo"]; ?>"><i class="ic fa fa-envelope"></i></a></li>
+                                        <li class="b-team__soc-item"><a class="b-team__soc-link" href="<?php echo $row["urlLocation"]; ?>" target="_blank"><i class="ic icon-location-pin"></i></a></li> */ /* ?>
                                     
                                     </ul>
                                 </div>
                                 <div class="b-team__inner bg-dark">
-                                    <div class="b-team__name"><?php echo $row["nombre"]; ?></div>
-                                    <div class="b-team__category"><?php echo $row["cargo"]; ?></div>
+                                    <div class="b-team__name"><?php if($row['id'] == 8){ echo strstr($row["nombre"], ' ', true); }else{ echo $row["nombre"]; } ?></div>
+                                    <div class="b-team__category"><?php echo utf8_encode($row["cargo"]); ?></div>
                                 </div>
                                 <div class="b-team__footer"><a class="b-team__phone" href="tel:+507<?php echo $row["celular"]; ?>"><i class="ic text-primary icon-call-end"></i> +507 <?php echo $row["celular"]; ?></a></div>
                             </div>
@@ -907,15 +861,16 @@
                         </div> -->
                     </div>
                 </div>
-            </section>
+            </section> <?php */ ?>
             <!-- end .b-team-->
+            <?php /* ?>
             <section class="section-reviews section-default parallax area-bg area-bg_dark">
                 <div class="area-bg__inner">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
                                 <div class="text-center">
-                                    <div class="ui-title-slogan">Te ayudamos a encontrar el auto perfecto</div>
+                                    <div class="ui-title-slogan"><!--Te ayudamos a encontrar el auto perfecto--></div>
                                     <h2 class="ui-title">Reseñas de nuestro clientes</h2><span class="section-reviews__decor">“</span>
                                 </div>
                             </div>
@@ -977,14 +932,15 @@
                     </div>
                 </div>
             </section>
+            <?php */ /* ?>
             <!-- end .b-reviews-->
             <section class="section-news section-default">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="text-center">
-                                <div class="ui-title-slogan">Te ayudamos a encontrar el auto perfecto</div>
-                                <h2 class="ui-title">Noticias &<span class="text-primary"> Articulos</span></h2>
+                                <div class="ui-title-slogan"><!--Te ayudamos a encontrar el auto perfecto--></div>
+                                <h2 class="ui-title">Noticias &<span class="text-primary"> Artículos</span></h2>
                             </div>
                         </div>
                     </div>
@@ -1003,7 +959,7 @@
                                         <div class="entry-content">
                                             <p>Panama Car Rental Celebra el Día Internacional de la Seguridad y Salud en el Trabajo y se certifica con la Norma ISO 45001:2018 - PUBLIRREPORTAJES...</p>
                                         </div>
-                                        <div class="entry-footer"><a class="entry-link btn-link" target="_blank" href="https://www.tvn-2.com/economia/empresas/publirreportajes/panama-car-rental-celebra-dia_1_2049663.html">Leer Articulo</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
+                                        <div class="entry-footer"><a class="entry-link btn-link" target="_blank" href="https://www.tvn-2.com/economia/empresas/publirreportajes/panama-car-rental-celebra-dia_1_2049663.html">Leer Articulo</a><span class="entry-views"><i class="ic icon-speech"></i> </span></div>
                                     </div>
                                 </section>
                                 <!-- end .post-->
@@ -1021,7 +977,7 @@
                                         <div class="entry-content">
                                             <p>Dollar Car Rental y Automarket Seminuevos reinaugura sucursal de Vía Israel | La Prensa Panamá. El pasado 11 de octubre, Grupo Panama Car Rental, celebró la reinauguració ...</p>
                                         </div>
-                                        <div class="entry-footer"><a class="entry-link btn-link" target="_blank" href="https://www.prensa.com/notas-de-prensa/dollar-car-rental-y-automarket-seminuevos-reinaugura-sucursal-de-via-israel/">Leer Articulo</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
+                                        <div class="entry-footer"><a class="entry-link btn-link" target="_blank" href="https://www.prensa.com/notas-de-prensa/dollar-car-rental-y-automarket-seminuevos-reinaugura-sucursal-de-via-israel/">Leer Articulo</a><span class="entry-views"><i class="ic icon-speech"></i> </span></div>
                                     </div>
                                 </section>
                                 <!-- end .post-->
@@ -1039,7 +995,7 @@
                                         <div class="entry-content">
                                             <p>Colocación de primera piedra: Centro y Taller Panamá Oeste Panama Car Rental. Panama Car Rental, empresa líder en la industria automotriz con más de 19 años en el mercado...</p>
                                         </div>
-                                        <div class="entry-footer"><a class="entry-link btn-link" target="_blank" href="https://radiopanama.com.pa/colocacion-de-primera-piedra-centro-y-taller-panama-oeste-panama-car-rental/">Leer Articulo</a><span class="entry-views"><i class="ic icon-speech"></i> 52</span></div>
+                                        <div class="entry-footer"><a class="entry-link btn-link" target="_blank" href="https://radiopanama.com.pa/colocacion-de-primera-piedra-centro-y-taller-panama-oeste-panama-car-rental/">Leer Articulo</a><span class="entry-views"><i class="ic icon-speech"></i> </span></div>
                                     </div>
                                 </section>
                                 <!-- end .post-->
@@ -1047,27 +1003,36 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="b-bnr-3 bg-dark">
+            </section> <?php */ ?>
+            <section class="bg-light" style="background-color:white;">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
-                            <h2 class="b-bnr-3__title ui-tilte">Ternemos el mejor precio del mercado</h2>
-                            <div class="b-bnr-3__info">Busca en nuestro inventario tu auto ideal</div><a class="b-bnr-3__btn btn btn-primary" href="https://automarketpanama.com/devtest/ultimos/public/listing">Ver inventario</a>
+                        <div class="col-6">
+                            <img src="<?php echo BASEURL; ?>media/ima/city.png" alt="" srcset="">
+                        </div>
+                        <div class="col-6 justify-content-center" style="text-align:center;">
+                        <br>
+                        <br>
+                            <h2 class="b-bnr-3__title ui-tilte" style="color:black;">Llévate tu seminuevo con financiamiento. </h2>
+                            <div class="b-bnr-3__info"></div><a class="b-bnr-3__btn btn btn-primary" href="https://automarketpanama.com/public/listing">Aplica aqui</a>
                         </div>
                     </div>
                 </div>
             </section>
+
+
             <!-- end .b-bnr-->
             <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
-            <?php if ($diesiseis->num_rows > 0) {
+                <?php if ($diesiseis->num_rows > 0) {
                     while ($row = $diesiseis->fetch_assoc()) { ?>
-                <div class="b-gallery__item">
-                    <!--<img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>-->
-                    <a href="https://automarketpanama.com/devtest/ultimos/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
-                        <img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" />
+                    <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                        <div class="b-gallery__item b-team__media"><!--  -->
+                            <!--<img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>-->
+                            <div style="">
+                                <img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" />
+                            </div>
+                        </div>
                     </a>
-                </div>
                 <?php
                     }
                 }

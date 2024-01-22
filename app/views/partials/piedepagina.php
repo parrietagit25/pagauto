@@ -16,15 +16,15 @@
         <div class="row">
         <div class="col-lg-4 col-sm-5">
             <div class="footer-section footer-section_info">
-            <div class="footer-info">Explorando excelencia en vehículos seminuevos, ofrecemos opciones variadas y accesibles para venta y alquiler. Cada auto garantiza calidad y confiabilidad, ideal para quienes buscan eficiencia y confor.</div>
-            <div class="footer-contacts">
-                <!--<div class="footer-contacts__item"><i class="ic icon-location-pin"></i>Fairview Ave, El Monte, CA 91732</div>-->
-                <div class="footer-contacts__item"><i class="ic icon-envelope"></i><a href="mailto:ventas@automarketpan.com">ventas@automarketpan.com</a></div>
-                <div class="footer-contacts__item"><i class="ic icon-earphones-alt"></i>Telefono:
-                
-                <a href="tel:+17553028549">+507 279-2789</a>
+                <div class="footer-info">Empresa líder en negocio automotriz. Dedicada a la compra y venta de autos seminuevos, alquiler de vehículos, renting, manejo de flota y taller con más de 20 años de experiencia en el mercado. <br>
+                Una empresa de Grupo Panama Car Rental. 
                 </div>
-            </div>
+                <div class="footer-contacts">
+                    <!--<div class="footer-contacts__item"><i class="ic icon-location-pin"></i>Fairview Ave, El Monte, CA 91732</div>-->
+                    <div class="footer-contacts__item"><i class="ic icon-envelope"></i><a href="mailto:ventas@automarketpan.com">ventas@automarketpan.com</a></div>
+                    <div class="footer-contacts__item"><i class="ic icon-earphones-alt"></i>Telefono:<a href="tel:+17553028549">+507 279-2789</a></div>
+                    <div class="footer-contacta__item"><i class="ic "><img width="20" src="<?php echo BASEURL; ?>media/icons/whatsapp.png" alt=""> </i> Whatsapp:+<a href="https://wa.me/50769590953" target="_blank" style="color:gray;"> 507 6959-0953</a></div>
+                </div>
             </div>
         </div>
         <div class="col-lg-4 col-sm-3">
@@ -36,7 +36,7 @@
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#">Inventario</a></li>
                     <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Contactanos</a></li>
+                    <li><a href="#">Contáctanos</a></li>
                 </ul>
                 </section>
             </div>
@@ -54,13 +54,13 @@
         </div>
         <div class="col-md-4">
             <section class="footer-section footer-section_subscribe">
-            <h3 class="footer-section__title">Subscribete</h3>
-            <form class="footer-form">
-                <div class="footer-form__info">Suscribete a nuestro voletin informativo para estar al tanto de nuestra ofertas.</div>
+            <h3 class="footer-section__title">Subscríbete</h3>
+            <form id="correo_cliente" class="footer-form" action="" method="post">
+                <div class="footer-form__info">Subscríbete a nuestro boletín informativo para recibir nuestras promociones.</div>
                 <div class="form-group">
-                <input class="footer-form__input form-control" type="email" placeholder="Tu correo">
+                <input class="footer-form__input form-control" type="email" placeholder="Tu correo" name="email_customer">
                 </div>
-                <button class="btn btn-sm btn-primary">Subscribete</button>
+                <button class="btn btn-sm btn-primary">Subscríbete</button>
             </form>
             </section>
         </div>
@@ -69,7 +69,7 @@
         <div class="col-12">
             <div class="footer-copyright">
             Copyrights (c) 2023 AutoMarket. Todos los derechos reservados.
-            <!-- <a class="footer-copyright__link" href="privacy-policy.html">Privacy Policy</a> -->
+            <a class="footer-copyright__link" href="https://automarketpanama.com/public/politicas">Política de Privacidad</a> 
             </div>
         </div>
         </div><span class="footer__btn-up js-scroll-top"><i class="ic fas fa-angle-up"></i><img src="assets/media/general/go_top.png" alt="go top"></span>

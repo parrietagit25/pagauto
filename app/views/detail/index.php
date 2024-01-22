@@ -1,6 +1,7 @@
 <?php $placa = $_GET['placa']; ?>
 <?php $datos_auto = get_data_car($placa);  ?>
-<?php $tipo_carro = get_tipo_carro(); ?>
+<?php $tipo_carro = get_tipo_carro();
+    $tipo_carro2 = get_tipo_carro(); ?>
 <?php include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <!-- Loader-->
     <div id="page-preloader"><span class="spinner border-t_second_b border-t_prim_a"></span></div>
@@ -21,7 +22,7 @@
                     <h1 class="b-title-page">Detalles del Auto</h1>
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="https://automarketpanama.com/public/">Inicio</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Detalles del Auto</li>
                       </ol>
                       <!-- end breadcrumb-->
@@ -43,14 +44,16 @@
             <section class="b-goods-f">
                 <div class="row">
                     <div class="col-lg-8">
-                    <div class="ui-subtitle"><?php echo $row['Make'].' '.$row['Model']; ?></div>
-                    <h1 class="ui-title text-uppercase"><?php echo $row['Transmission']; ?></h1>
+                    <div class="ui-subtitle"><?php echo $row['Transmission']; ?></div>
+                    <h1 class="ui-title text-uppercase"> <?php echo $row['Make'].' '.$row['Model']; ?></h1>
                     </div>
                     <div class="col-lg-4">
                         <div class="b-goods-f-price">
                             <div class="b-goods-f-price__inner">
-                            <div class="b-goods-f-price__msrp">Precio:<strong> $<?php echo number_format($row["Price"], 2); ?></strong></div>
-                            <div class="b-goods-f-price__main bg-primary">+ITBMS $<?php echo number_format($row["PriceTax"], 2); ?></div>
+                            <div class="b-goods-f-price__msrp">Precio:<strong> $<?php echo number_format($row["Price"], 2); ?></strong> <br> 
+                                                                      <strong>ITBMS $<?php echo number_format($row["PriceTax"] - $row["Price"], 2); ?></strong>
+                          </div>
+                            <div class="b-goods-f-price__main bg-primary"> <small style="font-size: 12px;"> +ITBMS</small> $<?php echo number_format($row["PriceTax"], 2); ?></div>
                             </div>
                             <div class="b-goods-f-price__note"></div>
                         </div>
@@ -59,13 +62,36 @@
 
               <div class="row">
                 <div class="col-lg-8">
-                  <div class="b-goods-f__links"><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-map-marker-alt text-primary"></i>Panamá, <?php echo $row['LocationName']; ?></a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-question text-primary"></i>Necesitas mas informacion</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-star text-primary"></i>Agregar a favoritos</a><a class="b-goods-f__links-item" href="#"><i class="ic fas fa-car-side text-primary"></i>Prueba de manejo</a><a class="b-goods-f__links-item" href="email:test@test.test"><i class="ic fas fa-envelope text-primary"></i>Enviar a un amigo</a></div>
-                    <div class="b-goods-f__slider">
-                        <iframe id="miIframe" src="https://spins.impel.io/automarketpanama/<?php echo $placa; ?>" width="600" height="400" style="border:none; display:none;" 
+                  
+                  <div class="b-goods-f__links">
+                    <a class="b-goods-f__links-item" href="#">
+                      <i class="ic fas fa-map-marker-alt text-primary"></i>
+                        Panamá, <?php echo $row['LocationName']; ?>
+                    </a>
+                    <!--<a class="b-goods-f__links-item" href="#">
+                      <i class="ic fas fa-question text-primary"></i>
+                        Necesitas más información
+                    </a>-->
+                    <a class="b-goods-f__links-item" href="#">
+                      <i class="ic fas fa-star text-primary"></i>
+                        Agregar a favoritos
+                    </a>
+                    <a class="b-goods-f__links-item" href="#">
+                      <i class="ic fas fa-car-side text-primary"></i>
+                        Prueba de manejo
+                    </a>
+                    <a class="b-goods-f__links-item" href="mailto:ventas@automarket.com?subject=Solicitud de Información&body=Estoy interesado en obtener más información acerca de https://automarketpanama.com/public/detail?placa=<?php echo $placa; ?>">
+                      <i class="ic fas fa-envelope text-primary"></i>
+                        Solicitar más información
+                    </a>
+                  </div>
+
+                    <div class="b-goods-f__slider "><!-- b-goods-f__slider 
+                        <img id="imagenDefault" src="<?php //echo $row['Photo']; ?>" style="display:block; width: 600px; height: 400px;" />-->
+                        <iframe id="miIframe" src="https://spins.impel.io/automarketpanama/<?php echo strtolower($placa); ?>" width="600" height="400" style="border:none; display:block;" 
                                 onload="checkIframeLoaded();" onerror="showDefaultImage();">
                             Tu navegador no soporta iframes.
                         </iframe>
-                        <img id="imagenDefault" src="<?php echo $row['Photo']; ?>" style="display:block; width: 600px; height: 400px;" />
                     </div>
                   <h2 class="b-goods-f__title">Descripcion del auto</h2>
                   <div class="row">
@@ -84,6 +110,9 @@
                         <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Transmission</dt>
                         <dd class="b-goods-f__descr-info col-lg-7 col-md-12"><?php echo $row['Transmission']; ?></dd>
                       </dl>
+                    </div>
+                    <div class="col-md-6">
+                        
                     </div>
                   </div>
                   <!--<ul class="nav nav-tabs nav-vehicle-detail-tabs" id="myTab" role="tablist">
@@ -129,22 +158,22 @@
 
                    if($row['LocationName'] == 'Tumba Muerto'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/devtest/ultimos/public/assets/media/imaGoo/tumbamuerto.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/tumbamuerto.jpg" alt="foto"/>
                        <p>Sucursal de Tumba Muerto <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php }elseif($row['LocationName'] == 'David'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/devtest/ultimos/public/assets/media/imaGoo/david.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/david.jpg" alt="foto"/>
                       <p>Sucursal de David <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php }elseif($row['LocationName'] == 'Via Israel'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/devtest/ultimos/public/assets/media/imaGoo/viaizrrael.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/viaizrrael.jpg" alt="foto"/>
                       <p>Sucursal de Vía Israel <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php }elseif($row['LocationName'] == 'Chorrera'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/devtest/ultimos/public/assets/media/imaGoo/costaverde.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/costaverde.jpg" alt="foto"/>
                       <p>Sucursal de Costa Verde <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php } ?>
@@ -156,7 +185,7 @@
                         </div>
                       </div>
                       <div class="b-seller__main"><i class="b-seller__ic fas fa-phone text-primary"></i>
-                        <div class="b-seller__contact"><span class="d-block">Contacto </span><a class="b-seller__phone" href="tel:12584037961">+507 <?php echo $vendedor['celular']; ?></a></div>
+                        <div class="b-seller__contact"><span class="d-block">Contacto </span><a class="b-seller__phone" href="tel:12584037961">+507 <?php //echo $vendedor['celular']; ?></a></div>
                         <ul class="b-seller-soc list-unstyled">
                           <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-twitter"></i></a></li>
                           <li class="b-seller-soc__item"><a class="b-seller-soc__link" href="#" target="_blank"><i class="ic fab fa-facebook"></i></a></li>

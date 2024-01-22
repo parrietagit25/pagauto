@@ -1,5 +1,14 @@
 <?php 
 $tipo_carro = get_tipo_carro();
+$tipo_carro2 = get_tipo_carro();
+if (isset($_POST['nombre'])) {
+  formulario_contacto($_POST['nombre'], $_POST['email'], $_POST['telefono'], $_POST['quebusca'], $_POST['detalles']);
+  ?>
+  <script>
+    alert("Mensaje Enviado");
+  </script>
+  <?php 
+}
 include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                
     <!-- Loader-->
@@ -19,11 +28,11 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
               <div class="row">
                 <div class="col offset-lg-3">
                   <div class="b-title-page__wrap">
-                    <h1 class="b-title-page">Contactanos</h1>
+                    <h1 class="b-title-page">Contáctanos</h1>
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/automarket/public/">Inicio</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Contactanos</li>
+                        <li class="breadcrumb-item"><a href="https://automarketpanama.com/public/">Inicio</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contáctanos</li>
                       </ol>
                       <!-- end breadcrumb-->
                     </nav>
@@ -89,24 +98,24 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
             <div class="row">
               <div class="col-md-6">
                 <section class="section-form-contacts">
-                  <h2 class="ui-title-inner">Escribenos <span class="text-primary"> </span></h2>
-                  <p>Rellena el siguiente formulario y uno de nuestros representantes contactará contigo en breve.</p>
+                  <!--<h2 class="ui-title-inner">Escribenos <span class="text-primary"> </span></h2>
+                  <p>Rellena el siguiente formulario y uno de nuestros representantes contactará contigo en breve.</p>-->
                   <div id="success"></div>
-                  <form class="b-form-contacts ui-form" id="contactForm" action="#" method="post">
+                  <!--<form class="b-form-contacts ui-form" id="contactForm" action="#" method="post">
                     <div class="form-group">
-                      <input class="form-control" id="user-name" type="text" name="user-name" placeholder="¿Cómo te llamas?" required="required"/>
+                      <input class="form-control" id="user-name" type="text" name="nombre" placeholder="¿Cómo te llamas?" required="required"/>
                     </div>
                     <div class="form-group">
-                      <input class="form-control" id="user-email" type="email" name="user-email" placeholder="¿Cuál es tu dirección de correo electrónico?"/>
+                      <input class="form-control" id="user-email" type="email" name="email" placeholder="¿Cuál es tu dirección de correo electrónico?"/>
                     </div>
                     <div class="form-group">
-                      <input class="form-control" id="user-email" type="email" name="user-email" placeholder="¿Cuál es tu número de teléfono? (opcional)"/>
+                      <input class="form-control" id="user-email" type="text" name="telefono" placeholder="¿Cuál es tu número de teléfono? (opcional)"/>
                     </div>
                     <div class="form-group">
-                      <input class="form-control" id="user-email" type="email" name="user-email" placeholder="¿Qué estás buscando?"/>
+                      <input class="form-control" id="user-email" type="text" name="quebusca" placeholder="¿Qué estás buscando?"/>
                     </div>
                     <div class="form-group">
-                      <textarea class="form-control" id="user-message" rows="5" placeholder="En que modelo de carro esta interesado/a? (opcional)" required="required"></textarea>
+                      <textarea class="form-control" name="detalles" id="user-message" rows="5" placeholder="En que modelo de carro esta interesado/a? (opcional)" required="required"></textarea>
                     </div>
                     <button class="btn btn-primary">Enviar</button>
                     <br>
@@ -114,7 +123,8 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                       Nunca compartas información confidencial (números de tarjetas de crédito, números de identificación personal, contraseñas) a través de este formulario. <br>
                       Este sitio está protegido por reCAPTCHA y se aplica la <a href="https://policies.google.com/privacy?hl=es">Política de privacidad</a> y las <a href="https://policies.google.com/terms?hl=es">Condiciones de servicio</a> de Google.
                     </small>
-                  </form>
+                  </form>-->
+                  <div class="pipedriveWebForms b-form-contacts ui-form" data-pd-webforms="https://webforms.pipedrive.com/f/30YpKWrA7vgJy7e4b5ECKq0ffWK2mGCUl9i11tqBbBwBPX5BI5saqtBLbUsvUUPfB"><script src="https://webforms.pipedrive.com/f/loader"></script></div>
                 </section>
                 <!-- end .b-form-contact-->
               </div>

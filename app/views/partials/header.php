@@ -44,6 +44,7 @@
         .nav-item .dropdown-menu {
             position: absolute;  
             z-index: 1000;
+            !important;
         }
 
         #form_buscado {

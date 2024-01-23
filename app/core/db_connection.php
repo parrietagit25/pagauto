@@ -122,7 +122,17 @@ function all_car($marca, $modelo, $tipo_vehiculo, $desde, $hasta, $transmision, 
 function get_marcas(){
 
     $conn = conectarDB();
-    $sql = "SELECT Make FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY Make";
+    $sql = "SELECT Make, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY Make";
+    $result = $conn->query($sql);
+    cerrarDB($conn);
+    return $result;
+
+}
+
+function get_marcas_filtros(){
+
+    $conn = conectarDB();
+    $sql = "SELECT Make, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY Make";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -142,7 +152,7 @@ function get_modelos(){
 function get_tipo_carro(){
 
     $conn = conectarDB();
-    $sql = "SELECT CarType FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY CarType";
+    $sql = "SELECT CarType, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY CarType";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -224,6 +234,32 @@ function get_marcas_formulario_principal($marca){
     cerrarDB($conn);
     return $result;
 
+}
+
+function get_ubicacion_filtro(){
+
+    $conn = conectarDB();
+    $sql = "SELECT LocationName FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY LocationName";
+    $result = $conn->query($sql);
+    cerrarDB($conn);
+    return $result;
+
+}
+
+function total_registros(){
+
+    $conn = conectarDB();
+    $resultado = $conn->query("SELECT COUNT(*) AS total FROM tabla");
+    $fila = $resultado->fetch_assoc();
+    $total_registros = $fila['total'];
+    return $total_registros;
+}
+
+function reg_pag_actual(inicio, $registros_por_pagina){
+    $conn = conectarDB();
+    $sql = "SELECT * FROM tabla LIMIT $inicio, $registros_por_pagina";
+    $resultado = $conexion->query($sql);
+    return $total_registresultadoros;
 }
 
 ?>

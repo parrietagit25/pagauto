@@ -78,7 +78,7 @@
                                 <button class="menu-mobile-button js-toggle-mobile-slidebar toggle-menu-button d-lg-none"><i class="toggle-menu-button-icon"><span></span><span></span><span></span><span></span><span></span><span></span></i></button>
                             </div>
                             <div class="col-lg d-none d-lg-block">
-                                <nav class="navbar navbar-expand-md justify-content-end" id="nav">
+                                <nav class="navbar navbar-expand-md justify-content-end" id="nav" style="z-index: 999;">
                                     <ul class="yamm main-menu navbar-nav">
                                         <li class="nav-item active"><a class="nav-link" href="/dev/public/">Inicio<span class="sr-only"></span></a></li>
                                         <li class="nav-item dropdown">
@@ -95,55 +95,55 @@
                                         <li class="nav-item"><a class="nav-link" href="/dev/public/about">Sobre Nosotros</a></li>
                                         <li class="nav-item"><a class="nav-link" href="/dev/public/contact">Contáctanos</a></li>
                                     </ul><a id="todo_inventario" class="btn btn-primary btn-sm col-auto" href="https://automarketpanama.com/dev/public/listing" style=""><i class="ic icon-list"></i> Ver Inventario</a>
-                                    
                                 </nav>
-                                <form id="form_buscado" class="form-buscador" method="get" action="https://automarketpanama.com/dev/public/listing">
-                                    <input type="hidden" name="buscador" value="1">
-                                    <div class="row">
 
-                                        <div class="col-3">
-                                            <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
-                                            <div class="">
-                                                <select name="marca" class="form-control" onchange="buscar_modelo(this.value)">
-                                                    <option value=''>Seleccionar</option>
-                                                    <?php while ($marca = $todas_marcas->fetch_assoc()) { ?>
-                                                        <option value="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?></option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
-                                            <div class="">
-                                                <select name="modelo" data-width="100%" class="form-control" id="marca_select">
-                                                    <option value=''>Seleccionar</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="b-find__label"><span class="b-find__number">03</span> Rango de Precio</div>
-                                            <div class="">
-                                                <select name="precio_max" class="form-control">
-                                                    <option value=''>Seleccionar</option>
-                                                    <option value="9000">Max $9,000</option>
-                                                    <option value="20000">Max $20,000</option>
-                                                    <option value="30000">Max $30,000</option>
-                                                    <option value="50000">Max $50,000</option>
-                                                    <option value="70000">Max $70,000</option>
-                                                    <option value="100000">Max $100,000</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="b-find__label"><span class="b-find__number"></div>
-                                            <div class="">
-                                                <input type="submit" class="b-find__btn btn btn-primary" value="Buscar">
-                                            </div>
-                                        </div>
+                               
+                                    <form id="form_buscado" class="form-buscador" method="get" action="https://automarketpanama.com/dev/public/listing">
+                                        <input type="hidden" name="buscador" value="1">
+                                        <div class="row">
 
-                                    </div>
-                                    
-                                </form>
+                                            <div class="col-3">
+                                                <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
+                                                <div class="">
+                                                    <select name="marca" class="form-control" onchange="buscar_modelo(this.value)">
+                                                        <option value=''>Seleccionar</option>
+                                                        <?php while ($marca = $todas_marcas->fetch_assoc()) { ?>
+                                                            <option value="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
+                                                <div class="">
+                                                    <select name="modelo" data-width="100%" class="form-control" id="marca_select">
+                                                        <option value=''>Seleccionar</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="b-find__label"><span class="b-find__number">03</span> Rango de Precio</div>
+                                                <div class="">
+                                                    <select name="precio_max" class="form-control">
+                                                        <option value=''>Seleccionar</option>
+                                                        <option value="9000">Max $9,000</option>
+                                                        <option value="20000">Max $20,000</option>
+                                                        <option value="30000">Max $30,000</option>
+                                                        <option value="50000">Max $50,000</option>
+                                                        <option value="70000">Max $70,000</option>
+                                                        <option value="100000">Max $100,000</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="b-find__label"><span class="b-find__number"></div>
+                                                <div class="">
+                                                    <input type="submit" class="b-find__btn btn btn-primary" value="Buscar">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                
                             </div>
                         </div>
                     </div>

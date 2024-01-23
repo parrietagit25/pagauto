@@ -1,7 +1,7 @@
 <?php $placa = $_GET['placa']; ?>
 <?php $datos_auto = get_data_car($placa);  ?>
 <?php $tipo_carro = get_tipo_carro();
-    $tipo_carro2 = get_tipo_carro(); ?>
+      $tipo_carro2 = get_tipo_carro(); ?>
 <?php include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <!-- Loader-->
     <div id="page-preloader"><span class="spinner border-t_second_b border-t_prim_a"></span></div>

@@ -11,6 +11,7 @@
       $todos_modelos = get_modelos();
       $tipo_carro = get_tipo_carro();
       $tipo_carro2 = get_tipo_carro(); 
+      
        ?>
 <?php include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <!-- Loader-->
@@ -337,37 +338,46 @@
 
                   if ($result->num_rows > 0) {
                           
-                      while ($row = $result->fetch_assoc()) { ?>
-                          <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                      while ($row = $result->fetch_assoc()) {
+
+                        $precios_similare = get_precios_similares($row["Price"]);
+                        
+                          while ($precios_similares = $precios_similare->fetch_assoc()) { 
+                          
+                        ?>
+
+                          <a href="https://automarketpanama.com/public/detail?placa=<?php echo $precios_similares['LicensePlate']; ?>">
                               <div class="b-goods-f b-goods-f_mod-a" style="border-radius:10px;">
                                   <div class="b-team__media"> <!-- b-goods-f__media -->
-                                      <img class="b-goods-f__img img-scale" draggable="false" width="445" height="333.75" src="<?php echo $row["Photo"]; ?>" alt="foto" />
+                                      <img class="b-goods-f__img img-scale" draggable="false" width="445" height="333.75" src="<?php echo $precios_similares["Photo"]; ?>" alt="foto" />
                                   </div>
                                   <div class="b-goods-f__main">
                                       <div class="b-goods-f__descrip">
                                           <div class="">
                                               <span>
                                                   <b>
-                                                  <h3 class="ui-title" style="margin:-10px;"><span style="color:#1b3b72;"><?php echo number_format($row["Price"], 2); ?></span></h3>
+                                                  <h3 class="ui-title" style="margin:-10px;"><span style="color:#1b3b72;"><?php echo number_format($precios_similares["Price"], 2); ?></span></h3>
                                                   <small style="font-size:10px;">Precio sin impuesto</small><br>
-                                                  <h5 style="color:black;"><?php echo $row["Make"]. ' ' . $row["Model"]; ?></h5>
+                                                  <h5 style="color:black;"><?php echo $precios_similares["Make"]. ' ' . $precios_similares["Model"]; ?></h5>
                                                   </b>
                                               </span>
                                           </div>
                                           <!--<div class="b-goods-f__info"></div>-->
                                           <ul class="b-goods-f__list list-unstyled">
-                                              <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i><?php echo $row["Km"]; ?>km</li>
-                                              <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Año: <?php echo $row["Year"]; ?></li>
-                                              <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i><?php echo trim($row["Transmission"]); ?></li>
+                                              <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i><?php echo $precios_similares["Km"]; ?>km</li>
+                                              <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Año: <?php echo $precios_similares["Year"]; ?></li>
+                                              <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i><?php echo trim($precios_similares["Transmission"]); ?></li>
                                           </ul>
                                       </div>
-                                      <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$<?php echo $row["PriceTax"]; ?></span></span>
+                                      <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$<?php echo $precios_similares["PriceTax"]; ?></span></span>
                                           </span>
                                       </div>
                                   </div>
                               </div>
                           </a>
                   <?php 
+                          }
+
                       }
                       
                   } else {

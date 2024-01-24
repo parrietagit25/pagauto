@@ -249,17 +249,17 @@ function get_ubicacion_filtro(){
 function total_registros(){
 
     $conn = conectarDB();
-    $resultado = $conn->query("SELECT COUNT(*) AS total FROM tabla");
+    $resultado = $conn->query("SELECT COUNT(*) AS total FROM Automarket_Invs_web WHERE Photo NOT IN ('')");
     $fila = $resultado->fetch_assoc();
     $total_registros = $fila['total'];
     return $total_registros;
 }
 
-function reg_pag_actual(inicio, $registros_por_pagina){
+function reg_pag_actual($inicio, $registros_por_pagina){
     $conn = conectarDB();
-    $sql = "SELECT * FROM tabla LIMIT $inicio, $registros_por_pagina";
-    $resultado = $conexion->query($sql);
-    return $total_registresultadoros;
+    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') LIMIT $inicio, $registros_por_pagina";
+    $resultado = $conn->query($sql);
+    return $resultado;
 }
 
 ?>

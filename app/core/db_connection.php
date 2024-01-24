@@ -255,18 +255,11 @@ function total_registros(){
     return $total_registros;
 }
 
-function reg_pag_actual($inicio, $registros_por_pagina){
+function reg_pag_actual(inicio, $registros_por_pagina){
     $conn = conectarDB();
-    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') LIMIT $inicio, $registros_por_pagina";
-    $resultado = $conn->query($sql);
-    return $resultado;
-}
-
-function get_autos_precio_similar($precio){
-    $conn = conectarDB();
-    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') and Price like %$precio%";
-    $resultado = $conn->query($sql);
-    return $resultado;
+    $sql = "SELECT * FROM tabla LIMIT $inicio, $registros_por_pagina";
+    $resultado = $conexion->query($sql);
+    return $total_registresultadoros;
 }
 
 ?>

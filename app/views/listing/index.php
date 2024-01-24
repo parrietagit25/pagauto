@@ -12,14 +12,14 @@
 <?php $filtro_ubicacion = get_ubicacion_filtro(); ?>
 <?php // paginador 
 
-$total_registros = otal_registros();
+$total_registros = total_registros();
 $registros_por_pagina = 9;
 $numero_paginas = ceil($total_registros / $registros_por_pagina);
 $pagina_actual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 $pagina_actual = max($pagina_actual, 1);
 $pagina_actual = min($pagina_actual, $numero_paginas);
 $inicio = ($pagina_actual - 1) * $registros_por_pagina;
-$registros_pag_actual = reg_pag_actual();
+$registros_pag_actual = reg_pag_actual($inicio, $registros_por_pagina);
 
 ?>
 <?php include(ROOT_PATH . '/app/views/partials/header.php'); ?>
@@ -57,67 +57,6 @@ $registros_pag_actual = reg_pag_actual();
                       <div class="widget-inner">
                         <form id="buscar" class="b-filter bg-light">
                           <div class="b-filter__main">
-                            <?php /*
-                            <div class="b-filter__row">
-                              <select class="selectpicker" name="marca" data-width="100%" title="Seleccionar Marca" multiple="multiple" data-max-options="1" data-style="ui-select" onchange="buscar_modelo(this.value)">
-                                <?php while ($marca = $todas_marcas->fetch_assoc()) { ?>
-                                <option value="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?></option>
-                                <?php } ?>
-                              </select>
-                            </div>
-                            <div class="b-filter__row">
-                              <select class="form-control" id="marca_select" name="modelo" data-width="100%" title="Seleccionar Modelo" data-max-options="1" data-style="ui-select">
-                                <option value="">Seleccionar</option>
-                                <?php /* while ($modelos = $todos_modelos->fetch_assoc()) { ?>
-                                <option value="<?php echo $modelos['Model']; ?>"><?php echo $modelos['Model']; ?></option>
-                                <?php } */ /* ?>
-                              </select>
-                            </div>
-                            <div class="b-filter__row">
-                              <select class="selectpicker" name="tipo_vehiculo" data-width="100%" title="Tipo de vehiculo" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                <?php while ($tipo = $tipo_carro->fetch_assoc()) { ?>
-                                <option value="<?php echo $tipo['CarType']; ?>"><?php echo $tipo['CarType']; ?></option>
-                                <?php } ?>
-                              </select>
-                            </div>
-                            <div class="b-filter__row row">
-                              <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
-                                <select class="selectpicker" name="desde" data-width="100%" title="Desde" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                  <?php while ($desde = $anio_desde->fetch_assoc()) { ?>
-                                  <option value="<?php echo $desde['Year']; ?>"><?php echo $desde['Year']; ?></option>
-                                  <?php } ?>
-                                </select>
-                              </div>
-                              <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
-                                <select class="selectpicker" name="hasta" data-width="100%" title="Hasta" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                  <?php while ($hasta = $anio_hasta->fetch_assoc()) { ?>
-                                  <option value="<?php echo $hasta['Year']; ?>"><?php echo $hasta['Year']; ?></option>
-                                  <?php } ?>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="b-filter__row">
-                              <select class="selectpicker" name="transmision" data-width="100%" title="Transmision" multiple="multiple" data-max-options="1" data-style="ui-select">
-                                <?php while ($transmision = $all_transmision->fetch_assoc()) { ?>
-                                  <option value="<?php echo $transmision['Transmission']; ?>"><?php echo $transmision['Transmission']; ?></option>
-                                <?php } ?>
-                              </select>
-                            </div>
-                            <?php */ /* ?>
-                          </div>
-                          <div class="b-filter-slider ui-filter-slider">
-                            <div class="b-filter-slider__title">Precio</div>
-                            <div class="b-filter-slider__main">
-                              <div id="filterPrice"></div>
-                              <div class="b-filter__row row">
-                                <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
-                                  <input class="ui-select" id="input-with-keypress-0" name="min"/>
-                                </div>
-                                <div class="b-filter__item col-md-6 col-lg-12 col-xl-6">
-                                  <input class="ui-select" id="input-with-keypress-1" name="max"/>
-                                </div>
-                              </div>
-                            </div> <?php */ ?>
                             <div class="b-filter__row">
                             <h2>Marca</h2>
                             
@@ -144,67 +83,16 @@ $registros_pag_actual = reg_pag_actual();
                             <?php } ?>
 
                             <h2>Precio</h2>
-
                             <a href="">10,000 a 29,999</a> <br>
                             <a href="">30,000 a 59,999</a> <br>
                             <a href="">60,000 a 89,999</a> <br>
                             <a href="">90,000 a 150,000</a>
-
                             </div>
-
                           </div>
-                          <!--<button class="b-filter__reset btn btn-default w-100" type="button">Limpiar Filtros</button>
-                          <button class="btn btn-primary w-100">Buscar</button>-->
                         </form>
                       </div>
                     </div>
                   </div>
-                  <!-- end .b-filter--><?php /* ?>
-                  <section class="widget b-brands section-sidebar">
-                    <h3 class="widget-title bg-dark"><i class="ic flaticon-car-4"></i>Marcas Populares</h3>
-                    <div class="widget-content">
-                      <div class="b-brands__main d-flex flex-wrap">
-                        <!--<a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=HONDA&menu=1">
-                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/1.png" alt="foto"/>
-                        </a>
-                        <a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=HYUNDAI&menu=1">
-                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/2.png" alt="foto"/>
-                        </a>
-                        <a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=KIA&menu=1">
-                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/3.png" alt="foto"/>
-                        </a>
-                        <a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=LAND ROVER&menu=1">
-                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/4.png" alt="foto"/>
-                        </a>
-                        <a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=NISSAN&menu=1">
-                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/5.png" alt="foto"/>
-                        </a>
-                        <a class="b-brands__item" href="https://automarketpanama.com/public/listing?marca=TOYOTA&menu=1">
-                          <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/6.png" alt="foto"/>
-                        </a> -->
-
-
-                        <a class="b-brands__item" href="#" data-marca="HONDA" data-menu="1">
-                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/1.png" alt="foto"/>
-                        </a>
-                        <a class="b-brands__item" href="#" data-marca="HYUNDAI" data-menu="1">
-                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/2.png" alt="foto"/>
-                        </a>
-                        <a class="b-brands__item" href="#" data-marca="KIA" data-menu="1">
-                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/3.png" alt="foto"/>
-                        </a>
-                        <!--<a class="b-brands__item" href="#" data-marca="LAND ROVER" data-menu="1">
-                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/4.png" alt="foto"/>
-                        </a>-->
-                        <a class="b-brands__item" href="#" data-marca="NISSAN" data-menu="1">
-                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/5.png" alt="foto"/>
-                        </a>
-                        <a class="b-brands__item" href="#" data-marca="TOYOTA" data-menu="1">
-                            <img class="b-brands__img img-fluid" src="assets/media/content/b-brands/6.png" alt="foto"/>
-                        </a>
-                      </div>
-                    </div>
-                  </section> <?php */ ?>
                 </aside>
               </div>
 
@@ -338,9 +226,9 @@ $registros_pag_actual = reg_pag_actual();
                     
                     }else{
 
-                        if ($todos_carros->num_rows > 0) {
+                        if ($registros_pag_actual->num_rows > 0) {
                                 
-                            while ($row = $todos_carros->fetch_assoc()) { ?>
+                            while ($row = $registros_pag_actual->fetch_assoc()) { ?>
 
                               <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
                                 <div class="b-goods-f col-lg-4 col-md-6">
@@ -383,64 +271,38 @@ $registros_pag_actual = reg_pag_actual();
                                     </div>
                                 </div>
                               </a>
-
-                      <?php /*
-
-                      <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
-                          <div class="b-goods-f b-goods-f_mod-a" style="border-radius:10px;">
-                              <div class="b-team__media"> <!-- b-goods-f__media -->
-                                  <img class="b-goods-f__img img-scale" draggable="false" width="445" height="333.75" src="<?php echo $row["Photo"]; ?>" alt="foto" />
-                              </div>
-                              <div class="b-goods-f__main">
-                                  <div class="b-goods-f__descrip">
-                                      <div class="">
-                                          <span>
-                                              <b>
-                                              <h3 class="ui-title" style="margin:-10px;"><span style="color:#1b3b72;"><?php echo number_format($row["Price"], 2); ?></span></h3>
-                                              <small style="font-size:10px;">Precio sin impuesto</small><br>
-                                              <h5 style="color:black;"><?php echo $row["Make"]. ' ' . $row["Model"]; ?></h5>
-                                              </b>
-                                          </span>
-                                      </div>
-                                      <!--<div class="b-goods-f__info"></div>-->
-                                      <ul class="b-goods-f__list list-unstyled">
-                                          <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i><?php echo $row["Km"]; ?>km</li>
-                                          <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Año: <?php echo $row["Year"]; ?></li>
-                                          <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i><?php echo trim($row["Transmission"]); ?></li>
-                                      </ul>
-                                  </div>
-                                  <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$<?php echo $row["PriceTax"]; ?></span></span>
-                                      </span>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>> */ ?>
-
-
                         <?php 
                          }
                      } 
                     
                   } ?>
-                  <!--</spam>-->
-
                 </main>
-                <!--<nav aria-label="Page navigation">
-                  <ul class="pagination justify-content-center">
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span class="ic fas fa-angle-double-right" aria-hidden="true"></span></a></li>
-                  </ul>
-                </nav>-->
+                <div style="text-align: center;">
+                  <?php if(!isset($_GET['pagina'])){  }else{ ?>
+                  <a href="?pagina=<?php echo $_GET['pagina'] - 1; ?>"> << </a> <?php } ?>
+                  <?php for ($pagina = 1; $pagina <= $numero_paginas; $pagina++) {
+
+                              if ($pagina == $_GET['pagina']) {
+                                $class = 'class="btn-sm btn-primary"';
+                              }else {
+                                $class = '';
+                              }
+
+                              if (!isset($_GET['pagina']) && $pagina == 1) {
+                                $class = 'class="btn-sm btn-primary"';
+                              }
+
+                              echo '<a '.$class.' href="?pagina=' . $pagina . '">' . $pagina . '</a> ';
+                          } ?>
+
+                  <?php if(!isset($_GET['pagina'])){ $siguiente=1; }else{ $siguiente = $_GET['pagina']; } ?>
+                  <a href="?pagina=<?php echo $siguiente + 1; ?>"> >> </a>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
-
-
           <section class="bg-light" style="background-color:white;">
             <div class="container">
                 <div class="row">

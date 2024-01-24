@@ -1,7 +1,17 @@
 <?php $placa = $_GET['placa']; ?>
 <?php $datos_auto = get_data_car($placa);  ?>
-<?php $tipo_carro = get_tipo_carro();
-      $tipo_carro2 = get_tipo_carro(); ?>
+<?php $result = obtenerDatos(8);
+      $seis = obtener6Mark();
+      $tres = obtenerDatos(3);
+      $diesiseis = obtenerDatos(16);
+      $uno = obtenerDatos(1);
+      $marcas = obtenerMarcas();
+      $vendedores4 = obtenerVendedores(4);
+      $todas_marcas = get_marcas();
+      $todos_modelos = get_modelos();
+      $tipo_carro = get_tipo_carro();
+      $tipo_carro2 = get_tipo_carro(); 
+       ?>
 <?php include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <!-- Loader-->
     <div id="page-preloader"><span class="spinner border-t_second_b border-t_prim_a"></span></div>
@@ -43,10 +53,11 @@
 
             <section class="b-goods-f">
                 <div class="row">
-                    <div class="col-lg-8">
-                    <div class="ui-subtitle"><?php echo $row['Transmission']; ?></div>
-                    <h1 class="ui-title text-uppercase"> <?php echo $row['Make'].' '.$row['Model']; ?></h1>
+                    <div class="col-lg-12">
+                      <!--<div class="ui-subtitle"><?php //echo $row['Transmission']; ?></div> -->
+                      <h1 class="ui-title text-uppercase"> <?php echo $row['Make'].' '.$row['Model'].' '.$row['Year']; ?></h1>
                     </div>
+                    <?php /*
                     <div class="col-lg-4">
                         <div class="b-goods-f-price">
                             <div class="b-goods-f-price__inner">
@@ -58,11 +69,12 @@
                             <div class="b-goods-f-price__note"></div>
                         </div>
                     </div>
+                    */ ?>
                 </div>
 
               <div class="row">
-                <div class="col-lg-8">
-                  
+                <div class="col-lg-9">
+                  <?php  /*
                   <div class="b-goods-f__links">
                     <a class="b-goods-f__links-item" href="#">
                       <i class="ic fas fa-map-marker-alt text-primary"></i>
@@ -85,14 +97,16 @@
                         Solicitar más información
                     </a>
                   </div>
+                   */ ?>
 
                     <div class="b-goods-f__slider "><!-- b-goods-f__slider 
                         <img id="imagenDefault" src="<?php //echo $row['Photo']; ?>" style="display:block; width: 600px; height: 400px;" />-->
-                        <iframe id="miIframe" src="https://spins.impel.io/automarketpanama/<?php echo strtolower($placa); ?>" width="600" height="400" style="border:none; display:block;" 
+                        <iframe id="miIframe" src="https://spins.impel.io/automarketpanama/<?php echo strtolower($placa); ?>" width="100%" height="600" style="border:none; display:block; width:100%;" 
                                 onload="checkIframeLoaded();" onerror="showDefaultImage();">
                             Tu navegador no soporta iframes.
                         </iframe>
                     </div>
+                  <?php /* ?>
                   <h2 class="b-goods-f__title">Descripcion del auto</h2>
                   <div class="row">
                     <div class="col-md-6">
@@ -114,7 +128,7 @@
                     <div class="col-md-6">
                         
                     </div>
-                  </div>
+                  </div> */ ?>
                   <!--<ul class="nav nav-tabs nav-vehicle-detail-tabs" id="myTab" role="tablist">
                     <li class="nav-item"><a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a></li>
                     <li class="nav-item"><a class="nav-link" id="features-tab" data-toggle="tab" href="#features" role="tab" aria-controls="features" aria-selected="false">Features & Options</a></li>
@@ -151,10 +165,32 @@
                     </div>
                   </div>-->
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                   <aside class="l-sidebar">
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 650px; box-shadow: 0 0 10px #888888; padding: 20px;">
+                        <h1>$<?php echo number_format($row["Price"], 2); ?></h1>
+                        Impuestos: $<?php echo number_format($row["PriceTax"] - $row["Price"], 2); ?><br>
+                        Precio Final: $<?php echo number_format($row["PriceTax"], 2); ?><br>
+                        <hr>
+                        Marca: <?php echo $row['Make']; ?><br>
+                        Modelo: <?php echo $row['Model']; ?><br>
+                        Año: <?php echo $row['Year']; ?><br>
+                        Kilometraje: <?php echo $row['Km']; ?><br>
+                        Combustible: <br>
+                        Transmision: <?php echo $row['Transmission']; ?><br>
+                        Color: <br>
+                        Interior: <br>
+                        Unidad: <br>
+                        Placa: <?php echo strtolower($placa); ?><br>
+                        Ubicacion: <br>
+                        <div style="margin-top: 20px;">
+                            <button class="btn btn-sm btn-primary" style="margin-bottom: 10px;">Contactar a un agente</button>
+                            <button class="btn btn-sm btn-primary" style="margin-bottom: 10px;">Solicitar Cotizacion</button>
+                            <button class="btn btn-sm btn-primary">Agenda prueba de manejo</button>
+                        </div>
+                    </div>
                       
-                  <?php 
+                  <?php /*
 
                    if($row['LocationName'] == 'Tumba Muerto'){ ?>
                     <div class="b-seller"> 
@@ -176,7 +212,7 @@
                       <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/costaverde.jpg" alt="foto"/>
                       <p>Sucursal de Costa Verde <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
-                    <?php } ?>
+                    <?php } */ ?>
                     <!--<div class="b-seller__header">
                         <div class="b-seller__img"><img class="img-scale" src="<?php //echo $vendedor['photo']; ?>" alt="foto"/></div>
                         <div class="b-seller__title">
@@ -249,10 +285,98 @@
             } 
             
             ?>
+
+              <section class="bg-light" style="background-color:white;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="<?php echo BASEURL; ?>media/ima/garan.png" width="200" style="margin-top:-30px;">
+                        </div>
+                        <div class="col-10 justify-content-center" style="text-align:center;">
+                          <ul style="text-align:left;">
+                            <li><h2>12 meses de garantia</h2></li>
+                            <li><h2>Historial de mantenimiento</h2></li>
+                            <li><h2>Garantia extendible hasta 24 meses</h2></li>
+                          </ul>
+                        </div>
+                    </div>
+                </div>           
+            </section>
             
           </div>
         </div>
 
+        <section class="bg-light" style="background-color:#ececf4;">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-10 justify-content-center" style="text-align:left;">
+                      <h1 style="font-size: 80px; color:#3d4c93;">Puedes financiar este auto!</h1>
+                      <h4>Te ayudamos a realizar el tramite de financiamiento para la compra de tu auto</h4>
+                      <button class="btn btn-sm btn-primary">Ver Requisitos</button>
+                    </div>
+                    <div class="col-2">
+                        <img src="<?php echo BASEURL; ?>media/ima/finan.png" width="400">
+                    </div>
+                </div>
+            </div>           
+        </section>
+        <section class="section-carousel">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <div class="ui-title-slogan"><!--TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE--></div>
+                      <h2 class="ui-title" style="color:red;">Autos <span > con precios similares</span></h2>
+                  </div>
+              </div>
+          </div>
+          <div class="section-carousel__inner bg-dark">
+              <div class="js-slider" data-slick="{&quot;slidesToShow&quot;: 5,  &quot;slidesToScroll&quot;: 5, &quot;infinite&quot;: true, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1800, &quot;settings&quot;: {&quot;slidesToShow&quot;: 4, &quot;slidesToScroll&quot;: 4}}, {&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}, {&quot;breakpoint&quot;: 1040, &quot;settings&quot;: {&quot;slidesToShow&quot;: 2, &quot;slidesToScroll&quot;: 1}}, {&quot;breakpoint&quot;: 767, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1, &quot;slidesToScroll&quot;: 1}}]}">
+              
+                  <?php
+
+                  if ($result->num_rows > 0) {
+                          
+                      while ($row = $result->fetch_assoc()) { ?>
+                          <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                              <div class="b-goods-f b-goods-f_mod-a" style="border-radius:10px;">
+                                  <div class="b-team__media"> <!-- b-goods-f__media -->
+                                      <img class="b-goods-f__img img-scale" draggable="false" width="445" height="333.75" src="<?php echo $row["Photo"]; ?>" alt="foto" />
+                                  </div>
+                                  <div class="b-goods-f__main">
+                                      <div class="b-goods-f__descrip">
+                                          <div class="">
+                                              <span>
+                                                  <b>
+                                                  <h3 class="ui-title" style="margin:-10px;"><span style="color:#1b3b72;"><?php echo number_format($row["Price"], 2); ?></span></h3>
+                                                  <small style="font-size:10px;">Precio sin impuesto</small><br>
+                                                  <h5 style="color:black;"><?php echo $row["Make"]. ' ' . $row["Model"]; ?></h5>
+                                                  </b>
+                                              </span>
+                                          </div>
+                                          <!--<div class="b-goods-f__info"></div>-->
+                                          <ul class="b-goods-f__list list-unstyled">
+                                              <li class="b-goods-f__list-item"><i class="ic flaticon-speedometer"></i><?php echo $row["Km"]; ?>km</li>
+                                              <li class="b-goods-f__list-item"><i class="ic flaticon-car-1"></i>Año: <?php echo $row["Year"]; ?></li>
+                                              <li class="b-goods-f__list-item"><i class="ic flaticon-gearshift"></i><?php echo trim($row["Transmission"]); ?></li>
+                                          </ul>
+                                      </div>
+                                      <div class="b-goods-f__sidebar"><span class="b-goods-f__price-group"><span class="b-goods-f__price bg-primary"><span class="b-goods-f__price-numb">$<?php echo $row["PriceTax"]; ?></span></span>
+                                          </span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                  <?php 
+                      }
+                      
+                  } else {
+                      echo "No se encontraron resultados";
+                  } ?>
+                  
+              </div>
+          </div>
+      </section>
 
         <?php include(ROOT_PATH . '/app/views/partials/piedepagina.php'); ?>         
           <!-- .footer-->

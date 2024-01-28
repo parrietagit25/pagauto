@@ -21,16 +21,22 @@ function cerrarDB($conn) {
 }
 
 function obtenerDatos($number) {
+
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') ORDER BY RAND() LIMIT $number";
+    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais ORDER BY RAND() LIMIT $number";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
 }
 
 function obtenerMarcas(){
+
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT Make FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY Make ORDER BY COUNT(*) DESC LIMIT 4";
+    $sql = "SELECT Make FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Make ORDER BY COUNT(*) DESC LIMIT 4";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -112,8 +118,10 @@ function all_car($marca, $modelo, $tipo_vehiculo, $desde, $hasta, $transmision, 
         $where .= " AND Price <= '".$max."'";
     }
 
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where";
+    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais $where";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -121,8 +129,10 @@ function all_car($marca, $modelo, $tipo_vehiculo, $desde, $hasta, $transmision, 
 
 function get_marcas(){
 
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT Make, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY Make";
+    $sql = "SELECT Make, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Make";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -131,8 +141,10 @@ function get_marcas(){
 
 function get_marcas_filtros(){
 
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT Make, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY Make";
+    $sql = "SELECT Make, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Make";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -141,8 +153,10 @@ function get_marcas_filtros(){
 
 function get_modelos(){
 
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT Model FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY Model";
+    $sql = "SELECT Model FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Model";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -151,8 +165,10 @@ function get_modelos(){
 
 function get_tipo_carro(){
 
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT CarType, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY CarType";
+    $sql = "SELECT CarType, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY CarType";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -161,8 +177,10 @@ function get_tipo_carro(){
 
 function get_from_year(){
 
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT Year FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY Year";
+    $sql = "SELECT Year FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Year";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -171,8 +189,10 @@ function get_from_year(){
 
 function get_to_year(){
 
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT Year FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY Year";
+    $sql = "SELECT Year FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Year";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -181,8 +201,10 @@ function get_to_year(){
 
 function get_transmision(){
 
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT Transmission FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY Transmission";
+    $sql = "SELECT Transmission FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Transmission";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -228,8 +250,10 @@ function formulario_contacto($nombre, $email, $telefono, $quebusca, $detalles){
 
 function get_marcas_formulario_principal($marca){
 
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT Model FROM Automarket_Invs_web WHERE Photo NOT IN ('') AND Make = '".$marca."' GROUP BY Model";
+    $sql = "SELECT Model FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais AND Make = '".$marca."' GROUP BY Model";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -238,8 +262,10 @@ function get_marcas_formulario_principal($marca){
 
 function get_ubicacion_filtro(){
 
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT LocationName FROM Automarket_Invs_web WHERE Photo NOT IN ('') GROUP BY LocationName";
+    $sql = "SELECT LocationName FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY LocationName";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -248,25 +274,86 @@ function get_ubicacion_filtro(){
 
 function total_registros(){
 
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $resultado = $conn->query("SELECT COUNT(*) AS total FROM Automarket_Invs_web WHERE Photo NOT IN ('')");
+    $resultado = $conn->query("SELECT COUNT(*) AS total FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais");
     $fila = $resultado->fetch_assoc();
     $total_registros = $fila['total'];
     return $total_registros;
 }
 
 function reg_pag_actual($inicio, $registros_por_pagina){
+
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') LIMIT $inicio, $registros_por_pagina";
+    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais LIMIT $inicio, $registros_por_pagina";
     $resultado = $conn->query($sql);
     return $resultado;
 }
 
 function get_precios_similares($precio){
+
+    $where_pais = get_where_pais();
+
     $conn = conectarDB();
-    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') AND Price LIKE '%$precio%'";
+    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais AND Price LIKE '%$precio%'";
     $resultado = $conn->query($sql);
     return $resultado;
 }
+
+function get_where_pais(){
+
+    $where_pais = "";
+    $pais = get_country();
+
+    if ($pais == 'Panama') {
+        
+        $where_pais .= " AND Internacional = '' ";
+        return $where_pais;
+
+    }else{
+        $where_pais .= " AND Internacional <> '' ";
+        return $where_pais;
+    }
+
+}
+
+function get_country(){
+    // La URL de la API
+  
+    $curl = curl_init();
+  
+    $urlip = "http://ip-api.com/json/" . urlencode($_SERVER['REMOTE_ADDR']);
+    
+    curl_setopt_array($curl, array(
+      CURLOPT_URL => $urlip,
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => '',
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => 'GET',
+    ));
+    
+    $response = curl_exec($curl);
+    
+    if ($response === false) {
+        curl_close($curl);
+        die('Error en la solicitud cURL: ' . curl_error($curl));
+    }
+    
+    curl_close($curl);
+    
+    $data = json_decode($response, true);
+    
+    $country = $data['country'];
+    
+    return $country;
+  
+  }
+
 
 ?>

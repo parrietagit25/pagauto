@@ -76,67 +76,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="b-find">
-                                <!--<ul class="b-find-nav nav nav-tabs" id="findTab" role="tablist">
-                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link active" id="tab-allCar" data-toggle="tab" href="#content-allCar" role="tab" aria-controls="content-allCar" aria-selected="true">Elige tu próximo auto</a></li>
-                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-newCars" data-toggle="tab" href="#content-newCars" role="tab" aria-controls="content-newCars" aria-selected="false">Autos Seminuevos</a></li>
-                                    <li class="b-find-nav__item nav-item"><a class="b-find-nav__link nav-link" id="tab-usedCars" data-toggle="tab" href="#content-usedCars" role="tab" aria-controls="content-usedCars" aria-selected="false">Autos Usados</a></li>
-                                </ul> -->
                                 <div class="b-find-content tab-content" id="findTabContent">
-                                    <?php /*
-                                    <div class="tab-pane fade show active" id="content-allCar">
-                                        <form id="form_buscado" class="b-find__form" method="get" action="https://automarketpanama.com/dev/public/listing">
-                                            <div class="b-find__row">
-                                                <div class="b-find__main">
-                                                    <div class="b-find__inner">
-                                                        <input type="hidden" name="buscador" value="1">
-                                                        <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
-                                                            <div class="b-find__selector">
-                                                                <select name="marca" class="selectpicker" data-width="100%" data-style="ui-select" onchange="buscar_modelo(this.value)">
-                                                                    <option value=''>Seleccionar</option>
-                                                                    <?php while ($marca = $todas_marcas->fetch_assoc()) { ?>
-                                                                        <option value="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?></option>
-                                                                    <?php } ?>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
-                                                            <div class="b-find__selector">
-                                                                <select name="modelo" data-width="100%" class="form-control" id="marca_select">
-                                                                    <option value=''>Seleccionar</option>
-                                                                    <?php /* while ($modelos = $todos_modelos->fetch_assoc()) { ?>
-                                                                        <option value="<?php echo $modelos['Model']; ?>"><?php echo $modelos['Model']; ?></option>
-                                                                    <?php } */  /* ?>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">03</span> Rango de Precio</div>
-                                                            <div class="b-find__selector">
-                                                                <select name="precio_max" class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option value=''>Seleccionar</option>
-                                                                    <option value="9000">Max $9,000</option>
-                                                                    <option value="20000">Max $20,000</option>
-                                                                    <option value="30000">Max $30,000</option>
-                                                                    <option value="50000">Max $50,000</option>
-                                                                    <option value="70000">Max $70,000</option>
-                                                                    <option value="100000">Max $100,000</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <input type="submit" class="b-find__btn btn btn-primary" value="Buscar">
-                                            </div>
-                                            <!--<div class="b-find__checkbox-group"><span class="b-find__checkbox-item">
-                                                <input class="forms__check" id="newCars" type="checkbox" checked="checked"/>
-                                                <label class="forms__label forms__label-check" for="newCars">New Cars</label></span><span class="b-find__checkbox-item">
-                                                <input class="forms__check" id="usedCars" type="checkbox"/>
-                                                <label class="forms__label forms__label-check" for="usedCars">Used Cars</label></span>
-                                            </div>-->
-                                        </form>
-                                    </div> */ ?>
                                     <div class="tab-pane fade" id="content-newCars">
                                         <form class="b-find__form">
                                             <div class="b-find__row">
@@ -176,11 +116,6 @@
                                                 </div>
                                                 <button class="b-find__btn btn btn-primary">Search</button>
                                             </div>
-                                            <!--<div class="b-find__checkbox-group"><span class="b-find__checkbox-item">
-                            <input class="forms__check" id="newCars2" type="checkbox" checked="checked"/>
-                            <label class="forms__label forms__label-check" for="newCars2">New Cars</label></span><span class="b-find__checkbox-item">
-                            <input class="forms__check" id="usedCars2" type="checkbox"/>
-                            <label class="forms__label forms__label-check" for="usedCars2">Used Cars</label></span></div>-->
                                         </form>
                                     </div>
                                     <div class="tab-pane fade" id="content-usedCars">
@@ -222,15 +157,6 @@
                                                 </div>
                                                 <button class="b-find__btn btn btn-primary">Search</button>
                                             </div>
-                                             <!--<div class="b-find__checkbox-group">
-                                                <span class="b-find__checkbox-item">
-                                               
-                                                <input class="forms__check" id="newCars3" type="checkbox" checked="checked"/>
-                                                <label class="forms__label forms__label-check" for="newCars3">New Cars</label></span><span class="b-find__checkbox-item">
-                                                <input class="forms__check" id="usedCars3" type="checkbox"/>
-                                                <label class="forms__label forms__label-check" for="usedCars3">Used Cars</label>
-                                                </span>
-                                            </div>-->
                                         </form>
                                     </div>
                                 </div>
@@ -240,34 +166,6 @@
                 </div>
             </div>
             <!-- end .b-find-->
-            <?php /*
-            <section class="b-welcome section-default">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="ui-title-slogan"><!--Te ayudamos a encontrar tu próximo vehículo fácilmente--></div>
-                            <h2 class="ui-title"> <span style="color:#1b3b72;">Sobre Nosotros</span></h2>
-                            <p>En Automarket Panamá nos dedicamos a la compra y venta de autos seminuevos con más de 20 años de experiencia en el mercado. Con nosotros puedes vender y comprar tu auto de manera rápida, transparente y segura. </p>
-                            <p>Encontrarás una amplia variedad de modelos de autos seminuevos que se adapten a tus necesidades. Desde sedanes seminuevos, SUV seminuevas, camionetas pickup seminuevas, hasta autos de lujo, tenemos opciones para cada estilo de vida. También contamos con una amplia variedad de autos comerciales para aquellos  emprendedores y negocios que buscan la combinación perfecta de confiabilidad y eficiencia para impulsar su éxito. </p>
-                            <p>Nuestro propósito es transformar tu necesidad de movilidad en comodidad ofreciendo:</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-7">
-                            <ul class="b-welcome-list list-unstyled d-sm-flex justify-content-around">
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-car"></i>Opciones de financiamientos 
-                                    <br> y seguros</li>
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-gearbox"></i>Procesos seguros 
-                                    <br> y transparentes </li>
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-wrench"></i>Mejores ofertas 
-                                    <br> y promociones </li>
-                                <li class="b-welcome-list__item flex-fill"><i class="ic flaticon-wrench"></i>Calidad y variedad  
-                                    <br> de autos </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section> */ ?>
             <!-- end .b-welcome-->
             <section class="section-carousel">
                 <div class="container">

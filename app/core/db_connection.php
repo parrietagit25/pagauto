@@ -269,4 +269,124 @@ function get_precios_similares($precio){
     return $resultado;
 }
 
+function all_car_filtro($marca, $categoria, $anio, $ubicacion, $precio){
+
+    $where = "";
+
+    if ($marca != '') {
+        $where .= " AND Make = '".$marca."' ";
+    }
+
+    if ($categoria != '') {
+        $where .= " AND CarType = '".$categoria."' ";
+    }
+
+    if ($anio != '') {
+        $where .= " AND Year = '".$anio."' ";
+    }
+
+    if ($ubicacion != '') {
+        $where .= " AND LocationName = '".$ubicacion."' ";
+    }
+
+    if ($precio != '') {
+
+        $valor = $precio;
+        $valores = explode("-", $valor);
+
+        if (count($valores) == 2) {
+            $valor_minimo = $valores[0]; 
+            $valor_maximo = $valores[1]; 
+        }
+
+        $where .= " AND Price >= '".$valor_minimo."' AND Price <= '".$valor_maximo."' ";
+    }
+
+    $conn = conectarDB();
+    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where";
+    $result = $conn->query($sql);
+    cerrarDB($conn);
+    return $result;
+
+}
+
+function total_registros_filtros($marca, $categoria, $anio, $ubicacion, $precio){
+
+    $where = "";
+
+    if ($marca != '') {
+        $where .= " AND Make = '".$marca."' ";
+    }
+
+    if ($categoria != '') {
+        $where .= " AND CarType = '".$categoria."' ";
+    }
+
+    if ($anio != '') {
+        $where .= " AND Year = '".$anio."' ";
+    }
+
+    if ($ubicacion != '') {
+        $where .= " AND LocationName = '".$ubicacion."' ";
+    }
+
+    if ($precio != '') {
+
+        $valor = $precio;
+        $valores = explode("-", $valor);
+
+        if (count($valores) == 2) {
+            $valor_minimo = $valores[0]; 
+            $valor_maximo = $valores[1]; 
+        }
+
+        $where .= " AND Price >= '".$valor_minimo."' AND Price <= '".$valor_maximo."' ";
+    }
+
+    $conn = conectarDB();
+    $resultado = $conn->query("SELECT COUNT(*) AS total FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where");
+    $fila = $resultado->fetch_assoc();
+    $total_registros = $fila['total'];
+    return $total_registros;
+}
+
+function reg_pag_actual_busqueda($inicio, $registros_por_pagina, $marca, $categoria, $anio, $ubicacion, $precio){
+
+    $where = "";
+
+    if ($marca != '') {
+        $where .= " AND Make = '".$marca."' ";
+    }
+
+    if ($categoria != '') {
+        $where .= " AND CarType = '".$categoria."' ";
+    }
+
+    if ($anio != '') {
+        $where .= " AND Year = '".$anio."' ";
+    }
+
+    if ($ubicacion != '') {
+        $where .= " AND LocationName = '".$ubicacion."' ";
+    }
+
+    if ($precio != '') {
+
+        $valor = $precio;
+        $valores = explode("-", $valor);
+
+        if (count($valores) == 2) {
+            $valor_minimo = $valores[0]; 
+            $valor_maximo = $valores[1]; 
+        }
+
+        $where .= " AND Price >= '".$valor_minimo."' AND Price <= '".$valor_maximo."' ";
+    }
+
+    $conn = conectarDB();
+    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where LIMIT $inicio, $registros_por_pagina";
+    $resultado = $conn->query($sql);
+    return $resultado;
+}
+
 ?>

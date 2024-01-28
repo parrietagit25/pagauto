@@ -1,6 +1,14 @@
-<?php 
-$tipo_carro = get_tipo_carro();
-$tipo_carro2 = get_tipo_carro();
+<?php $result = obtenerDatos(8);
+      $seis = obtener6Mark();
+      $tres = obtenerDatos(3);
+      $diesiseis = obtenerDatos(16);
+      $uno = obtenerDatos(1);
+      $marcas = obtenerMarcas();
+      $vendedores4 = obtenerVendedores(4);
+      $todas_marcas = get_marcas();
+      $todos_modelos = get_modelos();
+      $tipo_carro = get_tipo_carro();
+      $tipo_carro2 = get_tipo_carro(); 
 if (isset($_POST['nombre'])) {
   formulario_contacto($_POST['nombre'], $_POST['email'], $_POST['telefono'], $_POST['quebusca'], $_POST['detalles']);
   ?>
@@ -20,27 +28,10 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
         <!-- ==========================-->
         <!-- MOBILE MENU-->
         <!-- ==========================-->
-        <?php include(ROOT_PATH . '/app/views/partials/menu.php'); ?>
+        <?php include(ROOT_PATH . '/app/views/partials/menu2.php'); ?>
         <!-- end .header-->
-        <div class="section-title-page area-bg area-bg_dark area-bg_op_60">
-          <div class="area-bg__inner">
-            <div class="container">
-              <div class="row">
-                <div class="col offset-lg-3">
-                  <div class="b-title-page__wrap">
-                    <h1 class="b-title-page">Contáctanos</h1>
-                    <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="https://automarketpanama.com/public/">Inicio</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Contáctanos</li>
-                      </ol>
-                      <!-- end breadcrumb-->
-                    </nav>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="container">
+          <h3>INICIO > <span style="color:red;">CONTÁCTANOS</span></h3>
         </div>
         <!-- end .b-title-page-->
         <main class="l-main-content">

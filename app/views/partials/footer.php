@@ -192,6 +192,122 @@
         window.onresize = checkLogoVisibility;
 
         checkLogoVisibility();
+
+        console.log('paila 0');
+
+        console.log('paila 1');
+        
+        const selectedFilters = {}; 
+        const filtroElements = document.querySelectorAll('.filtro');
+        filtroElements.forEach(element => {
+            element.addEventListener('click', function (event) {
+                event.preventDefault();
+                const categoria = this.getAttribute('data-categoria');
+                const valor = this.getAttribute('data-valor');
+
+                selectedFilters[categoria] = valor;
+
+                var filtros = selectedFilters;
+
+                console.log('paila 2');
+
+                var marca = "";
+                var cate = "";
+                var anio = "";
+                var ubicacion = "";
+                var precio = "";
+
+                if (typeof filtros.marca !== 'undefined') {
+                    marca = filtros.marca;
+                }
+
+                if (typeof filtros.categoria !== 'undefined') {
+                    cate = filtros.categoria;
+                }
+
+                if (typeof filtros.anio !== 'undefined') {
+                    anio = filtros.anio;
+                }
+
+                if (typeof filtros.ubicacion !== 'undefined') {
+                    ubicacion = filtros.ubicacion;
+                }
+
+                if (typeof filtros.precio !== 'undefined') {
+                    precio = filtros.precio;
+                }
+
+                console.log('pecio: ' + precio);
+
+                //{marca: 'KIA', categoria: 'Comerciales', anio: '2022', ubicacion: 'Tumba Muerto', precio: '30000-59999'}
+
+                var formData = new FormData();
+                    formData.append('marca', marca);
+                    formData.append('categoria', cate);
+                    formData.append('anio', anio);
+                    formData.append('ubicacion', ubicacion);
+                    formData.append('precio', precio);
+                    formData.append('filtros_form_principal', 1);
+
+                fetch('/dev/app/views/listing/search.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('La solicitud fetch no fue exitosa');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // Aquí puedes manejar la respuesta del servidor
+                    document.querySelector("#autos_resul").innerHTML = data;
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            var registrosPorPagina = 9; 
+            var $registros = $("#registros .registro");
+            var totalRegistros = $registros.length;
+            var totalPaginas = Math.ceil(totalRegistros / registrosPorPagina);
+            var paginaActual = 1;
+
+            $registros.hide();
+
+            $registros.slice(0, registrosPorPagina).show();
+
+            /* for (var i = 1; i <= totalPaginas; i++) {
+                $("#paginador").append('<a href="#" data-pagina="' + i + '">' + i + '</a> ');
+            } */
+            $("#paginador a").click(function() {
+                var nuevaPagina = $(this).data("pagina");
+
+                if (nuevaPagina === "prev") {
+                    paginaActual = Math.max(paginaActual - 1, 1);
+                } else if (nuevaPagina === "next") {
+                    paginaActual = Math.min(paginaActual + 1, totalPaginas);
+                } else {
+                    paginaActual = nuevaPagina;
+                }
+
+                var inicio = (paginaActual - 1) * registrosPorPagina;
+                var fin = inicio + registrosPorPagina;
+
+                $registros.hide().slice(inicio, fin).show();
+
+                $("#paginador a").removeClass("btn btn-primary");
+                $("#paginador a[data-pagina='" + paginaActual + "']").addClass("btn btn-primary");
+            });
+
+            $("#paginador a[data-pagina='1']").addClass("btn btn-primary");
+        });
     </script>
 
     </body>

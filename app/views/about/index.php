@@ -1,9 +1,14 @@
-<?php 
-
-$vendedores4 = obtenerVendedores(13);
-$diesiseis = obtenerDatos(16);
-$tipo_carro = get_tipo_carro();
-$tipo_carro2 = get_tipo_carro();
+<?php $result = obtenerDatos(8);
+      $seis = obtener6Mark();
+      $tres = obtenerDatos(3);
+      $diesiseis = obtenerDatos(16);
+      $uno = obtenerDatos(1);
+      $marcas = obtenerMarcas();
+      $vendedores4 = obtenerVendedores(13);
+      $todas_marcas = get_marcas();
+      $todos_modelos = get_modelos();
+      $tipo_carro = get_tipo_carro();
+      $tipo_carro2 = get_tipo_carro();
 
 include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <!-- Loader-->
@@ -13,27 +18,10 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
         <!-- ==========================-->
         <!-- MOBILE MENU-->
         <!-- ==========================-->
-        <?php include(ROOT_PATH . '/app/views/partials/menu.php'); ?>
+        <?php include(ROOT_PATH . '/app/views/partials/menu2.php'); ?>
 
-        <div class="section-title-page area-bg area-bg_dark area-bg_op_60">
-          <div class="area-bg__inner">
-            <div class="container">
-              <div class="row">
-                <div class="col offset-lg-3">
-                  <div class="b-title-page__wrap">
-                    <h1 class="b-title-page">Sobre nosotros</h1>
-                    <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="https://automarketpanama.com/public/">Inicio</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Nosotros</li>
-                      </ol>
-                      <!-- end breadcrumb-->
-                    </nav>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="container">
+          <h3>INICIO > <span style="color:red;">SOBRE NOSOTROS</span></h3>
         </div>
         <!-- end .b-title-page-->
         <main>

@@ -48,12 +48,12 @@
                         <div class="sp-layer" data-width="100%" data-show-transition="right" data-hide-transition="right" data-show-duration="2000" data-show-delay="1200" data-hide-delay="400"><img class="main-slider__figure-2 img-fluid" src="<?php echo BASEURL; ?>media/slider/4.png" alt="foto" /></div>
                     </div>
                      */ ?>
-                     <div class="main-slider__slide sp-slide"><a href="https://automarketpanama.com/public/listing"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" /></a>
+                     <div class="main-slider__slide sp-slide"><a href="https://automarketpanama.com/dev/public/listing"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" /></a>
                         <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
                            
                         </div>
                     </div>
-                    <div class="main-slider__slide sp-slide"><a href="https://automarketpanama.com/public/listing"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" /></a>
+                    <div class="main-slider__slide sp-slide"><a href="https://automarketpanama.com/dev/public/listing"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" /></a>
                         <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
                             <!--<div class="main-slider__wrap">
                                 <div class="main-slider__slogan">luxury unleashed</div>
@@ -286,7 +286,7 @@
                         if ($result->num_rows > 0) {
                                 
                             while ($row = $result->fetch_assoc()) { ?>
-                                <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                                <a href="https://automarketpanama.com/dev/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
                                     <div class="b-goods-f b-goods-f_mod-a" style="border-radius:10px;">
                                         <div class="b-team__media"> <!-- b-goods-f__media -->
                                             <img class="b-goods-f__img img-scale" draggable="false" width="445" height="333.75" src="<?php echo $row["Photo"]; ?>" alt="foto" />
@@ -333,7 +333,7 @@
                         </h1>
                         <br>
                         <div class="col-12 d-flex justify-content-center">
-                            <a class="section-carousel__btn btn btn-primary" href="https://automarketpanama.com/public/listing">
+                            <a class="section-carousel__btn btn btn-primary" href="https://automarketpanama.com/dev/public/listing">
                                 <i class="ic icon-list"></i> <b> VER INVENTARIO </b>
                             </a>
                         </div>
@@ -410,7 +410,7 @@
                         </div>
                         <hr>
                         <div class="col-xl-12 d-flex justify-content-center align-items-center">
-                            <div class="b-bnr__second"><!--<a class="btn btn-primary" href="https://automarketpanama.com/public/listing">Ver inventario</a>-->
+                            <div class="b-bnr__second"><!--<a class="btn btn-primary" href="https://automarketpanama.com/dev/public/listing">Ver inventario</a>-->
                                 <div class="b-bnr-contacts">
                                     <div class="b-bnr-contacts__info">Contáctanos</div><a class="b-bnr-contacts__phone" href="tel:+5072792789"><i class="ic icon-call-end text-primary"></i> + 507 279-2789</a>
                                 </div>
@@ -717,7 +717,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="b-bnr-2__section b-bnr-2__section_first bg-dark">
-                                <h2 class="b-bnr-2__title">Quieres <br>comprar un auto seminuevo?</h2><a class="b-bnr-2__link" href="https://automarketpanama.com/public/listing">Inicia buscando en nuestro inventario +200 vehiculos</a>
+                                <h2 class="b-bnr-2__title">Quieres <br>comprar un auto seminuevo?</h2><a class="b-bnr-2__link" href="https://automarketpanama.com/dev/public/listing">Inicia buscando en nuestro inventario +200 vehiculos</a>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -1014,7 +1014,7 @@
                         <br>
                         <br>
                             <h2 class="b-bnr-3__title ui-tilte" style="color:black;">Llévate tu seminuevo con financiamiento. </h2>
-                            <div class="b-bnr-3__info"></div><a class="b-bnr-3__btn btn btn-primary" href="https://automarketpanama.com/public/listing">Aplica aqui</a>
+                            <div class="b-bnr-3__info"></div><a class="b-bnr-3__btn btn btn-primary" href="https://automarketpanama.com/dev/public/listing">Aplica aqui</a>
                         </div>
                     </div>
                 </div>
@@ -1025,7 +1025,7 @@
             <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
                 <?php if ($diesiseis->num_rows > 0) {
                     while ($row = $diesiseis->fetch_assoc()) { ?>
-                    <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                    <a href="https://automarketpanama.com/dev/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
                         <div class="b-gallery__item b-team__media"><!--  -->
                             <!--<img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>-->
                             <div style="">

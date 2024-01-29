@@ -1,6 +1,12 @@
 <?php
 // db_connection.php
 
+if (!isset($_SESSION['country_ip'])) {
+
+    $_SESSION['country_ip'] = get_where_pais();
+
+}
+
 function conectarDB() {
     $servername = "localhost";
     $username = "autopedro";
@@ -22,7 +28,7 @@ function cerrarDB($conn) {
 
 function obtenerDatos($number) {
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais ORDER BY RAND() LIMIT $number";
@@ -33,7 +39,7 @@ function obtenerDatos($number) {
 
 function obtenerMarcas(){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT Make FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Make ORDER BY COUNT(*) DESC LIMIT 4";
@@ -118,7 +124,7 @@ function all_car($marca, $modelo, $tipo_vehiculo, $desde, $hasta, $transmision, 
         $where .= " AND Price <= '".$max."'";
     }
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais $where";
@@ -129,7 +135,7 @@ function all_car($marca, $modelo, $tipo_vehiculo, $desde, $hasta, $transmision, 
 
 function get_marcas(){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT Make, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Make";
@@ -141,7 +147,7 @@ function get_marcas(){
 
 function get_marcas_filtros(){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT Make, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Make";
@@ -153,7 +159,7 @@ function get_marcas_filtros(){
 
 function get_modelos(){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT Model FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Model";
@@ -165,7 +171,7 @@ function get_modelos(){
 
 function get_tipo_carro(){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT CarType, count(*) as contar FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY CarType";
@@ -177,7 +183,7 @@ function get_tipo_carro(){
 
 function get_from_year(){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT Year FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Year";
@@ -189,7 +195,7 @@ function get_from_year(){
 
 function get_to_year(){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT Year FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Year";
@@ -201,7 +207,7 @@ function get_to_year(){
 
 function get_transmision(){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT Transmission FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY Transmission";
@@ -250,7 +256,7 @@ function formulario_contacto($nombre, $email, $telefono, $quebusca, $detalles){
 
 function get_marcas_formulario_principal($marca){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT Model FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais AND Make = '".$marca."' GROUP BY Model";
@@ -262,7 +268,7 @@ function get_marcas_formulario_principal($marca){
 
 function get_ubicacion_filtro(){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT LocationName FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais GROUP BY LocationName";
@@ -274,7 +280,7 @@ function get_ubicacion_filtro(){
 
 function total_registros(){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $resultado = $conn->query("SELECT COUNT(*) AS total FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais");
@@ -285,7 +291,7 @@ function total_registros(){
 
 function reg_pag_actual($inicio, $registros_por_pagina){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais LIMIT $inicio, $registros_por_pagina";
@@ -295,7 +301,7 @@ function reg_pag_actual($inicio, $registros_por_pagina){
 
 function get_precios_similares($precio){
 
-    $where_pais = get_where_pais();
+    $where_pais = $_SESSION['country_ip'];
 
     $conn = conectarDB();
     $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais AND Price LIKE '%$precio%'";
@@ -353,6 +359,46 @@ function get_country(){
     
     return $country;
   
+  }
+
+  function all_car_filtro($marca, $categoria, $anio, $ubicacion, $precio){
+
+    $where = "";
+
+    if ($marca != '') {
+        $where .= " AND Make = '".$marca."'";
+    }
+
+    if ($categoria != '') {
+        $where .= " AND CarType = '".$categoria."'";
+    }
+
+    if ($anio != '') {
+        $where .= " AND Year = '".$anio."'";
+    }
+
+    if ($ubicacion != '') {
+        $where .= " AND LocationName = '".$ubicacion."'";
+    }
+
+    if ($precio != '') {
+
+        $dato = $precio;
+        $posicion = strpos($dato, "-");
+        $variable1 = substr($dato, 0, $posicion);
+        $variable2 = substr($dato, $posicion + 1);
+
+        $where .= " AND Price >= '".$variable1."' AND Price <= '".$variable2."' ";
+    }
+
+    $where_pais = $_SESSION['country_ip'];
+
+    $conn = conectarDB();
+    $sql = "SELECT * FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais $where";
+    $result = $conn->query($sql);
+    cerrarDB($conn);
+    return $result;
+
   }
 
 

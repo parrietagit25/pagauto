@@ -28,13 +28,109 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
         <main>
             <br>
             <br>
+            <?php if (isset($_GET['tipo_f']) && $_GET['tipo_f']=='asalariados') { ?>
+              <div class="container">
+                  <div class="row">
+                    <div class="col-12" style="font-size:18px;">
+                      <h2>REQUISITOS ASALARIADOS</h2>
+                      <ul>
+                        <li style="font-size:20px;">Solicitud de Crédito </li>
+                        <li>Copia de Cédula / Pasaporte </li>
+                        <li>Copia de Licencia </li>
+                        <li>Carta de Trabajo</li>
+                        <li>Permiso de trabajo vigente ( extranjeros) </li>
+                        <li>Copia de Ficha/Talonarios </li>
+                        <li>Copia de Recibo de Luz/Agua </li>
+                      </ul>
+                    </div>
+                      <div class="col-12">
+                        <h2>Requisitos</h2>
+                        <div class="d-flex justify-content-between">
+                            <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary">Asalariados</a>
+                            <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary">Independientes</a>
+                            <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          <?php }elseif(isset($_GET['tipo_f']) && $_GET['tipo_f']=='independientes'){ ?> 
+            
+            <div class="container">
+              <div class="row">
+                <div class="col-12" style="font-size:18px;">
+                  <h2>REQUISITOS INDEPENDIENTES</h2>
+                    <ul>
+                      <li style="font-size:20px;">Solicitud de Crédito </li>
+                      <li>Copia de Cédula/ pasaporte </li>
+                      <li>Copia de Licencia </li>
+                      <li>2 últimas declaraciones de Renta </li>
+                      <li>Certificados de Recepción, Paz y Salvo  </li>
+                      <li>Copia de Recibo de Luz/Agua </li>
+                    </ul>
+                  </div>
+                  <div class="col-12">
+                    <h2>Requisitos</h2>
+                    <div class="d-flex justify-content-between">
+                        <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary">Asalariados</a>
+                        <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary">Independientes</a>
+                        <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+            
+          <?php }elseif(isset($_GET['tipo_f']) && $_GET['tipo_f']=='juridicos'){ ?>
+
             <div class="container">
                 <div class="row">
+                  <div class="col-12" style="font-size:18px;">
+                    <h2>REQUISITOS PERSONA JURÍDICA </h2>
+                      <ul>
+                        <li style="font-size:20px;">Solicitud de Crédito </li>
+                        <li>Copia de Cédula/ pasaporte </li>
+                        <li>Copia de Licencia </li>
+                        <li>2 últimas declaraciones de Renta </li>
+                        <li>Certificados de Recepción, Paz y Salvo </li>
+                        <li>Aviso de Operaciones </li>
+                        <li>Movimientos bancarios ( últimos 6 meses) </li>
+                        <li>Copia de Recibo de Luz/Agua </li>
+                      </ul>
+                    </div>
+                    <div class="col-12">
+                      <h2>Requisitos</h2>
+                      <div class="d-flex justify-content-between">
+                          <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary">Asalariados</a>
+                          <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary">Independientes</a>
+                          <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+          <?php }else{ ?>
+
+            <div class="container">
+                <div class="row">
+                  <div class="col-6" style="font-size:20px;">
                     <p>En Automarket contamos con un departamento especializado en asesorar, gestionar y negociar las condiciones más favorables para tu financiamiento y seguro para tu próximo vehículo. Mantenemos relaciones sólidas con las principales entidades bancarias y financieras, asegurándote opciones las mejores opciones adaptadas a tus necesidades.</p> 
                     <p>Además, brindamos el apoyo en la adquisición de póliza, garantizando la protección integral de tu inversión. </p>
                     <p>En AutoMarket, la calidad y excelencia en nuestros productos y servicios son nuestra prioridad. Estamos comprometidos a brindarte una experiencia de compra sin igual. ¡Permítenos servirte y hacer realidad la adquisición de tu Seminuevo de manera sencilla y segura! </p>
+                  </div>
+                  <div class="col-6">
+
+                  </div>
+                    <div class="col-12">
+                      <h2>Requisitos</h2>
+                      <div class="d-flex justify-content-between">
+                          <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary">Asalariados</a>
+                          <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary">Independientes</a>
+                          <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>
+                      </div>
+                    </div>
                 </div>
             </div>
+
+            <?php } ?>
             <br>
             <br>
           <!-- end .b-gallery-->

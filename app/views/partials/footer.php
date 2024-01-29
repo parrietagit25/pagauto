@@ -71,7 +71,13 @@
             .then(response => response.text())
             .then(data => {
 
-                document.querySelector("#autos_resul").innerHTML = data;
+                //document.querySelector("#autos_resul").innerHTML = data;
+                document.querySelector("#autos_resul").innerHTML = '<div class="loader_fetch"></div>';
+
+                setTimeout(() => {
+                    document.querySelector("#autos_resul").innerHTML = data;
+                    console.log(data);
+                }, 2000);
                 
                 console.log(data);
             })
@@ -143,7 +149,12 @@
                 })
                 .then(response => response.text())
                 .then(data => {
-                    document.querySelector("#autos_resul").innerHTML = data;
+                    //document.querySelector("#autos_resul").innerHTML = data;
+                    document.querySelector("#autos_resul").innerHTML = '<div class="loader_fetch"></div>';
+                    setTimeout(() => {
+                        document.querySelector("#autos_resul").innerHTML = data;
+                        console.log(data);
+                    }, 2000);
                 })
                 .catch(error => console.error('Error:', error));
             });
@@ -260,9 +271,15 @@
                     return response.text();
                 })
                 .then(data => {
-                    // Aquí puedes manejar la respuesta del servidor
-                    document.querySelector("#autos_resul").innerHTML = data;
-                    console.log(data);
+                    // Aquí puedes manejar la respuesta del servidor 
+
+                    document.querySelector("#autos_resul").innerHTML = '<div class="loader_fetch"></div>';
+
+                    setTimeout(() => {
+                        document.querySelector("#autos_resul").innerHTML = data;
+                        console.log(data);
+                    }, 2000);
+                    
                 })
                 .catch(error => {
                     console.error('Error:', error);

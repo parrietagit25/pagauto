@@ -160,13 +160,13 @@
                         Modelo: <?php echo $row['Model']; ?><br>
                         Año: <?php echo $row['Year']; ?><br>
                         Kilometraje: <?php echo $row['Km']; ?><br>
-                        Combustible: <br>
+                        Combustible: <?php echo $row['Fuel']; ?><br>
                         Transmision: <?php echo $row['Transmission']; ?><br>
-                        Color: <br>
-                        Interior: <br>
-                        Unidad: <br>
+                        Color: <?php echo $row['Color']; ?><br>
+                        Interior: <?php echo $row['Interior']; ?><br>
+                        Unidad: <?php echo $row['Unit']; ?><br>
                         Placa: <?php echo strtolower($placa); ?><br>
-                        Ubicacion: <br>
+                        Ubicacion: <?php echo $row['LocationName']; ?> <br>
                         <div style="margin-top: 20px;">
                             <button class="btn btn-sm btn-primary" style="margin-bottom: 10px;">Contactar a un agente</button>
                             <button class="btn btn-sm btn-primary" style="margin-bottom: 10px;">Solicitar Cotizacion</button>

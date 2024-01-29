@@ -24,7 +24,7 @@
 
                 </li>
                 <li class="nav-item"><a class="nav-link" href="/dev/public/financiamiento">Financiamiento</a></li>
-                <li class="nav-item"><a class="nav-link" href="/dev/public/about">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="/dev/public/about"> Nuestro Equipo</a></li>
                 <!--
                 <li class="nav-item "><a class="nav-link" href="#">Pages</a>
 
@@ -93,7 +93,7 @@
                                             </div>
                                         </li>
                                         <li class="nav-item"><a class="nav-link" href="/dev/public/financiamiento">Financiamiento</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/dev/public/about">Sobre Nosotros</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/dev/public/about">Nuestro Equipo</a></li>
                                         <li class="nav-item"><a class="nav-link" href="/dev/public/contact">Contáctanos</a></li>
                                     </ul><a id="todo_inventario" class="btn btn-primary btn-sm col-auto" href="https://automarketpanama.com/dev/public/listing" style=""><i class="ic icon-list"></i> Ver Inventario</a>
                                 </nav>

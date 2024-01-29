@@ -15,17 +15,13 @@
 $total_registros = total_registros();
 $registros_por_pagina = 9;
 $numero_paginas = ceil($total_registros / $registros_por_pagina);
-$pagina_actual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
-$pagina_actual = max($pagina_actual, 1);
-$pagina_actual = min($pagina_actual, $numero_paginas);
-$inicio = ($pagina_actual - 1) * $registros_por_pagina;
-$registros_pag_actual = reg_pag_actual($inicio, $registros_por_pagina);
 
 ?>
 <?php include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <div id="page-preloader"><span class="spinner border-t_second_b border-t_prim_a"></span></div>
       <div class="l-theme animated-css animsition" data-header="sticky" data-header-top="200">
-        <?php include(ROOT_PATH . '/app/views/partials/menu.php'); ?>
+        <?php include(ROOT_PATH . '/app/views/partials/menu2.php'); ?>
+        <!--
         <div class="section-title-page area-bg area-bg_dark area-bg_op_60">
           <div class="area-bg__inner">
             <div class="container">
@@ -35,7 +31,7 @@ $registros_pag_actual = reg_pag_actual($inicio, $registros_por_pagina);
                     <h1 class="b-title-page">Inventario</h1>
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="https://automarketpanama.com/public/">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="https://automarketpanama.com/dev/public/">Inicio</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Inventario</li>
                       </ol>
                     </nav>
@@ -44,8 +40,12 @@ $registros_pag_actual = reg_pag_actual($inicio, $registros_por_pagina);
               </div>
             </div>
           </div>
+        </div>--> 
+        <div class="container">
+          <h3>INICIO > <span style="color:red;">INVENTARIO</span></h3>
         </div>
-        <div class="l-main-content">
+
+        <div class="l-main-content" style="margin-top:-90px;">
           <div class="container">
             <div class="row">
 
@@ -59,34 +59,31 @@ $registros_pag_actual = reg_pag_actual($inicio, $registros_por_pagina);
                           <div class="b-filter__main">
                             <div class="b-filter__row">
                             <h2>Marca</h2>
-                            
                             <?php while ($marca = $marcas_filtros->fetch_assoc()) { ?>
-                              <a href="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?> (<?php echo $marca['contar']; ?>) </a> </br>
+                                <a href="#" class="filtro" data-categoria="marca" data-valor="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?> (<?php echo $marca['contar']; ?>) </a> <br>
                             <?php } ?>
 
                             <h2>Categoria</h2>
-
                             <?php while ($tipo_carro_filtro = $tipo_carro3->fetch_assoc()) { ?>
-                              <a href="<?php echo $tipo_carro_filtro['CarType']; ?>"><?php echo $tipo_carro_filtro['CarType']; ?> (<?php echo $tipo_carro_filtro['contar']; ?>) </a> </br>
+                                <a href="#" class="filtro" data-categoria="categoria" data-valor="<?php echo $tipo_carro_filtro['CarType']; ?>"><?php echo $tipo_carro_filtro['CarType']; ?> (<?php echo $tipo_carro_filtro['contar']; ?>) </a> <br>
                             <?php } ?>
 
                             <h2>Año</h2>
-
                             <?php while ($anio_filtro = $anio_desde2->fetch_assoc()) { ?>
-                              <a href="<?php echo $anio_filtro['Year']; ?>"><?php echo $anio_filtro['Year']; ?> </a> </br>
+                                <a href="#" class="filtro" data-categoria="anio" data-valor="<?php echo $anio_filtro['Year']; ?>"><?php echo $anio_filtro['Year']; ?> </a> <br>
                             <?php } ?>
 
-                            <h2>Ubicacion</h2>
-
+                            <h2>Ubicación</h2>
                             <?php while ($ubicacion_filtro = $filtro_ubicacion->fetch_assoc()) { ?>
-                              <a href="<?php echo $ubicacion_filtro['LocationName']; ?>"><?php echo $ubicacion_filtro['LocationName']; ?> </a> </br>
+                                <a href="#" class="filtro" data-categoria="ubicacion" data-valor="<?php echo $ubicacion_filtro['LocationName']; ?>"><?php echo $ubicacion_filtro['LocationName']; ?> </a> <br>
                             <?php } ?>
 
                             <h2>Precio</h2>
-                            <a href="">10,000 a 29,999</a> <br>
-                            <a href="">30,000 a 59,999</a> <br>
-                            <a href="">60,000 a 89,999</a> <br>
-                            <a href="">90,000 a 150,000</a>
+                            <a href="#" class="filtro" data-categoria="precio" data-valor="10000-29999">10,000 a 29,999</a> <br>
+                            <a href="#" class="filtro" data-categoria="precio" data-valor="30000-59999">30,000 a 59,999</a> <br>
+                            <a href="#" class="filtro" data-categoria="precio" data-valor="60000-89999">60,000 a 89,999</a> <br>
+                            <a href="#" class="filtro" data-categoria="precio" data-valor="90000-150000">90,000 a 150,000</a>
+
                             </div>
                           </div>
                         </form>
@@ -108,7 +105,7 @@ $registros_pag_actual = reg_pag_actual($inicio, $registros_por_pagina);
                       </div>
                     </div>
                     <div class="b-filter-goods__info col-auto"><!-- Showing results<strong> 1 to 10</strong> of total<strong> 145</strong> --></div>
-                    <div class="btns-switch col-auto"><i class="btns-switch__item js-view-list ic fa fa-th-list"></i><i class="btns-switch__item js-view-th active ic fa fa-th"></i></div>
+                    <div class="btns-switch col-auto"><!--<i class="btns-switch__item js-view-list ic fa fa-th-list"></i>--><i class="btns-switch__item js-view-th active ic fa fa-th"></i></div>
                   </div>
                 </div>
                 <main class="b-goods-group row" id="autos_resul">
@@ -118,11 +115,11 @@ $registros_pag_actual = reg_pag_actual($inicio, $registros_por_pagina);
 
                       $todos_carros = all_car('', '', $_GET['tipo_auto'], '', '', '', '', '');
 
-                      if ($todos_carros->num_rows > 0) {
-                              
-                          while ($row = $todos_carros->fetch_assoc()) { ?>
+                      if ($todos_carros->num_rows > 0) { ?>
 
-                              <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                          <?php while ($row = $todos_carros->fetch_assoc()) { ?>
+
+                              <a href="https://automarketpanama.com/dev/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
                                 <div class="b-goods-f col-lg-4 col-md-6">
                                     <div class="b-team__media"><!--b-goods-f__media-->
                                         <img width="262" height="196" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/>
@@ -163,21 +160,17 @@ $registros_pag_actual = reg_pag_actual($inicio, $registros_por_pagina);
                                     </div>
                                 </div>
                               </a>
-
-                      <?php } 
-
-                        }
+                        <?php } ?>
+                      <?php }
                       
                     }elseif(isset($_GET['buscador'])){
 
                       $todos_carros = all_car($_GET['marca'], $_GET['modelo'], '', '', '', '', '', $_GET['precio_max']);
 
-                      if ($todos_carros->num_rows > 0) {
-                              
-                          while ($row = $todos_carros->fetch_assoc()) { ?>
-                    
+                      if ($todos_carros->num_rows > 0) { ?>
 
-                              <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                          <?php while ($row = $todos_carros->fetch_assoc()) { ?>
+                              <a href="https://automarketpanama.com/dev/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
                                 <div class="b-goods-f col-lg-4 col-md-6">
                                     <div class="b-team__media"><!--b-goods-f__media-->
                                         <img width="262" height="196" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/>
@@ -218,20 +211,18 @@ $registros_pag_actual = reg_pag_actual($inicio, $registros_por_pagina);
                                     </div>
                                 </div>
                               </a>
-
-
-                      <?php } 
-
-                        }
+                      <?php } ?>
+                      <?php }
                     
                     }else{
 
-                        if ($registros_pag_actual->num_rows > 0) {
+                        if ($todos_carros->num_rows > 0) { ?>
                                 
-                            while ($row = $registros_pag_actual->fetch_assoc()) { ?>
+                          <div id="registros" class="b-goods-group row">
 
-                              <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
-                                <div class="b-goods-f col-lg-4 col-md-6">
+                           <?php while ($row = $todos_carros->fetch_assoc()) {  ?>
+                              <a href="https://automarketpanama.com/dev/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                                <div class="b-goods-f col-lg-4 col-md-6 registro">
                                     <div class="b-team__media"><!--b-goods-f__media-->
                                         <img width="262" height="196" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/>
                                         <span class="b-goods-f__media-inner">
@@ -271,34 +262,43 @@ $registros_pag_actual = reg_pag_actual($inicio, $registros_por_pagina);
                                     </div>
                                 </div>
                               </a>
-                        <?php 
-                         }
-                     } 
-                    
+                              <?php /* */ ?>
+                              <?php 
+                              } ?>
+                          </div>
+                          <div id="paginador">
+                              <a href="#" id="anterior" data-pagina="prev">&lt;&lt;</a>
+                              <?php for ($i = 1; $i <= $numero_paginas; $i++) { ?>
+                                  <a href="#" data-pagina="<?php echo $i; ?>"><?php echo '-'.$i.'-'; ?></a>
+                              <?php } ?>
+                              <a href="#" id="siguiente" data-pagina="next">&gt;&gt;</a>
+                          </div>
+                    <?php   /* ?>
+                            <div style="text-align: center;">
+                              <?php if(!isset($_GET['pagina'])){  }else{ ?>
+                              <a href="?pagina=<?php echo $_GET['pagina'] - 1; ?>"> << </a> <?php } ?>
+                              <?php for ($pagina = 1; $pagina <= $numero_paginas; $pagina++) {
+
+                                          if ($pagina == $_GET['pagina']) {
+                                            $class = 'class="btn-sm btn-primary"';
+                                          }else {
+                                            $class = '';
+                                          }
+
+                                          if (!isset($_GET['pagina']) && $pagina == 1) {
+                                            $class = 'class="btn-sm btn-primary"';
+                                          }
+
+                                          echo '<a '.$class.' href="?pagina=' . $pagina . '">' . $pagina . '</a> ';
+                                      } ?>
+
+                              <?php if(!isset($_GET['pagina'])){ $siguiente=1; }else{ $siguiente = $_GET['pagina']; } ?>
+                              <a href="?pagina=<?php echo $siguiente + 1; ?>"> >> </a>
+                            </div>
+                            */ ?>
+                    <?php } 
                   } ?>
                 </main>
-                <div style="text-align: center;">
-                  <?php if(!isset($_GET['pagina'])){  }else{ ?>
-                  <a href="?pagina=<?php echo $_GET['pagina'] - 1; ?>"> << </a> <?php } ?>
-                  <?php for ($pagina = 1; $pagina <= $numero_paginas; $pagina++) {
-
-                              if ($pagina == $_GET['pagina']) {
-                                $class = 'class="btn-sm btn-primary"';
-                              }else {
-                                $class = '';
-                              }
-
-                              if (!isset($_GET['pagina']) && $pagina == 1) {
-                                $class = 'class="btn-sm btn-primary"';
-                              }
-
-                              echo '<a '.$class.' href="?pagina=' . $pagina . '">' . $pagina . '</a> ';
-                          } ?>
-
-                  <?php if(!isset($_GET['pagina'])){ $siguiente=1; }else{ $siguiente = $_GET['pagina']; } ?>
-                  <a href="?pagina=<?php echo $siguiente + 1; ?>"> >> </a>
-                </div>
-
               </div>
             </div>
           </div>
@@ -313,7 +313,7 @@ $registros_pag_actual = reg_pag_actual($inicio, $registros_por_pagina);
                     <br>
                     <br>
                         <h2 class="b-bnr-3__title ui-tilte" style="color:black;">Llévate tu seminuevo con financiamiento. </h2>
-                        <div class="b-bnr-3__info"></div><a class="b-bnr-3__btn btn btn-primary" href="https://automarketpanama.com/public/listing">Aplica aqui</a>
+                        <div class="b-bnr-3__info"></div><a class="b-bnr-3__btn btn btn-primary" href="https://automarketpanama.com/dev/public/listing">Aplica aqui</a>
                     </div>
                 </div>
             </div>

@@ -21,28 +21,11 @@
         <!-- ==========================-->
         <!-- MOBILE MENU-->
         <!-- ==========================-->
-        <?php include(ROOT_PATH . '/app/views/partials/menu.php'); ?>
+        <?php include(ROOT_PATH . '/app/views/partials/menu2.php'); ?>
 
 
-        <div class="section-title-page area-bg area-bg_dark area-bg_op_60">
-          <div class="area-bg__inner">
-            <div class="container">
-              <div class="row">
-                <div class="col offset-lg-3">
-                  <div class="b-title-page__wrap">
-                    <h1 class="b-title-page">Detalles del Auto</h1>
-                    <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="https://automarketpanama.com/public/">Inicio</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Detalles del Auto</li>
-                      </ol>
-                      <!-- end breadcrumb-->
-                    </nav>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="container">
+          <h3>INICIO > INVENTARIO > <span style="color:red;">DETALLES DEL AUTO</span></h3>
         </div>
         <!-- end .b-title-page-->
 
@@ -93,7 +76,7 @@
                       <i class="ic fas fa-car-side text-primary"></i>
                         Prueba de manejo
                     </a>
-                    <a class="b-goods-f__links-item" href="mailto:ventas@automarket.com?subject=Solicitud de Información&body=Estoy interesado en obtener más información acerca de https://automarketpanama.com/public/detail?placa=<?php echo $placa; ?>">
+                    <a class="b-goods-f__links-item" href="mailto:ventas@automarket.com?subject=Solicitud de Información&body=Estoy interesado en obtener más información acerca de https://automarketpanama.com/dev/public/detail?placa=<?php echo $placa; ?>">
                       <i class="ic fas fa-envelope text-primary"></i>
                         Solicitar más información
                     </a>
@@ -177,13 +160,13 @@
                         Modelo: <?php echo $row['Model']; ?><br>
                         Año: <?php echo $row['Year']; ?><br>
                         Kilometraje: <?php echo $row['Km']; ?><br>
-                        Combustible: <br>
+                        Combustible: <?php echo $row['Fuel']; ?><br>
                         Transmision: <?php echo $row['Transmission']; ?><br>
-                        Color: <br>
-                        Interior: <br>
-                        Unidad: <br>
+                        Color: <?php echo $row['Color']; ?><br>
+                        Interior: <?php echo $row['Interior']; ?><br>
+                        Unidad: <?php echo $row['Unit']; ?><br>
                         Placa: <?php echo strtolower($placa); ?><br>
-                        Ubicacion: <br>
+                        Ubicacion: <?php echo $row['LocationName']; ?> <br>
                         <div style="margin-top: 20px;">
                             <button class="btn btn-sm btn-primary" style="margin-bottom: 10px;">Contactar a un agente</button>
                             <button class="btn btn-sm btn-primary" style="margin-bottom: 10px;">Solicitar Cotizacion</button>
@@ -195,22 +178,22 @@
 
                    if($row['LocationName'] == 'Tumba Muerto'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/tumbamuerto.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/dev/public/assets/media/imaGoo/tumbamuerto.jpg" alt="foto"/>
                        <p>Sucursal de Tumba Muerto <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php }elseif($row['LocationName'] == 'David'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/david.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/dev/public/assets/media/imaGoo/david.jpg" alt="foto"/>
                       <p>Sucursal de David <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php }elseif($row['LocationName'] == 'Via Israel'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/viaizrrael.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/dev/public/assets/media/imaGoo/viaizrrael.jpg" alt="foto"/>
                       <p>Sucursal de Vía Israel <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php }elseif($row['LocationName'] == 'Chorrera'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/costaverde.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/dev/public/assets/media/imaGoo/costaverde.jpg" alt="foto"/>
                       <p>Sucursal de Costa Verde <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php } */ ?>
@@ -346,7 +329,7 @@
                           
                         ?>
 
-                          <a href="https://automarketpanama.com/public/detail?placa=<?php echo $precios_similares['LicensePlate']; ?>">
+                          <a href="https://automarketpanama.com/dev/public/detail?placa=<?php echo $precios_similares['LicensePlate']; ?>">
                               <div class="b-goods-f b-goods-f_mod-a" style="border-radius:10px;">
                                   <div class="b-team__media"> <!-- b-goods-f__media -->
                                       <img class="b-goods-f__img img-scale" draggable="false" width="445" height="333.75" src="<?php echo $precios_similares["Photo"]; ?>" alt="foto" />

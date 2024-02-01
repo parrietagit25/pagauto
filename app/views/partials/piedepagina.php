@@ -44,9 +44,10 @@
                 <section class="footer-section footer-section_link">
                 <h3 class="footer-section__title">Links</h3>
                 <ul class="footer-list list-unstyled">
-                    <li><a href="#">Automarket</a></li>
-                    <li><a href="#">Dollar</a></li>
-                    <li><a href="#">Grupo PCR</a></li>
+                    <li><a target="_blank" href="https://dollarpanama.com/">Dollar</a></li>
+                    <li><a target="_blank" href="https://www.panarenting.com/">Panarenting</a></li>
+                    <li><a target="_blank" href="https://autoservicepanama.com/">Autoservice</a></li>
+                    <li><a target="_blank" href="https://www.grupopcr.com.pa/">Grupo PCR</a></li>
                 </ul>
                 </section>
             </div>

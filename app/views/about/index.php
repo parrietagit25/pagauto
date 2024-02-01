@@ -82,10 +82,8 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                                   <div class="b-team__category"><?php echo utf8_encode($row["cargo"]); ?></div>
                               </div>
                               <div class="b-team__footer"><!--<a class="b-team__phone" href="tel:+507<?php // echo $row["celular"]; ?>"><i class="ic text-primary icon-call-end"></i> +507 <?php // echo $row["celular"]; ?></a>-->
-                                  <ul>
-                                    <li class="b-team__soc-item"><a class="b-team__soc-link" href="https://www.instagram.com/<?php echo $row["redSocial"]; ?>/"><i class="ic fab fa-instagram"></i> <?php echo $row["redSocial"]; ?></a></li>
-                                  </ul>
-                                </div>
+                                  <a class="b-team__soc-link" href="https://www.instagram.com/<?php echo $row["redSocial"]; ?>/"><i class="ic fab fa-instagram"></i> <?php echo $row["redSocial"]; ?></a>
+                              </div>
                           </div>
                       </div>
                       <?php }

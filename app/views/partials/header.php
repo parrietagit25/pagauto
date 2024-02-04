@@ -70,6 +70,18 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .arrow-icon::after {
+            content: "▼"; /* Icono hacia abajo por defecto */
+            display: inline-block;
+            margin-left: 5px; /* Espacio entre el texto y el icono */
+            transition: transform 0.3s; /* Transición suave */
+        }
+
+        .collapsed .arrow-icon::after {
+            transform: rotate(180deg); /* Gira el icono hacia arriba cuando el panel está cerrado */
+        }
+
     </style>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -79,8 +91,8 @@
     })(window,document,'script','dataLayer','GTM-TDDPXS9');</script>
     <!-- End Google Tag Manager -->
     <!--[if lt IE 9 ]>
-<script src="/assets/js/separate-js/html5shiv-3.7.2.min.js" type="text/javascript"></script><meta content="no" http-equiv="imagetoolbar">
-<![endif]-->
+    <script src="/assets/js/separate-js/html5shiv-3.7.2.min.js" type="text/javascript"></script><meta content="no" http-equiv="imagetoolbar">
+    <![endif]-->
 </head>
 
 <body class="page">

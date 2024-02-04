@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-[26-Jan-2024 04:01:40 UTC] PHP Fatal error:  Uncaught Error: Class 'FinanciamientoController' not found in /home/uaq20qjz56nj/public_html/dev/app/core/App.php:26
-Stack trace:
-#0 /home/uaq20qjz56nj/public_html/dev/public/index.php(12): App->__construct()
-#1 {main}
-  thrown in /home/uaq20qjz56nj/public_html/dev/app/core/App.php on line 26
-=======
 [26-Jan-2024 20:01:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_country() in /home/uaq20qjz56nj/public_html/dev/app/core/db_connection.php:309
 Stack trace:
 #0 /home/uaq20qjz56nj/public_html/dev/app/core/db_connection.php(25): get_where_pais()
@@ -15,4 +8,26 @@ Stack trace:
 #5 /home/uaq20qjz56nj/public_html/dev/public/index.php(12): App->__construct()
 #6 {main}
   thrown in /home/uaq20qjz56nj/public_html/dev/app/core/db_connection.php on line 309
->>>>>>> e5e6a676f217b2d1c07399829e43dbbea1a72dd8
+[26-Jan-2024 20:25:12 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/uaq20qjz56nj/public_html/dev/app/core/db_connection.php on line 352
+[26-Jan-2024 20:25:12 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/uaq20qjz56nj/public_html/dev/app/core/db_connection.php on line 352
+[26-Jan-2024 20:25:12 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/uaq20qjz56nj/public_html/dev/app/core/db_connection.php on line 352
+[29-Jan-2024 15:03:00 UTC] PHP Notice:  Undefined variable: todas_marcas in /home/uaq20qjz56nj/public_html/dev/app/views/partials/menu.php on line 111
+[29-Jan-2024 15:03:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in /home/uaq20qjz56nj/public_html/dev/app/views/partials/menu.php:111
+Stack trace:
+#0 /home/uaq20qjz56nj/public_html/dev/app/views/about/index.php(16): include()
+#1 /home/uaq20qjz56nj/public_html/dev/app/core/Controller.php(30): require_once('/home/uaq20qjz5...')
+#2 /home/uaq20qjz56nj/public_html/dev/app/controllers/AboutController.php(6): Controller->view('about/index')
+#3 /home/uaq20qjz56nj/public_html/dev/app/core/App.php(40): AboutController->index()
+#4 /home/uaq20qjz56nj/public_html/dev/public/index.php(12): App->__construct()
+#5 {main}
+  thrown in /home/uaq20qjz56nj/public_html/dev/app/views/partials/menu.php on line 111
+[29-Jan-2024 15:04:49 UTC] PHP Notice:  Undefined variable: todas_marcas in /home/uaq20qjz56nj/public_html/dev/app/views/partials/menu.php on line 111
+[29-Jan-2024 15:04:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in /home/uaq20qjz56nj/public_html/dev/app/views/partials/menu.php:111
+Stack trace:
+#0 /home/uaq20qjz56nj/public_html/dev/app/views/about/index.php(16): include()
+#1 /home/uaq20qjz56nj/public_html/dev/app/core/Controller.php(30): require_once('/home/uaq20qjz5...')
+#2 /home/uaq20qjz56nj/public_html/dev/app/controllers/AboutController.php(6): Controller->view('about/index')
+#3 /home/uaq20qjz56nj/public_html/dev/app/core/App.php(40): AboutController->index()
+#4 /home/uaq20qjz56nj/public_html/dev/public/index.php(12): App->__construct()
+#5 {main}
+  thrown in /home/uaq20qjz56nj/public_html/dev/app/views/partials/menu.php on line 111

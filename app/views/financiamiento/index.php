@@ -33,7 +33,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                   <div class="row">
                     <div class="col-12" style="font-size:18px;">
                       <h2>REQUISITOS ASALARIADOS</h2>
-                      <ul>
+                      <ul style="padding-top:20px;">
                         <li style="font-size:20px;">Solicitud de Crédito </li>
                         <li>Copia de Cédula / Pasaporte </li>
                         <li>Copia de Licencia </li>
@@ -44,7 +44,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                       </ul>
                     </div>
                       <div class="col-12">
-                        <h2>Requisitos</h2>
+                        <h2 style="padding-top:20px;">Requisitos</h2>
                         <div class="d-flex justify-content-between">
                             <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary">Asalariados</a>
                             <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary">Independientes</a>
@@ -59,7 +59,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
               <div class="row">
                 <div class="col-12" style="font-size:18px;">
                   <h2>REQUISITOS INDEPENDIENTES</h2>
-                    <ul>
+                    <ul style="padding-top:20px;">
                       <li style="font-size:20px;">Solicitud de Crédito </li>
                       <li>Copia de Cédula/ pasaporte </li>
                       <li>Copia de Licencia </li>
@@ -69,8 +69,8 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                     </ul>
                   </div>
                   <div class="col-12">
-                    <h2>Requisitos</h2>
-                    <div class="d-flex justify-content-between">
+                    <h2 style="padding-top:20px;">Requisitos</h2>
+                    <div class="d-flex justify-content-between" style="padding-top:20px;">
                         <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary">Asalariados</a>
                         <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary">Independientes</a>
                         <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>
@@ -85,7 +85,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                 <div class="row">
                   <div class="col-12" style="font-size:18px;">
                     <h2>REQUISITOS PERSONA JURÍDICA </h2>
-                      <ul>
+                      <ul style="padding-top:20px;">
                         <li style="font-size:20px;">Solicitud de Crédito </li>
                         <li>Copia de Cédula/ pasaporte </li>
                         <li>Copia de Licencia </li>
@@ -97,8 +97,8 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                       </ul>
                     </div>
                     <div class="col-12">
-                      <h2>Requisitos</h2>
-                      <div class="d-flex justify-content-between">
+                      <h2 style="padding-top:20px;">Requisitos</h2>
+                      <div class="d-flex justify-content-between" style="padding-top:20px;">
                           <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary">Asalariados</a>
                           <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary">Independientes</a>
                           <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>
@@ -111,7 +111,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
 
             <div class="container">
                 <div class="row">
-                  <div class="col-6" style="font-size:20px;">
+                  <div class="col-6" style="font-size:20px; padding-top:20px;">
                     <p>En Automarket contamos con un departamento especializado en asesorar, gestionar y negociar las condiciones más favorables para tu financiamiento y seguro para tu próximo vehículo. Mantenemos relaciones sólidas con las principales entidades bancarias y financieras, asegurándote opciones las mejores opciones adaptadas a tus necesidades.</p> 
                     <p>Además, brindamos el apoyo en la adquisición de póliza, garantizando la protección integral de tu inversión. </p>
                     <p>En AutoMarket, la calidad y excelencia en nuestros productos y servicios son nuestra prioridad. Estamos comprometidos a brindarte una experiencia de compra sin igual. ¡Permítenos servirte y hacer realidad la adquisición de tu Seminuevo de manera sencilla y segura! </p>
@@ -120,8 +120,8 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
 
                   </div>
                     <div class="col-12">
-                      <h2>Requisitos</h2>
-                      <div class="d-flex justify-content-between">
+                      <h2 style="padding-top:20px;">Requisitos</h2>
+                      <div class="d-flex justify-content-between" style="padding-top:20px;">
                           <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary">Asalariados</a>
                           <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary">Independientes</a>
                           <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>

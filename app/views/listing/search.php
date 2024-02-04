@@ -16,6 +16,20 @@ if (isset($_POST['modelo_form_principal'])) {
 
     <?php } 
    
+}elseif(isset($_POST['ubicacion_form_principal'])) {
+
+    echo $_POST['ubicacion_form_principal'];
+
+    $obtener_modelo = get_ubicacion_formulario_principal($_POST['ubicacion_form_principal']); ?>
+
+    <option value=''>Seleccionar</option>
+
+    <?php while ($row = $obtener_modelo->fetch_assoc()) { ?>
+
+    <option value="<?php echo $row['LocationName']; ?>"><?php echo $row['LocationName']; ?></option>
+
+    <?php } 
+   
 }elseif(isset($_POST['filtros_form_principal'])){
 
 $marca = isset($_POST['marca']) && $_POST['marca'] !== '' ? $_POST['marca'] : '';
@@ -43,16 +57,16 @@ $todos_carros = all_car_filtro($marca, $categoria, $anio, $ubicacion, $precio); 
                         <span>
                             <b>
                             <h3 class="ui-title" style="margin:-10px;"><span style="color:#1b3b72;"><?php echo number_format($row["Price"], 2); ?></span></h3>
-                            <small style="font-size:10px;">Precio sin impuesto</small><br>
+                            <small style="font-size:10px; color:#333333;">Precio sin impuesto</small><br>
                             <h5 style="color:black;"><?php echo $row["Make"]. ' ' . $row["Model"]; ?></h5>
                             </b>
                         </span>
                     </div>
                     <div class="b-goods-f__info"></div>
-                    <ul class="list-unstyled">
-                        <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
-                        <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Año :</span><span class="b-goods-f__list-info"><?php echo $row['Year']; ?></span></li>
-                        <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
+                    <ul class="list-unstyled" style="color:#333333;">
+                        <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
+                        <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Año :</span><span class="b-goods-f__list-info"><?php echo $row['Year']; ?></span></li>
+                        <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
                     </ul>
                 </div>
                 <div class="b-goods-f__sidebar">

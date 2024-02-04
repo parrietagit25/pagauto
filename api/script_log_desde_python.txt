@@ -1,0 +1,10 @@
+Iniciando script...
+Contenido JSON recibido:
+{"VIN": "TUX-96", "Year": "2023", "Transmission": "AUTOMATICA", "Color": "BLANCO", "Make": "HYUNDAI", "Km": 34070, "Code": "TUX", "LicensePlate": "EE9011", "Model": "TUCSON", "Chasis": "KMHJB81DBPU140667", "Unit": "TUX-96", "Engine": "G4NLNU645544", "Fuel": "Gasolina Sin Plomo", "Price": 21798.0, "PriceTax": 23323.86, "Doors": 4, "CarType": "Camioneta", "CC": null, "LocationCode": 226, "LocationName": "David", "Interior": "TELA", "Headline": null, "Description": null, "Photo": null, "Status": "Disponible", "Marked": false, "Promo": false, "PromoPrice": 0.0, "PromoPriceTax": 0.0, "Prefijo": "CHIRI", "trg_updatefechaWeb": "2024-01-30T23:14:21", "update_stat": 1, "Internacional": null, "LoadDate": "2024-02-02 11:03:23"}
+VINs procesados: 
+Array
+(
+)
+Consulta de actualización: 
+UPDATE Automarket_Invs_web SET stat_master = 2 WHERE VIN NOT IN ()
+Error en la consulta de actualización: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1

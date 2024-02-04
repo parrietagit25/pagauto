@@ -184,6 +184,29 @@
         }
     </script>
     <script>
+        function buscar_ubicacion(x) {
+
+            var modelo = x;
+
+            var formData = new FormData();
+                formData.append('ubicacion_form_principal', modelo);
+            
+            fetch('/dev/app/views/listing/search.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+
+                document.querySelector("#ubicacion_select").innerHTML = data;
+                
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
+            
+        }
+    </script>
+    <script>
         function checkLogoVisibility() {
             var logo = document.querySelector('.scroll-edit');
             var screenWidth = window.innerWidth;
@@ -203,10 +226,6 @@
         window.onresize = checkLogoVisibility;
 
         checkLogoVisibility();
-
-        console.log('paila 0');
-
-        console.log('paila 1');
         
         const selectedFilters = {}; 
         const filtroElements = document.querySelectorAll('.filtro');
@@ -219,8 +238,6 @@
                 selectedFilters[categoria] = valor;
 
                 var filtros = selectedFilters;
-
-                console.log('paila 2');
 
                 var marca = "";
                 var cate = "";
@@ -326,7 +343,6 @@
             $("#paginador a[data-pagina='1']").addClass("btn btn-primary");
         });
     </script>
-
     </body>
 
 </html>

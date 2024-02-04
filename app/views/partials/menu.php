@@ -117,7 +117,7 @@
                                             <div class="col-3">
                                                 <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
                                                 <div class="">
-                                                    <select name="modelo" data-width="100%" class="form-control" id="marca_select">
+                                                    <select name="modelo" data-width="100%" class="form-control" id="marca_select" onchange="buscar_ubicacion(this.value)">
                                                         <option value=''>Seleccionar</option>
                                                     </select>
                                                 </div>
@@ -136,10 +136,19 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-3">
-                                                <div class="b-find__label"><span class="b-find__number"></div>
+                                            <div class="col-2">
+                                                <div class="b-find__label"><span class="b-find__number">04</span> Ubicacion</div>
                                                 <div class="">
-                                                    <input type="submit" class="b-find__btn btn btn-primary" value="Buscar">
+                                                    <select name="ubicacion" class="form-control" id="ubicacion_select" >
+                                                        <option value=''>Seleccionar</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="b-find__label"><span class="b-find__number"></span></div>
+                                                <div class="">
+                                                    <input type="submit" class="b-find__btn btn btn-link" style="width:70px;" value="">
+                                                    <i class="fas fa-search" style="z-index:999; font-size:30px; margin-top:10px;"></i> <!-- Agrega el icono de lupa aquí -->
                                                 </div>
                                             </div>
                                         </div>

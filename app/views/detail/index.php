@@ -294,10 +294,10 @@
             <div class="container">
                 <div class="row">
                     
-                    <div class="col-10 justify-content-center" style="text-align:left;">
-                      <h1 style="font-size: 80px; color:#3d4c93;">Puedes financiar este auto!</h1>
+                    <div class="col-10 justify-content-center" style="text-align:left; margin-top:40px;">
+                      <h1 style="font-size: 80px; font-weight: bold; color:#3d4c93;">Puedes financiar este auto!</h1>
                       <h4>Te ayudamos a realizar el tramite de financiamiento para la compra de tu auto</h4>
-                      <button class="btn btn-sm btn-primary">Ver Requisitos</button>
+                      <a class="btn btn-sm btn-primary" href="https://automarketpanama.com/dev/public/financiamiento">Ver Requisitos</a>
                     </div>
                     <div class="col-2">
                         <img src="<?php echo BASEURL; ?>media/ima/finan.png" width="400">

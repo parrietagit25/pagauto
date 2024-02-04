@@ -401,5 +401,17 @@ function get_country(){
 
   }
 
+  function get_ubicacion_formulario_principal($model){
+
+    $where_pais = $_SESSION['country_ip'];
+
+    $conn = conectarDB();
+    $sql = "SELECT LocationName FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais AND Model = '".$model."' GROUP BY LocationName";
+    $result = $conn->query($sql);
+    cerrarDB($conn);
+    return $result;
+
+  }
+
 
 ?>

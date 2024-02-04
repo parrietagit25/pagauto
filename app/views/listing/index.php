@@ -51,39 +51,78 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
 
               <div class="col-lg-3">
                 <aside class="l-sidebar">
-                  <div class="widget section-sidebar bg-light">
+                  <div class="widget section-sidebar">
                     <h3 class="widget-title bg-dark"><i class="ic flaticon-car-4"></i>FILTRAR POR</h3>
                     <div class="widget-content">
                       <div class="widget-inner">
-                        <form id="buscar" class="b-filter bg-light">
+                        <form id="buscar" class="b-filter">
                           <div class="b-filter__main">
                             <div class="b-filter__row">
-                            <h2>Marca</h2>
-                            <?php while ($marca = $marcas_filtros->fetch_assoc()) { ?>
-                                <a href="#" class="filtro" data-categoria="marca" data-valor="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?> (<?php echo $marca['contar']; ?>) </a> <br>
-                            <?php } ?>
 
-                            <h2>Categoria</h2>
-                            <?php while ($tipo_carro_filtro = $tipo_carro3->fetch_assoc()) { ?>
-                                <a href="#" class="filtro" data-categoria="categoria" data-valor="<?php echo $tipo_carro_filtro['CarType']; ?>"><?php echo $tipo_carro_filtro['CarType']; ?> (<?php echo $tipo_carro_filtro['contar']; ?>) </a> <br>
-                            <?php } ?>
-
-                            <h2>Año</h2>
-                            <?php while ($anio_filtro = $anio_desde2->fetch_assoc()) { ?>
-                                <a href="#" class="filtro" data-categoria="anio" data-valor="<?php echo $anio_filtro['Year']; ?>"><?php echo $anio_filtro['Year']; ?> </a> <br>
-                            <?php } ?>
-
-                            <h2>Ubicación</h2>
-                            <?php while ($ubicacion_filtro = $filtro_ubicacion->fetch_assoc()) { ?>
-                                <a href="#" class="filtro" data-categoria="ubicacion" data-valor="<?php echo $ubicacion_filtro['LocationName']; ?>"><?php echo $ubicacion_filtro['LocationName']; ?> </a> <br>
-                            <?php } ?>
-
-                            <h2>Precio</h2>
-                            <a href="#" class="filtro" data-categoria="precio" data-valor="10000-29999">10,000 a 29,999</a> <br>
-                            <a href="#" class="filtro" data-categoria="precio" data-valor="30000-59999">30,000 a 59,999</a> <br>
-                            <a href="#" class="filtro" data-categoria="precio" data-valor="60000-89999">60,000 a 89,999</a> <br>
-                            <a href="#" class="filtro" data-categoria="precio" data-valor="90000-150000">90,000 a 150,000</a>
-
+                                      <div class="accordion" id="miAcordeon" style="text-align:left;">
+                                        <div class="card">
+                                          <div class="card-header">
+                                            <h4 data-toggle="collapse" data-target="#panel1">Marca <span class="arrow-icon"></span></h4>
+                                          </div>
+                                          <div id="panel1" class="collapse show" data-parent="#miAcordeon"> <!-- show -->
+                                            <div class="card-body">
+                                              <?php while ($marca = $marcas_filtros->fetch_assoc()) { ?>
+                                                  <a href="#" style="color:black;" class="filtro" data-categoria="marca" data-valor="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?> (<?php echo $marca['contar']; ?>) </a> <br>
+                                              <?php } ?>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-header">
+                                            <h4 data-toggle="collapse" data-target="#panel2">Categoria <span class="arrow-icon"></span></h4>
+                                          </div>
+                                          <div id="panel2" class="collapse" data-parent="#miAcordeon">
+                                            <div class="card-body">
+                                              <?php while ($tipo_carro_filtro = $tipo_carro3->fetch_assoc()) { ?>
+                                                  <a href="#" style="color:black;" class="filtro" data-categoria="categoria" data-valor="<?php echo $tipo_carro_filtro['CarType']; ?>"><?php echo $tipo_carro_filtro['CarType']; ?> (<?php echo $tipo_carro_filtro['contar']; ?>) </a> <br>
+                                              <?php } ?>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-header">
+                                            <h4 data-toggle="collapse" data-target="#panel3">Año <span class="arrow-icon"></span></h4>
+                                          </div>
+                                          <div id="panel3" class="collapse" data-parent="#miAcordeon">
+                                            <div class="card-body">
+                                            <?php while ($anio_filtro = $anio_desde2->fetch_assoc()) { ?>
+                                                <a href="#" style="color:black;" class="filtro" data-categoria="anio" data-valor="<?php echo $anio_filtro['Year']; ?>"><?php echo $anio_filtro['Year']; ?> </a> <br>
+                                            <?php } ?>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-header">
+                                            <h4 data-toggle="collapse" data-target="#panel4">Ubicación <span class="arrow-icon"></span></h4>
+                                          </div>
+                                          <div id="panel4" class="collapse" data-parent="#miAcordeon">
+                                            <div class="card-body">
+                                            <?php while ($ubicacion_filtro = $filtro_ubicacion->fetch_assoc()) { ?>
+                                                <a href="#" style="color:black;" class="filtro" data-categoria="ubicacion" data-valor="<?php echo $ubicacion_filtro['LocationName']; ?>"><?php echo $ubicacion_filtro['LocationName']; ?> </a> <br>
+                                            <?php } ?>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-header">
+                                            <h4 data-toggle="collapse" data-target="#panel5">Precio <span class="arrow-icon"></span></h4>
+                                          </div>
+                                          <div id="panel5" class="collapse" data-parent="#miAcordeon">
+                                            <div class="card-body">
+                                              <a href="#" style="color:black;" class="filtro" data-categoria="precio" data-valor="10000-29999">10,000 a 29,999</a> <br>
+                                              <a href="#" style="color:black;" class="filtro" data-categoria="precio" data-valor="30000-59999">30,000 a 59,999</a> <br>
+                                              <a href="#" style="color:black;" class="filtro" data-categoria="precio" data-valor="60000-89999">60,000 a 89,999</a> <br>
+                                              <a href="#" style="color:black;" class="filtro" data-categoria="precio" data-valor="90000-150000">90,000 a 150,000</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                              <!-- </div> -->
                             </div>
                           </div>
                         </form>
@@ -104,7 +143,7 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                         </select> -->
                       </div>
                     </div>
-                    <div class="b-filter-goods__info col-auto"><!-- Showing results<strong> 1 to 10</strong> of total<strong> 145</strong> --></div>
+                    <div class="b-filter-goods__info col-auto"></div>
                     <div class="btns-switch col-auto"><!--<i class="btns-switch__item js-view-list ic fa fa-th-list"></i>--><i class="btns-switch__item js-view-th active ic fa fa-th"></i></div>
                   </div>
                 </div>
@@ -134,16 +173,16 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                               <span>
                                                   <b>
                                                   <h3 class="ui-title" style="margin:-10px;"><span style="color:#1b3b72;"><?php echo number_format($row["Price"], 2); ?></span></h3>
-                                                  <small style="font-size:10px;">Precio sin impuesto</small><br>
+                                                  <small style="font-size:10px; color:#333333;">Precio sin impuesto</small><br>
                                                   <h5 style="color:black;"><?php echo $row["Make"]. ' ' . $row["Model"]; ?></h5>
                                                   </b>
                                               </span>
                                             </div>
                                             <div class="b-goods-f__info"></div>
-                                            <ul class="list-unstyled">
-                                              <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
-                                              <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Año :</span><span class="b-goods-f__list-info"><?php echo $row['Year']; ?></span></li>
-                                              <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
+                                            <ul class="list-unstyled" style="color:#333333;">
+                                              <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
+                                              <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Año :</span><span class="b-goods-f__list-info"><?php echo $row['Year']; ?></span></li>
+                                              <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
                                             </ul>
                                         </div>
                                         <div class="b-goods-f__sidebar">
@@ -185,16 +224,16 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                               <span>
                                                   <b>
                                                   <h3 class="ui-title" style="margin:-10px;"><span style="color:#1b3b72;"><?php echo number_format($row["Price"], 2); ?></span></h3>
-                                                  <small style="font-size:10px;">Precio sin impuesto</small><br>
+                                                  <small style="font-size:10px; color:#333333;">Precio sin impuesto</small><br>
                                                   <h5 style="color:black;"><?php echo $row["Make"]. ' ' . $row["Model"]; ?></h5>
                                                   </b>
                                               </span>
                                             </div>
                                             <div class="b-goods-f__info"></div>
-                                            <ul class="list-unstyled">
-                                              <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
-                                              <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Año :</span><span class="b-goods-f__list-info"><?php echo $row['Year']; ?></span></li>
-                                              <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
+                                            <ul class="list-unstyled" style="color:#333333;">
+                                              <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
+                                              <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Año :</span><span class="b-goods-f__list-info"><?php echo $row['Year']; ?></span></li>
+                                              <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
                                             </ul>
                                         </div>
                                         <div class="b-goods-f__sidebar">
@@ -236,16 +275,16 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                               <span>
                                                   <b>
                                                   <h3 class="ui-title" style="margin:-10px;"><span style="color:#1b3b72;"><?php echo number_format($row["Price"], 2); ?></span></h3>
-                                                  <small style="font-size:10px;">Precio sin impuesto</small><br>
+                                                  <small style="font-size:10px; color:#333333;">Precio sin impuesto</small><br>
                                                   <h5 style="color:black;"><?php echo $row["Make"]. ' ' . $row["Model"]; ?></h5>
                                                   </b>
                                               </span>
                                             </div>
                                             <div class="b-goods-f__info"></div>
-                                            <ul class="list-unstyled">
-                                              <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
-                                              <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Año :</span><span class="b-goods-f__list-info"><?php echo $row['Year']; ?></span></li>
-                                              <li class="b-goods-f__list-item"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
+                                            <ul class="list-unstyled" style="color:#333333;">
+                                              <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Km :</span><span class="b-goods-f__list-info"><?php echo $row['Km']; ?>km</span></li>
+                                              <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Año :</span><span class="b-goods-f__list-info"><?php echo $row['Year']; ?></span></li>
+                                              <li class="b-goods-f__list-item" style="background-color:#CCCCCC;"><span class="b-goods-f__list-title">Transmision :</span><span class="b-goods-f__list-info"><?php echo $row['Transmission']; ?></span></li>
                                             </ul>
                                         </div>
                                         <div class="b-goods-f__sidebar">

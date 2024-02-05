@@ -16,6 +16,20 @@ if (isset($_POST['modelo_form_principal'])) {
 
     <?php } 
    
+}elseif(isset($_POST['ubicacion_form_principal'])) {
+
+    echo $_POST['ubicacion_form_principal'];
+
+    $obtener_modelo = get_ubicacion_formulario_principal($_POST['ubicacion_form_principal']); ?>
+
+    <option value=''>Seleccionar</option>
+
+    <?php while ($row = $obtener_modelo->fetch_assoc()) { ?>
+
+    <option value="<?php echo $row['LocationName']; ?>"><?php echo $row['LocationName']; ?></option>
+
+    <?php } 
+   
 }elseif(isset($_POST['filtros_form_principal'])){
 
 $marca = isset($_POST['marca']) && $_POST['marca'] !== '' ? $_POST['marca'] : '';

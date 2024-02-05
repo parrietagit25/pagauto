@@ -1,0 +1,196 @@
+el trigger esta eb el 27 pero no funciona cuando se actualiza
+primero arreglar lo del trigger
+tenemos que hacer una tabla intermedia para detectar el cambio en la tabla principal 
+solo se actualiza los registros afectados
+
+SELECT * 
+FROM sys.triggers 
+WHERE parent_id = OBJECT_ID('VIN');
+
+trigger que hizo yorlene 
+
+USE [PCRFACT]
+GO
+/****** Object:  Trigger [dbo].[trg_updatefechaWeb]    Script Date: 12/04/2023 1:37:09 p. m. ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+ 
+ALTER TRIGGER [dbo].[trg_updatefechaWeb]
+ON [dbo].[VIN]
+AFTER UPDATE 
+AS
+BEGIN
+ 
+IF TRIGGER_NESTLEVEL() > 1
+     RETURN
+ 
+         
+    UPDATE VIN
+    SET date_time_web = GETDATE()
+    FROM VIN
+	INNER JOIN inserted i ON VIN.VIN = i.VIN;
+END;
+
+
+////////////////////////////////////////////////////////// query de la tabla intermedia /////////////////////////////////////////////////////
+
+
+CREATE TABLE InterWeb_Automarket_Invs (
+    VIN varchar(30) NULL,
+    Year varchar(4) NULL,
+    Transmission varchar(20) NULL,
+    Color nvarchar(50) NULL,
+    Make varchar(50) NULL,
+    Km int NULL,
+    Code varchar(20) NULL,
+    LicensePlate varchar(20) NULL,
+    Model varchar(50) NULL,
+    Chasis varchar(20) NULL,
+    Unit varchar(20) NULL,
+    Engine varchar(20) NULL,
+    Fuel varchar(50) NULL,
+    Price money NULL,
+    PriceTax money NULL,
+    Doors int NULL,
+    CarType varchar(50) NULL,
+    CC float NULL,
+    LocationCode int NULL,
+    LocationName varchar(12) NULL,
+    Interior varchar(50) NULL,
+    Headline varchar(50) NULL,
+    Description varchar(1000) NULL,
+    Photo varchar(MAX) NULL,
+    Status varchar(10) NULL,
+    Marked bit NULL,
+    Promo bit NULL,
+    PromoPrice money NULL,
+    PromoPriceTax money NULL,
+    LoadDate datetime NULL,
+    trg_updatefechaWeb datetime NULL,
+    update_stat int NULL DEFAULT 1
+);
+
+tabla de la vista original Automarket_Invs
+tabla de la vista creada Automarket_Invs_web se agregaron 2 columnas VIN y fecha
+
+
+USE [PCRFACT]
+GO
+
+/****** Object:  Table [dbo].[InterWeb_Automarket_Invs]    Script Date: 18/12/2023 3:00:11 p. m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[InterWeb_Automarket_Invs](
+	[VIN] [varchar](30) NULL,
+	[Year] [varchar](4) NULL,
+	[Transmission] [varchar](20) NULL,
+	[Color] [nvarchar](50) NULL,
+	[Make] [varchar](50) NULL,
+	[Km] [int] NULL,
+	[Code] [varchar](20) NULL,
+	[LicensePlate] [varchar](20) NULL,
+	[Model] [varchar](50) NULL,
+	[Chasis] [varchar](20) NULL,
+	[Unit] [varchar](20) NULL,
+	[Engine] [varchar](20) NULL,
+	[Fuel] [varchar](50) NULL,
+	[Price] [money] NULL,
+	[PriceTax] [money] NULL,
+	[Doors] [int] NULL,
+	[CarType] [varchar](50) NULL,
+	[CC] [float] NULL,
+	[LocationCode] [int] NULL,
+	[LocationName] [varchar](12) NULL,
+	[Interior] [varchar](50) NULL,
+	[Headline] [varchar](50) NULL,
+	[Description] [varchar](1000) NULL,
+	[Photo] [varchar](max) NULL,
+	[Status] [varchar](10) NULL,
+	[Marked] [bit] NULL,
+	[Promo] [bit] NULL,
+	[PromoPrice] [money] NULL,
+	[PromoPriceTax] [money] NULL,
+	[LoadDate] [datetime] NULL,
+	[trg_updatefechaWeb] [datetime] NULL,
+	[update_stat] [int] NULL,
+	[Prefijo] [varchar](30) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[InterWeb_Automarket_Invs] ADD  DEFAULT ((1)) FOR [update_stat]
+GO
+
+
+
+
+/// creacion de la vista 
+
+USE [PCRFACT]
+GO
+
+/****** Object:  View [dbo].[Automarket_Invs_web]    Script Date: 18/12/2023 3:01:55 p. m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+-- dbo.Automarket_Invs source
+
+CREATE VIEW [dbo].[Automarket_Invs_web]
+AS SELECT
+	V.VIN,
+	V.Modelo as Year,
+	V.CodigoTransmision as Transmission,
+	UPPER(V.CodigoColor) as Color,
+	A.Familia as Make,
+	ISNULL(V.KM, 0) as Km,
+	V.Articulo as Code,
+	V.PLACAS as LicensePlate,
+	A.Linea as Model,
+	V.Llave as Chasis,
+	V.Vin as Unit,
+	V.Motor as Engine,
+	V.PCRCombustible as Fuel,
+	ISNULL(V.PCRPrecioMarcado, 0) as Price,
+	ISNULL(V.PCRPrecioMarcado, 0)+ (ISNULL(V.PCRPrecioMarcado, 0)*7/100) as PriceTax,
+	V.PCRNumeroPuertas as Doors,
+	V.PCRTipoAuto as CarType,
+	V.PCRTamMotor as CC,
+	S.Sucursal as LocationCode,
+	CASE WHEN S.Sucursal = 201 THEN 'Tumba Muerto'
+		 WHEN S.Sucursal = 206 THEN 'Via Israel'
+		 WHEN S.Sucursal = 222 THEN 'Chorrera'
+		 ELSE 'David' END as LocationName,
+	V.PCRTipoInterior as Interior,
+	V.PCRHeadline as Headline,
+	V.PCRDesc as Description,
+	V.PCRFotos as Photo,
+	(CASE WHEN dbo.fnObtenerAgenteVenta(s.SerieLote,s.Sucursal) is null THEN 'Disponible' 
+	WHEN dbo.fnObtenerAgenteVentaFACT(s.SerieLote,s.Sucursal) is not null THEN 'Facturado'
+	ELSE 'Reservado' END) As Status,
+	ISNULL(V.PCRDestacado, 0) as Marked,
+	ISNULL(V.PCRPromo, 0) as Promo,
+	ISNULL(V.PCRPrecioPromo, 0) as PromoPrice,
+	ISNULL(V.PCRPrecioPromo, 0) + (ISNULL(V.PCRPrecioPromo, 0)*7/100) as PromoPriceTax,
+	GETDATE() as LoadDate, 
+	V.date_time_web
+From SerieLote s 
+INNER JOIN VIN v ON s.SerieLote=v.VIN
+LEFT JOIN Art A ON s.Articulo = A.Articulo
+WHERE ((ISNULL(s.Existencia,0) > 0) OR (ISNULL(s.ExistenciaActivoFijo,0) > 0)) AND (s.Existencia is not null OR s.ExistenciaActivoFijo is not null)
+AND s.Sucursal <> 0
+AND v.CodigoRadio <> 1;
+GO
+
+
+//// campo agregado a la tabla VIN 
+
+[date_time_web]

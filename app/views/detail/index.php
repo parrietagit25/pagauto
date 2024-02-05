@@ -168,9 +168,9 @@
                         Placa: <?php echo strtolower($placa); ?><br>
                         Ubicacion: <?php echo $row['LocationName']; ?> <br>
                         <div style="margin-top: 20px;">
-                            <button class="btn btn-sm btn-primary" style="margin-bottom: 10px;">Contactar a un agente</button>
-                            <button class="btn btn-sm btn-primary" style="margin-bottom: 10px;">Solicitar Cotizacion</button>
-                            <button class="btn btn-sm btn-primary">Agenda prueba de manejo</button>
+                            <button class="btn btn-sm btn-primary" style="margin-bottom: 10px; width:100%;">Contactar a un agente</button>
+                            <button class="btn btn-sm btn-primary" style="margin-bottom: 10px; width:100%;">Solicitar Cotizacion</button>
+                            <!--<button class="btn btn-sm btn-primary">Agenda prueba de manejo</button> -->
                         </div>
                     </div>
                       

@@ -22,6 +22,14 @@ $conn = conectarDB();
                     </div>';
 
     }
+
+    if (isset($_POST['eliminar_user'])) {
+        $delete = $conn->query("DELETE FROM users WHERE id = '".$_POST['eliminar_user']."'");
+        $mensaje .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Usuario Eliminado</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+    }
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -48,9 +56,9 @@ $conn = conectarDB();
       <?php // <form action="" method="post"> ?>
         <div class="container">
             <?php echo $mensaje; ?>
-            <div class="container text-left" style="border: solid 1px #FADE24; padding:20px;">
+            <div class="container text-left">
               <div class="row">
-                <div class="col-12" style="border: solid 1px #FADE24; padding:20px;">
+                <div class="col-12">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Registrar Usuario
                     </button>
@@ -61,6 +69,7 @@ $conn = conectarDB();
                             <tr>
                                 <th>Usuario</th>
                                 <th>Fecha</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,13 +79,37 @@ $conn = conectarDB();
                             <tr>
                                 <td><?php echo $lista['username']; ?></td>
                                 <td><?php echo $lista['date_time']; ?></td>
+                                <td><input type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminar<?php echo $lista['id']; ?>" value="Eliminar"></td>
                             </tr>
+                            <div class="modal fade" id="eliminar<?php echo $lista['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Usuario usuario</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <form action="" method="post">
+                                        <div class="modal-body">
+                                            
+                                            <label>Esta seguro que desea eliminae el Usuario: <?php echo $lista['username']; ?></label> 
+                                            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="hidden" name="eliminar_user" value="<?php echo $lista['id']; ?>">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="submit" class="btn btn-danger" name="eliminar_userrr">Eliminar</button>
+                                        </div>
+                                    </form> 
+                                    </div>
+                                </div>
+                            </div>
                             <?php } ?>
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th>Usuario</th>
                                 <th>Fecha</th>
+                                <th>Acciones</th>
                             </tr>
                         </tfoot>
                     </table>

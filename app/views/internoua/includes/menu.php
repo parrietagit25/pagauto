@@ -15,7 +15,7 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="reg_user.php">Reg. Ususarios</a></li>
                     <li><a class="dropdown-item" href="">Bancos</a></li>
-                    <li><a class="dropdown-item" href="">SEO</a></li>
+                    <li><a class="dropdown-item" href="seo.php">SEO</a></li>
                     <li><a class="dropdown-item" href="">Sucursales</a></li>
                     <li><a class="dropdown-item" href="">Nuestro Equipo</a></li>
                 </ul>

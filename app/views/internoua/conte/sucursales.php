@@ -8,89 +8,51 @@ if (!isset($_SESSION["tipo_usuario"])) {
 
 $conn = conectarDB();
 
-    if (isset($_POST['atc_banco'])) {
+if (isset($_POST['atc_banco'])) {
+    $stmt = $conn->query("UPDATE sucursales SET stat = '".$_POST['status']."'
+                          WHERE 
+                          id = '".$_POST['id_sucursales']."'");
 
-        $stmt = $conn->query("UPDATE bancos SET stat = '".$_POST['status']."'
-                              WHERE 
-                              id = '".$_POST['id_banco']."'");
+    if (isset($_FILES["foto_banco"]) && $_FILES["foto_banco"]["error"] !== UPLOAD_ERR_NO_FILE) {
 
-        if(isset($_FILES["foto_banco"]) && $_FILES["foto_banco"]["error"] !== UPLOAD_ERR_NO_FILE) {
+        $archivo_temporal = $_FILES["foto_banco"]["tmp_name"];
+        $archivo_error = $_FILES["foto_banco"]["error"];
 
-            $archivo_nombre = $_FILES["foto_banco"]["name"];
-            $archivo_temporal = $_FILES["foto_banco"]["tmp_name"];
-            $archivo_tamano = $_FILES["foto_banco"]["size"];
-            $archivo_tipo = $_FILES["foto_banco"]["type"];
-            $archivo_error = $_FILES["foto_banco"]["error"];
-        
-            if($archivo_error > 0) {
-                echo "Error al subir la imagen: " . $archivo_error;
-            } else {
-
-                $directorio_destino = "../../../../public/assets/media/bancos/";
-                $ruta_destino = $directorio_destino . $archivo_nombre;
-
-                if(move_uploaded_file($archivo_temporal, $ruta_destino)) {
-                    //echo "La imagen se ha subido correctamente.";
-
-                    $ruta_destino = "assets/media/bancos/". $archivo_nombre;
-
-                    $stmt = $conn->query("UPDATE bancos SET ima_bank = '".$ruta_destino."'
-                                          WHERE 
-                                          id = '".$_POST['id_banco']."'");
-                    
-                } else {
-                    echo "Error al subir la imagen.";
-                }
-            }
+        if ($archivo_error > 0) {
+            echo "Error al subir la imagen: " . $archivo_error;
         } else {
-            //echo "No se ha enviado ninguna imagen.";
-        }
-        
-        $mensaje .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong> Registro Actualizado</strong> 
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>';
 
+            $directorio_destino = "../../../../public/assets/media/bancos/";
+
+            // Obtener el nombre de archivo actual de la base de datos
+            $stmt = $conn->query("SELECT descripcion FROM sucursales WHERE id = '".$_POST['id_sucursales']."'");
+            $row = $stmt->fetch_assoc();
+            $archivo_nombre = basename($row["descripcion"]);
+
+            $ruta_destino = $directorio_destino . $archivo_nombre;
+
+            if (move_uploaded_file($archivo_temporal, $ruta_destino)) {
+                //echo "La imagen se ha subido correctamente.";
+
+                $ruta_destino = "assets/media/bancos/" . $archivo_nombre;
+
+                $stmt = $conn->query("UPDATE sucursales SET descripcion = '".$ruta_destino."'
+                                      WHERE 
+                                      id = '".$_POST['id_sucursales']."'");
+            } else {
+                echo "Error al subir la imagen.";
+            }
+        }
+    } else {
+        //echo "No se ha enviado ninguna imagen.";
     }
 
-    if (isset($_POST['reg_banco_post'])) {
+    $mensaje .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong> Registro Actualizado</strong> 
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+}
 
-        if(isset($_FILES["reg_foto_banco"]) && $_FILES["reg_foto_banco"]["error"] !== UPLOAD_ERR_NO_FILE) {
-
-            $archivo_nombre = $_FILES["reg_foto_banco"]["name"];
-            $archivo_temporal = $_FILES["reg_foto_banco"]["tmp_name"];
-            $archivo_tamano = $_FILES["reg_foto_banco"]["size"];
-            $archivo_tipo = $_FILES["reg_foto_banco"]["type"];
-            $archivo_error = $_FILES["reg_foto_banco"]["error"];
-        
-            if($archivo_error > 0) {
-                echo "Error al subir la imagen: " . $archivo_error;
-            } else {
-
-                $directorio_destino = "../../../../public/assets/media/bancos/";
-                $ruta_destino = $directorio_destino . $archivo_nombre;
-
-                if(move_uploaded_file($archivo_temporal, $ruta_destino)) {
-                    //echo "La imagen se ha subido correctamente.";
-
-                    $ruta_destino = "assets/media/bancos/". $archivo_nombre;
-
-                    $stmt = $conn->query("INSERT INTO bancos(ima_bank, stat)VALUES('".$ruta_destino."', 1)");
-
-                    $mensaje .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong> Registrado</strong> 
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>';
-                    
-                } else {
-                    echo "Error al subir la imagen.";
-                }
-            }
-        } else {
-            //echo "No se ha enviado ninguna imagen.";
-        }
-        
-    }
 
 ?>
 <!doctype html>
@@ -124,37 +86,7 @@ $conn = conectarDB();
                     <br>
                     <h2>Nuestros aliados en Automarket</h2>
                     <br>
-                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg_banco"> Registrar Banco </a>
-                    
-                    <!-- Modal registrar -->
-                    <div class="modal fade" id="reg_banco" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar a banco</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <form action="" method="post" enctype="multipart/form-data">
-                                    <div class="modal-body">
-                                        <label for="">Foto</label>
-                                        <input type="file" name="reg_foto_banco" accept="image/*" class="form-control">
-                                        <br>
-                                        <label>Estado</label>  <br>
-                                        <span style="color:green;">ON</span><input type="radio" name="status" value="1" id=""> <br>
-                                        <span style="color:red;">OFF</span><input type="radio" name="status" value="0" id="">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                        <button type="submit" class="btn btn-primary" name="reg_banco_post">Guardar</button>
-                                    </div>
-                                </form> 
-                            </div>
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <?php $ultimo = $conn -> query("SELECT * FROM bancos");
+                    <?php $ultimo = $conn -> query("SELECT * FROM sucursales");
                             while ($lista = $ultimo->fetch_assoc()) {
                     ?>
                     
@@ -162,10 +94,10 @@ $conn = conectarDB();
                         <div class="b-team">
                             <div class="b-team__media">
                                 <div class="b-team__img">
-                                    <?php if($lista['ima_bank'] == ''){ ?>
+                                    <?php if($lista['descripcion'] == ''){ ?>
                                         <img class="img-fluid" width="263" height="280" src="<?php echo '../../../../public/assets/media/team/18.png'; ?>" alt="Foto">
                                     <?php }else{ ?>
-                                        <img class="img-fluid" width="263" height="280" src="<?php echo '../../../../public/'.$lista['ima_bank']; ?>" alt="Foto">
+                                        <img class="img-fluid" width="263" height="280" src="<?php echo '../../../../public/'.$lista['descripcion']; ?>" alt="Foto">
                                     <?php } ?>
                                 </div>
                             </div>
@@ -186,10 +118,10 @@ $conn = conectarDB();
                                 <form action="" method="post" enctype="multipart/form-data">
                                     <div class="modal-body">
 
-                                        <?php if($lista['photo'] == ''){ ?>
+                                        <?php if($lista['descripcion'] == ''){ ?>
                                             <img class="img-fluid" src="<?php echo '../../../../public/assets/media/team/18.png'; ?>" alt="Foto">
                                         <?php }else{ ?>
-                                            <img class="img-fluid" src="<?php echo '../../../../public/'.$lista['photo']; ?>" alt="Foto">
+                                            <img class="img-fluid" src="<?php echo '../../../../public/'.$lista['descripcion']; ?>" alt="Foto">
                                         <?php } ?>
                                         <br>
                                         <label for="">Cambiar foto</label>
@@ -200,7 +132,7 @@ $conn = conectarDB();
                                         <span style="color:red;">OFF</span><input type="radio" name="status" value="0" id="" <?php if($lista['stat']==0){ echo 'checked'; } ?>>
                                     </div>
                                     <div class="modal-footer">
-                                        <input type="hidden" name="id_banco" value="<?php echo $lista['id']; ?>">
+                                        <input type="hidden" name="id_sucursales" value="<?php echo $lista['id']; ?>">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                         <button type="submit" class="btn btn-primary" name="atc_banco">Guardar</button>
                                     </div>

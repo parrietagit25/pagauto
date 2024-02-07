@@ -48,26 +48,14 @@
                         <div class="sp-layer" data-width="100%" data-show-transition="right" data-hide-transition="right" data-show-duration="2000" data-show-delay="1200" data-hide-delay="400"><img class="main-slider__figure-2 img-fluid" src="<?php echo BASEURL; ?>media/slider/4.png" alt="foto" /></div>
                     </div>
                      */ ?>
-                     <div class="main-slider__slide sp-slide"><a href="https://automarketpanama.com/dev/public/listing"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" /></a>
-                        <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
-                           
-                        </div>
-                    </div>
-                    <div class="main-slider__slide sp-slide"><a href="https://automarketpanama.com/dev/public/listing"><img class="sp-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" /></a>
-                        <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400">
-                            <!--<div class="main-slider__wrap">
-                                <div class="main-slider__slogan">luxury unleashed</div>
-                                    <div class="main-slider__title">MAZDA<span class="main-slider__title_lg text-right">CX3<span class="main-slider__title">’19</span></span>
-                                </div>
-                                <div class="text-center">
-                                    <div class="main-slider__price"><span class="main-slider__price_up">$</span>249<span class="main-slider__price_down">/m</span><span class="main-slider__price_info">for 24 months</span></div>
-                                </div>
-                                <div class="text-right"><a class="main-slider__link" href="blog-post.html">learn more</a></div>
-                            </div>-->
-                        </div>
+                     <div class="main-slider__slide "><!-- sp-slide -->
+                        <a href="https://automarketpanama.com/dev/public/listing">
+                            <img class="sp-image desktop-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" />
+                            <img style="width: 100%;" class="sp-image mobile-image" src="<?php echo BASEURL; ?>media/slider/movil-slider.png" alt="slider" />
+                        </a>
+                        <div class="sp-layer" data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400"></div>
                     </div>
                     <!-- Slide 2-->
-                    
                 </div>
             </div>
             <!-- end .main-slider-->

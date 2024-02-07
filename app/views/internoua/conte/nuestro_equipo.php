@@ -59,6 +59,67 @@ $conn = conectarDB();
 
     }
 
+    if(isset($_POST['reg_vendedor'])){
+
+        $stmt = $conn->query("INSERT INTO team_pcr(nombre, sucursal, cargo, correo, celular, redSocial, stat)VALUES
+                                                 ('".$_POST['r_nombre']."', '".$_POST['r_sucursal']."', '".$_POST['r_cargo']."', '".$_POST['r_correo']."', '".$_POST['r_telefono']."', '".$_POST['r_redsocial']."', '".$_POST['r_status']."')");
+
+        $stmt = $conn->query("SELECT max(id) as max_id FROM team_pcr");
+
+        $ultimo_id == "";
+        while ($ult_id = $stmt->fetch_assoc()) {
+            $ultimo_id = $ult_id['max_id'];
+        }
+
+        if(isset($_FILES["r_foto_vendedor"]) && $_FILES["r_foto_vendedor"]["error"] !== UPLOAD_ERR_NO_FILE) {
+
+            $archivo_nombre = $_FILES["r_foto_vendedor"]["name"];
+            $archivo_temporal = $_FILES["r_foto_vendedor"]["tmp_name"];
+            $archivo_tamano = $_FILES["r_foto_vendedor"]["size"];
+            $archivo_tipo = $_FILES["r_foto_vendedor"]["type"];
+            $archivo_error = $_FILES["r_foto_vendedor"]["error"];
+        
+            if($archivo_error > 0) {
+                echo "Error al subir la imagen: " . $archivo_error;
+            } else {
+
+                $directorio_destino = "../../../../public/assets/media/team/";
+                $ruta_destino = $directorio_destino . $archivo_nombre;
+
+                if(move_uploaded_file($archivo_temporal, $ruta_destino)) {
+                    //echo "La imagen se ha subido correctamente.";
+
+                    $ruta_destino = "assets/media/team/". $archivo_nombre;
+
+                    $stmt = $conn->query("UPDATE team_pcr SET photo = '".$ruta_destino."'
+                                            WHERE 
+                                            id = '".$ultimo_id."'");
+                    
+                } else {
+                    echo "Error al subir la imagen.";
+                }
+            }
+        } else {
+            //echo "No se ha enviado ninguna imagen.";
+        }
+
+        $mensaje .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong> Registrado</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+    }
+
+    if (isset($_POST['id_eliminar_vendedor'])) {
+
+        $stmt = $conn->query("DELETE FROM team_pcr WHERE id = '".$_POST['id_eliminar_vendedor']."'");
+
+        $mensaje .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong> Eliminado</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+        
+    }
+
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -91,11 +152,61 @@ $conn = conectarDB();
                     <br>
                     <h2>Nuestro Equipo de Automarket</h2>
                     <br>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Registrar 
+                    </button>
+                    <br>
+                    <br>
+                    <!-- Modal Registrar-->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="" method="post" enctype="multipart/form-data">
+                                    <div class="modal-body">
+                                        <label for="">Foto</label>
+                                        <input type="file" name="r_foto_vendedor" accept="image/*" class="form-control">
+                                        <br>
+                                        <label>Nombre y apellido</label>  <br>
+                                        <input class="form-control" type="text" name="r_nombre" value="">
+                                        <label>Cargo</label>  <br>
+                                        <input class="form-control" type="text" name="r_cargo" value="">
+                                        <label for="">Sucursal</label> <br>
+                                        <select name="r_sucursal" id="" class="form-control">
+                                        <option value="">Seleccionar</option>
+                                        <option value="Panamá Oeste">Panamá Oeste</option>
+                                        <option value="Panamá">Panamá</option>
+                                        <option value="Chiriquí">Chiriquí</option>
+                                        </select>
+                                        <label>Telefono</label>  <br>
+                                        <input class="form-control" type="text" name="r_telefono" value="">
+                                        <label>Correo</label>  <br>
+                                        <input class="form-control" type="text" name="r_correo" value="">
+                                        <label>Instagram</label>  <br>
+                                        <input class="form-control" type="text" name="r_redsocial" value="">
+                                        <label>Estado</label>  <br>
+                                        <span style="color:green;">ON</span><input type="radio" name="r_status" value="1" id=""> <br>
+                                        <span style="color:red;">OFF</span><input type="radio" name="r_status" value="0" id="">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="hidden" name="regitrar_vendedor" value="1">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="submit" class="btn btn-primary" name="reg_vendedor">Registrar</button>
+                                    </div>
+                                </form> 
+                            </div>
+                        </div>
+                    </div>
+
+
                     <?php $ultimo = $conn -> query("SELECT * FROM team_pcr");
                             while ($lista = $ultimo->fetch_assoc()) {
                     ?>
                     
-                    <div class="col-lg-3 col-md-6" data-bs-toggle="modal" data-bs-target="#equipo<?php echo $lista['id']; ?>" style="float:left;">
+                    <div class="col-lg-3 col-md-6" data-bs-toggle="modal" data-bs-target="#equipo<?php echo $lista['id']; ?>" style="float:left; border: 1px solid black;">
                         <div class="b-team">
                             <div class="b-team__media">
                                 <div class="b-team__img">
@@ -118,11 +229,64 @@ $conn = conectarDB();
                             </div>
                             <div class="b-team__footer"><!--<a class="b-team__phone" href="tel:+507"><i class="ic text-primary icon-call-end"></i> +507 </a>-->
                                 <a class="b-team__soc-link" href="https://www.instagram.com/<?php echo $lista['redSocial']; ?>/"><i class="ic fab fa-instagram"></i> <?php echo $lista['redSocial']; ?></a>
+                                <br>
+                                <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminar<?php echo $lista['id']; ?>">Eliminar</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Modal -->
+                    <!-- Modal eliminar -->
+                    <div class="modal fade" id="eliminar<?php echo $lista['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="color:red;">Eliminar a <?php echo utf8_encode($lista['nombre']); ?></h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="" method="post" enctype="multipart/form-data">
+                                    <div class="modal-body">
+
+                                        <?php if($lista['photo'] == ''){ ?>
+                                            <img class="img-fluid" src="<?php echo '../../../../public/assets/media/team/18.png'; ?>" alt="Foto">
+                                        <?php }else{ ?>
+                                            <img class="img-fluid" src="<?php echo '../../../../public/'.$lista['photo']; ?>" alt="Foto">
+                                        <?php } ?>
+                                        <br>
+                                        <label for="">Cambiar foto</label>
+                                        <input type="file" name="foto_vendedor" accept="image/*" class="form-control">
+                                        <br>
+                                        <label>Nombre y apellido</label>  <br>
+                                        <input class="form-control" type="text" name="nombre" value="<?php echo utf8_encode($lista['nombre']); ?>">
+                                        <label>Cargo</label>  <br>
+                                        <input class="form-control" type="text" name="cargo" value="<?php echo utf8_encode($lista['cargo']); ?>">
+                                        <label for="">Sucursal</label> <br>
+                                        <select name="sucursal" id="" class="form-control">
+                                        <option value="">Seleccionar</option>
+                                        <option value="Panamá Oeste" <?php if(utf8_encode($lista['sucursal']) == 'Panamá Oeste'){ echo 'selected'; } ?>>Panamá Oeste</option>
+                                        <option value="Panamá" <?php if(utf8_encode($lista['sucursal']) == 'Panamá'){ echo 'selected'; } ?>>Panamá</option>
+                                        <option value="Chiriquí" <?php if(utf8_encode($lista['sucursal']) == 'Chiriquí'){ echo 'selected'; } ?>>Chiriquí</option>
+                                        </select>
+                                        <label>Telefono</label>  <br>
+                                        <input class="form-control" type="text" name="telefono" value="<?php echo utf8_encode($lista['celular']); ?>">
+                                        <label>Correo</label>  <br>
+                                        <input class="form-control" type="text" name="correo" value="<?php echo utf8_encode($lista['correo']); ?>">
+                                        <label>Instagram</label>  <br>
+                                        <input class="form-control" type="text" name="redsocial" value="<?php echo utf8_encode($lista['redSocial']); ?>">
+                                        <label>Estado</label>  <br>
+                                        <span style="color:green;">ON</span><input type="radio" name="status" value="1" id="" <?php if($lista['stat']==1){ echo 'checked'; } ?>> <br>
+                                        <span style="color:red;">OFF</span><input type="radio" name="status" value="0" id="" <?php if($lista['stat']==0){ echo 'checked'; } ?>>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="hidden" name="id_eliminar_vendedor" value="<?php echo $lista['id']; ?>">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="submit" class="btn btn-danger" name="eliminar_vendedor">Eliminar</button>
+                                    </div>
+                                </form> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal editar -->
                     <div class="modal fade" id="equipo<?php echo $lista['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">

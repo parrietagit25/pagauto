@@ -29,9 +29,9 @@ if (!isset($_SESSION["tipo_usuario"])) {
     <?php include '../includes/menu.php'; ?>
     <div class="container pt-5">
         <div class="container">
-            <div class="container text-left" style="border: solid 1px #FADE24; padding:20px;">
+            <div class="container text-left" style="">
               <div class="row">
-                  <div class="col-12" style="border: solid 1px #FADE24; padding:20px;">
+                  <div class="col-12" style="">
                       <h2>Sistema Administrativo AutoMarket</h2>
                   </div>
               </div>

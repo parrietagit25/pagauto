@@ -141,6 +141,27 @@
             transform: rotate(180deg); /* Gira el icono hacia arriba cuando el panel está cerrado */
         }
 
+        .desktop-image {
+            display: block;
+        }
+
+        .mobile-image {
+            display: none;
+        }
+
+        /* Mostrar la imagen móvil solo en pantallas de hasta 800px */
+        @media only screen and (max-width: 800px) {
+            .desktop-image {
+                display: none;
+            }
+            .mobile-image {
+                display: block;
+                max-width: 100%; /* Ajustar al ancho máximo de la pantalla */
+                height: 100%; /* Mantener la relación de aspecto */
+                width: 100%;
+            }
+        }
+
     </style>
     <?php /*
     <!-- Google Tag Manager -->

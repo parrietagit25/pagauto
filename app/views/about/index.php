@@ -4,7 +4,7 @@
       $diesiseis = obtenerDatos(16);
       $uno = obtenerDatos(1);
       $marcas = obtenerMarcas();
-      $vendedores4 = obtenerVendedores(13);
+      $vendedores4 = obtenerVendedores(40);
       $todas_marcas = get_marcas();
       $todos_modelos = get_modelos();
       $tipo_carro = get_tipo_carro();

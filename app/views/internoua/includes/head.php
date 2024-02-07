@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="author" content="Pedro Arrieta">
     <meta name="generator" content="Hugo 0.115.4">
     <title>AutoMarket - Interno</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">

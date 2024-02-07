@@ -9,6 +9,7 @@
       $todos_modelos = get_modelos();
       $tipo_carro = get_tipo_carro();
       $tipo_carro2 = get_tipo_carro();
+      $bancos = get_bancos();
 
 include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <!-- Loader-->
@@ -140,33 +141,11 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                 <div class="col-12">
                   <div class="section-brands__inner">
                     <div class="b-brands-2 row">
+                      <?php while ($bank=$bancos->fetch_assoc()) { ?>  
                       <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/1.png" alt="foto"/></div>
+                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="<?php echo $bank['ima_bank']; ?>" alt="foto"/></div>
                       </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/2.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/3.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/4.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/5.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/6.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/7.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/8.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/9.png" alt="foto"/></div>
-                      </div>
+                      <?php } ?>
                     </div>
                   </div>
                 </div>

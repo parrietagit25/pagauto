@@ -1,12 +1,71 @@
+<?php 
+    $seo = get_seo();
+
+    $seo_google_tag_manager = "";
+    $seo_google_tag_manager_noscript = "";
+    $seo_titulo_web = "";
+    $seo_meta_description = "";
+    $seo_titulo_principal = "";
+    $seo_titulo_seguncario = "";
+    $seo_URL_canonica = "";
+    $seo_pagina_indexada = "";
+    $seo_keywords = "";
+    $seo_author = "";
+
+    while ($seo_des = $seo->fetch_assoc()) { 
+        
+        if ($seo_des['id'] == 1) {
+            $seo_google_tag_manager = $seo_des['descripcion'];
+        }
+
+        if ($seo_des['id'] == 2) {
+            $seo_google_tag_manager_noscript = $seo_des['descripcion'];
+        }
+
+        if ($seo_des['id'] == 3) {
+            $seo_titulo_web = $seo_des['descripcion'];
+        }
+
+        if ($seo_des['id'] == 4) {
+            $seo_meta_description = $seo_des['descripcion'];
+        }
+
+        if ($seo_des['id'] == 5) {
+            $seo_titulo_principal = $seo_des['descripcion'];
+        }
+
+        if ($seo_des['id'] == 6) {
+            $seo_titulo_seguncario = $seo_des['descripcion'];
+        }
+
+        if ($seo_des['id'] == 7) {
+            $seo_URL_canonica = $seo_des['descripcion'];
+        }
+
+        if ($seo_des['id'] == 8) {
+            $seo_pagina_indexada = $seo_des['descripcion'];
+        }
+
+        if ($seo_des['id'] == 9) {
+            $seo_keywords = $seo_des['descripcion'];
+        }
+
+        if ($seo_des['id'] == 10) {
+            $seo_author = $seo_des['descripcion'];
+        }
+        
+ } ?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Automarket</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <?php echo utf8_encode($seo_titulo_web); ?>
+    <?php echo utf8_encode($seo_meta_description); ?>
+    <?php echo utf8_encode($seo_pagina_indexada); ?>
+    <?php echo utf8_encode($seo_keywords); ?>
+    <?php echo utf8_encode($seo_author); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="telephone=no" name="format-detection">
     <meta name="HandheldFriendly" content="true">
@@ -83,6 +142,7 @@
         }
 
     </style>
+    <?php /*
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -92,12 +152,14 @@
     <!-- End Google Tag Manager -->
     <!--[if lt IE 9 ]>
     <script src="/assets/js/separate-js/html5shiv-3.7.2.min.js" type="text/javascript"></script><meta content="no" http-equiv="imagetoolbar">
-    <![endif]-->
+    <![endif]--> */ ?>
+    <?php echo $seo_google_tag_manager; ?>
 </head>
 
 <body class="page">
-
+<?php /*
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDDPXS9"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <!-- End Google Tag Manager (noscript) --> */?>
+    <?php echo $seo_google_tag_manager_noscript; ?>

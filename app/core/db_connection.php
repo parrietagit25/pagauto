@@ -66,7 +66,7 @@ function obtener6Mark() {
 
 function obtenerVendedores($number) {
     $conn = conectarDB();
-    $sql = "SELECT * FROM team_pcr WHERE photo NOT IN ('') ORDER BY RAND() LIMIT $number";
+    $sql = "SELECT * FROM team_pcr WHERE photo NOT IN ('') AND stat = 1 ORDER BY RAND() LIMIT $number";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;
@@ -407,6 +407,26 @@ function get_country(){
 
     $conn = conectarDB();
     $sql = "SELECT LocationName FROM Automarket_Invs_web WHERE Photo NOT IN ('') $where_pais AND Model = '".$model."' GROUP BY LocationName";
+    $result = $conn->query($sql);
+    cerrarDB($conn);
+    return $result;
+
+  }
+
+  function get_seo(){
+
+    $conn = conectarDB();
+    $sql = "SELECT * FROM seo WHERE stat = 1";
+    $result = $conn->query($sql);
+    cerrarDB($conn);
+    return $result;
+
+  }
+
+  function get_bancos(){
+
+    $conn = conectarDB();
+    $sql = "SELECT * FROM bancos WHERE stat = 1";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;

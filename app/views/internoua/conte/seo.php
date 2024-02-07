@@ -9,27 +9,17 @@ if (!isset($_SESSION["tipo_usuario"])) {
 
 $conn = conectarDB();
 
-    if (isset($_POST['g_user'])) {
+    if (isset($_POST['atc_seo'])) {
 
-        $stmt = $conn->query("INSERT INTO users 
-                            (username, pass, stat, tipo_usuario)
-                            VALUES
-                            ('".$_POST['usuario']."', '".password_hash($_POST['password'], PASSWORD_BCRYPT)."', 1, 1)");
+        $stmt = $conn->query("UPDATE seo SET titulo = '".$_POST['titulo']."', descripcion = '".$_POST['descripcion']."' WHERE id = '".$_POST['id_seo']."'");
         
         $mensaje .= '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Usuario Registrado</strong> 
+                        <strong> Registrado Actualizado</strong> 
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>';
 
     }
 
-    if (isset($_POST['eliminar_user'])) {
-        $delete = $conn->query("DELETE FROM users WHERE id = '".$_POST['eliminar_user']."'");
-        $mensaje .= '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Usuario Eliminado</strong> 
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>';
-    }
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -66,8 +56,8 @@ $conn = conectarDB();
                             while ($lista = $ultimo->fetch_assoc()) {
                     ?>
                     <div class="row">
-                        <div class="col-4"><?php echo $lista['titulo']; ?></div>
-                        <div class="col-4"><textarea rows="4" cols="50" class="forn-control"><?php echo $lista['descripcion']; ?></textarea></div>
+                        <div class="col-4"><?php echo utf8_encode($lista['titulo']); ?></div>
+                        <div class="col-4"><textarea rows="4" cols="50" class="forn-control"><?php echo utf8_encode($lista['descripcion']); ?></textarea></div>
                         <div class="col-4"><a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#seo_camb<?php echo $lista['id']; ?>">Cambiar</a></div>
                     </div>
 
@@ -83,16 +73,16 @@ $conn = conectarDB();
                                 <div class="modal-body">
                                     
                                     <label>Titulo</label>  <br>
-                                    <input class="form-control" type="text" name="titulo" value="<?php echo $lista['titulo']; ?>">
+                                    <input class="form-control" type="text" name="titulo" value="<?php echo utf8_encode($lista['titulo']); ?>">
                                     
                                     <label>Contenido</label>  <br>
-                                    <textarea rows="4" cols="50" class="forn-control"><?php echo $lista['descripcion']; ?></textarea>
+                                    <textarea rows="4" cols="50" class="forn-control" name="descripcion"><?php echo utf8_encode($lista['descripcion']); ?></textarea>
                                     
                                 </div>
                                 <div class="modal-footer">
                                     <input type="hidden" name="id_seo" value="<?php echo $lista['id']; ?>">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="submit" class="btn btn-primary" name="seo_save">Guardar</button>
+                                    <button type="submit" class="btn btn-primary" name="atc_seo">Guardar</button>
                                 </div>
                             </form> 
                             </div>
@@ -105,33 +95,6 @@ $conn = conectarDB();
           </div>
         </div>
       <?php // </form> ?>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Registro de usuario</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="" method="post">
-                <div class="modal-body">
-                    
-                    <label>Usuario</label>  <br>
-                    <input class="form-control" type="text" name="usuario" value="">
-                    
-                    <label>Password</label>  <br>
-                    <input class="form-control" type="text" name="password" value="">
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary" name="g_user">Guardar</button>
-                </div>
-            </form> 
-            </div>
-        </div>
     </div>
 
     <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -14,10 +14,10 @@
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Mantenimiento</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="reg_user.php">Reg. Ususarios</a></li>
-                    <li><a class="dropdown-item" href="">Bancos</a></li>
+                    <li><a class="dropdown-item" href="bancos.php">Bancos</a></li>
                     <li><a class="dropdown-item" href="seo.php">SEO</a></li>
                     <li><a class="dropdown-item" href="">Sucursales</a></li>
-                    <li><a class="dropdown-item" href="">Nuestro Equipo</a></li>
+                    <li><a class="dropdown-item" href="nuestro_equipo.php">Nuestro Equipo</a></li>
                 </ul>
                 </li>
                 <li class="nav-item">

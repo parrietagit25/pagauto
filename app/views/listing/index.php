@@ -62,15 +62,9 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                       <div class="accordion" id="miAcordeon" style="text-align:left;">
                                         <div class="card">
                                           <div class="card-header">
-<<<<<<< HEAD
                                             <h4 data-toggle="collapse" data-target="#panel1">Marca</h4>
                                           </div>
                                           <div id="panel1" class="collapse show" data-parent="#miAcordeon">
-=======
-                                            <h4 data-toggle="collapse" data-target="#panel1">Marca <span class="arrow-icon"></span></h4>
-                                          </div>
-                                          <div id="panel1" class="collapse show" data-parent="#miAcordeon"> <!-- show -->
->>>>>>> 6f0f62a35a76e764326f5c372022a70a9bffad40
                                             <div class="card-body">
                                               <?php while ($marca = $marcas_filtros->fetch_assoc()) { ?>
                                                   <a href="#" style="color:black;" class="filtro" data-categoria="marca" data-valor="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?> (<?php echo $marca['contar']; ?>) </a> <br>
@@ -80,11 +74,7 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                         </div>
                                         <div class="card">
                                           <div class="card-header">
-<<<<<<< HEAD
                                             <h4 data-toggle="collapse" data-target="#panel2">Categoria</h4>
-=======
-                                            <h4 data-toggle="collapse" data-target="#panel2">Categoria <span class="arrow-icon"></span></h4>
->>>>>>> 6f0f62a35a76e764326f5c372022a70a9bffad40
                                           </div>
                                           <div id="panel2" class="collapse" data-parent="#miAcordeon">
                                             <div class="card-body">
@@ -96,11 +86,7 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                         </div>
                                         <div class="card">
                                           <div class="card-header">
-<<<<<<< HEAD
                                             <h4 data-toggle="collapse" data-target="#panel3">Año</h4>
-=======
-                                            <h4 data-toggle="collapse" data-target="#panel3">Año <span class="arrow-icon"></span></h4>
->>>>>>> 6f0f62a35a76e764326f5c372022a70a9bffad40
                                           </div>
                                           <div id="panel3" class="collapse" data-parent="#miAcordeon">
                                             <div class="card-body">
@@ -112,11 +98,7 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                         </div>
                                         <div class="card">
                                           <div class="card-header">
-<<<<<<< HEAD
                                             <h4 data-toggle="collapse" data-target="#panel4">Ubicación</h4>
-=======
-                                            <h4 data-toggle="collapse" data-target="#panel4">Ubicación <span class="arrow-icon"></span></h4>
->>>>>>> 6f0f62a35a76e764326f5c372022a70a9bffad40
                                           </div>
                                           <div id="panel4" class="collapse" data-parent="#miAcordeon">
                                             <div class="card-body">
@@ -128,11 +110,7 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                         </div>
                                         <div class="card">
                                           <div class="card-header">
-<<<<<<< HEAD
                                             <h4 data-toggle="collapse" data-target="#panel5">Precio</h4>
-=======
-                                            <h4 data-toggle="collapse" data-target="#panel5">Precio <span class="arrow-icon"></span></h4>
->>>>>>> 6f0f62a35a76e764326f5c372022a70a9bffad40
                                           </div>
                                           <div id="panel5" class="collapse" data-parent="#miAcordeon">
                                             <div class="card-body">

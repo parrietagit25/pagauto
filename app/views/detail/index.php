@@ -261,7 +261,22 @@
               </div>
             </section>
             <!-- end .b-goods-f-->
+              <section class="bg-light" style="background-color:white;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 justify-content-center" style="text-align:center;">
+                          <?php if($row['tipo_compra'] == 'SEMINUEVO'){ ?>
+                            <img src="<?php echo BASEURL; ?>media/ima/seminuevo.png" style="margin-top:-30px;">
+                          <?php }elseif ($row['tipo_compra'] == 'USADO') { ?>
+                            <img src="<?php echo BASEURL; ?>media/ima/usado.png" style="margin-top:-30px;">
+                          <?php }else{ ?>
+                          <?php } ?>
+                        </div>
+                    </div>
+                </div>           
+              </section>
             <?php
+
                 }
 
             } else {
@@ -269,23 +284,6 @@
             } 
             
             ?>
-
-              <section class="bg-light" style="background-color:white;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-2">
-                            <img src="<?php echo BASEURL; ?>media/ima/garan.png" width="200" style="margin-top:-30px;">
-                        </div>
-                        <div class="col-10 justify-content-center" style="text-align:center;">
-                          <ul style="text-align:left;">
-                            <li><h2>12 meses de garantia</h2></li>
-                            <li><h2>Historial de mantenimiento</h2></li>
-                            <li><h2>Garantia extendible hasta 24 meses</h2></li>
-                          </ul>
-                        </div>
-                    </div>
-                </div>           
-            </section>
             
           </div>
         </div>

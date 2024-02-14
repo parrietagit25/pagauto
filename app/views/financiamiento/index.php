@@ -118,7 +118,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                     <p>En AutoMarket, la calidad y excelencia en nuestros productos y servicios son nuestra prioridad. Estamos comprometidos a brindarte una experiencia de compra sin igual. ¡Permítenos servirte y hacer realidad la adquisición de tu Seminuevo de manera sencilla y segura! </p>
                   </div>
                   <div class="col-6">
-
+                    <img src="/dev/public/assets/media/financiamiento/financiamiento.png" style="height:100%;" alt="" srcset="">
                   </div>
                     <div class="col-12">
                       <h2 style="padding-top:20px;">Requisitos</h2>
@@ -134,6 +134,15 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
             <?php } ?>
             <br>
             <br>
+
+            <div class="container" style="display: flex; justify-content: center; align-items: center;">
+                <div class="row">
+                    <div class="col-12">
+                      <img src="/dev/public/assets/media/financiamiento/ANATOMÍA-DEL-SEMINUEVO.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+
           <!-- end .b-gallery-->
           <div class="section-brands">
             <div class="container">

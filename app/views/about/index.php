@@ -132,6 +132,15 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
               }
               ?>
           </div>
+
+          <div class="container" style="display: flex; justify-content: center; align-items: center;">
+              <div class="row">
+                  <div class="col-12">
+                    <img src="/dev/public/assets/media/financiamiento/ANATOMÍA-DEL-SEMINUEVO.png" alt="" srcset="">
+                  </div>
+              </div>
+          </div>
+
           <!-- end .b-gallery-->
           <div class="section-brands">
             <div class="container">

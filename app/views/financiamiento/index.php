@@ -32,7 +32,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
             <?php if (isset($_GET['tipo_f']) && $_GET['tipo_f']=='asalariados') { ?>
               <div class="container">
                   <div class="row">
-                    <div class="col-12" style="font-size:18px;">
+                    <div class="col-6" style="font-size:18px;">
                       <h2>REQUISITOS ASALARIADOS</h2>
                       <ul style="padding-top:20px;">
                         <li style="font-size:20px;">Solicitud de Crédito </li>
@@ -44,6 +44,9 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                         <li>Copia de Recibo de Luz/Agua </li>
                       </ul>
                     </div>
+                    <div class="col-6">
+                      <img src="/dev/public/assets/media/financiamiento/asalariado.png" style="height:100%;" alt="" srcset="">
+                    </div>
                       <div class="col-12">
                         <h2 style="padding-top:20px;">Requisitos</h2>
                         <div class="d-flex justify-content-between">
@@ -52,13 +55,15 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                             <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>
                         </div>
                       </div>
+
                   </div>
               </div>
+
           <?php }elseif(isset($_GET['tipo_f']) && $_GET['tipo_f']=='independientes'){ ?> 
             
             <div class="container">
               <div class="row">
-                <div class="col-12" style="font-size:18px;">
+                <div class="col-6" style="font-size:18px;">
                   <h2>REQUISITOS INDEPENDIENTES</h2>
                     <ul style="padding-top:20px;">
                       <li style="font-size:20px;">Solicitud de Crédito </li>
@@ -69,6 +74,9 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                       <li>Copia de Recibo de Luz/Agua </li>
                     </ul>
                   </div>
+                  <div class="col-6">
+                      <img src="/dev/public/assets/media/financiamiento/independiente.png" style="height:100%;" alt="" srcset="">
+                  </div>
                   <div class="col-12">
                     <h2 style="padding-top:20px;">Requisitos</h2>
                     <div class="d-flex justify-content-between" style="padding-top:20px;">
@@ -77,6 +85,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                         <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>
                     </div>
                   </div>
+
               </div>
           </div>
             
@@ -84,7 +93,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
 
             <div class="container">
                 <div class="row">
-                  <div class="col-12" style="font-size:18px;">
+                  <div class="col-6" style="font-size:18px;">
                     <h2>REQUISITOS PERSONA JURÍDICA </h2>
                       <ul style="padding-top:20px;">
                         <li style="font-size:20px;">Solicitud de Crédito </li>
@@ -96,6 +105,9 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                         <li>Movimientos bancarios ( últimos 6 meses) </li>
                         <li>Copia de Recibo de Luz/Agua </li>
                       </ul>
+                    </div>
+                    <div class="col-6">
+                        <img src="/dev/public/assets/media/financiamiento/juridico.png" style="height:100%;" alt="" srcset="">
                     </div>
                     <div class="col-12">
                       <h2 style="padding-top:20px;">Requisitos</h2>
@@ -134,14 +146,6 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
             <?php } ?>
             <br>
             <br>
-
-            <div class="container" style="display: flex; justify-content: center; align-items: center;">
-                <div class="row">
-                    <div class="col-12">
-                      <img src="/dev/public/assets/media/financiamiento/ANATOMÍA-DEL-SEMINUEVO.png" alt="" srcset="">
-                    </div>
-                </div>
-            </div>
 
           <!-- end .b-gallery-->
           <div class="section-brands">

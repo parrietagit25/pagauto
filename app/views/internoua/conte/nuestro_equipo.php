@@ -223,7 +223,7 @@ $conn = conectarDB();
                                 </ul>
                             </div>
                             <div class="b-team__inner">
-                                <div class="b-team__name"><?php echo utf8_encode($lista['nombre']); ?></div>
+                                <div class="b-team__name"><?php echo utf8_encode($lista['nombre']); ?></div> 
                                 <div class="b-team__category"><?php echo utf8_encode($lista['cargo']); ?></div>
                                 <div class="b-team__category"><?php if($lista['stat']==1){ echo '<b style="color:green;">ON</b>'; }else{ echo '<b style="color:red;">OFF</b>'; } ?></div>
                             </div>

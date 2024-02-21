@@ -162,6 +162,27 @@
             }
         }
 
+        #paginador {
+            text-align: center; 
+            width: 100%; 
+            display: flex; 
+            justify-content: center; 
+            margin-top: 20px; 
+        }
+
+        #paginador a {
+            margin: 0 10px; 
+            padding: 5px 10px; 
+            text-decoration: none;
+            color: #000; 
+        }
+
+        #paginador a.btn-primary {
+            background-color: red;
+            color: #fff; 
+            border-radius: 5px; 
+        }
+
     </style>
     <?php /*
     <!-- Google Tag Manager -->

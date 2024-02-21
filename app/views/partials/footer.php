@@ -306,43 +306,59 @@
 
     </script>
     <script>
-        $(document).ready(function() {
-            var registrosPorPagina = 9; 
-            var $registros = $("#registros .registro");
-            var totalRegistros = $registros.length;
-            var totalPaginas = Math.ceil(totalRegistros / registrosPorPagina);
-            var paginaActual = 1;
+            $(document).ready(function() {
+                var registrosPorPagina = 9; 
+                var $registros = $("#registros .registro");
+                var totalRegistros = $registros.length;
+                var totalPaginas = Math.ceil(totalRegistros / registrosPorPagina);
+                var paginaActual = 1;
+                var rangoPaginas = 5; // Número de páginas a mostrar
 
-            $registros.hide();
-
-            $registros.slice(0, registrosPorPagina).show();
-
-            /* for (var i = 1; i <= totalPaginas; i++) {
-                $("#paginador").append('<a href="#" data-pagina="' + i + '">' + i + '</a> ');
-            } */
-            $("#paginador a").click(function() {
-                var nuevaPagina = $(this).data("pagina");
-
-                if (nuevaPagina === "prev") {
-                    paginaActual = Math.max(paginaActual - 1, 1);
-                } else if (nuevaPagina === "next") {
-                    paginaActual = Math.min(paginaActual + 1, totalPaginas);
-                } else {
-                    paginaActual = nuevaPagina;
+                function mostrarRegistros(pagina) {
+                    var inicio = (pagina - 1) * registrosPorPagina;
+                    var fin = inicio + registrosPorPagina;
+                    $registros.hide().slice(inicio, fin).show();
                 }
 
-                var inicio = (paginaActual - 1) * registrosPorPagina;
-                var fin = inicio + registrosPorPagina;
+                function actualizarPaginador() {
+                    var inicioRango = Math.max(paginaActual - Math.floor(rangoPaginas / 2), 1);
+                    var finRango = Math.min(inicioRango + rangoPaginas - 1, totalPaginas);
 
-                $registros.hide().slice(inicio, fin).show();
+                    // Ajustar el inicio del rango si estamos al final del paginador
+                    if (finRango === totalPaginas) {
+                        inicioRango = Math.max(finRango - rangoPaginas + 1, 1);
+                    }
 
-                $("#paginador a").removeClass("btn btn-primary");
-                $("#paginador a[data-pagina='" + paginaActual + "']").addClass("btn btn-primary");
+                    $("#paginador a").not("#anterior, #siguiente").remove(); // Eliminar los números existentes
+
+                    for (var i = inicioRango; i <= finRango; i++) {
+                        $("<a href='#' data-pagina='" + i + "'>" + i + "</a>").insertBefore("#siguiente");
+                    }
+
+                    $("#paginador a").removeClass("btn btn-primary");
+                    $("#paginador a[data-pagina='" + paginaActual + "']").addClass("btn btn-primary");
+                }
+
+                $registros.hide();
+                mostrarRegistros(paginaActual);
+                actualizarPaginador();
+
+                $("#paginador a").click(function() {
+                    var nuevaPagina = $(this).data("pagina");
+
+                    if (nuevaPagina === "prev") {
+                        paginaActual = Math.max(paginaActual - 1, 1);
+                    } else if (nuevaPagina === "next") {
+                        paginaActual = Math.min(paginaActual + 1, totalPaginas);
+                    } else {
+                        paginaActual = parseInt(nuevaPagina);
+                    }
+
+                    mostrarRegistros(paginaActual);
+                    actualizarPaginador();
+                });
             });
 
-            $("#paginador a[data-pagina='1']").addClass("btn btn-primary");
-        });
-    </script>
+        </script>
     </body>
-
 </html>

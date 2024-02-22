@@ -162,6 +162,18 @@
             }
         }
 
+        /* Ocultar el contenedor por defecto */
+        #menu_movile {
+            display: none;
+        }
+
+        /* Mostrar el contenedor solo en pantallas menores de 768px (dispositivos móviles) */
+        @media (max-width: 767px) {
+            #menu_movile {
+                display: block;
+            }
+        }
+
     </style>
     <?php /*
     <!-- Google Tag Manager -->

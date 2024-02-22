@@ -112,6 +112,13 @@
         });
     </script>
     <script>
+        document.getElementById('form_buscado_movil').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            console.log('enviando ...');
+            this.submit();
+        });
+    </script>
+    <script>
         document.getElementById('form_buscado').addEventListener('submit', function(event) {
             event.preventDefault(); 
             console.log('enviando ...');
@@ -176,6 +183,7 @@
             .then(data => {
 
                 document.querySelector("#marca_select").innerHTML = data;
+                document.querySelector("#marca_select_movil").innerHTML = data;
                 
                 console.log(data);
             })
@@ -199,6 +207,7 @@
             .then(data => {
 
                 document.querySelector("#ubicacion_select").innerHTML = data;
+                document.querySelector("#ubicacion_select_movil").innerHTML = data;
                 
                 console.log(data);
             })

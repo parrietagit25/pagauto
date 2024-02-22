@@ -7,6 +7,7 @@
     $marcas = obtenerMarcas();
     $vendedores4 = obtenerVendedores(4);
     $todas_marcas = get_marcas();
+    $todas_marcas_2 = get_marcas();
     $todos_modelos = get_modelos();
     $tipo_carro = get_tipo_carro();
     $tipo_carro2 = get_tipo_carro();
@@ -59,102 +60,121 @@
                 </div>
             </div>
             <!-- end .main-slider-->
-            <div class="section-area bg-light">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="b-find">
-                                <div class="b-find-content tab-content" id="findTabContent">
-                                    <div class="tab-pane fade" id="content-newCars">
-                                        <form class="b-find__form">
-                                            <div class="b-find__row">
-                                                <div class="b-find__main">
-                                                    <div class="b-find__inner">
-                                                        <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
-                                                            <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Audi</option>
-                                                                    <option>BMV</option>
-                                                                    <option>Opel</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
-                                                            <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Model 1</option>
-                                                                    <option>Model 2</option>
-                                                                    <option>Model 3</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">03</span> Rango de Precio</div>
-                                                            <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Max $5000</option>
-                                                                    <option>Max $15000</option>
-                                                                    <option>Max $25000</option>
-                                                                </select>
-                                                            </div>
+
+            <!-- end .b-find-->
+            <!-- end .b-welcome-->
+
+            <div class="container" id="menu_movile">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="">
+                            <div class="" id="findTabContent">
+                                <div class="" id="content-newCars">
+                                    <form id="form_buscado_movil" class="form-buscador" method="get" action="https://automarketpanama.com/dev/public/listing">
+                                        <input type="hidden" name="buscador" value="1">
+                                        <div class="b-find__row">
+                                            <div class="b-find__main">
+                                                <div class="b-find__inner">
+                                                    <div class="b-find__item">
+                                                        <br>
+                                                        <div class="b-find__label">Buscar</div>
+                                                        <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
+                                                        <div class="b-find__selector">
+                                                            <select name="marca" class="form-control" onchange="buscar_modelo(this.value)">
+                                                                <option value=''>Seleccionar</option>
+                                                                <?php while ($marca = $todas_marcas_2->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $marca['Make']; ?>"><?php echo $marca['Make']; ?></option>
+                                                                <?php } ?>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <button class="b-find__btn btn btn-primary">Search</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="tab-pane fade" id="content-usedCars">
-                                        <form class="b-find__form">
-                                            <div class="b-find__row">
-                                                <div class="b-find__main">
-                                                    <div class="b-find__inner">
-                                                        <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
-                                                            <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Audi</option>
-                                                                    <option>BMV</option>
-                                                                    <option>Opel</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
-                                                            <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Model 1</option>
-                                                                    <option>Model 2</option>
-                                                                    <option>Model 3</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="b-find__item">
-                                                            <div class="b-find__label"><span class="b-find__number">03</span> Rango de Precio</div>
-                                                            <div class="b-find__selector">
-                                                                <select class="selectpicker" data-width="100%" data-style="ui-select">
-                                                                    <option>Max $5000</option>
-                                                                    <option>Max $15000</option>
-                                                                    <option>Max $25000</option>
-                                                                </select>
-                                                            </div>
+
+                                                    <div class="b-find__item">
+                                                        <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
+                                                        <div class="b-find__selector">
+                                                            <select name="modelo" data-width="100%" class="form-control" id="marca_select_movil" onchange="buscar_ubicacion(this.value)">
+                                                                <option value=''>Seleccionar</option>
+                                                            </select>
                                                         </div>
                                                     </div>
+
+                                                    <div class="b-find__item">
+                                                        <div class="b-find__label"><span class="b-find__number">03</span> Rango de Precio</div>
+                                                        <div class="b-find__selector">
+                                                            <select name="precio_max" class="form-control">
+                                                                <option value=''>Seleccionar</option>
+                                                                <option value="9000">Max $9,000</option>
+                                                                <option value="20000">Max $20,000</option>
+                                                                <option value="30000">Max $30,000</option>
+                                                                <option value="50000">Max $50,000</option>
+                                                                <option value="70000">Max $70,000</option>
+                                                                <option value="100000">Max $100,000</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="b-find__item">
+                                                        <div class="b-find__label"><span class="b-find__number">04</span> Ubicacion</div>
+                                                        <div class="b-find__selector">
+                                                            <select name="ubicacion" class="form-control" id="ubicacion_select_movil">
+                                                                <option value=''>Seleccionar</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
-                                                <button class="b-find__btn btn btn-primary">Search</button>
                                             </div>
-                                        </form>
-                                    </div>
+                                            <input type="submit" class="b-find__btn btn btn-primary" style="width:100%;" value="Buscar">
+                                        </div>
+                                    </form>
                                 </div>
+                                <!--<div class="tab-pane fade" id="content-usedCars">
+                                    <form class="b-find__form">
+                                        <div class="b-find__row">
+                                            <div class="b-find__main">
+                                                <div class="b-find__inner">
+                                                    <div class="b-find__item">
+                                                        <div class="b-find__label"><span class="b-find__number">01</span> Seleccionar Marca</div>
+                                                        <div class="b-find__selector">
+                                                            <select class="selectpicker" data-width="100%" data-style="ui-select">
+                                                                <option>Audi</option>
+                                                                <option>BMV</option>
+                                                                <option>Opel</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="b-find__item">
+                                                        <div class="b-find__label"><span class="b-find__number">02</span> Seleccionar Modelo</div>
+                                                        <div class="b-find__selector">
+                                                            <select class="selectpicker" data-width="100%" data-style="ui-select">
+                                                                <option>Model 1</option>
+                                                                <option>Model 2</option>
+                                                                <option>Model 3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="b-find__item">
+                                                        <div class="b-find__label"><span class="b-find__number">03</span> Rango de Precio</div>
+                                                        <div class="b-find__selector">
+                                                            <select class="selectpicker" data-width="100%" data-style="ui-select">
+                                                                <option>Max $5000</option>
+                                                                <option>Max $15000</option>
+                                                                <option>Max $25000</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="b-find__btn btn btn-primary">Search</button>
+                                        </div>
+                                    </form>
+                                </div>-->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- end .b-find-->
-            <!-- end .b-welcome-->
+
             <section class="section-carousel">
                 <div class="container">
                     <div class="row">
@@ -164,6 +184,9 @@
                         </div>
                     </div>
                 </div>
+
+
+
                 <div class="section-carousel__inner bg-light" style="height:500px;">
                     <div class="js-slider" data-slick="{&quot;slidesToShow&quot;: 5,  &quot;slidesToScroll&quot;: 5, &quot;infinite&quot;: true, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1800, &quot;settings&quot;: {&quot;slidesToShow&quot;: 4, &quot;slidesToScroll&quot;: 4}}, {&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}, {&quot;breakpoint&quot;: 1040, &quot;settings&quot;: {&quot;slidesToShow&quot;: 2, &quot;slidesToScroll&quot;: 1}}, {&quot;breakpoint&quot;: 767, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1, &quot;slidesToScroll&quot;: 1}}]}">
                         <?php

@@ -44,17 +44,23 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                     <div class="b-contacts__info">68 Landsriver St, Welson<br>California 22066</div>
                   </div>
                 </div>-->
-                <div class="col-md-12 col-lg-4">
-                  <div class="b-contacts"><i class="ic icon-phone bg-primary"></i>
-                    <div class="b-contacts__title">Whatsapp</div>
-                    <div class="b-contacts__info">+507 6959-0953<br></div>
+                
+                  <div class="col-md-12 col-lg-4">
+                    <a href="https://wa.me/50769590953" target="_blank" style="color:gray;">
+                      <div class="b-contacts"><i class="ic icon-phone bg-primary"></i>
+                        <div class="b-contacts__title">Whatsapp</div>
+                        <div class="b-contacts__info">+507 6959-0953<br></div>
+                      </div>
+                    </a>
                   </div>
-                </div>
+                
                 <div class="col-md-12 col-lg-4">
-                  <div class="b-contacts"><i class="ic icon-envelope"></i>
-                    <div class="b-contacts__title">Email</div>
-                    <div class="b-contacts__info">ventas@automarketpan.com<br></div>
-                  </div>
+                  <a href="mailto:ventas@automarketpan.com">
+                    <div class="b-contacts"><i class="ic icon-envelope"></i>
+                      <div class="b-contacts__title">Email</div>
+                      <div class="b-contacts__info">ventas@automarketpan.com<br></div>
+                    </div>
+                  </a>
                 </div>
                 <div class="col-md-12 col-lg-4">
                   <div class="b-contacts"><i class="ic icon-clock bg-primary"></i>
@@ -70,19 +76,31 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
             <div class="row">
               <div class="col-md-6" style="margin-top:20px;">
                 <!--<div class="map" id="map"></div>-->
-                <div id="mapTumbaMuerto"></div>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Automarket+Tumba+Muerto+Panama&travelmode=driving
+" target="_blank" rel="noopener noreferrer">
+                  <div id="mapTumbaMuerto"></div>
+                </a>
               </div>
               <br>
               <div class="col-md-6" style="margin-top:20px;">
-                <div id="mapViaIsrael"></div>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Automarket+Via+Israel+Panama&travelmode=driving
+" target="_blank" rel="noopener noreferrer">
+                  <div id="mapViaIsrael"></div>
+                </a>
               </div>
               <br>
               <div class="col-md-6" style="margin-top:20px;">
-                <div id="mapCostaVerde"></div>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Automarket+Costa+Verde+Panama&travelmode=driving
+" target="_blank" rel="noopener noreferrer">
+                  <div id="mapCostaVerde"></div>
+                </a>
               </div>
               <br>
               <div class="col-md-6" style="margin-top:20px;">
-                <div id="mapDavid"></div>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Automarket+David+Panama&travelmode=driving
+" target="_blank" rel="noopener noreferrer">
+                  <div id="mapDavid"></div>
+                </a>
               </div>
               <br>
             </div>

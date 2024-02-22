@@ -66,7 +66,7 @@ function obtener6Mark() {
 
 function obtenerVendedores($number) {
     $conn = conectarDB();
-    $sql = "SELECT * FROM team_pcr WHERE photo NOT IN ('') AND stat = 1 ORDER BY RAND() LIMIT $number";
+    $sql = "SELECT * FROM team_pcr WHERE photo NOT IN ('') AND stat = 1 ORDER BY posicion ASC LIMIT $number";
     $result = $conn->query($sql);
     cerrarDB($conn);
     return $result;

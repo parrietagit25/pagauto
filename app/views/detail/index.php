@@ -303,6 +303,7 @@
                 </div>
             </div>           
         </section>
+        <?php /*
         <section class="section-carousel">
           <div class="container">
               <div class="row">
@@ -367,7 +368,24 @@
                   
               </div>
           </div>
-      </section>
+        </section> */ ?>
+
+        <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
+            <?php if ($diesiseis->num_rows > 0) {
+                while ($row = $diesiseis->fetch_assoc()) { ?>
+                <a href="https://automarketpanama.com/dev/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                    <div class="b-gallery__item b-team__media"><!--  -->
+                        <!--<img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>-->
+                        <div style="">
+                            <img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" />
+                        </div>
+                    </div>
+                </a>
+            <?php
+                }
+            }
+            ?>
+        </div>
 
         <?php include(ROOT_PATH . '/app/views/partials/piedepagina.php'); ?>         
           <!-- .footer-->

@@ -16,7 +16,8 @@ $conn = conectarDB();
                                                   correo = '".$_POST['correo']."', 
                                                   celular = '".$_POST['telefono']."', 
                                                   redSocial = '".$_POST['redsocial']."', 
-                                                  stat = '".$_POST['status']."' 
+                                                  stat = '".$_POST['status']."', 
+                                                  posicion = '".$_POST['posicion']."'
                               WHERE 
                               id = '".$_POST['id_vendedor']."'");
 
@@ -202,7 +203,7 @@ $conn = conectarDB();
                     </div>
 
 
-                    <?php $ultimo = $conn -> query("SELECT * FROM team_pcr");
+                    <?php $ultimo = $conn -> query("SELECT * FROM team_pcr order by posicion asc");
                             while ($lista = $ultimo->fetch_assoc()) {
                     ?>
                     
@@ -223,6 +224,7 @@ $conn = conectarDB();
                                 </ul>
                             </div>
                             <div class="b-team__inner">
+                            <div class="b-team__name">Posición: <?php echo $lista['posicion']; ?></div>
                                 <div class="b-team__name"><?php echo utf8_encode($lista['nombre']); ?></div> 
                                 <div class="b-team__category"><?php echo utf8_encode($lista['cargo']); ?></div>
                                 <div class="b-team__category"><?php if($lista['stat']==1){ echo '<b style="color:green;">ON</b>'; }else{ echo '<b style="color:red;">OFF</b>'; } ?></div>
@@ -317,6 +319,8 @@ $conn = conectarDB();
                                         <option value="Panamá" <?php if(utf8_encode($lista['sucursal']) == 'Panamá'){ echo 'selected'; } ?>>Panamá</option>
                                         <option value="Chiriquí" <?php if(utf8_encode($lista['sucursal']) == 'Chiriquí'){ echo 'selected'; } ?>>Chiriquí</option>
                                         </select>
+                                        <label>Posición</label>  <br>
+                                        <input class="form-control" type="text" name="posicion" value="<?php echo $lista['posicion']; ?>">
                                         <label>Telefono</label>  <br>
                                         <input class="form-control" type="text" name="telefono" value="<?php echo utf8_encode($lista['celular']); ?>">
                                         <label>Correo</label>  <br>

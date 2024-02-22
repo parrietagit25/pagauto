@@ -79,26 +79,25 @@
         p {
         text-align: justify;
         }
-        /* ocultar y mostrar logo */
 
         .scroll-edit {
-            display: none; /* Oculta el logo de la pagina principal */
+            display: none;
         }
 
         .show-on-scroll {
-            display: block; /* Muestra el logo al hacer scroll de la pagina principal */
+            display: block; 
         }
 
         .form-row {
             display: flex;
-            justify-content: space-between; /* Ajusta los elementos uniformemente */
-            align-items: center; /* Centra los elementos verticalmente */
-            flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas si no hay suficiente espacio */
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
         }
 
         .b-find__item {
-            flex-basis: calc(33.333% - 20px); /* Ajusta el ancho de cada elemento, resta el espacio entre elementos si es necesario */
-            margin: 10px; /* Espacio entre elementos */
+            flex-basis: calc(33.333% - 20px);
+            margin: 10px; 
         }
         .nav-item .dropdown-menu {
             position: absolute;  
@@ -131,14 +130,14 @@
         }
 
         .arrow-icon::after {
-            content: "▼"; /* Icono hacia abajo por defecto */
+            content: "▼"; 
             display: inline-block;
-            margin-left: 5px; /* Espacio entre el texto y el icono */
-            transition: transform 0.3s; /* Transición suave */
+            margin-left: 5px; 
+            transition: transform 0.3s; 
         }
 
         .collapsed .arrow-icon::after {
-            transform: rotate(180deg); /* Gira el icono hacia arriba cuando el panel está cerrado */
+            transform: rotate(180deg);
         }
 
         .desktop-image {
@@ -149,36 +148,40 @@
             display: none;
         }
 
-        /* Mostrar la imagen móvil solo en pantallas de hasta 800px */
         @media only screen and (max-width: 800px) {
             .desktop-image {
                 display: none;
             }
             .mobile-image {
                 display: block;
-                max-width: 100%; /* Ajustar al ancho máximo de la pantalla */
-                height: 100%; /* Mantener la relación de aspecto */
+                max-width: 100%; 
+                height: 100%;
                 width: 100%;
             }
         }
 
-        /* Ocultar el contenedor por defecto */
         #menu_movile {
             display: none;
         }
 
-        /* Mostrar el contenedor solo en pantallas menores de 768px (dispositivos móviles) */
         @media (max-width: 767px) {
             #menu_movile {
-                display: block;
+             display: block;
             }
+        } 
+
+        @media (max-width: 767px) {
+            #estadisticas_movil {
+             display: none;
+            }
+        }
             
         #paginador {
-            text-align: center; 
+            text-align: center;
             width: 100%; 
-            display: flex; 
-            justify-content: center; 
-            margin-top: 20px; 
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
         }
 
         #paginador a {
@@ -193,6 +196,37 @@
             color: #fff; 
             border-radius: 5px; 
         }
+
+        @media (max-width: 767px) {
+            .ui-title {
+                font-size: 16px; 
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section-carousel__btn {
+                font-size: 14px; 
+                padding: 10px 20px; 
+            }
+        }
+
+        @media (max-width: 767px) {
+        .b-bnr__title {
+            font-size: 16px; 
+        }
+        .b-bnr-contacts__info, .b-bnr-contacts__phone {
+            font-size: 14px; 
+        }
+        .b-bnr-contacts {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 0; 
+            margin-bottom: 10px; 
+        }
+        .b-bnr__main, .b-bnr__second, .b-bnr-contacts {
+            text-align: left; 
+        }
+    }
 
     </style>
     <?php /*

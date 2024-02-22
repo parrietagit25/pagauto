@@ -179,7 +179,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="ui-title-slogan"><!--TE AYUDAMOS A ENCONTRAR TU PRÓXIMO VEHICULO FÁCILMENTE--></div>
+                            <div class="ui-title-slogan"></div>
                             <h2 class="ui-title">INVENTARIO > <span style="color:red;"> AUTOS DESTACADOS</span></h2>
                         </div>
                     </div>
@@ -273,7 +273,7 @@
                 </div>
             </section>
             <!-- end .b-bnr-->
-            <div class="section-progress">
+            <div class="section-progress" id="estadisticas_movil">
                 <div class="container">
                     <ul class="b-progress-list row list-unstyled">
                         <li class="b-progress-list__item col-md-3">

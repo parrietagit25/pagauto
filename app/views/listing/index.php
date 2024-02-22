@@ -307,9 +307,7 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                           </div>
                           <div id="paginador">
                               <a href="#" id="anterior" data-pagina="prev">&lt;&lt;</a>
-                              <?php for ($i = 1; $i <= $numero_paginas; $i++) { ?>
-                                  <a href="#" data-pagina="<?php echo $i; ?>"><?php echo '-'.$i.'-'; ?></a>
-                              <?php } ?>
+                              <!-- Los números de página se generarán dinámicamente con JavaScript -->
                               <a href="#" id="siguiente" data-pagina="next">&gt;&gt;</a>
                           </div>
                     <?php   /* ?>

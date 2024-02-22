@@ -95,7 +95,8 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
           <section class="section-default" style="margin-top:-150px;">
             <div class="container">
               <div class="row" style="font-size:20px;">
-                <div class="col-xl-12">
+
+                <div class="col-xl-6">
                   <p>
                     <span class="text-primary">Automarket</span>
                     Panamá es la empresa líder en Panamá en venta de autos seminuevos y usados, 
@@ -111,6 +112,9 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                     <li>Autos 100% Garantizados. </li>
                   </ul>
                 </div>
+                <div class="col-xl-6" style="margin-top:-70px;">
+                  <img src="/dev/public/assets/media/financiamiento/ANATOMÍA-DEL-SEMINUEVO.png" alt="" srcset="">
+                </div>
               </div>
             </div>
           </section>
@@ -119,7 +123,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
           <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
               <?php if ($diesiseis->num_rows > 0) {
                   while ($row = $diesiseis->fetch_assoc()) { ?>
-                  <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                  <a href="https://automarketpanama.com/dev/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
                       <div class="b-gallery__item b-team__media"><!--  -->
                           <!--<img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>-->
                           <div style="">
@@ -131,14 +135,6 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                   }
               }
               ?>
-          </div>
-
-          <div class="container" style="display: flex; justify-content: center; align-items: center;">
-              <div class="row">
-                  <div class="col-12">
-                    <img src="/dev/public/assets/media/financiamiento/ANATOMÍA-DEL-SEMINUEVO.png" alt="" srcset="">
-                  </div>
-              </div>
           </div>
 
           <!-- end .b-gallery-->

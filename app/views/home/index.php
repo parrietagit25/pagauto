@@ -296,21 +296,19 @@
                 </div>
             </div>
             <br>
-            <section class="bg-light" style="background-color:white;">
+            <section class="bg-light custom-section" style="background-color:white;">
                 <div class="container">
                     <div class="row">
-                        <div class="col-6">
-                            <img src="<?php echo BASEURL; ?>media/ima/city.png" alt="" srcset="">
-                        </div>
-                        <div class="col-6 justify-content-center" style="text-align:center;">
-                        <br>
-                        <br>
-                            <h2 class="b-bnr-3__title ui-tilte" style="color:black;">Llévate tu seminuevo con financiamiento. </h2>
-                            <div class="b-bnr-3__info"></div><a class="b-bnr-3__btn btn btn-primary" href="https://automarketpanama.com/dev/public/listing">Aplica aqui</a>
+                        <div class="col-12 col-md-6 custom-image" alt="" srcset=""></div>
+                        <div class="col-12 col-md-6 text-center">
+                            <br><br>
+                            <h2 class="b-bnr-3__title ui-tilte" style="color:black;">Llévate tu seminuevo con financiamiento.</h2>
+                            <a class="b-bnr-3__btn btn btn-primary" href="https://automarketpanama.com/dev/public/listing">Aplica aquí</a>
                         </div>
                     </div>
                 </div>
             </section>
+            <br>
             <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
                 <?php if ($diesiseis->num_rows > 0) {
                     while ($row = $diesiseis->fetch_assoc()) { ?>

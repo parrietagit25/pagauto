@@ -228,6 +228,80 @@
         }
     }
 
+    .slick-prev, .slick-next {
+        /*display: none !important; /* Oculta las flechas por defecto */
+    }
+
+    @media screen and (max-width: 767px) {
+        .slick-prev, .slick-next {
+            display: block !important; /* Muestra las flechas en pantallas pequeñas */
+        }
+    }
+
+    .custom-section .custom-image {
+        background-image: url('<?php echo BASEURL; ?>media/ima/city.png');
+        height: 300px; /* Ajusta según la altura deseada */
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Cambia la imagen en pantallas menores a 768px */
+    @media (max-width: 767px) {
+        .custom-section .custom-image {
+            background-image: url('<?php echo BASEURL; ?>media/ima/city2.png');
+        }
+    }
+
+    /* Centra el texto y el botón en pantallas pequeñas */
+    @media (max-width: 767px) {
+        .custom-section .col-12 {
+            text-align: center;
+        }
+    }
+
+    .financing-image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    @media (max-width: 767px) {
+        /* Cambia la imagen en pantallas móviles */
+        .financing-image {
+            content: url('/dev/public/assets/media/financiamiento/financiamiento2.png');
+        }
+    }
+
+    @media (max-width: 767px) {
+        .d-flex .btn {
+            width: 100%;
+            margin-top: 10px; /* Ajusta el espacio entre botones */
+        }
+    }
+
+
+    .image-container .financing-image {
+        display: block; /* Asegura que la imagen original se muestre en pantallas grandes */
+    }
+    
+/* Cambia las imágenes en pantallas móviles */
+    @media (max-width: 767px) {
+        .asalariado {
+            content: url('/dev/public/assets/media/financiamiento/asalariado2.png');
+        }
+        .independiente {
+            content: url('/dev/public/assets/media/financiamiento/independiente2.png');
+        }
+        .juridico {
+            content: url('/dev/public/assets/media/financiamiento/juridico2.png');
+        }
+        
+        .d-flex .btn {
+            width: 100%;
+            margin-top: 10px; /* Ajusta el espacio entre botones */
+        }
+    }
+
+
     </style>
     <?php /*
     <!-- Google Tag Manager -->

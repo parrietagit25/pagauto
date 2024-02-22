@@ -1,13 +1,13 @@
         <!-- ==========================-->
         <!-- MOBILE MENU-->
         <!-- ==========================-->
-        <div data-off-canvas="mobile-slidebar left overlay">
+        <div data-off-canvas="mobile-slidebar left overlay" style="background-color:white; color:black;">
             <a class="navbar-brand scroll" href="https://automarketpanama.com/dev/public/"><img width="200" class="scroll-logo" src="<?php echo BASEURL; ?>media/logo/LOGO-WEB-AUTOMARKET.png" alt="logo"></a>
 
 
             <ul class="navbar-nav">
-                <li class="nav-item active"><a class="nav-link" href="/automarket/dev/public/">Inicio<span class="sr-only"></span></a></li>
-                <li class="nav-item "><a class="btn btn-primary" href="https://automarketpanama.com/dev/public/listing">Inventario</a>
+                <li class="nav-item active"><a class="nav-link" href="/automarket/dev/public/" style="color: black !important;">Inicio<span class="sr-only" ></span></a></li>
+                <li class="nav-item "><a class="btn btn-primary" href="https://automarketpanama.com/dev/public/listing" >Inventario</a>
 
 
                     <ul>
@@ -17,14 +17,14 @@
                         <li><a class="dropdown-item" href="#">Buses</a></li>
                         <li><a class="dropdown-item" href="#">Camiones</a></li>-->
                         <?php while ($tipo = $tipo_carro->fetch_assoc()) { ?>
-                            <a class="dropdown-item" href="https://automarketpanama.com/dev/public/listing?tipo_auto=<?php echo $tipo['CarType']; ?>&menu=1"><?php echo $tipo['CarType']; ?></a>
+                            <a class="dropdown-item" href="https://automarketpanama.com/dev/public/listing?tipo_auto=<?php echo $tipo['CarType']; ?>&menu=1" style="color: black !important;"><?php echo $tipo['CarType']; ?></a>
                         <?php } ?>
                     </ul>
 
 
                 </li>
-                <li class="nav-item"><a class="nav-link" href="/dev/public/financiamiento">Financiamiento</a></li>
-                <li class="nav-item"><a class="nav-link" href="/dev/public/about"> Nuestro Equipo</a></li>
+                <li class="nav-item"><a class="nav-link" href="/dev/public/financiamiento" style="color: black !important;">Financiamiento</a></li>
+                <li class="nav-item"><a class="nav-link" href="/dev/public/about" style="color: black !important;"> Nuestro Equipo</a></li>
                 <!--
                 <li class="nav-item "><a class="nav-link" href="#">Pages</a>
 
@@ -40,7 +40,7 @@
                         <li><a class="dropdown-item" href="blog-post.html">Blog post</a></li>
                     </ul>
                 </li> -->
-                <li class="nav-item"><a class="nav-link" href="/dev/public/contact">Contáctanos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/dev/public/contact" style="color: black !important;">Contáctanos</a></li>
             </ul>
 
         </div>

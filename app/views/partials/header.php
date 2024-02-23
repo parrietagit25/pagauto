@@ -154,9 +154,9 @@
             }
             .mobile-image {
                 display: block;
-                max-width: 100%; 
+                /*max-width: 100%; 
                 height: 100%;
-                width: 100%;
+                width: 100%;*/
             }
         }
 
@@ -301,6 +301,84 @@
         }
     }
 
+    .titulo-nuestro-equipo {
+        font-size: 24px; /* Tamaño actual o el que prefieras */
+    }
+
+    /* Media query para pantallas de hasta 767px de ancho */
+    @media (max-width: 767px) {
+        .titulo-nuestro-equipo {
+            font-size: 18px; /* Reduce el tamaño de la fuente en móviles */
+        }
+    }
+
+    .contact-image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Cambia la imagen cuando la pantalla sea menor a 768px */
+    @media (max-width: 767px) {
+        .contact-image-container img {
+            display: none; /* Oculta la imagen original en dispositivos móviles */
+        }
+        .contact-image-container {
+            background: url('<?php echo BASEURL; ?>media/imaGoo/contact2.png') no-repeat center center;
+            background-size: cover;
+            min-height: 200px; /* Ajusta esto según el tamaño deseado */
+        }
+    } 
+
+    @media (max-width: 767px) {
+        #imagen_contacto {
+            margin-top: 50px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        #miIframe {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        #imagen_garantia {
+            display: none;
+        }
+        #imagen_garantia_movil {
+            display: block !important;
+            width: 250px;
+        }
+        #garantia_12_meses {
+            display: block !important;
+            text-align: left !important;
+        }
+        #garantia_6_meses {
+            display: block !important;
+            text-align: left !important;
+        }
+        #titulo_ouedes_financiar{
+            font-size: 22px !important;
+        }
+        #imagen_financiamiento{
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 767px){
+        #filtros_listin{
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .section-carousel .slick-prev,
+        .section-carousel .slick-next {
+            display: block !important; /* Asegura que las flechas sean visibles */
+            z-index: 1; /* Asegura que las flechas estén sobre otros elementos */
+        }
+    }
 
     </style>
     <?php /*

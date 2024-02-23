@@ -299,7 +299,7 @@ function CharsStart() {
 
   if ($('.js-slider-for').length) {
     $('.js-slider-for').slick({
-      arrows: false,
+      arrows: true,
       fade: true,
       asNavFor: '.js-slider-nav'
     });

@@ -31,7 +31,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
         <?php include(ROOT_PATH . '/app/views/partials/menu2.php'); ?>
         <!-- end .header-->
         <div class="container">
-          <h3>INICIO > <span style="color:red;">CONTÁCTANOS</span></h3>
+          <h3 class="titulo-nuestro-equipo">INICIO > <span style="color:red;">CONTÁCTANOS</span></h3>
         </div>
         <!-- end .b-title-page-->
         <main class="l-main-content">
@@ -106,43 +106,19 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <section class="section-form-contacts">
-                  <!--<h2 class="ui-title-inner">Escribenos <span class="text-primary"> </span></h2>
-                  <p>Rellena el siguiente formulario y uno de nuestros representantes contactará contigo en breve.</p>-->
-                  <div id="success"></div>
-                  <!--<form class="b-form-contacts ui-form" id="contactForm" action="#" method="post">
-                    <div class="form-group">
-                      <input class="form-control" id="user-name" type="text" name="nombre" placeholder="¿Cómo te llamas?" required="required"/>
-                    </div>
-                    <div class="form-group">
-                      <input class="form-control" id="user-email" type="email" name="email" placeholder="¿Cuál es tu dirección de correo electrónico?"/>
-                    </div>
-                    <div class="form-group">
-                      <input class="form-control" id="user-email" type="text" name="telefono" placeholder="¿Cuál es tu número de teléfono? (opcional)"/>
-                    </div>
-                    <div class="form-group">
-                      <input class="form-control" id="user-email" type="text" name="quebusca" placeholder="¿Qué estás buscando?"/>
-                    </div>
-                    <div class="form-group">
-                      <textarea class="form-control" name="detalles" id="user-message" rows="5" placeholder="En que modelo de carro esta interesado/a? (opcional)" required="required"></textarea>
-                    </div>
-                    <button class="btn btn-primary">Enviar</button>
-                    <br>
-                    <small>
-                      Nunca compartas información confidencial (números de tarjetas de crédito, números de identificación personal, contraseñas) a través de este formulario. <br>
-                      Este sitio está protegido por reCAPTCHA y se aplica la <a href="https://policies.google.com/privacy?hl=es">Política de privacidad</a> y las <a href="https://policies.google.com/terms?hl=es">Condiciones de servicio</a> de Google.
-                    </small>
-                  </form>-->
-                  <div class="pipedriveWebForms b-form-contacts ui-form" data-pd-webforms="https://webforms.pipedrive.com/f/30YpKWrA7vgJy7e4b5ECKq0ffWK2mGCUl9i11tqBbBwBPX5BI5saqtBLbUsvUUPfB"><script src="https://webforms.pipedrive.com/f/loader"></script></div>
-                </section>
-                <!-- end .b-form-contact-->
-              </div>
-              <div class="col-md-6">
-                <section class="section-form-contacts">
+                <section class="section-form-contacts contact-image-container" id="imagen_contacto">
                   <img src="<?php echo BASEURL; ?>media/imaGoo/contact.png" alt="">
                 </section>
                 <!-- end .b-form-contact-->
               </div>
+              <div class="col-md-6">
+                <section class="">
+                  <div id="success"></div>
+                  <div class="pipedriveWebForms b-form-contacts ui-form" data-pd-webforms="https://webforms.pipedrive.com/f/30YpKWrA7vgJy7e4b5ECKq0ffWK2mGCUl9i11tqBbBwBPX5BI5saqtBLbUsvUUPfB"><script src="https://webforms.pipedrive.com/f/loader"></script></div>
+                </section>
+                <!-- end .b-form-contact-->
+              </div>
+              
             </div>
           </div>
         </main>

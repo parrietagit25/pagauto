@@ -42,27 +42,27 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
           </div>
         </div>--> 
         <div class="container">
-          <h3>INICIO > <span style="color:red;">INVENTARIO</span></h3>
+          <h3 class="titulo-nuestro-equipo">INICIO > <span style="color:red;">INVENTARIO</span></h3>
         </div>
 
         <div class="l-main-content" style="margin-top:-90px;">
           <div class="container">
             <div class="row">
 
-              <div class="col-lg-3">
+              <div class="col-lg-3" >
                 <aside class="l-sidebar">
                   <div class="widget section-sidebar">
-                    <h3 class="widget-title bg-dark"><i class="ic flaticon-car-4"></i>FILTRAR POR</h3>
+                    <h3 class="widget-title bg-dark" onclick="mostrar_filtros()"><i class="ic flaticon-car-4"></i>FILTRAR POR</h3>
                     <div class="widget-content">
                       <div class="widget-inner">
                         <form id="buscar" class="b-filter">
                           <div class="b-filter__main">
-                            <div class="b-filter__row">
+                            <div class="b-filter__row" id="filtros_listin">
 
                                       <div class="accordion" id="miAcordeon" style="text-align:left;">
                                         <div class="card">
                                           <div class="card-header">
-                                            <h4 data-toggle="collapse" data-target="#panel1">Marca</h4>
+                                            <h4 data-toggle="collapse" data-target="#panel1" >Marca <span class="arrow">▼</span></h4>
                                           </div>
                                           <div id="panel1" class="collapse show" data-parent="#miAcordeon">
                                             <div class="card-body">
@@ -74,7 +74,7 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                         </div>
                                         <div class="card">
                                           <div class="card-header">
-                                            <h4 data-toggle="collapse" data-target="#panel2">Categoria</h4>
+                                            <h4 data-toggle="collapse" data-target="#panel2">Categoria <span class="arrow">▼</span></h4>
                                           </div>
                                           <div id="panel2" class="collapse" data-parent="#miAcordeon">
                                             <div class="card-body">
@@ -86,7 +86,7 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                         </div>
                                         <div class="card">
                                           <div class="card-header">
-                                            <h4 data-toggle="collapse" data-target="#panel3">Año</h4>
+                                            <h4 data-toggle="collapse" data-target="#panel3">Año <span class="arrow">▼</span></h4>
                                           </div>
                                           <div id="panel3" class="collapse" data-parent="#miAcordeon">
                                             <div class="card-body">
@@ -98,7 +98,7 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                         </div>
                                         <div class="card">
                                           <div class="card-header">
-                                            <h4 data-toggle="collapse" data-target="#panel4">Ubicación</h4>
+                                            <h4 data-toggle="collapse" data-target="#panel4">Ubicación <span class="arrow">▼</span></h4>
                                           </div>
                                           <div id="panel4" class="collapse" data-parent="#miAcordeon">
                                             <div class="card-body">
@@ -110,7 +110,7 @@ $numero_paginas = ceil($total_registros / $registros_por_pagina);
                                         </div>
                                         <div class="card">
                                           <div class="card-header">
-                                            <h4 data-toggle="collapse" data-target="#panel5">Precio</h4>
+                                            <h4 data-toggle="collapse" data-target="#panel5">Precio <span class="arrow">▼</span></h4>
                                           </div>
                                           <div id="panel5" class="collapse" data-parent="#miAcordeon">
                                             <div class="card-body">

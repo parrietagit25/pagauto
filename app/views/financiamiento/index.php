@@ -30,7 +30,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
             <br>
             <br>
             <?php if (isset($_GET['tipo_f']) && $_GET['tipo_f']=='asalariados') { ?>
-              <div class="container">
+              <!--<div class="container">
                   <div class="row">
                     <div class="col-6" style="font-size:18px;">
                       <h2>REQUISITOS ASALARIADOS</h2>
@@ -57,77 +57,78 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                       </div>
 
                   </div>
+              </div> -->
+
+              <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-1 order-md-2">
+                          <img src="/dev/public/assets/media/financiamiento/asalariado.png" class="financing-image asalariado" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 order-2 order-md-1" style="font-size:20px; padding-top:20px;">
+                      <ul>
+                          <li> <b> REQUISITOS ASALARIADO </b> </li>
+                          <li>Solicitud de Crédito </li>
+                          <li>Copia de Cédula / Pasaporte </li>
+                          <li>Copia de Licencia </li>
+                          <li>Carta de Trabajo</li>
+                          <li>Permiso de trabajo vigente ( extranjeros) </li>
+                          <li>Copia de Ficha/Talonarios </li>
+                          <li>Copia de Recibo de Luz/Agua </li>
+                      </ul>
+                    </div>
+                    <div class="col-12 order-3" style="padding-top:20px;">
+                        <h2>Requisitos</h2>
+                        <div class="d-flex justify-content-between flex-wrap" style="padding-top:20px;">
+                            <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary my-1">Asalariados</a>
+                            <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary my-1">Independientes</a>
+                            <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary my-1">Jurídicos</a>
+                        </div>
+                    </div>
+                  </div>
               </div>
 
           <?php }elseif(isset($_GET['tipo_f']) && $_GET['tipo_f']=='independientes'){ ?> 
             
             <div class="container">
               <div class="row">
-                <div class="col-6" style="font-size:18px;">
-                  <h2>REQUISITOS INDEPENDIENTES</h2>
-                    <ul style="padding-top:20px;">
-                      <li style="font-size:20px;">Solicitud de Crédito </li>
+                  <div class="col-12 col-md-6 order-1 order-md-2">
+                        <img src="/dev/public/assets/media/financiamiento/independiente.png" class="financing-image independiente" alt="">
+                  </div>
+                  <div class="col-12 col-md-6 order-2 order-md-1" style="font-size:20px; padding-top:20px;">
+                    <ul>
+                      <li> <b> REQUISITOS INDEPENDIENTE </b> </li>
+                      <li>Solicitud de Crédito </li>
                       <li>Copia de Cédula/ pasaporte </li>
                       <li>Copia de Licencia </li>
                       <li>2 últimas declaraciones de Renta </li>
-                      <li>Certificados de Recepción, Paz y Salvo  </li>
+                      <li>Certificados de Recepción, Paz y Salvo </li>
+                      <li>Aviso de Operaciones </li>
+                      <li>Movimientos bancarios ( últimos 6 meses) </li>
                       <li>Copia de Recibo de Luz/Agua </li>
                     </ul>
                   </div>
-                  <div class="col-6">
-                      <img src="/dev/public/assets/media/financiamiento/independiente.png" style="height:100%;" alt="" srcset="">
+                  <div class="col-12 order-3" style="padding-top:20px;">
+                        <h2>Requisitos</h2>
+                        <div class="d-flex justify-content-between flex-wrap" style="padding-top:20px;">
+                            <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary my-1">Asalariados</a>
+                            <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary my-1">Independientes</a>
+                            <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary my-1">Jurídicos</a>
+                        </div>
+                      </div>
                   </div>
-                  <div class="col-12">
-                    <h2 style="padding-top:20px;">Requisitos</h2>
-                    <div class="d-flex justify-content-between" style="padding-top:20px;">
-                        <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary">Asalariados</a>
-                        <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary">Independientes</a>
-                        <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>
-                    </div>
-                  </div>
-
-              </div>
-          </div>
+            </div>
             
           <?php }elseif(isset($_GET['tipo_f']) && $_GET['tipo_f']=='juridicos'){ ?>
-<!--
-            <div class="container">
-                <div class="row">
-                  <div class="col-6" style="font-size:18px;">
-                    <h2>REQUISITOS PERSONA JURÍDICA </h2>
-                      <ul style="padding-top:20px;">
-                        <li style="font-size:20px;">Solicitud de Crédito </li>
-                        <li>Copia de Cédula/ pasaporte </li>
-                        <li>Copia de Licencia </li>
-                        <li>2 últimas declaraciones de Renta </li>
-                        <li>Certificados de Recepción, Paz y Salvo </li>
-                        <li>Aviso de Operaciones </li>
-                        <li>Movimientos bancarios ( últimos 6 meses) </li>
-                        <li>Copia de Recibo de Luz/Agua </li>
-                      </ul>
-                    </div>
-                    <div class="col-6">
-                        <img src="/dev/public/assets/media/financiamiento/juridico.png" style="height:100%;" alt="" srcset="">
-                    </div>
-                    <div class="col-12">
-                      <h2 style="padding-top:20px;">Requisitos</h2>
-                      <div class="d-flex justify-content-between" style="padding-top:20px;">
-                          <a href="/dev/public/financiamiento?tipo_f=asalariados" class="btn btn-primary">Asalariados</a>
-                          <a href="/dev/public/financiamiento?tipo_f=independientes" class="btn btn-primary">Independientes</a>
-                          <a href="/dev/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>
-                      </div>
-                    </div>
-                </div>
-            </div> -->
-
 
              <div class="container">
                 <div class="row">
+                    
                     <div class="col-12 col-md-6 order-1 order-md-2">
                         <img src="/dev/public/assets/media/financiamiento/juridico.png" class="financing-image juridico" alt="">
                     </div>
                     <div class="col-12 col-md-6 order-2 order-md-1" style="font-size:20px; padding-top:20px;">
                           <ul>
+                            <li> <b> REQUISITOS JURIDICO </b></li>
                             <li>Solicitud de Crédito </li>
                             <li>Copia de Cédula/ pasaporte </li>
                             <li>Copia de Licencia </li>
@@ -181,6 +182,21 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
             <br>
 
           <!-- end .b-gallery-->
+          <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
+            <?php 
+                while ($bank=$bancos->fetch_assoc()) { ?>
+                <a href="https://automarketpanama.com/dev/public/detail?placa=">
+                    <div class="b-gallery__item b-team__media">
+                        <div style="">
+                            <img class="img-fluid" src="<?php echo $bank["ima_bank"]; ?>" alt="foto" />
+                        </div>
+                    </div>
+                </a>
+            <?php
+                }
+            ?>
+          </div>
+          <?php /*
           <div class="section-brands">
             <div class="container">
               <div class="row">
@@ -197,7 +213,8 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                 </div>
               </div>
             </div>
-          </div>
+          </div>  */ ?>
+
           <!-- end .b-brands-->
         </main>
         <?php include(ROOT_PATH . '/app/views/partials/piedepagina.php'); ?>         

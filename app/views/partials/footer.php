@@ -369,5 +369,69 @@
             });
 
         </script>
+        <script>
+            function mostrar_filtros() {
+                var screenWidth = window.innerWidth;
+                var filtrosListinDiv = document.getElementById("filtros_listin");
+                
+                // Verifica si la pantalla es menor a 767px
+                if (screenWidth < 767) {
+                    // Cambia el estado de display basado en el estado actual
+                    if (filtrosListinDiv.style.display === "none" || filtrosListinDiv.style.display === "") {
+                        filtrosListinDiv.style.display = "block";
+                    } else {
+                        filtrosListinDiv.style.display = "none";
+                    }
+                } else {
+                    // Opcional: Manejar el caso para pantallas mayores a 767px si es necesario
+                    console.log('Pantalla mayor a 767px, ajusta este comportamiento según sea necesario.');
+                }
+            }
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            // Selecciona todos los encabezados del acordeón
+            var accHeaders = document.querySelectorAll('#miAcordeon .card-header h4');
+
+            accHeaders.forEach(function(header) {
+                // Escucha el evento de abrir el acordeón
+                header.addEventListener('click', function() {
+                    var arrowSpan = this.querySelector('.arrow'); // Selecciona la flecha
+                    var panel = document.querySelector(this.dataset.target); // Selecciona el panel asociado
+                    if (panel.classList.contains('show')) {
+                        // Si el panel ya está abierto, cambia la flecha hacia abajo
+                        arrowSpan.textContent = '▼';
+                    } else {
+                        // Si el panel está cerrado, cambia la flecha hacia arriba
+                        arrowSpan.textContent = '▲';
+                    }
+                });
+            });
+
+            // Ajustar las flechas basado en el estado inicial de cada panel
+            document.querySelectorAll('#miAcordeon .collapse').forEach(function(panel) {
+                    var arrowSpan = panel.previousElementSibling.querySelector('.arrow'); // Selecciona la flecha
+                    if (panel.classList.contains('show')) {
+                        arrowSpan.textContent = '▲'; // Cambia la flecha hacia arriba si el panel está abierto
+                    } else {
+                        arrowSpan.textContent = '▼'; // Cambia la flecha hacia abajo si el panel está cerrado
+                    }
+                });
+            });
+
+        </script>
+        <script>
+            $('.js-slider').slick({
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                infinite: true,
+                responsive: [
+                    { breakpoint: 1800, settings: { slidesToShow: 4, slidesToScroll: 4, arrows: true }},
+                    { breakpoint: 1400, settings: { slidesToShow: 3, slidesToScroll: 1, arrows: true }},
+                    { breakpoint: 1040, settings: { slidesToShow: 2, slidesToScroll: 1, arrows: true }},
+                    { breakpoint: 767, settings: { slidesToShow: 1, slidesToScroll: 1, arrows: true }}
+                ]
+                });
+        </script>
     </body>
 </html>

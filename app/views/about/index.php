@@ -21,38 +21,12 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
         <?php include(ROOT_PATH . '/app/views/partials/menu2.php'); ?>
 
         <div class="container">
-          <h3>INICIO > <span style="color:red;">NUESTRO EQUIPO</span></h3>
+          <h3 class="titulo-nuestro-equipo">INICIO > <span style="color:red;">NUESTRO EQUIPO</span></h3>
         </div>
         <!-- end .b-title-page-->
         <main>
-          <!--
-          <div class="section-default bg-light">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="b-advantages"><i class="b-advantages__ic flaticon-car-repair-check-list"></i>
-                    <div class="b-advantages__title">Facil financiamiento</div>
-                    <div class="b-advantages__info">Financiamiento accesible y flexible para tu auto seminuevo: soluciones rápidas, personalizadas y sin complicaciones.</div>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="b-advantages active"><i class="b-advantages__ic flaticon-speedometer"></i>
-                    <div class="b-advantages__title">Muchas marcas de autos</div>
-                    <div class="b-advantages__info">Amplia selección de marcas y modelos de autos seminuevos: encuentra tu coche ideal con facilidad y rapidez.</div>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="b-advantages"><i class="b-advantages__ic flaticon-car-repair"></i>
-                    <div class="b-advantages__title">Servicios rapidos</div>
-                    <div class="b-advantages__info">Servicio rápido y eficiente: elige tu auto seminuevo ideal con rapidez, comodidad y atención personalizada.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          -->
 
-          <section class="section-team section-default">
+          <section class="section-team section-default" style="margin-top:-60px;">
             <div class="container">
               <div class="row">
                 <div class="col-12">
@@ -112,8 +86,8 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                     <li>Autos 100% Garantizados. </li>
                   </ul>
                 </div>
-                <div class="col-xl-6" style="margin-top:-70px;">
-                  <img src="/dev/public/assets/media/financiamiento/ANATOMÍA-DEL-SEMINUEVO.png" alt="" srcset="">
+                <div class="col-xl-6">
+                  <img style="margin-top:-30px;" src="/dev/public/assets/media/financiamiento/ANATOMÍA-DEL-SEMINUEVO.png" alt="" srcset="">
                 </div>
               </div>
             </div>
@@ -137,47 +111,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
               ?>
           </div>
 
-          <!-- end .b-gallery-->
-          <div class="section-brands">
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                  <div class="section-brands__inner">
-                    <div class="b-brands-2 row">
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/1.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/2.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/3.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/4.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/5.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/6.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/7.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/8.png" alt="foto"/></div>
-                      </div>
-                      <div class="col-md col-12">
-                        <div class="b-brands-2__item"><img class="b-brands-2__img img-fluid" src="assets/media/bancos/9.png" alt="foto"/></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end .b-brands-->
+          <!-- end .b-gallery-->>
         </main>
         <?php include(ROOT_PATH . '/app/views/partials/piedepagina.php'); ?>         
           <!-- .footer-->

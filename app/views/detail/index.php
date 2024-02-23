@@ -25,12 +25,12 @@
 
 
         <div class="container">
-          <h3>INICIO > INVENTARIO > <span style="color:red;">DETALLES DEL AUTO</span></h3>
+          <h3 class="titulo-nuestro-equipo">INVENTARIO > <span style="color:red;">DETALLES DEL AUTO</span></h3>
         </div>
         <!-- end .b-title-page-->
 
         <div class="l-main-content">
-          <div class="container">
+          <div class="container" style="margin-top:-30px;">
           <?php
             if ($datos_auto->num_rows > 0) {
                 while ($row = $datos_auto->fetch_assoc()) { ?>
@@ -90,64 +90,6 @@
                             Tu navegador no soporta iframes.
                         </iframe>
                     </div>
-                  <?php /* ?>
-                  <h2 class="b-goods-f__title">Descripcion del auto</h2>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <dl class="b-goods-f__descr row">
-                        <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Año</dt>
-                        <dd class="b-goods-f__descr-info col-lg-7 col-md-12"><?php echo $row['Year']; ?></dd>
-                        <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Modelo</dt>
-                        <dd class="b-goods-f__descr-info col-lg-7 col-md-12"><?php echo $row['Model']; ?></dd>
-                        <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Tipo</dt>
-                        <dd class="b-goods-f__descr-info col-lg-7 col-md-12"><?php echo $row['CarType']; ?></dd>
-                        <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Color</dt>
-                        <dd class="b-goods-f__descr-info col-lg-7 col-md-12"><?php echo $row['Color']; ?></dd>
-                        <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Km</dt>
-                        <dd class="b-goods-f__descr-info col-lg-7 col-md-12"><?php echo $row['Km']; ?></dd>
-                        <dt class="b-goods-f__descr-title col-lg-5 col-md-12">Transmission</dt>
-                        <dd class="b-goods-f__descr-info col-lg-7 col-md-12"><?php echo $row['Transmission']; ?></dd>
-                      </dl>
-                    </div>
-                    <div class="col-md-6">
-                        
-                    </div>
-                  </div> */ ?>
-                  <!--<ul class="nav nav-tabs nav-vehicle-detail-tabs" id="myTab" role="tablist">
-                    <li class="nav-item"><a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a></li>
-                    <li class="nav-item"><a class="nav-link" id="features-tab" data-toggle="tab" href="#features" role="tab" aria-controls="features" aria-selected="false">Features & Options</a></li>
-                    <li class="nav-item"><a class="nav-link" id="location-tab" data-toggle="tab" href="#location" role="tab" aria-controls="location" aria-selected="false">Vehicle Location</a></li>
-                    <li class="nav-item"><a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Owner Reviews</a></li>
-                  </ul>
-                  <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-                      <p>Edipisicing eiusmod tempor incididunt labore sed dolore magna aliqa enim ipsum ad minim veniams quis nostrud citation ullam laboris nisi ut aliquip laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      <p><strong>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</strong> nisi ut aliquip ex ea commodo cons equat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exe pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed umt perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-                      <h3 class="b-goods-f__title-inner">General Information</h3>
-                      <ul class="list list-mark-2">
-                        <li>Enim ipsum ad minim veniams quis nostrud citation ullam laboris nisi</li>
-                        <li>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore</li>
-                        <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
-                        <li>Laboris nisi ut aliquip ex ea comodo consequat duis aute irure dolor in</li>
-                        <li>Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</li>
-                      </ul>
-                    </div>
-                    <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
-                      <p>Edipisicing eiusmod tempor incididunt labore sed dolore magna aliqa enim ipsum ad minim veniams quis nostrud citation ullam laboris nisi ut aliquip laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
-                      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo cons equat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exe pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed umt perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-                    </div>
-                    <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-                      <ul class="list list-mark-2">
-                        <li>Enim ipsum ad minim veniams quis nostrud citation ullam laboris nisi</li>
-                        <li>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore</li>
-                        <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
-                        <li>Laboris nisi ut aliquip ex ea comodo consequat duis aute irure dolor in</li>
-                        <li>Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</li>
-                      </ul>
-                    </div>
-                  </div>-->
                 </div>
                 <div class="col-lg-3">
                   <aside class="l-sidebar">
@@ -266,9 +208,25 @@
                     <div class="row">
                         <div class="col-12 justify-content-center" style="text-align:center;">
                           <?php if($row['tipo_compra'] == 'SEMINUEVO'){ ?>
-                            <img src="<?php echo BASEURL; ?>media/ima/seminuevo.png" style="margin-top:-30px;">
+                            <img src="<?php echo BASEURL; ?>media/ima/seminuevo.png" style="margin-top:-30px;" id="imagen_garantia">
+                            
+                            <ul id="garantia_12_meses" style="display:none;">
+                              <li>12 MESES DE GARANTIA</li>
+                              <li>HISTORIAL DE MANTENIMIENTOS</li>
+                              <li>MENOS DE 18 MESES DE USO</li>
+                              <li>GARANTIA EXTENDIBLE HASTA 24 MESES</li>
+                            </ul>
+                            <img src="<?php echo BASEURL; ?>media/ima/garan.png" style="display:none;" id="imagen_garantia_movil">
+
                           <?php }elseif ($row['tipo_compra'] == 'USADO') { ?>
-                            <img src="<?php echo BASEURL; ?>media/ima/usado.png" style="margin-top:-30px;">
+                            <img src="<?php echo BASEURL; ?>media/ima/usado.png" style="margin-top:-30px;" id="imagen_garantia">
+                            <ul id="garantia_6_meses" style="display:none;">
+                              <li>6 MESES DE GARANTIA</li>
+                              <li>HISTORIAL DE MANTENIMIENTOS</li>
+                              <li>MENOS DE 18 MESES DE USO</li>
+                              <li>GARANTIA EXTENDIBLE HASTA 12 MESES</li>
+                            </ul>
+                            <img src="<?php echo BASEURL; ?>media/ima/garan.png" style="display:none;" id="imagen_garantia_movil">
                           <?php }else{ ?>
                           <?php } ?>
                         </div>
@@ -289,20 +247,21 @@
         </div>
 
         <section class="bg-light" style="background-color:#ececf4;">
-            <div class="container">
-                <div class="row">
-                    
-                    <div class="col-10 justify-content-center" style="text-align:left; margin-top:40px;">
-                      <h1 style="font-size: 80px; font-weight: bold; color:#3d4c93;">Puedes financiar este auto!</h1>
-                      <h4>Te ayudamos a realizar el tramite de financiamiento para la compra de tu auto</h4>
+          <div class="container">
+              <div class="row justify-content-center align-items-center">
+                  <div class="col-lg-8 col-md-10 text-center" style="margin-top:40px;">
+                      <h1 id="titulo_ouedes_financiar" style="font-size: 80px; font-weight: bold; color:#3d4c93;">Puedes financiar este auto!</h1>
+                      <h4>Te ayudamos a realizar el trámite de financiamiento para la compra de tu auto</h4>
                       <a class="btn btn-sm btn-primary" href="https://automarketpanama.com/dev/public/financiamiento">Ver Requisitos</a>
-                    </div>
-                    <div class="col-2">
-                        <img src="<?php echo BASEURL; ?>media/ima/finan.png" width="400">
-                    </div>
-                </div>
-            </div>           
+                  </div>
+                  <div class="col-lg-4 col-md-10 text-center">
+                      <img id="imagen_financiamiento" src="<?php echo BASEURL; ?>media/ima/finan.png" style="max-width:100%; height:auto;">
+                  </div>
+              </div>
+          </div>       
+          <br>    
         </section>
+
         <?php /*
         <section class="section-carousel">
           <div class="container">
@@ -369,7 +328,7 @@
               </div>
           </div>
         </section> */ ?>
-
+  <br>
         <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
             <?php if ($diesiseis->num_rows > 0) {
                 while ($row = $diesiseis->fetch_assoc()) { ?>

@@ -22,7 +22,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
         <?php include(ROOT_PATH . '/app/views/partials/menu2.php'); ?>
         
         <div class="container">
-            <h3>INICIO > <span style="color:red;">FINANCIAMIENTO</span></h3>
+            <h3 class="titulo-nuestro-equipo">INICIO > <span style="color:red;">FINANCIAMIENTO</span></h3>
         </div>
         
         <!-- end .b-title-page-->

@@ -54,10 +54,10 @@
 
 
 function init() {
-  initMap('mapTumbaMuerto', 9.0068, -79.5188, 'Automarket Tumba Muerto', 'https://automarketpanama.com/dev/public/assets/media/imaGoo/tumbamuerto.jpg', 'Sucursal de Tumba Muerto <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.');
-  initMap('mapViaIsrael', 8.9870, -79.5197, 'Automarket Vía Israel', 'https://automarketpanama.com/dev/public/assets/media/imaGoo/viaizrrael.jpg', 'Sucursal de Vía Israel <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.');
-  initMap('mapCostaVerde', 8.9145, -79.7226, 'Automarket Costa Verde', 'https://automarketpanama.com/dev/public/assets/media/imaGoo/costaverde.jpg', 'Sucursal de Costa Verde <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.');
-  initMap('mapDavid', 8.4295, -82.4340, 'Automarket David', 'https://automarketpanama.com/dev/public/assets/media/imaGoo/david.jpg', 'Sucursal de David <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.');
+  initMap('mapTumbaMuerto', 9.0068, -79.5188, 'Automarket Tumba Muerto', 'https://automarketpanama.com/public/assets/media/imaGoo/tumbamuerto.jpg', 'Sucursal de Tumba Muerto <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.');
+  initMap('mapViaIsrael', 8.9870, -79.5197, 'Automarket Vía Israel', 'https://automarketpanama.com/public/assets/media/imaGoo/viaizrrael.jpg', 'Sucursal de Vía Israel <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.');
+  initMap('mapCostaVerde', 8.9145, -79.7226, 'Automarket Costa Verde', 'https://automarketpanama.com/public/assets/media/imaGoo/costaverde.jpg', 'Sucursal de Costa Verde <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.');
+  initMap('mapDavid', 8.4295, -82.4340, 'Automarket David', 'https://automarketpanama.com/public/assets/media/imaGoo/david.jpg', 'Sucursal de David <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.');
 }
 
 function initMap(mapElementId, lat, lng, title, imageUrl, description) {

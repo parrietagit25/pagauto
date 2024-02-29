@@ -45,7 +45,7 @@ $todos_carros = all_car_filtro($marca, $categoria, $anio, $ubicacion, $precio); 
         <a class="" href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
         <div class="b-goods-f col-lg-4 col-md-6">
             <div class="b-team__media"><!--b-goods-f__media-->
-                <img width="262" height="196" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/>
+                <img width="262" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/>
                 <span class="b-goods-f__media-inner">
                     <!--<span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span>
                     <span class="b-goods-f__label bg-primary">NEW</span>-->
@@ -106,7 +106,7 @@ if ($todos_carros->num_rows > 0) { ?>
                 <a class="" href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
                     <div class="b-goods-f col-lg-4 col-md-6">
                         <div class="b-goods-f__media">
-                            <img width="262" height="196" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/>
+                            <img width="262" class="b-goods-f__img img-scale" src="<?php echo $row['Photo']; ?>" alt="foto"/>
                             <span class="b-goods-f__media-inner">
                                 <!--<span class="b-goods-f__favorite"><i class="ic far fa-star"></i></span>
                                 <span class="b-goods-f__label bg-primary">NEW</span>-->

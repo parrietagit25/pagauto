@@ -278,7 +278,6 @@
         }
     }
 
-
     .image-container .financing-image {
         display: block; /* Asegura que la imagen original se muestre en pantallas grandes */
     }
@@ -369,6 +368,12 @@
     @media (max-width: 767px){
         #filtros_listin{
             display: none;
+        }
+        #filtros_menu{
+            display: none;
+        }
+        .filtros_modal{
+            display: block !important;
         }
     }
 

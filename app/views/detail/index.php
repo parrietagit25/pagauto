@@ -76,7 +76,7 @@
                       <i class="ic fas fa-car-side text-primary"></i>
                         Prueba de manejo
                     </a>
-                    <a class="b-goods-f__links-item" href="mailto:ventas@automarket.com?subject=Solicitud de Información&body=Estoy interesado en obtener más información acerca de https://automarketpanama.com/dev/public/detail?placa=<?php echo $placa; ?>">
+                    <a class="b-goods-f__links-item" href="mailto:ventas@automarket.com?subject=Solicitud de Información&body=Estoy interesado en obtener más información acerca de https://automarketpanama.com/public/detail?placa=<?php echo $placa; ?>">
                       <i class="ic fas fa-envelope text-primary"></i>
                         Solicitar más información
                     </a>
@@ -110,8 +110,8 @@
                         Placa: <?php echo strtolower($placa); ?><br>
                         Ubicacion: <?php echo $row['LocationName']; ?> <br>
                         <div style="margin-top: 20px;">
-                            <button class="btn btn-sm btn-primary" style="margin-bottom: 10px; width:100%;">Contactar a un agente</button>
-                            <button class="btn btn-sm btn-primary" style="margin-bottom: 10px; width:100%;">Solicitar Cotizacion</button>
+                            <a href="https://wa.me/50769590953" target="_blank" class="btn btn-sm btn-primary" style="margin-bottom: 10px; width:100%;">Contactar a un agente</a>
+                            <a href="https://wa.me/50769590953" target="_blank" class="btn btn-sm btn-primary" style="margin-bottom: 10px; width:100%;">Solicitar Cotizacion</a>
                             <!--<button class="btn btn-sm btn-primary">Agenda prueba de manejo</button> -->
                         </div>
                     </div>
@@ -120,22 +120,22 @@
 
                    if($row['LocationName'] == 'Tumba Muerto'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/dev/public/assets/media/imaGoo/tumbamuerto.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/tumbamuerto.jpg" alt="foto"/>
                        <p>Sucursal de Tumba Muerto <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php }elseif($row['LocationName'] == 'David'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/dev/public/assets/media/imaGoo/david.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/david.jpg" alt="foto"/>
                       <p>Sucursal de David <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php }elseif($row['LocationName'] == 'Via Israel'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/dev/public/assets/media/imaGoo/viaizrrael.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/viaizrrael.jpg" alt="foto"/>
                       <p>Sucursal de Vía Israel <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php }elseif($row['LocationName'] == 'Chorrera'){ ?>
                     <div class="b-seller"> 
-                      <img class="img-scale" src="https://automarketpanama.com/dev/public/assets/media/imaGoo/costaverde.jpg" alt="foto"/>
+                      <img class="img-scale" src="https://automarketpanama.com/public/assets/media/imaGoo/costaverde.jpg" alt="foto"/>
                       <p>Sucursal de Costa Verde <br> Horario <br> Lunes a Sábado de 8:00 a.m. a 5:00 p.m. <br> Domingos de 8:00 a.m. a 12:00 m.d.</p>
                     </div>
                     <?php } */ ?>
@@ -252,7 +252,7 @@
                   <div class="col-lg-8 col-md-10 text-center" style="margin-top:40px;">
                       <h1 id="titulo_ouedes_financiar" style="font-size: 80px; font-weight: bold; color:#3d4c93;">Puedes financiar este auto!</h1>
                       <h4>Te ayudamos a realizar el trámite de financiamiento para la compra de tu auto</h4>
-                      <a class="btn btn-sm btn-primary" href="https://automarketpanama.com/dev/public/financiamiento">Ver Requisitos</a>
+                      <a class="btn btn-sm btn-primary" href="https://automarketpanama.com/public/financiamiento">Ver Requisitos</a>
                   </div>
                   <div class="col-lg-4 col-md-10 text-center">
                       <img id="imagen_financiamiento" src="<?php echo BASEURL; ?>media/ima/finan.png" style="max-width:100%; height:auto;">
@@ -287,7 +287,7 @@
                           
                         ?>
 
-                          <a href="https://automarketpanama.com/dev/public/detail?placa=<?php echo $precios_similares['LicensePlate']; ?>">
+                          <a href="https://automarketpanama.com/public/detail?placa=<?php echo $precios_similares['LicensePlate']; ?>">
                               <div class="b-goods-f b-goods-f_mod-a" style="border-radius:10px;">
                                   <div class="b-team__media"> <!-- b-goods-f__media -->
                                       <img class="b-goods-f__img img-scale" draggable="false" width="445" height="333.75" src="<?php echo $precios_similares["Photo"]; ?>" alt="foto" />
@@ -332,7 +332,7 @@
         <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
             <?php if ($diesiseis->num_rows > 0) {
                 while ($row = $diesiseis->fetch_assoc()) { ?>
-                <a href="https://automarketpanama.com/dev/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
+                <a href="https://automarketpanama.com/public/detail?placa=<?php echo $row['LicensePlate']; ?>">
                     <div class="b-gallery__item b-team__media"><!--  -->
                         <!--<img class="img-fluid" src="<?php echo $row["Photo"]; ?>" alt="foto" /></div>-->
                         <div style="">

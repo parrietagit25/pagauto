@@ -1,5 +1,6 @@
 RewriteEngine On
-RewriteBase /dev/public/
+RewriteBase /public/
+#RewriteBase /dev/public/
 #RewriteBase /public/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

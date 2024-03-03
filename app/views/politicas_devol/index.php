@@ -1,400 +1,86 @@
-SELECT count(*) as cantidad FROM Automarket_Invs_web WHERE LicensePlate in('EE9296',
-'EE9298',
-'EE9307',
-'CX8850',
-'EA6736',
-'EA8995',
-'EC2990',
-'CZ0893',
-'EE9428',
-'EE0963',
-'EE0969',
-'EE2696',
-'EE2699',
-'EE2700',
-'EB1533',
-'EB1540',
-'EB1541',
-'EB1543',
-'EB1623',
-'EB1624',
-'EC4285',
-'EC4284',
-'ED4837',
-'ED5489',
-'EE6241',
-'EC4289',
-'EC4290',
-'ED5492',
-'ED6053',
-'EE6239',
-'CZ4814',
-'EF8500',
-'EA7976',
-'EC4958',
-'ED4848',
-'ED4849',
-'ED4853',
-'ED4855',
-'ED4871',
-'ED4873',
-'ED4875',
-'ED4880',
-'ED4972',
-'ED4976',
-'ED4977',
-'ED5952',
-'ED5956',
-'ED5954',
-'EE6739',
-'EA0789',
-'EA8217',
-'EC4580',
-'EC4851',
-'EC4859',
-'EC4868',
-'EC4872',
-'ED5973',
-'ED6207',
-'EE3736',
-'EE3737',
-'EE5519',
-'EE5521',
-'EE5523',
-'EE5526',
-'EE5531',
-'EE5535',
-'EE5536',
-'EE5956',
-'EE5965',
-'EE5967',
-'EE5974',
-'EE5978',
-'EE6015',
-'EE6551',
-'EE6553',
-'EE6555',
-'EE6566',
-'EE7059',
-'EE7064',
-'EE7068',
-'EF9163',
-'CX8430',
-'CZ1839',
-'CX5355',
-'ED6715',
-'EF0975',
-'EF0977',
-'EG4725',
-'EG4838',
-'EG4843',
-'EG5295',
-'EG5301',
-'EG5314',
-'EG5315',
-'EG5316',
-'EG5319',
-'EG5336',
-'EG5338',
-'EG5352',
-'EG5358',
-'EG5362',
-'EG5366',
-'EG5368',
-'EG5323',
-'EG5348',
-'EG8881',
-'EE6401',
-'EE7249',
-'EB1901',
-'EB1886',
-'EB1893',
-'EB1899',
-'ED5459',
-'EE6652',
-'EE6655',
-'EE6673',
-'EE6699',
-'EE6700',
-'EI6562',
-'EA8113',
-'ED5162',
-'EG7508',
-'EG7513',
-'EE9429',
-'EE9442',
-'EE9444',
-'EE8574',
-'EE8871',
-'EE8874')
+
+<?php 
+    $result = obtenerDatos(8);
+    $seis = obtener6Mark();
+    $tres = obtenerDatos(3);
+    $diesiseis = obtenerDatos(16);
+    $uno = obtenerDatos(1);
+    $marcas = obtenerMarcas();
+    $vendedores4 = obtenerVendedores(4);
+    $todas_marcas = get_marcas();
+    $todos_modelos = get_modelos();
+    $tipo_carro = get_tipo_carro();
+    $tipo_carro2 = get_tipo_carro();
+
+    if (isset($_POST['email_customer'])) {
+      insertar_email_cliente($_POST['email_customer']);  ?>
+
+      <script>
+          alert('Registro Realizado');
+      </script>
+
+  <?php  }
+
+include(ROOT_PATH . '/app/views/partials/header.php'); ?>
+    <!-- Loader-->
+    <div id="page-preloader"><span class="spinner border-t_second_b border-t_prim_a"></span></div>
+    <!-- Loader end-->
+         <div class="l-theme animated-css animsition" data-header="sticky" data-header-top="200">
+        <!-- ==========================-->
+        <!-- MOBILE MENU-->
+        <!-- ==========================-->
+        <?php include(ROOT_PATH . '/app/views/partials/menu2.php'); ?>
 
 
-SELECT t.LicensePlate
-FROM (
-    VALUES ('EE9296',
-'EE9298',
-'EE9307',
-'CX8850',
-'EA6736',
-'EA8995',
-'EC2990',
-'CZ0893',
-'EE9428',
-'EE0963',
-'EE0969',
-'EE2696',
-'EE2699',
-'EE2700',
-'EB1533',
-'EB1540',
-'EB1541',
-'EB1543',
-'EB1623',
-'EB1624',
-'EC4285',
-'EC4284',
-'ED4837',
-'ED5489',
-'EE6241',
-'EC4289',
-'EC4290',
-'ED5492',
-'ED6053',
-'EE6239',
-'CZ4814',
-'EF8500',
-'EA7976',
-'EC4958',
-'ED4848',
-'ED4849',
-'ED4853',
-'ED4855',
-'ED4871',
-'ED4873',
-'ED4875',
-'ED4880',
-'ED4972',
-'ED4976',
-'ED4977',
-'ED5952',
-'ED5956',
-'ED5954',
-'EE6739',
-'EA0789',
-'EA8217',
-'EC4580',
-'EC4851',
-'EC4859',
-'EC4868',
-'EC4872',
-'ED5973',
-'ED6207',
-'EE3736',
-'EE3737',
-'EE5519',
-'EE5521',
-'EE5523',
-'EE5526',
-'EE5531',
-'EE5535',
-'EE5536',
-'EE5956',
-'EE5965',
-'EE5967',
-'EE5974',
-'EE5978',
-'EE6015',
-'EE6551',
-'EE6553',
-'EE6555',
-'EE6566',
-'EE7059',
-'EE7064',
-'EE7068',
-'EF9163',
-'CX8430',
-'CZ1839',
-'CX5355',
-'ED6715',
-'EF0975',
-'EF0977',
-'EG4725',
-'EG4838',
-'EG4843',
-'EG5295',
-'EG5301',
-'EG5314',
-'EG5315',
-'EG5316',
-'EG5319',
-'EG5336',
-'EG5338',
-'EG5352',
-'EG5358',
-'EG5362',
-'EG5366',
-'EG5368',
-'EG5323',
-'EG5348',
-'EG8881',
-'EE6401',
-'EE7249',
-'EB1901',
-'EB1886',
-'EB1893',
-'EB1899',
-'ED5459',
-'EE6652',
-'EE6655',
-'EE6673',
-'EE6699',
-'EE6700',
-'EI6562',
-'EA8113',
-'ED5162',
-'EG7508',
-'EG7513',
-'EE9429',
-'EE9442',
-'EE9444',
-'EE8574',
-'EE8871',
-'EE8874')
-) AS t(LicensePlate)
-LEFT JOIN Automarket_Invs_web a ON t.LicensePlate = a.LicensePlate
-WHERE a.LicensePlate IS NULL;
+        <div class="container">
+          <h3 class="titulo-nuestro-equipo">INICIO > <span style="color:red;">POLÍTICAS DE DEVOLUCIÓN </span></h3>
+        </div>
+        <!-- end .b-title-page-->
 
-SELECT t.LicensePlate
-FROM (
-    SELECT 'EE9296' AS LicensePlate UNION
-    SELECT 'EE9298' UNION
-    SELECT 'EE9307' UNION
-    SELECT 'CX8850' UNION
-    SELECT 'EA6736' UNION
-    SELECT 'EA8995' UNION
-    SELECT 'EC2990' UNION
-    SELECT 'CZ0893' UNION
-    SELECT 'EE9428' UNION
-    SELECT 'EE0963' UNION
-    SELECT 'EE0969' UNION
-    SELECT 'EE2696' UNION
-    SELECT 'EE2699' UNION
-    SELECT 'EE2700' UNION
-    SELECT 'EB1533' UNION
-    SELECT 'EB1540' UNION
-    SELECT 'EB1541' UNION
-    SELECT 'EB1543' UNION
-    SELECT 'EB1623' UNION
-    SELECT 'EB1624' UNION
-    SELECT 'EC4285' UNION
-    SELECT 'EC4284' UNION
-    SELECT 'ED4837' UNION
-    SELECT 'ED5489' UNION
-    SELECT 'EE6241' UNION
-    SELECT 'EC4289' UNION
-    SELECT 'EC4290' UNION
-    SELECT 'ED5492' UNION
-    SELECT 'ED6053' UNION
-    SELECT 'EE6239' UNION
-    SELECT 'CZ4814' UNION
-    SELECT 'EF8500' UNION
-    SELECT 'EA7976' UNION
-    SELECT 'EC4958' UNION
-    SELECT 'ED4848' UNION
-    SELECT 'ED4849' UNION
-    SELECT 'ED4853' UNION
-    SELECT 'ED4855' UNION
-    SELECT 'ED4871' UNION
-    SELECT 'ED4873' UNION
-    SELECT 'ED4875' UNION
-    SELECT 'ED4880' UNION
-    SELECT 'ED4972' UNION
-    SELECT 'ED4976' UNION
-    SELECT 'ED4977' UNION
-    SELECT 'ED5952' UNION
-    SELECT 'ED5956' UNION
-    SELECT 'ED5954' UNION
-    SELECT 'EE6739' UNION
-    SELECT 'EA0789' UNION
-    SELECT 'EA8217' UNION
-    SELECT 'EC4580' UNION
-    SELECT 'EC4851' UNION
-    SELECT 'EC4859' UNION
-    SELECT 'EC4868' UNION
-    SELECT 'EC4872' UNION
-    SELECT 'ED5973' UNION
-    SELECT 'ED6207' UNION
-    SELECT 'EE3736' UNION
-    SELECT 'EE3737' UNION
-    SELECT 'EE5519' UNION
-    SELECT 'EE5521' UNION
-    SELECT 'EE5523' UNION
-    SELECT 'EE5526' UNION
-    SELECT 'EE5531' UNION
-    SELECT 'EE5535' UNION
-    SELECT 'EE5536' UNION
-    SELECT 'EE5956' UNION
-    SELECT 'EE5965' UNION
-    SELECT 'EE5967' UNION
-    SELECT 'EE5974' UNION
-    SELECT 'EE5978' UNION
-    SELECT 'EE6015' UNION
-    SELECT 'EE6551' UNION
-    SELECT 'EE6553' UNION
-    SELECT 'EE6555' UNION
-    SELECT 'EE6566' UNION
-    SELECT 'EE7059' UNION
-    SELECT 'EE7064' UNION
-    SELECT 'EE7068' UNION
-    SELECT 'EF9163' UNION
-    SELECT 'CX8430' UNION
-    SELECT 'CZ1839' UNION
-    SELECT 'CX5355' UNION
-    SELECT 'ED6715' UNION
-    SELECT 'EF0975' UNION
-    SELECT 'EF0977' UNION
-    SELECT 'EG4725' UNION
-    SELECT 'EG4838' UNION
-    SELECT 'EG4843' UNION
-    SELECT 'EG5295' UNION
-    SELECT 'EG5301' UNION
-    SELECT 'EG5314' UNION
-    SELECT 'EG5315' UNION
-    SELECT 'EG5316' UNION
-    SELECT 'EG5319' UNION
-    SELECT 'EG5336' UNION
-    SELECT 'EG5338' UNION
-    SELECT 'EG5352' UNION
-    SELECT 'EG5358' UNION
-    SELECT 'EG5362' UNION
-    SELECT 'EG5366' UNION
-    SELECT 'EG5368' UNION
-    SELECT 'EG5323' UNION
-    SELECT 'EG5348' UNION
-    SELECT 'EG8881' UNION
-    SELECT 'EE6401' UNION
-    SELECT 'EE7249' UNION
-    SELECT 'EB1901' UNION
-    SELECT 'EB1886' UNION
-    SELECT 'EB1893' UNION
-    SELECT 'EB1899' UNION
-    SELECT 'ED5459' UNION
-    SELECT 'EE6652' UNION
-    SELECT 'EE6655' UNION
-    SELECT 'EE6673' UNION
-    SELECT 'EE6699' UNION
-    SELECT 'EE6700' UNION
-    SELECT 'EI6562' UNION
-    SELECT 'EA8113' UNION
-    SELECT 'ED5162' UNION
-    SELECT 'EG7508' UNION
-    SELECT 'EG7513' UNION
-    SELECT 'EE9429' UNION
-    SELECT 'EE9442' UNION
-    SELECT 'EE9444' UNION
-    SELECT 'EE8574' UNION
-    SELECT 'EE8871' UNION
-    SELECT 'EE8874'
-) AS t
-LEFT JOIN Automarket_Invs_web a ON t.LicensePlate = a.LicensePlate
-WHERE a.LicensePlate IS NULL;
+        <div class="l-main-content">
+          <div class="container">
+
+            <section class="b-goods-f">
+                <div class="row">
+                    <div class="col-lg-8">
+                    <div class="ui-subtitle"></div>
+                    <h1 class="ui-title text-uppercase"></h1>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="b-goods-f-price">
+                        </div>
+                    </div>
+                </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                    <h4>POLÍTICAS DE DEVOLUCIÓN </h4>
+                    <p>En Automarket Panamá, valoramos la satisfacción del cliente y nos esforzamos por brindar un servicio transparente y justo en todas nuestras transacciones. A continuación, detallamos nuestra política de devolución de abono:</p>
+                    <b>Devolución de Abono: </b>
+                    <p>Si por algún motivo el cliente decide cancelar su reserva, Automarket procederá a devolver el abono realizado por el cliente. </p>
+                    <b>Se aplicará un cargo por manejo de transacción del 20% sobre el abono total como compensación por los costos administrativos asociados con la reserva y cancelación. </b>
+                    <p>La devolución se realizará dentro de un plazo de entre 7 a 15 días hábiles después de la cancelación. (El tiempo puede ser mayor sujeto a los tiempos de procesamiento bancario si el abono fue realizado por medio de tarjeta de crédito). </p>
+                    <b>Proceso de cancelación de reserva: </b>
+                    <p>En Automarket, entendemos que las circunstancias pueden cambiar, y estamos comprometidos a facilitar al máximo el proceso de cancelación de reserva para nuestros clientes.  </p>
+                    <b>A continuación, detallamos el proceso paso a paso: </b>
+                    <p>Comunicación Inicial: Si necesita cancelar tu reserva, comuníquese con su asesor de ventas. Puede comunicarse vía telefónica, por correo electrónico o visitando la sucursal donde recibió la atención. </p>
+                    <p>Proporcione la información del vehículo reservado: Al contactarnos, proporcione la información relevante sobre el vehículo que abonó, como: Marca, Modelo y Placa.</p>
+                    <p>Confirmación de Cancelación: Nuestro equipo de atención le guiará a través del proceso de cancelación y le proporcionará una confirmación por escrito una vez que se haya completado la cancelación. </p>
+                  <aside class="l-sidebar">
+
+                  </aside>
+                </div>
+              </div>
+            </section>
+            <!-- end .b-goods-f-->
+            
+          </div>
+        </div>
+
+
+        <?php include(ROOT_PATH . '/app/views/partials/piedepagina.php'); ?>         
+          <!-- .footer-->
+      </div>
+    </div>
+    <!-- end layout-theme-->
+<?php include(ROOT_PATH . '/app/views/partials/footer.php'); ?>

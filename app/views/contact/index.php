@@ -17,6 +17,16 @@ if (isset($_POST['nombre'])) {
   </script>
   <?php 
 }
+
+if (isset($_POST['email_customer'])) {
+  insertar_email_cliente($_POST['email_customer']);  ?>
+
+  <script>
+      alert('Registro Realizado');
+  </script>
+
+<?php  }
+
 include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                
     <!-- Loader-->

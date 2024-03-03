@@ -11,6 +11,15 @@
       $tipo_carro2 = get_tipo_carro();
       $bancos = get_bancos();
 
+      if (isset($_POST['email_customer'])) {
+        insertar_email_cliente($_POST['email_customer']);  ?>
+
+        <script>
+            alert('Registro Realizado');
+        </script>
+
+    <?php  }
+
 include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <!-- Loader-->
     <div id="page-preloader"><span class="spinner border-t_second_b border-t_prim_a"></span></div>
@@ -35,34 +44,6 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
             <br>
 
             <?php if (isset($_GET['tipo_f']) && $_GET['tipo_f']=='asalariados') { ?>
-              <!--<div class="container">
-                  <div class="row">
-                    <div class="col-6" style="font-size:18px;">
-                      <h2>REQUISITOS ASALARIADOS</h2>
-                      <ul style="padding-top:20px;">
-                        <li style="font-size:20px;">Solicitud de Crédito </li>
-                        <li>Copia de Cédula / Pasaporte </li>
-                        <li>Copia de Licencia </li>
-                        <li>Carta de Trabajo</li>
-                        <li>Permiso de trabajo vigente ( extranjeros) </li>
-                        <li>Copia de Ficha/Talonarios </li>
-                        <li>Copia de Recibo de Luz/Agua </li>
-                      </ul>
-                    </div>
-                    <div class="col-6">
-                      <img src="/public/assets/media/financiamiento/asalariado.png" style="height:100%;" alt="" srcset="">
-                    </div>
-                      <div class="col-12">
-                        <h2 style="padding-top:20px;">Requisitos</h2>
-                        <div class="d-flex justify-content-between">
-                            <a href="/public/financiamiento?tipo_f=asalariados" class="btn btn-primary">Asalariados</a>
-                            <a href="/public/financiamiento?tipo_f=independientes" class="btn btn-primary">Independientes</a>
-                            <a href="/public/financiamiento?tipo_f=juridicos" class="btn btn-primary">Jurídicos</a>
-                        </div>
-                      </div>
-
-                  </div>
-              </div> -->
 
               <div class="container">
                 
@@ -79,6 +60,9 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                           <li>Copia de Ficha/Talonarios </li>
                           <li>Copia de Recibo de Luz/Agua </li>
                       </ul>
+                      <div class="">
+                          <div class="footer-contacta__item"><a href="https://automarketpanama.com/public/pipe" style="color:red;">APLICA YA!</a></div>
+                      </div>
                     </div>
                     <div class="col-12 col-md-6 order-1 order-md-1">
                           <img src="/public/assets/media/financiamiento/asalariado.png" class="financing-image asalariado" alt="">
@@ -111,6 +95,9 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                       <li>Movimientos bancarios ( últimos 6 meses) </li>
                       <li>Copia de Recibo de Luz/Agua </li>
                     </ul>
+                    <div class="">
+                      <div class="footer-contacta__item"><a href="https://automarketpanama.com/public/pipe" style="color:red;">APLICA YA!</a></div>
+                    </div>
                   </div>
                   <div class="col-12 col-md-6 order-2 order-md-2">
                         <img src="/public/assets/media/financiamiento/independiente.png" class="financing-image independiente" alt="">
@@ -142,6 +129,9 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                         <li>Movimientos bancarios ( últimos 6 meses) </li>
                         <li>Copia de Recibo de Luz/Agua </li>
                       </ul>
+                      <div class="">
+                          <div class="footer-contacta__item"><a href="https://automarketpanama.com/public/pipe" style="color:red;">APLICA YA!</a></div>
+                      </div>
                     </div>
                     <div class="col-12 col-md-6 order-2 order-md-2">
                         <img src="/public/assets/media/financiamiento/juridico.png" class="financing-image juridico" alt="">
@@ -179,6 +169,9 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                         <p>En Automarket contamos con un departamento especializado en asesorar, gestionar y negociar las condiciones más favorables para tu financiamiento y seguro para tu próximo vehículo. Mantenemos relaciones sólidas con las principales entidades bancarias y financieras, asegurándote opciones las mejores opciones adaptadas a tus necesidades.</p> 
                         <p>Además, brindamos el apoyo en la adquisición de póliza, garantizando la protección integral de tu inversión. </p>
                         <p>En AutoMarket, la calidad y excelencia en nuestros productos y servicios son nuestra prioridad. Estamos comprometidos a brindarte una experiencia de compra sin igual. ¡Permítenos servirte y hacer realidad la adquisición de tu Seminuevo de manera sencilla y segura! </p>
+                        <div class="">
+                          <div class="footer-contacta__item"><a href="https://automarketpanama.com/public/pipe" style="color:red;">APLICA YA!</a></div>
+                        </div>
                     </div>
                     
                 </div>

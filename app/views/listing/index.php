@@ -20,8 +20,15 @@ $total_registros = total_registros();
 $registros_por_pagina = 9;
 $numero_paginas = ceil($total_registros / $registros_por_pagina);
 
-?>
-<?php include(ROOT_PATH . '/app/views/partials/header.php'); ?>
+if (isset($_POST['email_customer'])) {
+  insertar_email_cliente($_POST['email_customer']);  ?>
+
+  <script>
+      alert('Registro Realizado');
+  </script>
+
+<?php  }
+    include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <div id="page-preloader"><span class="spinner border-t_second_b border-t_prim_a"></span></div>
       <div class="l-theme animated-css animsition" data-header="sticky" data-header-top="200">
         <?php include(ROOT_PATH . '/app/views/partials/menu2.php'); ?>

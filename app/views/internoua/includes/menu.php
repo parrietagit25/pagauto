@@ -18,6 +18,7 @@
                     <li><a class="dropdown-item" href="seo.php">SEO</a></li>
                     <li><a class="dropdown-item" href="sucursales.php">Sucursales</a></li>
                     <li><a class="dropdown-item" href="nuestro_equipo.php">Nuestro Equipo</a></li>
+                    <li><a class="dropdown-item" href="suscritos.php">Suscritos</a></li>
                 </ul>
                 </li>
                 <li class="nav-item">

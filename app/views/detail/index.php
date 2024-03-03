@@ -12,8 +12,16 @@
       $tipo_carro = get_tipo_carro();
       $tipo_carro2 = get_tipo_carro(); 
       
-       ?>
-<?php include(ROOT_PATH . '/app/views/partials/header.php'); ?>
+      if (isset($_POST['email_customer'])) {
+        insertar_email_cliente($_POST['email_customer']);  ?>
+
+        <script>
+            alert('Registro Realizado');
+        </script>
+
+    <?php  }
+   
+    include(ROOT_PATH . '/app/views/partials/header.php'); ?>
     <!-- Loader-->
     <div id="page-preloader"><span class="spinner border-t_second_b border-t_prim_a"></span></div>
     <!-- Loader end-->
@@ -224,7 +232,6 @@
                               <li>6 MESES DE GARANTIA</li>
                               <li>HISTORIAL DE MANTENIMIENTOS</li>
                               <li>MENOS DE 18 MESES DE USO</li>
-                              <li>GARANTIA EXTENDIBLE HASTA 12 MESES</li>
                             </ul>
                             <img src="<?php echo BASEURL; ?>media/ima/garan.png" style="display:none;" id="imagen_garantia_movil">
                           <?php }else{ ?>

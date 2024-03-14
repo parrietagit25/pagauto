@@ -316,7 +316,8 @@ function get_where_pais(){
 
     if ($pais == 'Panama') {
         
-        $where_pais .= " AND Internacional = '' ";
+        //$where_pais .= " AND Internacional = '' ";
+        $where_pais .= "";
         return $where_pais;
 
     }else{

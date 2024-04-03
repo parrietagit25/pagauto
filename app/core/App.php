@@ -11,6 +11,11 @@ class App {
         // Verificar si el controlador existe en la URL
         if (!empty($url[0])) {
             // Capitaliza la primera letra del controlador
+
+            if ($url[0] == 'nuestro-equipo') {
+                $url[0] = 'nuestroequipo';
+            }
+
             $controllerName = ucfirst($url[0]) . 'Controller';
             
             if (file_exists('../app/controllers/' . $controllerName . '.php')) {

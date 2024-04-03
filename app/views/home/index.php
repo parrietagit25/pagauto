@@ -1,4 +1,4 @@
-<?php 
+<?php  # listing
     $result = obtenerDatos(8);
     $seis = obtener6Mark();
     $tres = obtenerDatos(3);
@@ -50,7 +50,7 @@
                     </div>
                      */ ?>
                      <div class="main-slider__slide "><!-- sp-slide -->
-                        <a href="https://automarketpanama.com/public/listing">
+                        <a href="https://automarketpanama.com/public/inventario">
                             <img class="sp-image desktop-image" src="<?php echo BASEURL; ?>media/slider/1.png" alt="slider" />
                             <img style="width: 100%;" class="sp-image mobile-image" src="<?php echo BASEURL; ?>media/slider/movil-slider.png" alt="slider" />
                         </a>
@@ -70,7 +70,7 @@
                         <div class="">
                             <div class="" id="findTabContent">
                                 <div class="" id="content-newCars">
-                                    <form id="form_buscado_movil" class="form-buscador" method="get" action="https://automarketpanama.com/public/listing">
+                                    <form id="form_buscado_movil" class="form-buscador" method="get" action="https://automarketpanama.com/public/inventario">
                                         <input type="hidden" name="buscador" value="1">
                                         <div class="b-find__row">
                                             <div class="b-find__main">
@@ -94,6 +94,9 @@
                                                         <div class="b-find__selector">
                                                             <select name="modelo" data-width="100%" class="form-control" id="marca_select_movil" onchange="buscar_ubicacion(this.value)">
                                                                 <option value=''>Seleccionar</option>
+                                                                <?php while ($modelos_all = $todos_modelos->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $modelos_all['Model']; ?>"><?php echo $modelos_all['Model']; ?></option>
+                                                                <?php } ?>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -239,7 +242,7 @@
                         </h1>
                         <br>
                         <div class="col-12 d-flex justify-content-center">
-                            <a class="section-carousel__btn btn btn-primary" href="https://automarketpanama.com/public/listing">
+                            <a class="section-carousel__btn btn btn-primary" href="https://automarketpanama.com/public/inventario">
                                 <i class="ic icon-list"></i> <b> VER INVENTARIO </b>
                             </a>
                         </div>

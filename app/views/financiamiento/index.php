@@ -31,7 +31,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
         <?php include(ROOT_PATH . '/app/views/partials/menu2.php'); ?>
         
         <div class="container">
-            <h3 class="titulo-nuestro-equipo">INICIO > <span style="color:red;">FINANCIAMIENTO</span></h3>
+            <h3 class="titulo-nuestro-equipo">INICIO > <span style="color:white;">FINANCIAMIENTO</span></h3>
             <br>
             <div class="">
                 <div class="footer-contacta__item"><i class="ic "><img width="20" src="<?php echo BASEURL; ?>media/icons/whatsapp.png" alt=""> </i>Contactanos al Whatsapp:+<a href="https://wa.me/50769590953" target="_blank" style="color:gray;"> 507 6959-0953</a></div>
@@ -61,7 +61,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                           <li>Copia de Recibo de Luz/Agua </li>
                       </ul>
                       <div class="">
-                          <div class="footer-contacta__item"><a href="https://automarketpanama.com/public/pipe" style="color:red;">APLICA YA!</a></div>
+                          <div class="footer-contacta__item btn btn-primary"><a href="https://automarketpanama.com/public/pipe" style="color:white;">APLICA YA!</a></div>
                       </div>
                     </div>
                     <div class="col-12 col-md-6 order-1 order-md-1">
@@ -96,7 +96,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                       <li>Copia de Recibo de Luz/Agua </li>
                     </ul>
                     <div class="">
-                      <div class="footer-contacta__item"><a href="https://automarketpanama.com/public/pipe" style="color:red;">APLICA YA!</a></div>
+                      <div class="footer-contacta__item btn btn-primary"><a href="https://automarketpanama.com/public/pipe" style="color:white;">APLICA YA!</a></div>
                     </div>
                   </div>
                   <div class="col-12 col-md-6 order-2 order-md-2">
@@ -130,7 +130,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                         <li>Copia de Recibo de Luz/Agua </li>
                       </ul>
                       <div class="">
-                          <div class="footer-contacta__item"><a href="https://automarketpanama.com/public/pipe" style="color:red;">APLICA YA!</a></div>
+                          <div class="footer-contacta__item btn btn-primary"><a href="https://automarketpanama.com/public/pipe" style="color:white;">APLICA YA!</a></div>
                       </div>
                     </div>
                     <div class="col-12 col-md-6 order-2 order-md-2">
@@ -152,7 +152,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
             <div class="container">
                 <div class="row">
                     <!-- Contenedor de Requisitos y Botones -->
-                    <div class="col-12 order-1" style="padding-top:20px;">
+                    <div class="col-12 order-1" style="padding-top:30px;">
                         <h2>Requisitos</h2>
                         <div class="d-flex justify-content-between flex-wrap" style="padding-top:20px;">
                             <a href="/public/financiamiento?tipo_f=asalariados" class="btn btn-primary my-1">Asalariados</a>
@@ -161,7 +161,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                         </div>
                     </div>
                     <!-- Contenedor de la Imagen -->
-                    <div class="col-12 col-md-6 order-3 order-md-3">
+                    <div class="col-12 col-md-6 order-3 order-md-3" style="margin-top: 30px;">
                         <img src="/public/assets/media/financiamiento/financiamiento.png" class="financing-image" alt="">
                     </div>
                     <!-- Contenedor del Texto -->
@@ -170,7 +170,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                         <p>Además, brindamos el apoyo en la adquisición de póliza, garantizando la protección integral de tu inversión. </p>
                         <p>En AutoMarket, la calidad y excelencia en nuestros productos y servicios son nuestra prioridad. Estamos comprometidos a brindarte una experiencia de compra sin igual. ¡Permítenos servirte y hacer realidad la adquisición de tu Seminuevo de manera sencilla y segura! </p>
                         <div class="">
-                          <div class="footer-contacta__item"><a href="https://automarketpanama.com/public/pipe" style="color:red;">APLICA YA!</a></div>
+                          <div class="footer-contacta__item btn btn-primary"><a href="https://automarketpanama.com/public/pipe" style="color:white;">APLICA YA!</a></div>
                         </div>
                     </div>
                     

@@ -64,7 +64,7 @@
             console.log('pasando');
             var formData = new FormData(this);
             
-            fetch('/app/views/listing/search.php', {
+            fetch('/app/views/inventario/search.php', {
                 method: 'POST',
                 body: formData
             })
@@ -150,7 +150,7 @@
                 formData.append('marca', marca);
                 formData.append('menu', menu);
 
-                fetch('/app/views/listing/search.php', {
+                fetch('/app/views/inventario/search.php', {
                     method: 'POST',
                     body: formData
                 })
@@ -175,7 +175,7 @@
             var formData = new FormData();
                 formData.append('modelo_form_principal', modelo);
             
-            fetch('/app/views/listing/search.php', {
+            fetch('/app/views/inventario/search.php', {
                 method: 'POST',
                 body: formData
             })
@@ -199,7 +199,7 @@
             var formData = new FormData();
                 formData.append('ubicacion_form_principal', modelo);
             
-            fetch('/app/views/listing/search.php', {
+            fetch('/app/views/inventario/search.php', {
                 method: 'POST',
                 body: formData
             })
@@ -286,7 +286,7 @@
                     formData.append('precio', precio);
                     formData.append('filtros_form_principal', 1);
 
-                fetch('/app/views/listing/search.php', {
+                fetch('/app/views/inventario/search.php', {
                     method: 'POST',
                     body: formData
                 })

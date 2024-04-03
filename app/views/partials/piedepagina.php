@@ -34,9 +34,9 @@
                         <h3 class="footer-section__title">Acerca de</h3>
                         <ul class="footer-list list-unstyled">
                             <li><a href="https://automarketpanama.com/public/home">Inicio</a></li>
-                            <li><a href="https://automarketpanama.com/public/listing">Inventario</a></li>
-                            <li><a href="https://automarketpanama.com/public/about">Sobre Nosotros</a></li>
-                            <li><a href="https://automarketpanama.com/public/contact">Contáctanos</a></li>
+                            <li><a href="https://automarketpanama.com/public/inventario">Inventario</a></li>
+                            <li><a href="https://automarketpanama.com/public/nuestro-equipo">Sobre Nosotros</a></li>
+                            <li><a href="https://automarketpanama.com/public/contacto">Contáctanos</a></li>
                         </ul>
                         </section>
                     </div>

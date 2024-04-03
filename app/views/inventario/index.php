@@ -424,7 +424,7 @@ if (isset($_POST['email_customer'])) {
                     <div class="col-12 col-md-6 text-center">
                         <br><br>
                         <h2 class="b-bnr-3__title ui-tilte" style="color:black;">Llévate tu seminuevo con financiamiento.</h2>
-                        <a class="b-bnr-3__btn btn btn-primary" href="https://automarketpanama.com/public/listing">Aplica aquí</a>
+                        <a class="b-bnr-3__btn btn btn-primary" href="https://automarketpanama.com/public/inventario">Aplica aquí</a>
                     </div>
                 </div>
             </div>

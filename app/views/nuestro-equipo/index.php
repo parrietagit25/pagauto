@@ -35,6 +35,16 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
         <!-- end .b-title-page-->
         <main>
 
+        <section class="section-default" style="margin-top:-10px;">
+          <div class="container">
+            <div class="row" style="font-size:20px;">
+              <div class="col-xl-12">
+                <img style="margin-top:-30px;" src="/public/assets/media/financiamiento/ANATOMÍA-DEL-SEMINUEVO.png" alt="" srcset="">
+              </div>
+            </div>
+          </div>
+        </section>
+
           <section class="section-team section-default" style="margin-top:-60px;">
             <div class="container">
               <div class="row">
@@ -82,17 +92,17 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                 <div class="col-xl-6">
                   <p>
                     <span class="text-primary">Automarket</span>
-                    Panamá es la empresa líder en Panamá en venta de autos seminuevos y usados, 
-                    con 21 años en el mercado, más de 17,500 autos entregados y 5 sucursales a nivel nacional.  
+                    Panamá es la empresa líder en la venta de autos Seminuevos y Garantizados en Panamá. 
+                    Con más de 21 años en el mercado y más de 17,500 autos vendidos.
                   </p>
                   <p>
-                    Descubre la facilidad de adquirir un seminuevo de verdad con Automarket Panamá. 
-                    Confía en nosotros para encontrar el vehículo perfecto que se ajuste a tus necesidades y estilo de vida. 
+                    Vive la experiencia de tener tu Auto Seminuevo de Verdad con Automarket Panama.
                   </p>
                   <ul>
-                    <li>Confianza de 21 Años de experiencia.</li>
-                    <li>Respaldo Intengral.</li>
-                    <li>Autos 100% Garantizados. </li>
+                    <li>5 Sucursales a nivel Nacional.</li>
+                    <li>Equipo de Ventas especializado.</li>
+                    <li>Asesoría en Financiamiento y Seguros. </li>
+                    <li>Respaldo y Garantía. </li>
                   </ul>
                 </div>
                 <div class="col-xl-6">

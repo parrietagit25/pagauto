@@ -66,7 +66,7 @@ if ($data) {
     $update_stat = $data->update_stat;
 
      // Verificar si el VIN ya existe en la base de datos
-     $checkVin = $conn->prepare("SELECT COUNT(*) FROM Automarket_Invs_web WHERE VIN = ?");
+     $checkVin = $conn->prepare("SELECT COUNT(*) FROM Automarket_Invs_web_temp WHERE VIN = ?");
      $checkVin->bind_param("s", $VIN);
      $checkVin->execute();
      $result = $checkVin->get_result();
@@ -77,7 +77,7 @@ if ($data) {
         // Si el VIN existe, verifica el update_stat
         if ($update_stat == 1) {
             // Actualiza el registro existente
-            $stmt = $conn->query("UPDATE Automarket_Invs_web SET 
+            $stmt = $conn->query("UPDATE Automarket_Invs_web_temp SET 
                                     Year = '".$Year."', Transmission = '".$Transmission."', Color = '".$Color."', Make = '".$Make."', Km = '".$Km."', Code = '".$Code."', 
                                     LicensePlate = '".$LicensePlate."', Model = '".$Model."', Chasis = '".$Chasis."', Unit = '".$Unit."', Engine = '".$Engine."', Fuel = '".$Fuel."', 
                                     Price = '".$Price."', PriceTax = '".$PriceTax."', Doors = '".$Doors."', CarType = '".$CarType."', CC = '".$CC."', LocationCode = '".$LocationCode."', 
@@ -96,7 +96,7 @@ if ($data) {
 
     } else {
 
-        $stmt = $conn->query("INSERT INTO Automarket_Invs_web 
+        $stmt = $conn->query("INSERT INTO Automarket_Invs_web_temp 
                             (Year, Transmission, Color, Make, Km, Code, LicensePlate, Model, Chasis, Unit, Engine, Fuel, Price, PriceTax, Doors, CarType, CC, LocationCode, LocationName, Interior, Headline, Description, Photo, Status, Marked, Promo, PromoPrice, PromoPriceTax, LoadDate, Prefijo, VIN, trg_updatefechaWeb, update_stat, stat_master) 
                             VALUES ('".$Year."', '".$Transmission."', '".$Color."', '".$Make."', '".$Km."', '".$Code."', '".$LicensePlate."', '".$Model."', '".$Chasis."', '".$Unit."', '".$Engine."', '".$Fuel."', '".$Price."', '".$PriceTax."', '".$Doors."', '".$CarType."', '".$CC."', '".$LocationCode."', '".$LocationName."', '".$Interior."', '".$Headline."', '".$Description."', '".$Photo."', '".$Status."', '".$Marked."', '".$Promo."', '".$PromoPrice."', '".$PromoPriceTax."', '".$LoadDate."', '".$Prefijo."', '".$VIN."', '".$trg_updatefechaWeb."', '".$update_stat."', 1)");
 
@@ -127,7 +127,7 @@ if ($data) {
     fwrite($logFile, "Consulta de actualización: \n");
 
     // Actualizar stat_master a 2 para VINs que no están en el JSON
-    $updateSql = "UPDATE Automarket_Invs_web SET stat_master = 2 WHERE VIN NOT IN ($vinListString)";
+    $updateSql = "UPDATE Automarket_Invs_web_temp SET stat_master = 2 WHERE VIN NOT IN ($vinListString)";
 
     fwrite($logFile, $updateSql . "\n");
 

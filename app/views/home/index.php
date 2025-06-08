@@ -311,6 +311,268 @@
                     </div>
                 </div>
             </section>
+
+            <?php  ?>
+
+            <section class="section-reviews section-default parallax area-bg area-bg_dark">
+                <div class="area-bg__inner">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="text-center">
+                                    <h2 class="ui-title">Opiniones de Clientes</h2><span class="section-reviews__decor">“</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                            <!--b-reviews-slider js-slider slick-initialized slick-slider slick-dotted -->
+                                <div class="b-reviews-slider js-slider slick-slider slick-dotted" data-slick="{&quot;slidesToShow&quot;: 3,  &quot;slidesToScroll&quot;: 3, &quot;centerMode&quot;: false, &quot;arrows&quot;: false, &quot;dots&quot;: true, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 2, &quot;slidesToScroll&quot;: 2, &quot;centerMode&quot;: false}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1, &quot;slidesToScroll&quot;: 1, &quot;centerMode&quot;: false}}]}">
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>Variedad de autos.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner">
+                                                    <span class="b-reviews__name">Carlos D'Amil</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="b-reviews__author"><img class="img-fluid" src="assets/media/content/b-reviews/face-1.jpg" alt="foto"/></span>
+                                            </cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>Como es mi segunda compra, yo lo contacté por WhatsApp y a partir de ahí iniciamos el proceso. El vehículo estaba en la sucursal de Tumba Muerto, pero Christian está en Chorrera si mal no recuerdo.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner">
+                                                    <span class="b-reviews__name">Jackeline Calderón</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="b-reviews__author"><img class="img-fluid" src="assets/media/content/b-reviews/face-2.jpg" alt="foto"/></span>
+                                            </cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>La manera en que se me dieron opciones para adquirir mi vehículo y la rapidez cuando hice el pago, en menos de una semana ya tenía las llaves en mi mano.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner">
+                                                    <span class="b-reviews__name">Anel Ponte</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="b-reviews__author"><img class="img-fluid" src="assets/media/content/b-reviews/face-1.jpg" alt="foto"/></span>
+                                            </cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>Porque la comunicación fue bastante constante, Emmanuel fue muy atento, nos guió durante el proceso y nos asesoró hasta el final, nos sentimos muy satisfechos con nuestra compra.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner">
+                                                    <span class="b-reviews__name">Yustyn García</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="b-reviews__author"><img class="img-fluid" src="assets/media/content/b-reviews/face-1.jpg" alt="foto"/></span>
+                                            </cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>Proceso súper rápido y buena atención.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner">
+                                                    <span class="b-reviews__name">María González</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="b-reviews__author"><img class="img-fluid" src="assets/media/content/b-reviews/face-2.jpg" alt="foto"/></span>
+                                            </cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>Rápida aprobación, pero demora en la entrega.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner">
+                                                    <span class="b-reviews__name">Ángelica</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="b-reviews__author"><img class="img-fluid" src="assets/media/content/b-reviews/face-2.jpg" alt="foto"/></span>
+                                            </cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>Excelente atención en todo momento. Buena disponibilidad del vendedor.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner">
+                                                    <span class="b-reviews__name">Elizabeth</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="b-reviews__author"><img class="img-fluid" src="assets/media/content/b-reviews/face-2.jpg" alt="foto"/></span>
+                                            </cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>Todos sus vehículos están garantizados y casi nuevo y la atención de sus vendedores no tiene precio, son lo máximo.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner"><span class="b-reviews__name">Jonatan</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="b-reviews__author"><img class="img-fluid" src="assets/media/content/b-reviews/face-1.jpg" alt="foto"/></span>
+                                            </cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>Muy buena atención y muy claro en las condiciones.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner">
+                                                    <span class="b-reviews__name">Miguel</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span>
+                                                    </span><span class="b-reviews__author">
+                                                        <img class="img-fluid" src="assets/media/content/b-reviews/face-1.jpg" alt="foto"/>
+                                                    </span>
+                                            </cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>Muy buenos precios, accesibilidad con los bancos, demora el trámite con el municipio.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner">
+                                                    <span class="b-reviews__name">Ismael</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span>
+                                                    </span><span class="b-reviews__author"><img class="img-fluid" src="assets/media/content/b-reviews/face-1.jpg" alt="foto"/></span></cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>Buena atención, información clara y todo muy rápido apoyo excelente de parte del vendedor.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner">
+                                                    <span class="b-reviews__name">Jaime</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="b-reviews__author"><img class="img-fluid" src="assets/media/content/b-reviews/face-1.jpg" alt="foto"/></span></cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="b-reviews">
+                                        <blockquote class="b-reviews__blockquote">
+                                            <div class="b-reviews__wrap">
+                                                <p>Fui superbién atendida por Mario y estuvo a la orden siempre , si tuviera que comprar otro carro vuelvo aquí.</p>
+                                            </div>
+                                            <cite class="b-reviews__cite" title="Blockquote Title">
+                                                <span class="b-reviews__inner">
+                                                    <span class="b-reviews__name">Maira</span>
+                                                    <span class="b-reviews__category">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="b-reviews__author"><img class="img-fluid" src="assets/media/content/b-reviews/face-2.jpg" alt="foto"/></span></cite>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <?php  ?>
+
             <br>
             <div class="b-gallery js-slider" data-slick="{&quot;slidesToShow&quot;: 8, &quot;arrows&quot;: false, &quot;autoplay&quot;: true,  &quot;slidesToScroll&quot;: 1, &quot;responsive&quot;: [{&quot;breakpoint&quot;: 1400, &quot;settings&quot;: {&quot;slidesToShow&quot;: 6, &quot;slidesToScroll&quot;: 3}}, {&quot;breakpoint&quot;: 768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3, &quot;slidesToScroll&quot;: 1}}]}">
                 <?php if ($diesiseis->num_rows > 0) {

@@ -6,6 +6,7 @@
 
 
             <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="https://www.automarketrentacar.com/" style="color: black !important; border: solid 2px red;">Alquiler de Autos<span class="sr-only" ></span></a></li>
                 <li class="nav-item active"><a class="nav-link" href="https://automarketpanama.com/public/" style="color: black !important;">Inicio<span class="sr-only"></span></a></li>
                 <li class="nav-item "><a class="btn btn-primary" href="https://automarketpanama.com/public/inventario">Inventario</a>
 
@@ -37,7 +38,7 @@
                                 <div class="top-bar__inner row justify-content-between align-items-center">
                                     <ul class="top-bar__list list-unstyled col">
                                         <!--<li class="top-bar__item"><a class="top-bar__link" href="mailto:ventas@automarketpan.com">ventas@automarketpan.com</a></li>-->
-                                        <li class="top-bar__item">Contáctanos: +507 279-2789 | +507 6959-0953</li>
+                                        <li class="top-bar__item">Contáctanos: +507 279-2789 | +507 6731-3059</li>
                                         <li class="top-bar__item">Horario de atención: Lunes a Sábado de 8:00 a.m. a 5:00 p.m.</li>
                                     </ul><a class="btn btn-primary btn-sm col-auto" href="https://automarketpanama.com/public/inventario" style="display:block; margin-right: -60px; "><i class="ic icon-list"></i> Ver Inventario</a>
                                 </div>
@@ -61,6 +62,7 @@
                             <div class="col-lg d-none d-lg-block">
                                 <nav class="navbar navbar-expand-md justify-content-end" id="nav" style="z-index: 999;">
                                     <ul class="yamm main-menu navbar-nav">
+                                        <li class="nav-item active"><a class="nav-link" href="https://www.automarketrentacar.com/" style="border: solid 2px red;">Alquiler de Autos<span class="sr-only" ></span></a></li>
                                         <li class="nav-item active"><a class="nav-link" href="/public/">Inicio<span class="sr-only"></span></a></li>
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" id="navbarDropdown2" href="/public/inventario" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inventario</a>

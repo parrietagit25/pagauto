@@ -166,9 +166,27 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                     </div>
                     <!-- Contenedor del Texto -->
                     <div class="col-12 col-md-6 order-2 order-md-2" style="font-size:20px; padding-top:20px;">
+                    
+                    <p><b>Asesoría para el financiamiento de tu Seminuevo con Automarket</b><p>
+                    <p>En Automarket, siempre nos esforzamos por ofrecerle el mejor servicio y las mejores opciones para sus necesidades.
+                    Nos complace informarle que contamos con un servicio de asesoría para el financiamiento de su Seminuevo
+                    .¿Qué ofrecemos?</p>
+
+                    <p><b>Asesoría Personalizada:</b> Nuestro personal capacitado está disponible para guiarle en cada paso del proceso de financiamiento.</p>
+
+                    <p><b>Mejores Ofertas Bancarias:</b> Trabajamos con los principales bancos para asegurarnos  que obtenga las mejores promociones y tasas de interés disponibles en el mercado.</p>
+
+                    <p><b>Respuesta Rápida:</b> Entendemos que su tiempo es valioso, por eso garantizamos una respuesta en un plazo de 24 horas.</p>
+
+                    <p><b>¿Cómo funciona?</b> Escoja el auto de su preferencia y presentando la documentación según su perfil, nosotros nos encargamos del resto.</p>
+
+                    <p><b>Contáctenos:</b> Puede llamarnos al +507 279-2789 o enviarnos un correo electrónico a ventas@automarketpan.com Evaluación: Nuestro equipo evaluará sus necesidades y le ofrecerá las mejores opciones de financiamiento disponibles.</p>
+
+
+                        <!--
                         <p>En Automarket contamos con un departamento especializado en asesorar, gestionar y negociar las condiciones más favorables para tu financiamiento y seguro para tu próximo vehículo. Mantenemos relaciones sólidas con las principales entidades bancarias y financieras, asegurándote opciones las mejores opciones adaptadas a tus necesidades.</p> 
                         <p>Además, brindamos el apoyo en la adquisición de póliza, garantizando la protección integral de tu inversión. </p>
-                        <p>En AutoMarket, la calidad y excelencia en nuestros productos y servicios son nuestra prioridad. Estamos comprometidos a brindarte una experiencia de compra sin igual. ¡Permítenos servirte y hacer realidad la adquisición de tu Seminuevo de manera sencilla y segura! </p>
+                        <p>En AutoMarket, la calidad y excelencia en nuestros productos y servicios son nuestra prioridad. Estamos comprometidos a brindarte una experiencia de compra sin igual. ¡Permítenos servirte y hacer realidad la adquisición de tu Seminuevo de manera sencilla y segura! </p>-->
                         <div class="">
                           <div class="footer-contacta__item btn btn-primary"><a href="https://automarketpanama.com/public/pipe" style="color:white;">APLICA YA!</a></div>
                         </div>

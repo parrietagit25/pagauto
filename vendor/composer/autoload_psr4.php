@@ -6,7 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'LeonardHernandez\\Automarket\\' => array($baseDir . '/src'),
-    'Detection\\' => array($vendorDir . '/mobiledetect/mobiledetectlib/src'),
 );

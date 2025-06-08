@@ -118,8 +118,13 @@
                         Placa: <?php echo strtolower($placa); ?><br>
                         Ubicacion: <?php echo $row['LocationName']; ?> <br>
                         <div style="margin-top: 20px;">
-                            <a href="https://wa.me/50769590953" target="_blank" class="btn btn-sm btn-primary" style="margin-bottom: 10px; width:100%;">Contactar a un agente</a>
-                            <a href="https://wa.me/50769590953" target="_blank" class="btn btn-sm btn-primary" style="margin-bottom: 10px; width:100%;">Solicitar Cotizacion</a>
+
+                        <?php $mensaje = "Hola estoy interesado en " . $row['Make'] . " " . $row['Model'] . " " . $row['Year'] . 
+                                         " link: https://automarketpanama.com/public/detail?placa=" . strtolower($placa); 
+                              $mensajeCodificado = urlencode($mensaje);
+                              $linkWhatsApp = "https://wa.me/50767313059?text=" . $mensajeCodificado; ?>
+                            <a href="<?php echo $linkWhatsApp; ?>" target="_blank" class="btn btn-sm btn-primary" style="margin-bottom: 10px; width:100%;">Contactar a un agente</a>
+                            <a href="<?php echo $linkWhatsApp; ?>" target="_blank" class="btn btn-sm btn-primary" style="margin-bottom: 10px; width:100%;">Solicitar Cotizacion</a>
                             <!--<button class="btn btn-sm btn-primary">Agenda prueba de manejo</button> -->
                         </div>
                     </div>
@@ -215,7 +220,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 justify-content-center" style="text-align:center;">
-                          <?php if($row['tipo_compra'] == 'SEMINUEVO'){ ?>
+                          <?php if($row['tipo_compra'] == 'SEMINUEVO' || $row['tipo_compra'] == 'Nuevo' || $row['tipo_compra'] == 'Seminuevo'){ ?>
                             <img src="<?php echo BASEURL; ?>media/ima/seminuevo.png" style="margin-top:-30px;" id="imagen_garantia">
                             
                             <ul id="garantia_12_meses" style="display:none;">
@@ -226,7 +231,7 @@
                             </ul>
                             <img src="<?php echo BASEURL; ?>media/ima/garan.png" style="display:none;" id="imagen_garantia_movil">
 
-                          <?php }elseif ($row['tipo_compra'] == 'USADO') { ?>
+                          <?php }elseif ($row['tipo_compra'] == 'USADO' || $row['tipo_compra'] == 'Usado') { ?>
                             <img src="<?php echo BASEURL; ?>media/ima/usado.png" style="margin-top:-30px;" id="imagen_garantia">
                             <ul id="garantia_6_meses" style="display:none;">
                               <li>6 MESES DE GARANTIA</li>

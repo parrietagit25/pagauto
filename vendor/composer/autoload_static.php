@@ -9,30 +9,22 @@ class ComposerStaticInit01d95e86f5239115bfeec238f81cd791
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
-            'Psr\\SimpleCache\\' => 16,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'L' => 
         array (
             'LeonardHernandez\\Automarket\\' => 28,
         ),
-        'D' => 
-        array (
-            'Detection\\' => 10,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Psr\\SimpleCache\\' => 
+        'PHPMailer\\PHPMailer\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'LeonardHernandez\\Automarket\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
-        ),
-        'Detection\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/src',
         ),
     );
 

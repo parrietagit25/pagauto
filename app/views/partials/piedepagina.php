@@ -16,14 +16,15 @@
         <div class="row">
             <div class="col-lg-4 col-sm-5">
                 <div class="footer-section footer-section_info">
-                    <div class="footer-info">Empresa líder en negocio automotriz. Dedicada a la compra y venta de autos seminuevos, alquiler de vehículos, renting, manejo de flota y taller con más de 20 años de experiencia en el mercado. <br>
-                             Una empresa de Grupo Panama Car Rental. 
+                    <div class="footer-info">Empresa líder en negocio automotriz. Dedicada a la venta de autos seminuevos de verdad, 
+                                             con más de 20 años de experiencia en el mercado. <br>
+                                             Una empresa de Grupo Panama Car Rental. 
                     </div>
                     <div class="footer-contacts">
                         <!--<div class="footer-contacts__item"><i class="ic icon-location-pin"></i>Fairview Ave, El Monte, CA 91732</div>-->
                         <div class="footer-contacts__item"><i class="ic icon-envelope"></i><a href="mailto:ventas@automarketpan.com">ventas@automarketpan.com</a></div>
                         <div class="footer-contacts__item"><i class="ic icon-earphones-alt"></i>Telefono:<a href="tel:+17553028549">+507 279-2789</a></div>
-                        <div class="footer-contacta__item"><i class="ic "><img width="20" src="<?php echo BASEURL; ?>media/icons/whatsapp.png" alt=""> </i> Whatsapp:+<a href="https://wa.me/50769590953" target="_blank" style="color:gray;"> 507 6959-0953</a></div>
+                        <div class="footer-contacta__item"><i class="ic "><img width="20" src="<?php echo BASEURL; ?>media/icons/whatsapp.png" alt=""> </i> Whatsapp:+<a href="https://wa.me/50767313059" target="_blank" style="color:gray;"> 507 6731-3059</a></div>
                     </div>
                 </div>
             </div>
@@ -44,7 +45,7 @@
                         <section class="footer-section footer-section_link">
                         <h3 class="footer-section__title">Links</h3>
                         <ul class="footer-list list-unstyled">
-                            <li><a target="_blank" href="https://dollarpanama.com/">Dollar</a></li>
+                            <!--<li><a target="_blank" href="https://dollarpanama.com/">Dollar</a></li>-->
                             <li><a target="_blank" href="https://www.panarenting.com/">Panarenting</a></li>
                             <li><a target="_blank" href="https://autoservicepanama.com/">Autoservice</a></li>
                             <li><a target="_blank" href="https://www.grupopcr.com.pa/">Grupo PCR</a></li>

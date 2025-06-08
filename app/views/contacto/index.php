@@ -59,7 +59,7 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                     <a href="https://wa.me/50769590953" target="_blank" style="color:gray;">
                       <div class="b-contacts"><i class="ic icon-phone bg-primary"></i>
                         <div class="b-contacts__title">Whatsapp</div>
-                        <div class="b-contacts__info">+507 6959-0953<br></div>
+                        <div class="b-contacts__info">+507 6731-3059<br></div>
                       </div>
                     </a>
                   </div>

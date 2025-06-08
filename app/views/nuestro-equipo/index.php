@@ -1,4 +1,5 @@
-<?php $result = obtenerDatos(8);
+<?php 
+$result = obtenerDatos(8);
       $seis = obtener6Mark();
       $tres = obtenerDatos(3);
       $diesiseis = obtenerDatos(16);
@@ -35,6 +36,17 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
         <!-- end .b-title-page-->
         <main>
 
+          <section style="margin-top:30px;">
+            <div class="container">
+              <div class="row" style="font-size:20px;">
+                <div class="col-xl-12" style="display: flex; justify-content: center; align-items: center;">
+                  <img style="margin-top:-30px;" src="/public/assets/media/financiamiento/ANATOMÍA-DEL-SEMINUEVO.png" alt="" srcset="">
+                </div>
+              </div>
+            </div>
+          </section>
+
+
           <section class="section-team section-default" style="margin-top:-60px;">
             <div class="container">
               <div class="row">
@@ -61,7 +73,12 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
                                   </ul>
                               </div>
                               <div class="b-team__inner bg-dark">
-                                  <div class="b-team__name"><?php if($row['id'] == 8){ echo strstr($row["nombre"], ' ', true); }else{ echo $row["nombre"]; } ?></div>
+                                  <div class="b-team__name"><?php if($row['id'] == 8) { 
+                                                                    //echo mb_strtoupper(strstr(utf8_encode($row["nombre"]), ' ', true)); 
+                                                                    echo mb_strtoupper(utf8_encode($row["nombre"]));
+                                                                    } else { 
+                                                                        echo mb_strtoupper(utf8_encode($row["nombre"])); 
+                                                                    } ?></div>
                                   <div class="b-team__category"><?php echo utf8_encode($row["cargo"]); ?></div>
                               </div>
                               <div class="b-team__footer"><!--<a class="b-team__phone" href="tel:+507<?php // echo $row["celular"]; ?>"><i class="ic text-primary icon-call-end"></i> +507 <?php // echo $row["celular"]; ?></a>-->
@@ -79,25 +96,25 @@ include(ROOT_PATH . '/app/views/partials/header.php'); ?>
             <div class="container">
               <div class="row" style="font-size:20px;">
 
-                <div class="col-xl-6">
+                <div class="col-xl-12">
                   <p>
                     <span class="text-primary">Automarket</span>
-                    Panamá es la empresa líder en Panamá en venta de autos seminuevos y usados, 
-                    con 21 años en el mercado, más de 17,500 autos entregados y 5 sucursales a nivel nacional.  
+                    Panamá es la empresa líder en la venta de autos Seminuevos y Garantizados en Panamá. 
+                    Con más de 21 años en el mercado y más de 17,500 autos vendidos.
                   </p>
                   <p>
-                    Descubre la facilidad de adquirir un seminuevo de verdad con Automarket Panamá. 
-                    Confía en nosotros para encontrar el vehículo perfecto que se ajuste a tus necesidades y estilo de vida. 
+                    Vive la experiencia de tener tu Auto Seminuevo de Verdad con Automarket Panama.
                   </p>
                   <ul>
-                    <li>Confianza de 21 Años de experiencia.</li>
-                    <li>Respaldo Intengral.</li>
-                    <li>Autos 100% Garantizados. </li>
+                    <li>5 Sucursales a nivel Nacional.</li>
+                    <li>Equipo de Ventas especializado.</li>
+                    <li>Asesoría en Financiamiento y Seguros. </li>
+                    <li>Respaldo y Garantía. </li>
                   </ul>
                 </div>
-                <div class="col-xl-6">
+                <!--<div class="col-xl-6">
                   <img style="margin-top:-30px;" src="/public/assets/media/financiamiento/ANATOMÍA-DEL-SEMINUEVO.png" alt="" srcset="">
-                </div>
+                </div>-->
               </div>
             </div>
           </section>

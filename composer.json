@@ -1,17 +1,23 @@
 {
     "name": "leonard.hernandez/automarket",
     "autoload": {
-        "psr-4": {
-            "LeonardHernandez\\Automarket\\": "src/"
-        }
+      "psr-4": {
+        "LeonardHernandez\\Automarket\\": "src/"
+      }
     },
     "authors": [
-        {
-            "name": "Grupo PCR",
-            "email": "76816677+TecnologiaPCR@users.noreply.github.com"
-        }
+      {
+        "name": "Grupo PCR",
+        "email": "76816677+TecnologiaPCR@users.noreply.github.com"
+      }
     ],
     "require": {
-        "mobiledetect/mobiledetectlib": "^4.8"
+      "phpmailer/phpmailer": "^6.6"
+    },
+    "config": {
+      "platform": {
+        "php": "7.4.0"
+      }
     }
-}
+  }
+  

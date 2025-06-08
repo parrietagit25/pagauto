@@ -234,10 +234,15 @@ if (isset($_POST['email_customer'])) {
               </div>
 
               <div class="col-lg-9">
+                <b>Compara tu Seminuevo.</b>
+                   Seminuevo de Verdad de Automarket | Menos de 18 meses de uso | Menos de 50,000 kms | Historial de mantenimiento disponible | Financiables | Garantía mínima de 12 meses
+
                 <div class="b-filter-goods">
                   <div class="row justify-content-between align-items-center">
                     <div class="b-filter-goods__wrap col-auto">
+                        
                       <div class="b-filter-goods__select">
+                        
                         <!--<select class="selectpicker" data-width="100%" title="Newest First" multiple="multiple" data-max-options="1" data-style="ui-select">
                           <option>A-Z</option>
                           <option>Z-A</option>

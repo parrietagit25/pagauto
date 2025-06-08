@@ -1,12 +1,9 @@
 <?php
+define('ROOT_PATH', realpath(__DIR__ . '/../'));
 
-define('ROOT_PATH', realpath(dirname(__FILE__) . '/..'));
-
-
-include '../app/core/db_connection.php';
-require_once '../app/config.php';
-require_once '../app/core/Controller.php';
-require_once '../app/core/App.php';
-//require_once '../app/controllers/HomeController.php';
+require_once ROOT_PATH . '/app/core/db_connection.php';
+require_once ROOT_PATH . '/app/config.php';
+require_once ROOT_PATH . '/app/core/Controller.php';
+require_once ROOT_PATH . '/app/core/App.php';
 
 $app = new App();

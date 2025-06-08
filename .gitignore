@@ -1,0 +1,36 @@
+# Archivos que puedan contener contraseñas o secretos
+.env
+*.env
+*.key
+*.pem
+*.crt
+*.pfx
+*.p12
+*.jks
+config.php
+settings.php
+secrets.py
+*.secret
+*.credentials
+*.json
+*.yml
+*.yaml
+
+# Archivos de conexión y servicios sensibles
+*config/*.php
+*secret/*.php
+*credenciales/*.php
+
+# Archivos comunes que contienen credenciales en proyectos PHP
+app/config/*.php
+config/database.php
+config/mail.php
+
+# Ignorar node_modules y otros archivos pesados
+node_modules/
+vendor/
+.DS_Store
+*.log
+*.bak
+*.zip
+*.tar.gz
